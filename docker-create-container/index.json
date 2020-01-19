@@ -1,0 +1,26 @@
+{
+    "title": "Create Docker Container Scenario",
+    "description": "Here you will create your first docker container and run it in the katakoda environment",
+    "difficulty": "beginner",
+    "time": "2 minutes",
+    "details": {
+        "steps": [{
+            "title": "Step 1 - Create container",
+            "text": "step1.md"
+        }],
+        "intro": {
+            "text": "intro.md",
+            "credits": ""
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "bash"
+    }
+}
