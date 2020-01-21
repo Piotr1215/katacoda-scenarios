@@ -17,7 +17,7 @@
         }
     },
     "environment": {
-        "hideintro": true, "hidefinish": true,
+        "hideintro": false, "hidefinish": false,
         "showvisualise": true,
         "scopePort": 4040,
         "uilayout": "editor-terminal"
