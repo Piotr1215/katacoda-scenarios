@@ -24,7 +24,7 @@
         "scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
         "showvisualise": true,
         "scopePort": 4040,
-        "uilayout": "editor-terminal",
+        "uilayout": "terminal",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
     },
     "backend": {
