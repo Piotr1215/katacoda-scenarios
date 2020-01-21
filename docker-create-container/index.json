@@ -31,9 +31,15 @@
         "imageid": "ubuntu"
     },
     "assets": {
-        "host01": [
+        "client": [
             {
                 "file": "docker-compose.yml",
+                "target": "~/"
+            }
+        ],
+        "host01": [
+            {
+                "file": "config.yml",
                 "target": "~/"
             }
         ]
