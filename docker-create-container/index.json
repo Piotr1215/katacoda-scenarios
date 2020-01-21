@@ -4,10 +4,12 @@
     "difficulty": "beginner",
     "time": "2 minutes",
     "details": {
-        "steps": [{
-            "title": "Step 1 - Create container",
-            "text": "step1.md"
-        }],
+        "steps": [
+            {
+                "title": "Step 1 - Create container",
+                "text": "step1.md"
+            }
+        ],
         "intro": {
             "text": "intro.md",
             "credits": ""
@@ -17,12 +19,21 @@
         }
     },
     "environment": {
-        "hideintro": false, "hidefinish": false,
+        "hideintro": false,
+        "hidefinish": false,
         "showvisualise": true,
         "scopePort": 4040,
         "uilayout": "editor-terminal"
     },
     "backend": {
         "imageid": "ubuntu"
+    },
+    "assets": {
+        "client": [
+            {
+                "file": "docker-compose.yml",
+                "target": "~/"
+            }
+        ]
     }
 }
