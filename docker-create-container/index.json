@@ -16,6 +16,20 @@
         },
         "finish": {
             "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                {
+                    "file": "docker-compose.yml",
+                    "target": "~/"
+                }
+            ],
+            "host01": [
+                {
+                    "file": "config.yml",
+                    "target": "~/"
+                }
+            ]
         }
     },
     "environment": {
@@ -29,19 +43,5 @@
     },
     "backend": {
         "imageid": "ubuntu"
-    },
-    "assets": {
-        "client": [
-            {
-                "file": "docker-compose.yml",
-                "target": "~/"
-            }
-        ],
-        "host01": [
-            {
-                "file": "config.yml",
-                "target": "~/"
-            }
-        ]
     }
 }
