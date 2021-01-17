@@ -18,6 +18,20 @@
                 "text": "step3.md"
             }
         ],
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                }
+            ]
+        },
         "intro": {
             "text": "intro.md",
             "code": "launch.sh"
