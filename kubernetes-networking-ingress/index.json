@@ -20,7 +20,7 @@
         ],
         "intro": {
             "text": "intro.md",
-            "foreground": "/usr/bin/launch.sh"
+            "code": "/usr/bin/launch.sh"
         },
         "finish": {
             "text": "finish.md"
