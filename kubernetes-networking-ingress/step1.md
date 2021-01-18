@@ -7,8 +7,9 @@ Expose Service: `k expose deployment.app/nginx-test --port 80 --target-port 80 -
 Create ingress controller: `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.43.0/deploy/static/provider/baremetal/deploy.yaml`{{execute}}
 
 Make sure Ingress controller is running:
-```kubectl get pods -n ingress-nginx \
-  -l app.kubernetes.io/name=ingress-nginx --watch
+
+```
+kubectl get pods -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx --watch
 ```{{execute}}
 
 Create Ingress:
