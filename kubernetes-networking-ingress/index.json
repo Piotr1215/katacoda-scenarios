@@ -25,22 +25,14 @@
         "finish": {
             "text": "finish.md"
         },
-                "assets": {
-                    "host01": [
-                        {
-                            "file": "*",
-                            "target": "/root",
-                            "chmod": "+x"
-                        }
-                    ],
-                    "node01": [
-                        {
-                            "file": "*",
-                            "target": "/root",
-                            "chmod": "+x"
-                        }
-                    ]
+        "assets": {
+            "controlplane": [
+                {
+                    "file": "*",
+                    "target": "/root"
                 }
+            ]
+        }
     },
     "environment": {
         "uilayout": "terminal"
