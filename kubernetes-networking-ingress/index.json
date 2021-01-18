@@ -19,17 +19,17 @@
             }
         ],
         "assets": {
-            "host01": [
+            "client": [
                 {
                     "file": "wait.sh",
-                    "target": "/usr/local/bin/",
+                    "target": "~/",
                     "chmod": "+x"
                 }
             ]
         },
         "intro": {
             "text": "intro.md",
-            "background": "launch.sh"
+            "code": "launch.sh"
         },
         "finish": {
             "text": "finish.md"
