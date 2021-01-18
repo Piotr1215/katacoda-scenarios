@@ -9,8 +9,6 @@ kubectl wait node --all --for=condition=Ready --timeout=3m
 
 source <(kubectl completion bash)
 
-cd /root/k8s
-
 clear
 
 echo "Cluster is ready! Cluster information:"
