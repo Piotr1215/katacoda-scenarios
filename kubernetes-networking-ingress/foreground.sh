@@ -1,0 +1,1 @@
+echo "Waiting for Kubernetes to start"; while [ ! -f /opt/.backgroundfinished ] ; do sleep 2; done; echo "Kubernetes Started"

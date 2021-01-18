@@ -30,7 +30,8 @@
         },
         "intro": {
             "text": "intro.md",
-            "code": "launch.sh"
+            "courseDate": "launch.sh",
+            "code": "foreground.sh"
         },
         "finish": {
             "text": "finish.md"
