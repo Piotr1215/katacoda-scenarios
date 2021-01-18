@@ -9,12 +9,11 @@ Create ingress controller: `kubectl apply -f https://raw.githubusercontent.com/k
 Make sure Ingress controller is running:
 ```kubectl get pods -n ingress-nginx \
   -l app.kubernetes.io/name=ingress-nginx --watch
-```
-{{execute}}
+```{{execute}}
 
 Create Ingress:
 
-``` bash
+```
 cat << EOF | kubectl create -f -
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
@@ -27,5 +26,4 @@ spec:
     serviceName: nginxsvc
     servicePort: 80
 EOF
-```
-{{execute}}
+```{{execute}}
