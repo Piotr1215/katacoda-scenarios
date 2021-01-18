@@ -19,15 +19,6 @@
                 "text": "step3.md"
             }
         ],
-        "assets": {
-            "client": [
-                {
-                    "file": "wait.sh",
-                    "target": "~/",
-                    "chmod": "+x"
-                }
-            ]
-        },
         "intro": {
             "text": "intro.md",
             "courseData": "launch.sh"
