@@ -9,6 +9,12 @@ kubectl wait node --all --for=condition=Ready --timeout=3m
 
 source <(kubectl completion bash)
 
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+
+complete -F __start_kubectl k
+
+source ~/.bashrc
+
 clear
 
 echo "Cluster is ready! Cluster information:"
