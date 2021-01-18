@@ -1,5 +1,6 @@
 #!/bin/bash
-set -x
+function waitstart()
+{
 echo "Waiting for Kubernetes to start..."
   while [ ! -f /root/.kube/config ]
   do
@@ -9,3 +10,7 @@ echo "Kubernetes started"
 if [ -f /root/.kube/start ]; then
   /root/.kube/start
 fi
+}
+
+waitstart >/dev/null
+
