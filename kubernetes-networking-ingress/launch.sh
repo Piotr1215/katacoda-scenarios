@@ -1,12 +1,9 @@
 #!/bin/bash
-echo "Waiting for Kubernetes to start..."
-  while [ ! -f /root/.kube/config ]
-  do
-    sleep 1
-  done
-echo "Kubernetes started"
+while [ ! -f /root/.kube/config ]; do
+  sleep 1
+done
 if [ -f /root/.kube/start ]; then
   /root/.kube/start
 fi
-$(clear >&2)
-echo "done" >> /opt/.backgroundfinished
+
+echo "done" >>/opt/.backgroundfinished
