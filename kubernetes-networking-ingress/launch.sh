@@ -1,9 +1,19 @@
-ssh root@[[HOST_IP]] 'echo "Host *" >> /root/.ssh/config && echo "    StrictHostKeyChecking no" >> /root/.ssh/config && chmod 400 /root/.ssh/config'
+#!/bin/bash
 
-while [ ! -f /root/.kube/config ]
-  do
-    sleep 1
-  done
-if [ -f /root/.kube/start ]; then
-  /root/.kube/start
-fi
+until kubectl cluster-info 2&>/dev/null; do
+  echo "Waiting for Kubernetes cluster startup..."
+  sleep 5
+done
+
+kubectl wait node --all --for=condition=Ready --timeout=3m
+
+source <(kubectl completion bash)
+
+cd /root/k8s
+
+clear
+
+echo "Cluster is ready! Cluster information:"
+
+kubectl cluster-info
+kubectl version --short
