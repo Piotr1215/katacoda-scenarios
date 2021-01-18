@@ -29,7 +29,7 @@
         },
         "intro": {
             "text": "intro.md",
-            "code": "launch.sh"
+            "background": "launch.sh"
         },
         "finish": {
             "text": "finish.md"
