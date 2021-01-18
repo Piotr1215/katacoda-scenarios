@@ -1,14 +1,14 @@
 {
-    "title": "Kubernetes Networking: Ingress",
+    "title": "Kubernetes Networking",
     "description": "Ingress controller in action",
     "difficulty": "medium",
     "time": "15 minutes",
     "details": {
         "steps": [
             {
-                "title": "Step 1",
+                "title": "Step 1: Services",
                 "text": "step1.md",
-                "courseData": "step1-background.sh"
+                "code": "step1-background.sh"
             },
             {
                 "title": "Step 2",
