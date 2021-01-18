@@ -8,5 +8,4 @@ echo "Kubernetes started"
 if [ -f /root/.kube/start ]; then
   /root/.kube/start
 fi
-clear
 echo "done" >> /opt/.backgroundfinished
