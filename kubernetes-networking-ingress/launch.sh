@@ -21,3 +21,4 @@ echo "Cluster is ready! Cluster information:"
 
 kubectl cluster-info
 kubectl version --short
+kubectl wait node --all --for=condition=Ready --timeout=3m
