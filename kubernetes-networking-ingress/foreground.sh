@@ -1,3 +1,5 @@
+#!/bin/bash
 echo "Waiting for Kubernetes to start. This can take a few minutes"
-    while [ ! -f /opt/.backgroundfinished ]; do sleep 2; done
+while [ ! -f /opt/.backgroundfinished ]; do sleep 2; done
+clear
 echo "Kubernetes Started"
