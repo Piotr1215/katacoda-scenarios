@@ -1,0 +1,104 @@
+{
+  "title": "First Steps To Becoming Certified Kubernetes Application Developer",
+  "description": "Learn the foundations of Kubernetes in one short scenario",
+  "difficulty": "Beginner",
+  "icon": "fa-kubernetes",
+  "time": "30-60 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 - Running Cluster",
+        "text": "step1.md",
+        "courseData": "background-init.sh",
+        "code": "foreground-init.sh",
+        "answer": "step1-answer.md"
+      },
+      {
+        "title": "Step 1 - Shortcuts",
+        "text": "step1-shortcuts.md"
+      },
+      {
+        "title": "Step 2 - Deploy First App",
+        "code": "clear.sh",
+        "text": "step2.md",
+        "answer": "step2-answer.md"
+      },
+      {
+        "title": "Step 3 - List Pods",
+        "text": "step3.md",
+        "answer": "step3-answer.md"
+      },
+      {
+        "title": "Step 4 - Describe Pods",
+        "text": "step3-describe.md"
+      },
+      {
+        "title": "Step 5 - Namespaces",
+        "code": "clear.sh",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 6 - Create Namespace",
+        "text": "step5.md",
+	"answer": "step5-answer.md"
+      },
+      {
+        "title": "Step 7 - Scaling",
+        "code": "reset.sh",
+        "text": "step6.md"
+      },
+      {
+        "title": "Step 8 - YAML",
+        "code": "clear.sh",
+        "text": "step7.md",
+        "answer": "step7-vimtips.md"
+      },
+      {
+        "title": "Step 11 - Rollout Deployment",
+        "code": "clear.sh",
+        "text": "step9-rollout-updateimage.md"
+      },
+      {
+        "title": "Step 12 - Rollback Deployment",
+        "text": "step9-rollback.md"
+      },
+      {
+        "title": "Step 13 - Create Service",
+        "code": "clear.sh",
+        "text": "step10.md"
+      },
+      {
+        "title": "Step 14 - Labels",
+        "text": "step11.md",
+        "answer": "step11-answer.md"
+      },
+      {
+        "title": "Step 15 - Logs",
+        "code": "clear.sh",
+        "text": "step13.md"
+      },
+      {
+        "title": "Step 17 - Metrics",
+        "code": "clear.sh",
+        "text": "step14.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+        "host01": [
+            {"file": "deploy-metricsserver.yaml", "target": "/opt/deploy-metricsserver.yaml"}
+        ]
+    }
+  },
+  "environment": {
+    "uilayout": "tips-terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running"
+  }
+}
