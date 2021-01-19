@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Step 1",
+                "title": "Scalability: enable up and down-scaling of pods",
                 "text": "step1.md"
             },
             {
