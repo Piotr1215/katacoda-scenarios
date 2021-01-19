@@ -1,0 +1,22 @@
+{
+    "title": "Kubernetes Networking",
+    "description": "Exercise Kubernetes networking: services, ingress, ingress controllers, load balancing. Kubernetes version 1.18",
+    "icon": "fa-kubernetes",
+    "courses": [
+        {
+            "course_id": "k8s-networking-services",
+            "title": "Kubernetes Networking: Expose and consume a service",
+            "description": "Expose and consume a NodePort service"
+        },
+        {
+            "course_id": "k8s-networking-ingress",
+            "title": "Kubernetes Networking: Create and apply ingress rule",
+            "description": "Create an ingress resource with path redirect"
+        },
+        {
+            "course_id": "k8s-networking-loadbalancing",
+            "title": "Kubernetes Networking: Create a LoadBalancer",
+            "description": "Create a load balancer service and load balance traffic between different pods of a deployment"
+        }
+    ]
+}
