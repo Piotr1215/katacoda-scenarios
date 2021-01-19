@@ -4,6 +4,7 @@
   "difficulty": "Beginner",
   "icon": "fa-kubernetes",
   "time": "30-60 minutes",
+  "private": "true",
   "details": {
     "steps": [
       {
