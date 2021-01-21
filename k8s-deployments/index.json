@@ -25,7 +25,7 @@
             "text": "finish.md"
         },
         "assets": {
-            "client": [
+            "controlplane": [
                 {
                     "file": "prepare-cluster.sh",
                     "target": "/root",
