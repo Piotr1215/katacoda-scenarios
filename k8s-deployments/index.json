@@ -24,6 +24,14 @@
         },
         "finish": {
             "text": "finish.md"
+        },
+        "assets": {
+            "client": [
+                {
+                    "file": "*",
+                    "target": "/root"
+                }
+            ]
         }
     },
     "environment": {
