@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Scalability: enable up and down-scaling of pods",
+                "title": "Setup Kubernetes Cluster",
                 "text": "step1.md"
             },
             {
