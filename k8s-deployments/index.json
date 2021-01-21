@@ -28,7 +28,8 @@
             "client": [
                 {
                     "file": "*",
-                    "target": "/root"
+                    "target": "/root",
+                    "chmod": "+x"
                 }
             ]
         }
