@@ -28,7 +28,7 @@
             "controlplane": [
                 {
                     "file": "prepare-cluster.sh",
-                    "target": "/root",
+                    "target": "/root/",
                     "chmod": "+x"
                 }
             ]
