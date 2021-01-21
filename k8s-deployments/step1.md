@@ -1,6 +1,6 @@
 # Cluster Setup
 
-Run `./prepare-cluster.sh`{{execute T1}} to start cluster.
+Run `prepare-cluster.sh`{{execute T1}} to start cluster.
 
 Once the script finished, check if nodes are running and ready on the other terminal `kubectl get nodes -w`{{execute T2}}
 
