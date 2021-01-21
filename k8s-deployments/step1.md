@@ -1,18 +1,9 @@
-# Scalability: enable up and down-scaling of pods
+# Cluster Setup
 
-Create deployment: `k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml`{{execute T1}}
-This will create a simple nginx deployment.
+Run `launch.sh`{{execute T1}} to start cluster.
 
-## Prepare Kubernetes Cluster
+Check if nodes are running and ready on the other terminal `kubectl get nodes -w`{{execute T2}}
 
-`launch.sh`{{execute T1}}
+Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`
 
-## Scale deployment up and watch pods being created
-
-First, we are going to set up a watch to observe how pods are being created and terminated: `k get pods -w`{{execute T2}}
-
-Let's make sure our deployment is setup correctly `k get deploy`{{execute T1}}
-
-Now, let's scale it up to **5 replicas** `k scale deployment nginx-test --replicas 5`{{execute T1}}. Pay attention what is happening on the other terminal. Additional pods are being created!
-
-2. Scale deployment down and watch pods being terminated
+All right, cluster seems to be ready for testing, let's head to *Step2*
