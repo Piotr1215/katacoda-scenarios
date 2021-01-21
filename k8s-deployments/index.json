@@ -27,7 +27,7 @@
         "assets": {
             "client": [
                 {
-                    "file": "prepare-cluster",
+                    "file": "prepare-cluster.sh",
                     "target": "/root",
                     "chmod": "+x"
                 }
