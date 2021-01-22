@@ -19,7 +19,7 @@
                 "text": "step3.md"
             },
             {
-                "title": "TEST",
+                "title": "Deployments",
                 "text": "step4.md"
             }
         ],
@@ -47,6 +47,10 @@
             {
                 "name": "Octant",
                 "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com"
+            },
+            {
+                "name": "Sample Page",
+                "port": 80
             }
         ]
     },
