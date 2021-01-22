@@ -2,13 +2,13 @@
 
 ## Create deployment
 
-`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml`{{execute T1}}
+`tmux send-keys -t 1 "k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml" Enter`{{execute T1}}
 
 This will create a simple nginx deployment.
 
 ## Scale deployment up and watch pods being created
 
-First, we are going to set up a watch to observe how pods are being created and terminated: `k get pods -w`{{execute T2}}
+First, we are going to set up a watch to observe how pods are being created and terminated: `tmux send-keys -t 2 "k get pods -w" Enter`{{execute T1}}
 
 Let's make sure our deployment is setup correctly `k get deploy`{{execute T1}}
 
