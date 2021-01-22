@@ -18,8 +18,9 @@
                 "text": "step3.md"
             },
             {
-                "title": "Deployment",
-                "text": "step4.md"
+                "title": "TEST",
+                "text": "step4.md",
+                "foreground": "run_octant.sh"
             }
         ],
         "intro": {
@@ -40,10 +41,15 @@
     },
     "environment": {
         "uilayout": "terminal-terminal",
-        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+        "dashboards": [
+            {
+                "name": "Octant",
+                "port": 7777
+            }
+        ]
     },
     "backend": {
-        "port": 8080,
         "imageid": "kubernetes-cluster-running:1.18"
     }
 }
