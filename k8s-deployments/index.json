@@ -19,7 +19,8 @@
             }
         ],
         "intro": {
-            "text": "intro.md"
+            "text": "intro.md",
+            "courseData": "prepare-cluster.sh"
         },
         "finish": {
             "text": "finish.md"
@@ -35,9 +36,11 @@
         }
     },
     "environment": {
-        "uilayout": "terminal-terminal"
+        "uilayout": "terminal-terminal",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
     },
     "backend": {
+        "port": 8080,
         "imageid": "kubernetes-cluster-running:1.18"
     }
 }
