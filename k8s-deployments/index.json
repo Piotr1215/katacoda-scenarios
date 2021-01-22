@@ -19,8 +19,7 @@
             }
         ],
         "intro": {
-            "text": "intro.md",
-            "code": "prepare-cluster.sh"
+            "text": "intro.md"
         },
         "finish": {
             "text": "finish.md"
