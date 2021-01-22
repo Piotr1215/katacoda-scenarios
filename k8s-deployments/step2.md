@@ -1,4 +1,4 @@
-# Enable up and down-scaling of pods
+# Scale pods up and down on demand
 
 ## Create deployment
 
@@ -19,5 +19,7 @@ Now, let's scale it up to **5 replicas** `k scale deployment nginx-test --replic
 Again, we are going to set up a watch to observe how pods are being created and terminated: `k get pods -w`{{execute T2 interrupt}}
 
 Now, let's scale it down back to **1 replica** `k scale deployment nginx-test --replicas 1`{{execute T1}}. Pay attention what is happening on the other terminal. Pods are being terminated.
+
+There should only be one pod left: `k get pods`{{execute T2}}
 
 **Conclusion**: We have successfully proven pods can be easily scaled up and down.

@@ -1,4 +1,4 @@
-# Cluster Setup
+# Prepare Kubernetes Cluster
 
 Run `launch.sh`{{execute T1}} to start cluster.
 
