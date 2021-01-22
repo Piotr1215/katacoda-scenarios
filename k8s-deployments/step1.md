@@ -10,9 +10,18 @@ Check if nodes are running and ready on the other terminal `kubectl wait node --
 
 > *wait*, it establishes a wait handle on the command and periodically refreshes the output.
 
+Expected command output. Run command one more time if you cannot see the output below.
+
+```
+node/controlplane condition met
+node/node01 condition met
+```
+
 Once all nodes are ready, we can see if all pods are in ready status.
 
 Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute T2 interrupt}}
+
+Last thing, let's create a useful alias for `kubectl` also on the cluster node `alias k=kubectl`{{execute T2}}
 
 Finally let's see what Kubernetes version are we running on:
 
