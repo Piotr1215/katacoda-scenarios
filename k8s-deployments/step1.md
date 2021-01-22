@@ -6,9 +6,9 @@ Now we need to make sure that additional Kubernetes node: *node01* has the same 
 To achieve this we will use `scp` to copy over content of the *.kube* directory including Kubernetes *config* file
 `scp -pr .kube root@node01:/root/.kube`{{execute T1}}
 
-Check if nodes are running and ready on the other terminal `kubectl get nodes -w`{{execute T2}}
+Check if nodes are running and ready on the other terminal `kubectl wait node --all --for=condition=Ready --timeout=3m`{{execute T2}}
 
-> The *-w* parameter is shorthand for *-wait*, it establishes a wait handle on the command and periodically refreshes the output.
+> *wait*, it establishes a wait handle on the command and periodically refreshes the output.
 
 Once all nodes are ready, we can see if all pods are in ready status.
 
