@@ -1,6 +1,6 @@
 # Prepare Kubernetes Cluster
 
-Run `launch.sh`{{execute T1}} to start cluster.
+Wait until cluster finishes loading
 
 Now we need to make sure that additional Kubernetes node: *node01* has the same *kubeconfig* configuration so we can execute commands on this node as well.
 To achieve this we will use `scp` to copy over content of the *.kube* directory including Kubernetes *config* file

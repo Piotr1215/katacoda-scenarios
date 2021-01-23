@@ -16,4 +16,6 @@ List all environmental variables in container running in our pod `k set env pods
 
 Now, let's add a new environmental variable on the deployment `k set env deployment/nginx-test APP=TEST`{{execute T1}} and list variables again `k set env pods --all --list`{{execute T1}}, we should see the new variable added.
 
+Reset watch: `k get pods`{{execute interrupt T2}}
+
 **Conclusion**: We have successfully proven that pods in a deployment can be easily changed via deployment manipulation.

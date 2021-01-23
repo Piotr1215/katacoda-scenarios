@@ -32,7 +32,8 @@
             }
         ],
         "intro": {
-            "text": "intro.md"
+            "text": "intro.md",
+            "courseData": "setup.sh"
         },
         "finish": {
             "text": "finish.md"
@@ -61,7 +62,8 @@
         "dashboards": [
             {
                 "name": "Octant",
-                "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com"
+                "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
+                "port": 7777
             },
             {
                 "name": "Sample Page",
