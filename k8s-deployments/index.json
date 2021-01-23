@@ -12,23 +12,19 @@
             },
             {
                 "title": "Scalability",
-                "text": "step2.md",
-                "foreground": "clear-terminals.sh"
+                "text": "step2.md"
             },
             {
                 "title": "Configuration",
-                "text": "step3.md",
-                "foreground": "clear-terminals.sh"
+                "text": "step3.md"
             },
             {
                 "title": "Deployments",
-                "text": "step4.md",
-                "foreground": "clear-terminals.sh"
+                "text": "step4.md"
             },
             {
                 "title": "Delivery Control",
-                "text": "step5.md",
-                "foreground": "clear-terminals.sh"
+                "text": "step5.md"
             }
         ],
         "intro": {
