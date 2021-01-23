@@ -34,14 +34,14 @@
             "text": "finish.md"
         },
         "assets": {
-            "controlplane": [
+            "host01": [
                 {
                     "file": "clear-terminal.sh",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 }
             ],
-            "node01": [
+            "host02": [
                 {
                     "file": "clear-terminal.sh",
                     "target": "/usr/local/bin/",
