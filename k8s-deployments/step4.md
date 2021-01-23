@@ -17,5 +17,6 @@ Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katac
 7. Activate auto-refresh plugin if you installed in in step 1
 8. Update image of the containers running in pods controlled by our deployment `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:blue --record`{{execute T1}}
 9. Observe how page changes to new version.
+10. Reset watch: `k get pods`{{execute interrupt T2}}
 
 **Conclusion**: We have successfully proven that pods in a deployment can be easily updated with new version of an image without causing downtime in availability.
