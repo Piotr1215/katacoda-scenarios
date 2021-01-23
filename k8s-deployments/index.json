@@ -22,11 +22,13 @@
             },
             {
                 "title": "Deployments",
-                "text": "step4.md"
+                "text": "step4.md",
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Delivery Control",
-                "text": "step5.md"
+                "text": "step5.md",
+                "foreground": "clear-terminals.sh"
             }
         ],
         "intro": {
