@@ -38,14 +38,14 @@
             "text": "finish.md"
         },
         "assets": {
-            "host01": [
+            "controlplane": [
                 {
                     "file": "*",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 }
             ],
-            "host02": [
+            "node01": [
                 {
                     "file": "*",
                     "target": "/usr/local/bin/",
