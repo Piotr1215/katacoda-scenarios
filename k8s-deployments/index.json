@@ -38,7 +38,14 @@
             "text": "finish.md"
         },
         "assets": {
-            "node01": [
+            "host01": [
+                {
+                    "file": "*",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                }
+            ],
+            "host02": [
                 {
                     "file": "*",
                     "target": "/usr/local/bin/",
