@@ -53,7 +53,7 @@
     "uilayout": "terminal-iframe",
     "dashboards": [
       {
-        "name": "Dashboard",
+        "name": "Octant",
         "port": 7777
       }
     ]
