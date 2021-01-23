@@ -49,7 +49,14 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal"
+    "showdashboard": true,
+    "uilayout": "terminal-iframe",
+    "dashboards": [
+      {
+        "name": "Dashboard",
+        "port": 7777
+      }
+    ]
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18",
