@@ -21,6 +21,10 @@
             {
                 "title": "Deployments",
                 "text": "step4.md"
+            },
+            {
+                "title": "Delivery Control",
+                "text": "step5.md"
             }
         ],
         "intro": {
