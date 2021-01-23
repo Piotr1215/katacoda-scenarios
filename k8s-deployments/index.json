@@ -41,7 +41,7 @@
             "node01": [
                 {
                     "file": "*",
-                    "target": "/root/",
+                    "target": "/usr/local/bin/",
                     "chmod": "+x"
                 }
             ]
