@@ -15,7 +15,7 @@ OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant &
 echo "done" >> /opt/.octantinstalled
 
 echo "Waiting for nodes ready"
-kubectl wait node --all --for=condition=Ready --timeout=3m
+kubectl wait node --all --for=condition=Ready --timeout=60s
 echo "done" >> /opt/.nodesready
 
 echo "done" >> /opt/.backgroundfinished
