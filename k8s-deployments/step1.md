@@ -17,7 +17,7 @@ node/controlplane condition met
 node/node01 condition met
 ```
 
-Once all nodes are ready, we can see if all pods are in ready status.
+Once all nodes are ready, we can see if all pods are in running status.
 
 Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute T2 interrupt}}
 

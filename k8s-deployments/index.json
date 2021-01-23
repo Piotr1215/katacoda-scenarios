@@ -12,19 +12,23 @@
             },
             {
                 "title": "Scalability",
-                "text": "step2.md"
+                "text": "step2.md",
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Configuration",
-                "text": "step3.md"
+                "text": "step3.md",
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Deployments",
-                "text": "step4.md"
+                "text": "step4.md",
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Delivery Control",
-                "text": "step5.md"
+                "text": "step5.md",
+                "foreground": "clear-terminals.sh"
             }
         ],
         "intro": {
@@ -34,7 +38,7 @@
             "text": "finish.md"
         },
         "assets": {
-            "controlplane": [
+            "client": [
                 {
                     "file": "*",
                     "target": "/root/",
