@@ -12,11 +12,13 @@
             },
             {
                 "title": "Scalability",
-                "text": "step2.md"
+                "text": "step2.md",
+                "foreground": "clear-terminal.sh"
             },
             {
                 "title": "Configuration",
-                "text": "step3.md"
+                "text": "step3.md",
+                "foreground": "clear-terminal.sh"
             },
             {
                 "title": "Deployments",
@@ -36,14 +38,14 @@
         "assets": {
             "host01": [
                 {
-                    "file": "clear-terminal.sh",
+                    "file": "*",
                     "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
             ],
             "host02": [
                 {
-                    "file": "clear-terminal.sh",
+                    "file": "*",
                     "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
