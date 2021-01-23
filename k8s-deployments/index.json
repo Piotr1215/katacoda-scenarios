@@ -13,12 +13,12 @@
             {
                 "title": "Scalability",
                 "text": "step2.md",
-                "foreground": "clear-terminal.sh"
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Configuration",
                 "text": "step3.md",
-                "foreground": "clear-terminal.sh"
+                "foreground": "clear-terminals.sh"
             },
             {
                 "title": "Deployments",
