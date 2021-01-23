@@ -37,14 +37,14 @@
             "host01": [
                 {
                     "file": "clear-terminal.sh",
-                    "target": "/usr/local/bin/",
+                    "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
             ],
             "host02": [
                 {
                     "file": "clear-terminal.sh",
-                    "target": "/usr/local/bin/",
+                    "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
             ]
