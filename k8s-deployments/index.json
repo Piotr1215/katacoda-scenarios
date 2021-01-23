@@ -36,14 +36,14 @@
         "assets": {
             "controlplane": [
                 {
-                    "file": "*",
+                    "file": "clear-terminal.sh",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 }
             ],
             "node01": [
                 {
-                    "file": "*",
+                    "file": "clear-terminal.sh",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 }
