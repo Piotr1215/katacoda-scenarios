@@ -49,6 +49,8 @@
     }
   },
   "environment": {
+    "uieditorpath": "/root/dca-exercises/k8s",
+    "showide": true,
     "uilayout": "terminal"
   },
   "backend": {

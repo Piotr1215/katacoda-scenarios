@@ -30,7 +30,9 @@ showProgress()
   waitForCompletion /opt/.nodesready
   # echo -n "Completing"
   # waitForCompletion /opt/.backgroundfinished
-  echo "Ready"
+  echo -n "Cloning examples"
+  waitForCompletion /opt/.examplescloned
+  echo "All Set"
   echo ""
 }
 
