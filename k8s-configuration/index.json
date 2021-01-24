@@ -49,7 +49,7 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/dca-exercises/k8s",
+    "uieditorpath": "/root/dca-exercises/k8s/configuration",
     "showide": true,
     "uilayout": "terminal"
   },
