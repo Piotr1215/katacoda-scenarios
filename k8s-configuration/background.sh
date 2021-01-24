@@ -19,8 +19,9 @@ kubectl wait node --all --for=condition=Ready --timeout=60s
 echo "done" >> /opt/.nodesready
 
 echo "Cloning Repo with Examples"
+mkdir examples
+cd examples
 git clone https://github.com/Piotr1215/dca-exercises.git dca-exercises
-cd /root/dca-exercises
 echo "done" >> /opt/.examplescloned
 
 echo "done" >> /opt/.backgroundfinished

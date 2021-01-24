@@ -49,7 +49,7 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root",
+    "uieditorpath": "/root/examples",
     "showide": true,
     "idePort": 23000,
     "uilayout": "terminal-iframe",
