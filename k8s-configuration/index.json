@@ -51,7 +51,15 @@
   "environment": {
     "uieditorpath": "/root/dca-exercises/k8s/configuration",
     "showide": true,
-    "uilayout": "terminal"
+    "idePort": 23000,
+    "uilayout": "terminal-iframe",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Octant",
+        "port": 7777
+      }
+    ]
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
