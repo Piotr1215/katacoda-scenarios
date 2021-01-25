@@ -12,8 +12,8 @@ Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katac
 2. Setup watch on pods `k get pods -w`{{execute T2}}
 3. Make sure deployment is scaled to 5 replicas `k scale deployment nginx-test --replicas 5`{{execute T1}}
 4. Expose deployment by creating a service of type NodePort `k expose deployment/nginx-test --port 80 --target-port 80 --type NodePort --name nginxsvc`{{execute T1}}
-5. Retrieve port of the newly service `export PORT=$(k get service nginxsvc -o jsonpath='{.spec.ports[*].nodePort}')`{{execute T1}}, `echo $PORT`{{execute T1}} copy the port, this is a node port where *nginxsvc* is running on.
-6. Navigate to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
+5. Retrieve port of the newly service `export PORT=$(k get service nginxsvc -o jsonpath='{.spec.ports[*].nodePort}')`{{execute T1}}
+6. Navigate to https://[[HOST_SUBDOMAIN]]-${PORT}-[[KATACODA_HOST]].environments.katacoda.com/
 7. Activate auto-refresh plugin if you installed in in step 1
 8. Update image of the containers running in pods controlled by our deployment `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:blue --record`{{execute T1}}
 9. Observe how page changes to new version.
