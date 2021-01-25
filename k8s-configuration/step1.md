@@ -29,7 +29,7 @@ This command will connect shell to our nginx contianer running in the pod
 
 Once inside the container check */etc/foo* directory and content of the files. Remember, those files come from config map *data* section
 
-`cd /etc/foo ; ls ; cat api.properties ; cat deployment_env ; echo""`
+`cd /etc/foo ; ls ; cat api.properties ; cat deployment_env ; echo""`{{execute}}
 
 ```
 apiVersion: v1
@@ -46,6 +46,6 @@ data:
     api.code=555
 ```
 
-Exit shell `^C`{{execute ctrl-seq}}
+Exit shell `exit`{{execute}}
 
 **Conclusion**: We have successfully proven applications and configuration can be easily decoupled using confg maps
