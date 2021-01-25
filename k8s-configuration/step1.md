@@ -6,6 +6,8 @@ Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katac
 
 Click on IDE tab, this will load VS Code, once it finishes loading, open configuration file that we are about to create.
 
+`cd /dca-exercises/k8s/configuration/`{{execute}}
+
 `/dca-exercises/k8s/configuration/1-create-configmap.yaml`{{open}}
 
 
