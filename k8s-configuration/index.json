@@ -57,7 +57,7 @@
     "uieditorpath": "/root/examples",
     "showide": true,
     "idePort": 23000,
-    "uilayout": "terminal-iframe",
+    "uilayout": "vscode-terminal-split",
     "showdashboard": true,
     "dashboards": [
       {
