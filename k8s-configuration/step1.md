@@ -2,4 +2,4 @@
 
 ## Open file
 
-`1-create-configmap.yaml`{{open}}
+`/dca-exercises/k8s/configuration/1-create-configmap.yaml`{{open}}

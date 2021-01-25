@@ -55,6 +55,8 @@
   },
   "environment": {
     "uieditorpath": "/root/examples",
+    "showide": true,
+    "idePort": 23000,
     "uilayout": "vscode-terminal-split",
     "showdashboard": true,
     "dashboards": [
