@@ -55,8 +55,9 @@
   },
   "environment": {
     "uieditorpath": "/root/examples",
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "editor-terminal",
     "showdashboard": true,
+    "uisettings": "yaml",
     "dashboards": [
       {
         "name": "Octant",
