@@ -14,7 +14,7 @@
       {
         "title": "Step 2",
         "text": "step2.md",
-        "foreground": "clear-terminals.sh"
+        "foreground": "step2-cleanup.sh"
       },
       {
         "title": "Step 3",
@@ -54,8 +54,6 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/examples",
-    "showide": true,
     "uilayout": "terminal-iframe",
     "showdashboard": true,
     "dashboards": [

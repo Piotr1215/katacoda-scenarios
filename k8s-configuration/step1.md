@@ -4,25 +4,29 @@ Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katac
 
 ## Create config map
 
-Click on IDE tab, this will load VS Code, once it finishes loading, open configuration file that we are about to create.
+We are going to create a simple config map
 
-`cd /dca-exercises/k8s/configuration/`{{execute}}
+`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/1-create-configmap.yaml`{{execute}}
 
-`/dca-exercises/k8s/configuration/1-create-configmap.yaml`{{open}}
+## Create deployment with config map mounted as volume
 
+Once config map is created, let's create a deployment and mount the config map as volume, like so
+`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/4-Create-deployment.yaml`{{execute}}
 
-2. Create deployment with config map mounted as volume
-3. Check how config map data is mounted into a folder specified in pod template
+## Examine pod and config map mounted to it
 
-Resources to create:
+First lets capture pod name as into a variable `export POD=$(kubectl get pods -n default | grep "nginx-test" | awk '{print $1}')`{{execute}}
 
-``` bash
-#Create config map:
-k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/1-create-configmap.yaml
+> Every pod in a deployment gets additional random string assigned by *Kubelet*, that's why we need the above command to extract pod name
 
-#Create deployment with config map mounted as volume:
-k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/4-Create-deployment.yaml
-```
+We can view how config map *config-demo* is mounted to our pod: `kubectl describe po $POD | grep Volumes: -A 9`{{execute}}
 
-## Open file
+Now, let's explore the nginx container running in our pod and see if data is mounted correctly to a volume.
 
+`kubectl exec -it $POD -- sh`{{execute}}
+
+Inside the container run this code snippet to see config data mounted as files `cd /etc/foo ; ls ; cat api.properties ; cat deployment_env ; echo""`{{execute}}
+
+Exit pod shell `exit`{{execute}}
+
+**Conclusion**: We have successfully proven applications and configuration can be easily decoupled using confg maps
