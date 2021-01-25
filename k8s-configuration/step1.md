@@ -1,5 +1,7 @@
 # Enable separations of application code and configuration
 
+Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com, this command will display *octant* cluster viewer. Octant is already installed on this setup
+
 1. Create config map
 2. Create deployment with config map mounted as volume
 3. Check how config map data is mounted into a folder specified in pod template
