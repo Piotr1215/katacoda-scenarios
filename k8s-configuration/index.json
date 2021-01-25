@@ -54,14 +54,15 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/examples",
+    "uieditorpath": "/root/examples/dca-exercises/k8s/configuration",
     "uilayout": "editor-terminal",
     "showdashboard": true,
     "uisettings": "yaml",
     "dashboards": [
       {
         "name": "Octant",
-        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com"
+        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
+        "port": 7777
       }
     ]
   },
