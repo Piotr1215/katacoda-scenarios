@@ -22,6 +22,7 @@ echo "Cloning repo with examples"
 mkdir examples
 cd examples
 git clone https://github.com/Piotr1215/dca-exercises.git dca-exercises
+cd dca-exercises/k8s/configuration
 echo "done" >> /opt/.examplescloned
 
 echo "done" >> /opt/.backgroundfinished
