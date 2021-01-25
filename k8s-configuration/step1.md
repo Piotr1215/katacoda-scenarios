@@ -1,6 +1,6 @@
 # Enable separations of application code and configuration
 
-Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com, this command will display *octant* cluster viewer. Octant is already installed on this setup
+> During this exercise, feel free to click on *Octant* tab and explore cluster status in a visual way. We will focus on *kubectl* commands.
 
 ## Create config map
 
@@ -23,10 +23,29 @@ We can view how config map *config-demo* is mounted to our pod: `kubectl describ
 
 Now, let's explore the nginx container running in our pod and see if data is mounted correctly to a volume.
 
+This command will connect shell to our nginx contianer running in the pod
+
 `kubectl exec -it $POD -- sh`{{execute}}
 
-Inside the container run this code snippet to see config data mounted as files `cd /etc/foo ; ls ; cat api.properties ; cat deployment_env ; echo""`{{execute}}
+Once inside the container check */etc/foo* directory and content of the files. Remember, those files come from config map *data* section
 
-Exit pod shell `exit`{{execute}}
+`cd /etc/foo ; ls ; cat api.properties ; cat deployment_env ; echo""`
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-demo
+data:
+  # property-like keys; each key maps to a simple value
+  deployment_env: "DEV"
+
+  # file-like keys
+  api.properties: |
+    api.debug=true
+    api.code=555
+```
+
+Exit shell `^C`{{execute ctrl-seq}}
 
 **Conclusion**: We have successfully proven applications and configuration can be easily decoupled using confg maps
