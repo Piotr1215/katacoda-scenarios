@@ -3,6 +3,7 @@
 > Visit Kubernetes documentation if you need a refresher about [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 >
 > Basic definitions are provided on diagrams below
+> This scenario is part of a [blog about Kubernetes deployments](https://itnext.io/kubernetes-explained-deep-enough-deployments-371755fbe2a3)
 
 ## How does it work?
 
