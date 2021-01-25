@@ -21,8 +21,7 @@ cd examples
 git clone https://github.com/Piotr1215/dca-exercises.git dca-exercises
 echo "done" >> /opt/.examplescloned
 
-echo "done" >> /opt/.backgroundfinished
-
 echo "Starting Octant in the background"
 OCTANT_DISABLE_OPEN_BROWSER=true
 OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
+echo "done" >> /opt/.backgroundfinished
