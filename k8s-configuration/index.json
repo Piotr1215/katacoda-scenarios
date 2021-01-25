@@ -54,7 +54,7 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/examples/dca-exercises/k8s/configuration",
+    "uieditorpath": "/root/examples",
     "uilayout": "editor-terminal",
     "showdashboard": true,
     "uisettings": "yaml",
