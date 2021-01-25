@@ -46,6 +46,6 @@ data:
     api.code=555
 ```
 
-Exit shell `exit`{{execute}}
+Exit shell, click `exit`{{execute no-newline}} and confirm with <kbd>Enter</kbd>
 
 **Conclusion**: We have successfully proven applications and configuration can be easily decoupled using confg maps
