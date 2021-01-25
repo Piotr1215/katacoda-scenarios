@@ -26,7 +26,7 @@ Check what image deployment currently has `k describe deploy nginx-test | grep i
 4. Observe how Kuberentes performs a rollout `k rollout status deployment nginx-test`{{execute interrupt T2}}
 5. Check logs to see error messages on pods with *ImagePullBackOff* error `k get pods | grep ImagePullBackOff | awk '{print $1}' | xargs kubectl describe pod`{{execute T1}}
 6. Check rollout history to determine how many revisions are recorded, there should be at least one.  `k rollout history deployment nginx-test`{{execute T1}}, choose number to which you want to roll back to
-7. Perform rollback to previous version `k rollout undo deployment nginx-test --to-revision `{{execute no-newline}} add revision number and hit *Enter*
+7. Perform rollback to previous version `k rollout undo deployment nginx-test --to-revision `{{execute no-newline}}, add revision number from the command output above and hit *Enter*
 8. Observe how Kubernetes performs a new rollout `k rollout status deployment nginx-test`{{execute interrupt T2}}
 9. Do a curl on service to make sure deployment was successful `curl localhost:$PORT`{{execute T1}}
 
