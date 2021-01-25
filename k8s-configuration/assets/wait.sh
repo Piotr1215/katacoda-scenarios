@@ -32,6 +32,8 @@ showProgress()
   # waitForCompletion /opt/.backgroundfinished
   echo -n "Cloning examples"
   waitForCompletion /opt/.examplescloned
+  echo "Octant started in the background"
+  waitForCompletion /opt/.backgroundfinished
   echo "All Set"
   echo ""
 }
