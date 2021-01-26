@@ -6,31 +6,47 @@
 > - Alternatively [admission controller](https://github.com/xing/kubernetes-deployment-restart-controller) setup is possible, but this is out of scope for this exercise
 
 Create Resources:
+We are going to create a simple config map, same as in step 1
 
-``` bash
-#Create config map:
-k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/1-create-configmap.yaml
+`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/1-create-configmap.yaml`{{execute}}
 
-#Create deployment with config map mounted as volume:
-k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/4-Create-deployment.yaml
-```
+## Create deployment with config map mounted as volume
 
-1. Create config map
-2. Create deployment with config map mounted as volume
-3. Check how config map data is mounted into a folder specified in pod template
-4. Edit config map and adjust one value
-5. Check how config map data is is updated in a folder pod specified in pod template as mount point
+Once config map is created, let's create a deployment and mount the config map as volume, like so
+`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/4-Create-deployment.yaml`{{execute}}
 
-[![Config Update](https://asciinema.org/a/384415.svg)](https://asciinema.org/a/384415)
+## Examine pod and config map mounted to it
 
-Cleanup Resources:
+As previously we will capture pod name in a variable, let's reuse the same name `export POD=$(kubectl get pods -n default | grep "nginx-test" | awk '{print $1}')`{{execute}}
 
-``` bash
-#Delete deployment:
-k delete -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/4-Create-deployment.yaml
+We are going to enter pod shell `k exec -it $POD -- sh`{{execute}}
 
-#Delete config map:
-k delete -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/1-create-configmap.yaml
-```
+```bash
+cd /etc/foo/
+cat api.properties
+cat deployment_env
+echo ""
+```{{execute}}
 
-**Conclusion:** We have successfully proven configuration values mounted to pod as volume are auto updated after config map changes
+Now, we are going to edit config map and change its data values `k edit cm config-demo`{{execute}}. Output should be similar to below:
+
+![Config map edit](https://www.screencast.com/t/3m9xcRxj)
+
+Enter edit mode in vim `i`{{execute no-newline}}
+
+Adjust values of *api.debug*, *api.code* and *deployment_env*. Now let's check if values are correctly updated in the pod.
+
+`k exec -it $POD -- sh`{{execute}}
+
+```bash
+cd /etc/foo/
+cat api.properties
+cat deployment_env
+echo ""
+```{{execute}}
+
+We should see updated values
+
+> It might take a moment for Kubelet to reflect the new values in the pod.
+
+**Conclusion:** We have successfully proven configuration values mounted to pod as volume are auto updated after config map changes.

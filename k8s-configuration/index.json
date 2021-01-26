@@ -20,21 +20,6 @@
         "title": "Config Update",
         "text": "step3.md",
         "foreground": "step3-cleanup.sh"
-      },
-      {
-        "title": "Step 4",
-        "text": "step4.md",
-        "foreground": "step4-cleanup.sh"
-      },
-      {
-        "title": "Step 5",
-        "text": "step5.md",
-        "foreground": "clear-terminals.sh"
-      },
-      {
-        "title": "Step 6",
-        "text": "step6.md",
-        "foreground": "clear-terminals.sh"
       }
     ],
     "intro": {
