@@ -2,16 +2,6 @@
 
 > Secrets are by default **base64 encoded**, but it's possible to create secret with plain text by using **stringData:** instead of **data** section of secret YAML
 
-Resources to create:
-
-``` bash
-#Create encoded secret:
-
-
-#Create deployment with secret mounted as volume:
-
-```
-
 ## Create secret
 
 We will create a encoded sample secret resource `k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/configuration/3-create-secret-encoded.yaml`{{execute}}

@@ -28,11 +28,13 @@ cat deployment_env
 echo ""
 ```{{execute}}
 
+Exit shell, click `exit`{{execute no-newline}} and confirm with <kbd>Enter</kbd>
+
 Now, we are going to edit config map and change its data values `k edit cm config-demo`{{execute}}. Output should be similar to below:
 
-![Config map edit](https://www.screencast.com/t/3m9xcRxj)
+![Config map edit](https://content.screencast.com/users/PiotrZ9813/folders/Snagit/media/452c5103-32e8-4408-b511-9b5223f7e515/01.26.2021-11.48.png)
 
-Enter edit mode in vim `i`{{execute no-newline}}
+Enter edit mode in vim `i`{{execute no-newline}}. Once edit is done, let's switch to normal mode `^ESC`{{execute ctrl-seq}} and save the file `:wq!`{{execute}}
 
 Adjust values of *api.debug*, *api.code* and *deployment_env*. Now let's check if values are correctly updated in the pod.
 
