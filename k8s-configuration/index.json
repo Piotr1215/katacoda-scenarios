@@ -17,14 +17,14 @@
         "foreground": "step2-cleanup.sh"
       },
       {
-        "title": "Step 3",
+        "title": "Config Update",
         "text": "step3.md",
-        "foreground": "step2-cleanup.sh"
+        "foreground": "step3-cleanup.sh"
       },
       {
         "title": "Step 4",
         "text": "step4.md",
-        "foreground": "clear-terminals.sh"
+        "foreground": "step4-cleanup.sh"
       },
       {
         "title": "Step 5",

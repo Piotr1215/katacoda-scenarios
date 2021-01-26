@@ -41,7 +41,7 @@ As previously we will capture pod name in a variable, let's reuse the same name 
 
 Run `kubectl describe po $POD | grep Volumes: -A 9`{{execute}} to see our secret mounted as a volume.
 
-We are going to enter pod shell `k exec -it $POD -- sh`
+We are going to enter pod shell `k exec -it $POD -- sh`{{execute}}
 
 ```bash
 cd /etc/foo/
@@ -53,7 +53,7 @@ Notice that inside the container secrets are available in clear text, this is so
 
 Exit shell, click `exit`{{execute no-newline}} and confirm with <kbd>Enter</kbd>
 
-Decode password to see it in clear text `kubectl get secrets mysecret-encoded -n default | grep "password" | awk '{print $1}' | base64 --decode`
+Decode password to see it in clear text `kubectl get secrets mysecret-encoded -n default -o jsonpath='{@.data.password}'| base64 --decode && echo ""`{{execute}}. Here we have used [*jsonpath*](https://kubernetes.io/docs/reference/kubectl/jsonpath/) to extract single value from command output
 
 > Kubernetes currently does not encrypt secrets in its data store *etcd*. Mounted secrets are only encoded, nevertheless, there are discussions to provide secrets encryption at rest and in transit, so it's considered best practice to use secrets whenever dealing with sensitive information.
 
