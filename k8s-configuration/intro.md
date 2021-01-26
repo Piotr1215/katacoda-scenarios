@@ -18,15 +18,6 @@ Kubernetes natively supports 2 resources geared towards storing configuration co
 
 ![Kubernetes Configuration Components](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/k8s-config-components.puml&fmt=png)
 
-Both config maps and secrets can be mounted into pods in 2 ways:
-
-- As volumes
-- As environmental variables
-
-> Below diagram shows those options on the example of config map, same applies to secrets
-
-![Kubernetes Configuration Options](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/k8s-config-mindmap.puml&fmt=png)
-
 ## What Problem does it solve?
 
 - enable separations of application code and configuration

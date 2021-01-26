@@ -6,20 +6,20 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Config Maps",
         "text": "step1.md",
         "background": "background.sh",
         "foreground": "foreground.sh"
       },
       {
-        "title": "Step 2",
+        "title": "Secrets",
         "text": "step2.md",
         "foreground": "step2-cleanup.sh"
       },
       {
         "title": "Step 3",
         "text": "step3.md",
-        "foreground": "clear-terminals.sh"
+        "foreground": "step2-cleanup.sh"
       },
       {
         "title": "Step 4",

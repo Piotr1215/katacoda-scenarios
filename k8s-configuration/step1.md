@@ -2,6 +2,15 @@
 
 > During this exercise, feel free to click on *Octant* tab and explore cluster status in a visual way. We will focus on *kubectl* commands.
 
+Both config maps and secrets can be mounted into pods in 2 ways:
+
+- As volumes
+- As environmental variables
+
+> Below diagram shows those options on the example of config map, same applies to secrets
+
+![Kubernetes Configuration Options](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/k8s-config-mindmap.puml&fmt=png)
+
 ## Create config map
 
 We are going to create a simple config map
