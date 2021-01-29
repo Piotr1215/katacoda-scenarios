@@ -1,23 +1,27 @@
 # Create Service
 
-```gherkin
-Feature: NodePort service
+## Feature: NodePort service
 
     Expose service on each node on the
     same static port. Accessible on each node IP:PORT combination
 
-    Scenario: Expose deployment on the network
-      Given there is nginx deployment present in the cluster
-      `k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml`{{execute}}
+## Scenario: Expose deployment on the network
 
-      And it is in default namespace
-      `k get deploy -owide`{{execute}}
-      When deployment is exposed using "NodePort" Service
-      Then pods of the deployment can be curled using "http://nginxsvc" name
-      And sample page correctly renders on the node port in "Katacoda"
+**Given** there is nginx deployment present in the cluster
 
-    Scenario:
-```
+    `k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml`{{execute}}
+
+**And** it is in default namespace
+
+`k get deploy -owide`{{execute}}
+
+**When** deployment is exposed using "NodePort" Service
+
+**Then** pods of the deployment can be curled using "http://nginxsvc" name
+
+**And** sample page correctly renders on the node port in "Katacoda"
+
+Scenario:
 
 
 
