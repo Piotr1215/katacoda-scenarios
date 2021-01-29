@@ -6,13 +6,13 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Feature: NodePort Service",
         "text": "step1.md",
         "background": "background.sh",
         "foreground": "foreground.sh"
       },
       {
-        "title": "Step 2",
+        "title": "Feature: Cluster Networking",
         "text": "step2.md"
       },
       {
