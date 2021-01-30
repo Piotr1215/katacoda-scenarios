@@ -1,4 +1,4 @@
-# Description
+# Feature: NodePort Service
 
     Expose service on each node on the
     same static port. Accessible on each node IP:PORT combination
@@ -20,3 +20,5 @@
 `echo $PORT`{{execute}}
 
 Navigate to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
+
+**Conclusion:** We have successfully proven that workloads running in pods can be easily consumed from outside of the cluster

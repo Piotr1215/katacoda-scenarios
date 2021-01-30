@@ -6,30 +6,30 @@
   "details": {
     "steps": [
       {
-        "title": "Feature: NodePort Service",
+        "title": "Expose pods to consumers from outside of the cluster",
         "text": "step1.md",
         "background": "background.sh",
         "foreground": "foreground.sh"
       },
       {
-        "title": "Feature: Cluster Networking",
-        "text": "step2.md"
+        "title": "Enables pods to communicate with each other",
+        "text": "step2.md",
+        "foreground": "clear-terminal.sh"
       },
       {
-        "title": "Step 3",
-        "text": "step3.md"
+        "title": "Service are easily discoverable",
+        "text": "step3.md",
+        "foreground": "clear-terminal.sh"
       },
       {
-        "title": "Step 4",
-        "text": "step4.md"
+        "title": "Pods up and down scaling does not disrupt communication",
+        "text": "step4.md",
+        "foreground": "clear-terminal.sh"
       },
       {
-        "title": "Step 5",
-        "text": "step5.md"
-      },
-      {
-        "title": "Step 6",
-        "text": "step6.md"
+        "title": "Enables consumption of services external to the cluster",
+        "text": "step5.md",
+        "foreground": "clear-terminal.sh"
       }
     ],
     "intro": {

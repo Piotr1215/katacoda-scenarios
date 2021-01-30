@@ -1,4 +1,4 @@
-# Description
+# Feature: Cluster Networking
 
     Kubernetes networking is flat meaning that resources can communicate with each other directly via their IPs
 
@@ -17,3 +17,5 @@
 `kubectl run -it --rm debug --image=radial/busyboxplus:curl --restart=Never -- curl http://nginxsvc`{{execute}}
 
 **Then** index.html content is returned to the terminal
+
+**Conclusion:** We have successfully proven that pods can communicate with each other via services using DNS service
