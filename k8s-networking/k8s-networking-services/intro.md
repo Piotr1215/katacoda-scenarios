@@ -40,17 +40,12 @@ There are 4 types of services in Kubernetes:
 
 We are going to revisit scenarios from the section [What Problem does it solve?](#What-Problem-does-it-solve?) and validate that the statements are correct.
 
-> [!TIP]
 > If you would like to learn a few useful networking commands, I have created a gist with the ones that helped me pass my CKA certification
 > [Kubernetes related networking commands](https://gist.github.com/Piotr1215/23cf678d74079f98dc7be731e6a3f1d1)
 
 ### Prerequisites
 
-Instead of asciinema recording, this time we are going to use [katacoda](https://www.katacoda.com/). You just need a web browser, inquisitive mindset and some spare time to learn new things, no other prerequisites needed :)
-
-> [!TIP]
-> [Katacoda](https://www.katacoda.com/) is a great free service. It is an "Interactive Learning and Training Platform for Software Engineers" that "enables learning new technologies using real
-> environments right in your browser"
+You just need a web browser, inquisitive mindset and some spare time to learn new things, no other prerequisites needed :)
 
 ### Sample Scenario
 
@@ -64,7 +59,6 @@ Below diagram shows connectivity between different layers of the multi-tier arch
 
 ![Multi-Tier-Architecture](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/multi-layer-architecture-components.puml&fmt=png)
 
-> [!NOTE]
 > Modern architectures, especially microservices follow different architectural patterns. For example [The Twelve-Factor App](https://12factor.net/) approach where connectivity between application layer and data persistance layer is done via HTTPS and often UI part of the application is served as a static web app or SPA.
 
 One key difference in Kubernetes world and more broadly, in the era of infrastructure as code, servers are a resource like any other and are dynamically provisioned. Workloads can be reschedules on a different server any any time without notice and everything is expected to work just the same.
@@ -78,10 +72,9 @@ Now, let's see how simiart architecture could look like using Kubernetes:
 
 By introducing the *service* abstraction we have decoupled actual workloads from communication mechanism. This allows us to take advantage of the dynamic nature of Kubernetes infrastructure and unlocked additional possibilities like scaling, separation of layers etc. Kubernetes can now move pods to other nodes, scale them or destroy and re-create without causing disruption to our application.
 
-This time for each scenario we are going to use formalized notation called [Gherkin Syntax](https://docs.specflow.org/projects/specflow/en/latest/Gherkin/Gherkin-Reference.html). This will help us better express goals and conditions of our experiments.
+This time for each step we are going to use formalized notation called [Gherkin Syntax](https://docs.specflow.org/projects/specflow/en/latest/Gherkin/Gherkin-Reference.html). This will help us better express goals and conditions of our experiments.
 
-> [!NOTE]
 > Typically we would use testing framework like [Specflow](https://docs.specflow.org/projects/specflow/en/latest/index.html) or [Cucumber](https://cucumber.io/),
 > but for the purpose of learning we are going to execute steps in the Katacoda environment manually.
 
-Let's describe our scenarios and head to my [Katacoda Scenario](https://www.katacoda.com/decoder/courses/k8s-networking/k8s-networking-services) and experiment on your own!
+Let's dive in!
