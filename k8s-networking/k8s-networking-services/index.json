@@ -25,11 +25,6 @@
         "title": "Pods up and down scaling does not disrupt communication",
         "text": "step4.md",
         "foreground": "clear-terminal.sh"
-      },
-      {
-        "title": "Enables consumption of services external to the cluster",
-        "text": "step5.md",
-        "foreground": "clear-terminal.sh"
       }
     ],
     "intro": {

@@ -23,9 +23,9 @@
 
 Navigate to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
 
-**And** new endpoints are registered in the service manifest
+**And** 5 endpoints are registered in the service manifest
 
-`k get endpoints nginxsvc -w`{{execute}}
+`k get endpoints nginxsvc`{{execute}}
 
 or alternatively check out Octant https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/
 
