@@ -25,7 +25,7 @@ There are 4 types of services in Kubernetes:
 > It is often confusing to understand what ports do what in Service manifest, so let's make sure to refresh the definitions:
 >
 > - **TargetPort** is the Port which the *application* is configured to *listen on*
-> - **Port** is how the application will be *accessed from the outside*
+> - **Port** is the port where the service will be *exposed internally to other applications in the cluster*
 > - **NodePort** is a *static port* on each node where service of type *NodePort* is exposed
 
 ## What Problem does it solve?
