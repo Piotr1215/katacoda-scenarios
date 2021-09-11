@@ -32,13 +32,6 @@
                     "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
-            ],
-            "host02": [
-                {
-                    "file": "wait.sh",
-                    "target": "/usr/local/bin",
-                    "chmod": "+x"
-                }
             ]
         }
     },
