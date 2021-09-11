@@ -28,14 +28,14 @@
         "assets": {
             "host01": [
                 {
-                    "file": "*",
+                    "file": "wait.sh",
                     "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
             ],
             "host02": [
                 {
-                    "file": "*",
+                    "file": "wait.sh",
                     "target": "/usr/local/bin",
                     "chmod": "+x"
                 }
