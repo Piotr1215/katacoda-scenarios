@@ -2,3 +2,4 @@
 
 ## Changelog:
 - single file in assets
+- file renamed to launch-kubernetes.sh

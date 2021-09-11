@@ -20,7 +20,7 @@
         ],
         "intro": {
             "text": "intro.md",
-            "code": "launch.sh"
+            "code": "launch-kubernetes.sh"
         },
         "finish": {
             "text": "finish.md"
