@@ -7,7 +7,8 @@
         "steps": [
             {
                 "title": "Step 1: Services",
-                "text": "step1.md"
+                "text": "step1.md",
+                "background": "background.sh"
             },
             {
                 "title": "Step 2",
@@ -20,7 +21,8 @@
         ],
         "intro": {
             "text": "intro.md",
-            "foreground": "launch-kubernetes.sh"
+            "foreground": "foreground.sh",
+            "courseData": "launch-kubernetes.sh"
         },
         "finish": {
             "text": "finish.md"
