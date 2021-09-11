@@ -26,10 +26,18 @@
             "text": "finish.md"
         },
         "assets": {
-            "client": [
+            "host01": [
                 {
                     "file": "*",
-                    "target": "/root"
+                    "target": "/usr/local/bin",
+                    "chmod": "+x"
+                }
+            ],
+            "host02": [
+                {
+                    "file": "*",
+                    "target": "/usr/local/bin",
+                    "chmod": "+x"
                 }
             ]
         }
