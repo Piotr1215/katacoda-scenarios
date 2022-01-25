@@ -1,10 +1,12 @@
 # Interactive Katacoda Scenarios
 
-[![](http://shields.katacoda.com/katacoda/decoder/count.svg)](https://www.katacoda.com/decoder "Get your profile on Katacoda.com")
+[![alt](http://shields.katacoda.com/katacoda/decoder/count.svg)](https://www.katacoda.com/decoder "Get your profile on Katacoda.com")
 
-Visit https://www.katacoda.com/decoder to view the profile and interactive scenarios
+Visit <https://www.katacoda.com/decoder> to view the profile and interactive scenarios
 
-### Writing Scenarios
-Visit https://www.katacoda.com/docs to learn more about creating Katacoda scenarios
+[![alt](http://shields.katacoda.com/katacoda/decoder/count.svg)](https://www.katacoda.com/decoder "Get your profile on Katacoda.com")
 
-For examples, visit https://github.com/katacoda/scenario-example
+Visit <https://www.katacoda.com/docs> to learn more about creating Katacoda scenarios
+
+For examples, visit <https://github.com/katacoda/scenario-example>
+
