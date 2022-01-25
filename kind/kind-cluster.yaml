@@ -1,0 +1,9 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 9001
+    hostPort: 30778
+    listenAddress: "0.0.0.0" # Optional, defaults to "0.0.0.0"
+    protocol: udp # Optional, defaults to tcp
