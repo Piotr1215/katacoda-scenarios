@@ -8,7 +8,7 @@
             {
                 "title": "Cluster Setup",
                 "text": "step1.md",
-                "background": "prepare-cluster.sh"
+                "foreground": "prepare-cluster.sh"
             },
             {
                 "title": "Linkerd",
