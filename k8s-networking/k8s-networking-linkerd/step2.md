@@ -1,10 +1,10 @@
-# Scale pods up and down on demand
+# Install linkerd
 
-## Create deployment
+## Install CLI
 
-`k apply -f https://raw.githubusercontent.com/Piotr1215/dca-exercises/master/k8s/deployment/1-create-deployment.yaml`{{execute T1}}
+`curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh`{{execute T1}}
 
-This will create a simple nginx deployment.
+The CLI will allow you to interact with your Linkerd deployment.
 
 ## Scale deployment up and watch pods being created
 
