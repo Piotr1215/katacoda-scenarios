@@ -1,4 +1,4 @@
-# Install-linkerd :link:
+# Install-linkerd 📎
 
 ## Install linkerd control plane
 
