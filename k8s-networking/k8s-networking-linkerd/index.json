@@ -32,7 +32,8 @@
             }
         ],
         "intro": {
-            "text": "intro.md"
+            "text": "intro.md",
+            "background": "prepare_cluster.sh"
         },
         "finish": {
             "text": "finish.md"
@@ -71,6 +72,7 @@
         ]
     },
     "backend": {
-        "imageid": "kubernetes-cluster-running:1.18"
+        "imageid": "kubernetes-cluster-running:1.18",
+        "ports": 8080
     }
 }
