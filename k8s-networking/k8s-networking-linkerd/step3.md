@@ -1,21 +1,11 @@
-# Change pods state and configuration on the flight
+# Setup Frontent 💻
 
-## Scale deployment back to 5 replicas
+> Kuard is a demo K8s application from the book “Kubernetes Up and Running”
 
-First, we are going to set up a watch to observe how pods are being created and terminated: `k get pods -w`{{execute T2}}
+`kubectl run --restart=Never --image=gcr.io/kuar-demo/kuard-amd64:blue kuard`{{execute T1}}
 
-Let's make sure our deployment is setup correctly `k get deploy`{{execute T1}}
+Port forward traffic to the pod
 
-Now, let's scale it up to **5 replicas** `k scale deployment nginx-test --replicas 5`{{execute T1}}. Pay attention what is happening on the other terminal. Additional pods are being created.
+`kubectl port-forward kuard 8080:8080 --address 0.0.0.0`{{execute T1}}
 
-## Make sure there are no environmental variables on the pods
-
-Again, we are going to set up a fresh watch to observe how pods are being created and terminated: `k get pods -w`{{execute T2 interrupt}}
-
-List all environmental variables in container running in our pod `k set env pods --all --list`{{execute T1}}. Pay attention what is happening on the other terminal. Pods are being terminated.
-
-Now, let's add a new environmental variable on the deployment `k set env deployment/nginx-test APP=TEST`{{execute T1}} and list variables again `k set env pods --all --list`{{execute T1}}, we should see the new variable added.
-
-Reset watch: `k get pods`{{execute interrupt T2}}
-
-**Conclusion**: We have successfully proven that pods in a deployment can be easily changed via deployment manipulation.
+Naviagate to [the kuard page](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)

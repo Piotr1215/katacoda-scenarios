@@ -14,7 +14,12 @@ Check what pods are deployed in *kube-system* namespace:
 
 `kubectl get pods -n kube-system`{{execute T1 interrupt}}
 
-Let's also make sure that the linkerd CLI was succesfully installed:
+Let's also make sure that the linkerd CLI was succesfully installed.
 
 `linkerd version`{{execute T1}}
+
+And check if the cluster is ready for the control plane installation
+
 `linkerd check --pre`{{execute T1}}
+
+Once all the checks are green, proceed to the next step.

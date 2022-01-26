@@ -1,6 +1,4 @@
-# Install-linkerd 📎
-
-## Install linkerd control plane
+# Setup Control Plane 📎
 
 `linkerd install | kubectl apply -f -`{{execute T1}}
 
