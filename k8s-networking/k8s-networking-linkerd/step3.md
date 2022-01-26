@@ -4,6 +4,8 @@
 
 `kubectl run --restart=Never --image=gcr.io/kuar-demo/kuard-amd64:blue kuard`{{execute T1}}
 
+`kubectl wait pod kuard --for=condition=Ready --timeout=1m`{{execute T1}}
+
 Port forward traffic to the pod
 
 `kubectl port-forward kuard 8080:8080 --address 0.0.0.0`{{execute T1}}

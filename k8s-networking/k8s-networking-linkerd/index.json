@@ -60,13 +60,8 @@
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
         "dashboards": [
             {
-                "name": "Octant",
-                "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
-                "port": 7777
-            },
-            {
-                "name": "Sample Page",
-                "port": 80
+                "name": "Kuard",
+                "port": 8080
             }
         ]
     },
