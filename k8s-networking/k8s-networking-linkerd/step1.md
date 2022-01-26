@@ -1,6 +1,4 @@
-# Prepare Kubernetes Cluster 
-
-:coffee:
+# Prepare Kubernetes Cluster ☕
 
 A background script will perform following tasks:
 
