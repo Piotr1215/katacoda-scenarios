@@ -33,7 +33,7 @@
         ],
         "intro": {
             "text": "intro.md",
-            "background": "prepare_cluster.sh"
+            "background": "prepare-cluster.sh"
         },
         "finish": {
             "text": "finish.md"
