@@ -8,10 +8,10 @@
             {
                 "title": "Cluster Setup",
                 "text": "step1.md",
-                "background": "run_octant.sh"
+                "background": "prepare-cluster.sh"
             },
             {
-                "title": "Scalability",
+                "title": "Linkerd",
                 "text": "step2.md",
                 "foreground": "clear-terminals.sh"
             },

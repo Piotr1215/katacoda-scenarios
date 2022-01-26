@@ -1,14 +1,10 @@
-# Install linkerd
+# Install-linkerd :link:
 
-## Install CLI
+## Add CLI to PATH
 
-`curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh`{{execute T1}}
+`export PATH=$PATH:/root/.linkerd2/bin`{{execute T1}}
 
-The CLI will allow you to interact with your Linkerd deployment.
-
-## Validate your Kubernetes cluster
-
-`linkerd check --pre`{{execute T1}}
+The linkerd CLI will allow you to interact with your Linkerd deployment.
 
 ## Install the control plane onto your cluster
 
