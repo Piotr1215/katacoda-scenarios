@@ -2,9 +2,9 @@
 
 > Kuard is a demo K8s application from the book “Kubernetes Up and Running”
 
-`kubectl run --restart=Never --image=gcr.io/kuar-demo/kuard-amd64:blue kuard`{{execute T1}}
+`kubectl create deployment --image=gcr.io/kuar-demo/kuard-amd64:blue kuard`{{execute T1}}
 
-`kubectl wait pod kuard --for=condition=Ready --timeout=1m`{{execute T1}}
+`kubectl wait deployment kuard --for=condition=Available --timeout=1m`{{execute T1}}
 
 Port forward traffic to the pod
 

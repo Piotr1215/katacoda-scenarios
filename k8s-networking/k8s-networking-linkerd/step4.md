@@ -1,7 +1,7 @@
 # Inject Linkerd Sidecar 💉
 
 ```bash
-kubectl get -n emojivoto deploy -o yaml \
+kubectl get deploy kuard -o yaml \
   | linkerd inject - \
   | kubectl apply -f -
 ```{{execute T1}}

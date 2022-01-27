@@ -6,7 +6,7 @@
     "details": {
         "steps": [
             {
-                "title": "Cluster Setup",
+                "title": "Cluster",
                 "text": "step1.md",
                 "foreground": "prepare-cluster.sh"
             },
@@ -16,12 +16,12 @@
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Configuration",
+                "title": "Web App",
                 "text": "step3.md",
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Deployments",
+                "title": "Observability",
                 "text": "step4.md",
                 "foreground": "clear-terminals.sh"
             },
@@ -62,6 +62,10 @@
             {
                 "name": "Kuard",
                 "port": 8080
+            },
+            {
+                "name": "Dashboard",
+                "port": 50750
             }
         ]
     },
