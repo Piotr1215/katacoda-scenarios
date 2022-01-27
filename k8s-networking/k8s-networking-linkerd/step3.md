@@ -1,4 +1,4 @@
-Install a sample Web App 💻
+# Setup Frontent 💻
 
 > Kuard is a demo K8s application from the book “Kubernetes Up and Running”
 
@@ -8,6 +8,6 @@ Install a sample Web App 💻
 
 Port forward traffic to the pod
 
-`kubectl port-forward kuard 8080:8080 --address 0.0.0.0 &`{{execute T1}}
+`kubectl port-forward kuard 8080:8080 --address 0.0.0.0`{{execute T1}}
 
 Naviagate to [the kuard page](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)

@@ -1,4 +1,6 @@
-☕ a background script will perform following tasks:
+# Prepare Kubernetes Cluster ☕
+
+A background script will perform following tasks:
 
 > IMPORTANT. If any of the steps fails or you see CrashLoopBackOff in the kubectl command results, please restart the Katacoda environment.
 
@@ -12,7 +14,7 @@
 
 > Once all nodes are ready, we can see cluster health information.
 
-Check if all system pods are running in *kube-system* namespace:
+Check what pods are deployed in *kube-system* namespace:
 
 `kubectl get pods -n kube-system`{{execute T1 interrupt}}
 

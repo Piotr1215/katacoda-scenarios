@@ -11,17 +11,17 @@
                 "foreground": "prepare-cluster.sh"
             },
             {
-                "title": "Install Linkerd",
+                "title": "Linkerd",
                 "text": "step2.md",
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Setup Demo App",
+                "title": "Configuration",
                 "text": "step3.md",
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Linkerd Sidecar",
+                "title": "Deployments",
                 "text": "step4.md",
                 "foreground": "clear-terminals.sh"
             },

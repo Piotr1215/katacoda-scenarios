@@ -1,9 +1,7 @@
-Inject Linkerd Sidecar 💉
-
-We are injecting a linkerd sidecar to kuard pod and enabling it.
+# Inject Linkerd Sidecar 💉
 
 ```bash
-kubectl get pod kuard -o yaml \
+kubectl get -n emojivoto deploy -o yaml \
   | linkerd inject - \
   | kubectl apply -f -
 ```{{execute T1}}

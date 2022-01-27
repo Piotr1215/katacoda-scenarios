@@ -1,8 +1,12 @@
 🔭 Observability
 
-First we need to install observability extensions
+First we need to install observability extension
 
-`linkerd viz install | kubectl apply -f -`{{execute T1}}
+```bash
+helm install linkerd-viz \
+  --set dashboard.enforcedHostRegexp=.* \
+  linkerd/linkerd-viz
+```{{execute T1}}
 
 `linkerd check`{{execute T1}}
 
