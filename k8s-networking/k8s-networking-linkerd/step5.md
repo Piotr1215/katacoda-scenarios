@@ -13,11 +13,47 @@ helm install linkerd-viz \
 `linkerd check`{{execute T1}}
 
 ```bash
-linkerd viz dashboard --address 0.0.0.0
+linkerd viz dashboard --address 0.0.0.0 &
 ```{{execute T1}}
 
 ```bash
 https://[[HOST_SUBDOMAIN]]-50750-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
 ```{{execute T1}}
 
+---
+
+Another slide
+
+Check how many containers run in the kuard pod
+
+`kubectl get pods -l app=kuard -o jsonpath='{.items[*].spec.containers[*].name}{"\n"}'`{{execute T1}}
+
+
+---
+
+Another
+
+Install emoji app
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/emojivoto.yml \
+  | kubectl apply -f -
+```{{execute T1}}
+
+```bash
+kubectl -n emojivoto port-forward svc/web-svc 8085:80 &
+```{{execute T1}}
+
+```bash
+https://[[HOST_SUBDOMAIN]]-8085-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
+```{{execute T1}}
+
+
+Inject emoji app with linkerd sidecar
+
+```bash
+kubectl get -n emojivoto deploy -o yaml \
+  | linkerd inject - \
+  | kubectl apply -f -
+```{{execute T1}}
 
