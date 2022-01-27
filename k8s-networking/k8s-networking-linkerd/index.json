@@ -21,13 +21,18 @@
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Observability",
+                "title": "Sidecar",
                 "text": "step4.md",
                 "foreground": "clear-terminals.sh"
             },
             {
-                "title": "Delivery Control",
+                "title": "Observability",
                 "text": "step5.md",
+                "foreground": "clear-terminals.sh"
+            },
+            {
+                "title": "Mutual TLS",
+                "text": "step6.md",
                 "foreground": "clear-terminals.sh"
             }
         ],

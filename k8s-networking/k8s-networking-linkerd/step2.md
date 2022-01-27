@@ -9,3 +9,5 @@ linkerd install | kubectl apply -f -
 ➡ check linkerd installation
 
 `linkerd check`{{execute T1}}
+
+> be patient, this can take a while ⌛
