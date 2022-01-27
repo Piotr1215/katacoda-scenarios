@@ -1,5 +1,7 @@
 ☕ a background script will perform following tasks:
 
+> IMPORTANT. If any of the steps fails or you see CrashLoopBackOff in the kubectl command results, please restart the Katacoda environment.
+
 - start a 2-node Kubernetes cluster
 - prepare katacoda environment
 - setup required environmental variables

@@ -1,11 +1,8 @@
 📎 Setup Linkerd Control Plane
 
+➡ add helm repo
+
 `helm repo add linkerd https://helm.linkerd.io/stable`{{execute T1}}
-
-> we need to crete custom certificates for the helm installer
-> this is required to run a custom dashboard later on
-
-➡ 
 
 ➡ install linkerd
 
@@ -21,7 +18,7 @@ helm install linkerd2 \
   --set-file identity.issuer.tls.crtPEM=issuer.crt \
   --set-file identity.issuer.tls.keyPEM=issuer.key \
   --set identity.issuer.crtExpiry=$exp \
-  --set dashboard.enforcedHostRegexp=.* \
+  --set dashboard.enforcedHostRegexp=" " \
   linkerd/linkerd2
 ```{{execute T1}}
 
