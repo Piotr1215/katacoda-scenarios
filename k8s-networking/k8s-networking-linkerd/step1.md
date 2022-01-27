@@ -1,6 +1,4 @@
-# Prepare Kubernetes Cluster ☕
-
-A background script will perform following tasks:
+☕ a background script will perform following tasks:
 
 - start a 2-node Kubernetes cluster
 - cleanup the environment
@@ -10,7 +8,7 @@ A background script will perform following tasks:
 
 Once all nodes are ready, we can see cluster health information.
 
-Check what pods are deployed in *kube-system* namespace:
+Check if all system pods are running in *kube-system* namespace:
 
 `kubectl get pods -n kube-system`{{execute T1 interrupt}}
 

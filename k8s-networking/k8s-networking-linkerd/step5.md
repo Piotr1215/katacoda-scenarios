@@ -1,23 +1,11 @@
-# Control the delivery process by using rollouts and rollbacks
+🔭 Observability
 
-First we need to understand how Kubernetes performs updates:
-Kubernetes supports two types of deployment strategies
+First we need to install observability extensions
 
-- RollingUpdate
-- Recreate
+`linkerd viz install | kubectl apply -f -`{{execute T1}}
+ 
 
-We are only looking at RollingUpdate below:
 
-![Deployment Spec](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/k8s-deployment-seq.puml&fmt=png)
-*Source*: https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/
-
-Rollback is simply the reverse of rolling update. Kubernetes stores state of previous updates, so it’s very easy to revert to previous revision.
-
-**Let’s dive in!**
-
-## Follow steps below
-
-1. Scale deployment to **10 replicas** `k scale deployment nginx-test --replicas 10`{{execute T1}}
 Check what image deployment currently has `k describe deploy nginx-test | grep image`{{execute T1}} and trigger rolling update by setting new version of the image (blue or green tag)
    - if image is *piotrzan/nginx-demo:blue* run `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:green --record=true`{{execute T1}}
    - if image is *piotrzan/nginx-demo:green* run `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:blue --record=true`{{execute T1}}
