@@ -2,6 +2,11 @@
 
 `helm repo add linkerd https://helm.linkerd.io/stable`{{execute T1}}
 
+> we need to crete custom certificates for the helm installer
+> this is required to run a custom dashboard later on
+
+➡ prepare certificates
+
 ```bash
 step certificate create root.linkerd.cluster.local ca.crt ca.key \
 --profile root-ca --no-password --insecure
@@ -13,6 +18,7 @@ step certificate create identity.linkerd.cluster.local issuer.crt issuer.key \
 --ca ca.crt --ca-key ca.key
 ```{{execute T1}}
 
+➡ install linkerd
 
 ```bash
 # set expiry date one year from now, in Mac:
@@ -29,5 +35,7 @@ helm install linkerd2 \
   --set enforcedHostRegexp=.* \
   linkerd/linkerd2
 ```{{execute T1}}
+
+➡ check linkerd installation
 
 `linkerd check`{{execute T1}}
