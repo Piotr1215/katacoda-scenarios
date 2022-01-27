@@ -1,4 +1,4 @@
-# Setup Control Plane 📎
+📎 setup linkerd control plane
 
 ➡ install linkerd
 

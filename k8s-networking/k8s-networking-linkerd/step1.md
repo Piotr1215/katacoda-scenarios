@@ -1,6 +1,4 @@
-# Prepare Kubernetes Cluster ☕
-
-A background script will perform following tasks:
+☕ background script will perform following tasks:
 
 > IMPORTANT. If any of the steps fails or you see CrashLoopBackOff in the kubectl command results, please restart the Katacoda environment.
 
@@ -9,8 +7,6 @@ A background script will perform following tasks:
 - setup required environmental variables
 - install linkerd CLI
 - display information about the cluster
-- install step
-- add custom certificates
 
 > Once all nodes are ready, we can see cluster health information.
 
