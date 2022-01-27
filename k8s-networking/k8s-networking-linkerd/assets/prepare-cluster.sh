@@ -29,3 +29,6 @@ kubectl wait node --all --for=condition=Ready --timeout=3m
 curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 
 export PATH=$PATH:/root/.linkerd2/bin
+
+# Install step
+sudo apt install step -y

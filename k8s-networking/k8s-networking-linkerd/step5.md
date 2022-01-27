@@ -6,6 +6,7 @@ First we need to install observability extensions
  
 
 
+
 Check what image deployment currently has `k describe deploy nginx-test | grep image`{{execute T1}} and trigger rolling update by setting new version of the image (blue or green tag)
    - if image is *piotrzan/nginx-demo:blue* run `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:green --record=true`{{execute T1}}
    - if image is *piotrzan/nginx-demo:green* run `k set image deployment/nginx-test nginx-test=piotrzan/nginx-demo:blue --record=true`{{execute T1}}

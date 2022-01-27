@@ -1,12 +1,12 @@
 ☕ a background script will perform following tasks:
 
 - start a 2-node Kubernetes cluster
-- cleanup the environment
+- prepare katacoda environment
 - setup required environmental variables
 - install linkerd CLI
 - display information about the cluster
 
-Once all nodes are ready, we can see cluster health information.
+> Once all nodes are ready, we can see cluster health information.
 
 Check if all system pods are running in *kube-system* namespace:
 
@@ -20,4 +20,4 @@ And check if the cluster is ready for the control plane installation
 
 `linkerd check --pre`{{execute T1}}
 
-Once all the checks are green, proceed to the next step.
+Once all the checks are green, proceed to the next step 👟
