@@ -5,6 +5,8 @@
 - setup required environmental variables
 - install linkerd CLI
 - display information about the cluster
+- install step
+- add custom certificates
 
 > Once all nodes are ready, we can see cluster health information.
 

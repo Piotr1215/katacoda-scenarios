@@ -5,18 +5,7 @@
 > we need to crete custom certificates for the helm installer
 > this is required to run a custom dashboard later on
 
-➡ prepare certificates
-
-```bash
-step certificate create root.linkerd.cluster.local ca.crt ca.key \
---profile root-ca --no-password --insecure
-```{{execute T1}}
-
-```bash
-step certificate create identity.linkerd.cluster.local issuer.crt issuer.key \
---profile intermediate-ca --not-after 8760h --no-password --insecure \
---ca ca.crt --ca-key ca.key
-```{{execute T1}}
+➡ 
 
 ➡ install linkerd
 
