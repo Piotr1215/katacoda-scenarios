@@ -21,7 +21,7 @@ helm install linkerd2 \
   --set-file identity.issuer.tls.crtPEM=issuer.crt \
   --set-file identity.issuer.tls.keyPEM=issuer.key \
   --set identity.issuer.crtExpiry=$exp \
-  --set enforcedHostRegexp=.* \
+  --set dashboard.enforcedHostRegexp=.* \
   linkerd/linkerd2
 ```{{execute T1}}
 
