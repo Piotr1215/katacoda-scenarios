@@ -1,31 +1,25 @@
-# Kubernetes Deployments: scaling, rollouts, rollbacks
+# Mutual TLS with Linkerd
 
-> Visit Kubernetes documentation if you need a refresher about [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+> Visit Linkerd documentation if you need a refresher about [service mesh](https://linkerd.io/what-is-a-service-mesh/)
 >
 > Basic definitions are provided on diagrams below
-> This scenario is part of a [blog about Kubernetes deployments](https://itnext.io/kubernetes-explained-deep-enough-deployments-371755fbe2a3)
+> This scenario is part of a [blog about mTLS with linkerd]()
 
 ## How does it work?
 
-Typical deployment resource consists of following objects
+Once installed on the cluster, linkerd control plane will inject sidecars to Kubernetes system pods. From there we can inject sidecars to the pods and create a service mesh.
 
-![Deployment Spec](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/k8s-deployment-spec.puml&fmt=png)
-
-As usual *apiVersion, kind, metadata and spec* are mandatory fields in every Kubernetes resource. Deployment adds following important fields under *spec*:
-
-- replicas: number of pods replicated via the deployment
-- selector: tells Kubernetes how deployment should find pods to act on
-- template: fields under this section refer to pod specification that deployment acts on
+![Linkerd mTLS](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/linkerd-mtls-sequence.puml&fmt=png)
 
 ## What Problem does it solve?
 
-Deployments are very flexible and can be used in many ways. Below I have selected most important problems that deployments help solve.
+Service meshes add observability, security, and reliability features to “cloud native” applications by transparently inserting this functionality at the platform layer rather than the application layer.
 
-- **Scalability**: enable up and down-scaling of pods
-- **Configuration**: enables changing of pods state and configuration on the flight
-- **Deployment**: enables zero-downtime updates of pods to new versions
-- **Delivery Control**: enables high degree of control over delivery process by using rollouts and rollbacks
+- **Platform Level Metrics**: without changing configuration or source code, track low level metrics
+- **Mutual TLS - mLTS**: add encryption and certificates based identity to cluster workloads
+- **Improved Resiliency**: latency aware load balancing, retires, timeouts and advanced deployment patterns
+- **Authorization Policy**: enforce traffic rules on services level
 
-In next steps of this tutorial we will perform experiments to make sure prove the above statements.
+In next steps of this tutorial we will focus on setting up and utilizing mutualTLS with Linkerd
 
-Let's get to the exercises!
+Let's get started!
