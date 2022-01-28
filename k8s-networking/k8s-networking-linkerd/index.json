@@ -69,10 +69,6 @@
                 "port": 8080
             },
             {
-                "name": "Emoji",
-                "port": 8085
-            },
-            {
                 "name": "Dashboard",
                 "port": 50750
             }
