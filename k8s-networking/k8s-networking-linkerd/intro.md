@@ -22,4 +22,3 @@ Service meshes add observability, security, and reliability features to “cloud
 
 In next steps of this tutorial we will focus on setting up and utilizing mutualTLS with Linkerd
 
-Let's get started!

@@ -15,3 +15,5 @@
 `kubectl port-forward deploy/kuard 8080:8080 --address 0.0.0.0 &`{{execute T1}}
 
 Naviagate to [the kuard page](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/), or open it from the tabs on top of the terminal window.
+
+Let's get started![kuard-app](assets/kuard-app.png)!
