@@ -23,3 +23,7 @@ linkerd viz dashboard --address 0.0.0.0 &
 ➡ visit the page or access from the tabs on top of terminal
 
 [Linkerd Dashboard](https://[[HOST_SUBDOMAIN]]-50750-[[KATACODA_HOST]].environments.katacoda.com/)
+
+➡ check if mTLS works between system pods and kuard pod
+
+![kuard-deployment](assets/kuard-deployment.png)

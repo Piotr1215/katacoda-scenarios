@@ -2,7 +2,7 @@
   "title": "Kubernetes Networking: Service mesh with Linkerd",
   "description": "Using Linkerd to showcase service to service mutual TLS and other features",
   "difficulty": "Intermediate",
-  "time": "30 minutes",
+  "time": "15 minutes",
     "details": {
         "steps": [
             {
