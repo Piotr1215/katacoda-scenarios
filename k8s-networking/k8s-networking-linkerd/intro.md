@@ -3,7 +3,7 @@
 > Visit Linkerd documentation if you need a refresher about [service mesh](https://linkerd.io/what-is-a-service-mesh/)
 >
 > Basic definitions are provided on diagrams below
-> This scenario is part of a [blog about mTLS with linkerd]()
+> This scenario is part of a [blog about mTLS with linkerd](https://itnext.io/how-to-secure-kubernetes-in-cluster-communication-5a9927be415b)
 
 ## How does it work?
 
