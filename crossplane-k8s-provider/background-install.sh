@@ -3,13 +3,14 @@
 MESSAGE_FILE='/opt/.messagefile'
 
 # Start Kubernetes
-echo "Installing k3s Kubernetes Cluster"
+echo "Installing k3s Kubernetes Cluster" > $MESSAGE_FILE
 curl -sfL https://get.k3s.io | sh -
 
 echo "Waiting for nodes ready" > $MESSAGE_FILE
 k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 
 echo "Setup KUBECONFIG" > $MESSAGE_FILE
+echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" 
 echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
 
 echo "Installing Helm" > $MESSAGE_FILE

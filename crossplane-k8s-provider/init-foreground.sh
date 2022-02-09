@@ -54,6 +54,7 @@ start_progress () {
 
   clear && echo -n "$START_MESSAGE "
 
+  printf "%s\n" "$(cat $MESSAGE_FILE)"
   # Periodically check for background signal or user Ctrl-C interuption
   end_message=$END_NORMAL_MESSAGE
   while [[ $progress_pid -ge 0 ]]; do
