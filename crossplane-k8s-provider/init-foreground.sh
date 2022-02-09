@@ -17,7 +17,7 @@ symbols=("▐⠂       ▌" "▐⠈       ▌" "▐ ⠂      ▌" "▐ ⠠      
 
 progress_pid=0
 
-show_progress () {  
+show_progress () {
   while :; do
     tput civis
     for symbol in "${symbols[@]}"; do
@@ -68,9 +68,9 @@ start_progress () {
   done
 
   stty sane; tput cnorm; clear
-  printf "%s\n" "$(cat $MESSAGE_FILE)"
+  printf "%s\n" "$(cat ${MESSAGE_FILE})"
   printf "%s\n\n" "${end_message}"
-  
+
   # Pick up any changes during background
   source ~/.bashrc
 }
