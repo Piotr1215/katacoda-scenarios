@@ -38,7 +38,23 @@
       "text": "intro.md"
     },
     "finish": {
-      "text": "finish.md"
+      "text": "finish.md",
+      "foreground": "init-foreground.sh",
+      "background": "background-install.sh"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "init-foreground.sh",
+          "target": "./",
+          "chmod": "+x"
+        },
+        {
+          "file": "background-install.sh",
+          "target": "./",
+          "chmod": "+x"
+        }
+      ]
     }
   },
   "environment": {
