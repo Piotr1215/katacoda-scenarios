@@ -6,6 +6,7 @@ BACKGROUND_SAFE_WORD='done'                          # Word in BACKGROUND_SIGNAL
 START_MESSAGE='Starting scenario'                    # Message before the progress animation
 END_NORMAL_MESSAGE='Scenario ready. You have a running Kubernetes cluster.'
 END_KILLED_MESSAGE='Interupted. This scenario may still be initializing.'
+MESSAGE_FILE='/opt/.messagefile'
 
 SPINNER_COLOR_NUM=2                # Color to use, unless COLOR_CYCLE=1
 SPINNER_COLOR_CYCLE=0              # 1 to rotate colors between each animation
@@ -65,6 +66,7 @@ start_progress () {
   done
 
   stty sane; tput cnorm; clear
+  printf "%s\n" "$(cat $MESSAGE_FILE)"
   printf "%s\n\n" "${end_message}"
   
   # Pick up any changes during background
