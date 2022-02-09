@@ -3,10 +3,10 @@
 MESSAGE_FILE='/opt/.messagefile'
 
 # Start Kubernetes
-#echo "Installing k3s Kubernetes Cluster" > $MESSAGE_FILE
+echo "Installing k3s Kubernetes Cluster" > $MESSAGE_FILE
 curl -sfL https://get.k3s.io | sh -
 
-#echo "Waiting for nodes ready" > $MESSAGE_FILE
+echo "Waiting for nodes ready" > $MESSAGE_FILE
 k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 
 #echo "Setup KUBECONFIG" > $MESSAGE_FILE
@@ -14,9 +14,9 @@ k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 #echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
 
 #echo "Installing Helm" > $MESSAGE_FILE
-wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
-tar xvf helm-v3.4.1-linux-amd64.tar.gz
-mv linux-amd64/helm /usr/local/bin
+#wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
+#tar xvf helm-v3.4.1-linux-amd64.tar.gz
+#mv linux-amd64/helm /usr/local/bin
 
 #echo "Installing Crossplane" > $MESSAGE_FILE
 #kubectl create namespace crossplane-system
