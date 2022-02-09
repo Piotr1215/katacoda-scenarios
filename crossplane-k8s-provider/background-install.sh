@@ -14,9 +14,9 @@ k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 #echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
 
 echo "Installing Helm" > $MESSAGE_FILE
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
+wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
+tar xvf helm-v3.4.1-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/local/bin
 
 #echo "Installing Crossplane" > $MESSAGE_FILE
 #kubectl create namespace crossplane-system
