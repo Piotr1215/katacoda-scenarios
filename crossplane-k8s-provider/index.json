@@ -46,12 +46,12 @@
       "host01": [
         {
           "file": "init-foreground.sh",
-          "target": "./",
+          "target": "/root",
           "chmod": "+x"
         },
         {
           "file": "background-install.sh",
-          "target": "./",
+          "target": "/root",
           "chmod": "+x"
         }
       ]
