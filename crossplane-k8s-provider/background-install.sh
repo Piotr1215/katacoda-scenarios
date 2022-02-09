@@ -9,9 +9,9 @@ curl -sfL https://get.k3s.io | sh -
 echo "Waiting for nodes ready" > $MESSAGE_FILE
 k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 
-echo "Setup KUBECONFIG" > $MESSAGE_FILE
-echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" 
-echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
+#echo "Setup KUBECONFIG" > $MESSAGE_FILE
+#echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" 
+#echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
 
 #echo "Installing Helm" > $MESSAGE_FILE
 #curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
