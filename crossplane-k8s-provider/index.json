@@ -35,12 +35,12 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
-    },
-    "finish": {
-      "text": "finish.md",
+      "text": "intro.md",
       "foreground": "init-foreground.sh",
       "background": "background-install.sh"
+    },
+    "finish": {
+      "text": "finish.md"
     },
     "assets": {
       "host01": [
