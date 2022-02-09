@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 MESSAGE_FILE='/opt/.messagefile'
 
 # Start Kubernetes
