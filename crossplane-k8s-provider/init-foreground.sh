@@ -17,12 +17,6 @@ symbols=("▐⠂       ▌" "▐⠈       ▌" "▐ ⠂      ▌" "▐ ⠠      
 
 progress_pid=0
 
-cleanup () {
-  kill $progress_pid >/dev/null 2>&1
-  progress_pid=-1
-  end_message=$END_KILLED_MESSAGE
-}
-
 show_progress () {  
   while :; do
     tput civis
@@ -44,6 +38,12 @@ show_progress () {
   done
   tput cnorm
   return 0
+}
+
+cleanup () {
+  kill $progress_pid >/dev/null 2>&1
+  progress_pid=-1
+  end_message=$END_KILLED_MESSAGE
 }
 
 start_progress () {
