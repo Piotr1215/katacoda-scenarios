@@ -7,6 +7,7 @@ START_MESSAGE='Starting scenario'                    # Message before the progre
 END_NORMAL_MESSAGE='Scenario ready. You have a running Kubernetes cluster.'
 END_KILLED_MESSAGE='Interupted. This scenario may still be initializing.'
 MESSAGE_FILE='/opt/.messagefile'
+touch $MESSAGE_FILE
 
 SPINNER_COLOR_NUM=2                # Color to use, unless COLOR_CYCLE=1
 SPINNER_COLOR_CYCLE=0              # 1 to rotate colors between each animation

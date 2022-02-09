@@ -1,7 +1,6 @@
 #!/bin/bash
 
 MESSAGE_FILE='/opt/.messagefile'
-touch $MESSAGE_FILE
 
 # Start Kubernetes
 echo "Installing k3s Kubernetes Cluster" > $MESSAGE_FILE
