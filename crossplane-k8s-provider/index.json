@@ -52,8 +52,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "showide": true
+    "uilayout": "vscode-terminal-split"
   },
   "backend": {
     "imageid": "ubuntu:2004"
