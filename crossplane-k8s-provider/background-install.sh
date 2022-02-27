@@ -27,4 +27,7 @@ helm repo upate
 helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
 kubectl wait deployment.apps/crossplane --namespace crossplane-system --for condition=AVAILABLE=True --timeout 1m
 
+echo "Installing Crossplane CLI"
+curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh
+
 echo "done" >> /opt/.backgroundfinished
