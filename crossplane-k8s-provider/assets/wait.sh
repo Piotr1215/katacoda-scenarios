@@ -28,7 +28,10 @@ showProgress()
   waitForCompletion /opt/.helminstalled
   echo -n "Installing Crossplane"
   waitForCompletion /opt/.crossplaneinstalled
+  echo -n "Installing Crossplane CLI"
+  waitForCompletion /opt/.crossplanecliinstalled
   waitForCompletion /opt/.backgroundfinished
+
   echo "All Set"
   echo ""
 }
