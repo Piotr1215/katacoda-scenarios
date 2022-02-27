@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#set -euo pipefail
+set -euo pipefail
 
 MESSAGE_FILE='/opt/.messagefile'
 
@@ -39,6 +39,6 @@ kubectl wait deployment.apps/coredns --namespace kube-system --for condition=AVA
 echo "Installing Crossplane CLI" > $MESSAGE_FILE
 curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh &> /dev/null
 
--echo "done" >> /opt/.backgroundfinished
+echo "done" >> /opt/.backgroundfinished
 
 echo "Cluster Ready" &> /dev/null
