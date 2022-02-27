@@ -36,7 +36,8 @@
     ],
     "intro": {
       "text": "intro.md",
-      "foreground": "background-install.sh"
+      "foreground": "init-foreground.sh",
+      "background": "background-install.sh"
     },
     "finish": {
       "text": "finish.md"

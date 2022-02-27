@@ -33,12 +33,12 @@ echo "Installing Crossplane" > $MESSAGE_FILE
      kubectl wait deployment.apps/crossplane --namespace crossplane-system --for condition=AVAILABLE=True --timeout 1m
 } &> /dev/null
 
-echo "Waiting for DNS service to start"
+echo "Waiting for DNS service to start" > $MESSAGE_FILE
 kubectl wait deployment.apps/coredns --namespace kube-system --for condition=AVAILABLE=True --timeout 1m &> /dev/null
 
-echo "Installing Crossplane CLI"
+echo "Installing Crossplane CLI" > $MESSAGE_FILE
 curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh &> /dev/null
 
-clear
+-echo "done" >> /opt/.backgroundfinished
 
 echo "Cluster Ready" &> /dev/null
