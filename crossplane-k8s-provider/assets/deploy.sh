@@ -27,16 +27,19 @@ helm repo add crossplane-stable https://charts.crossplane.io/stable
 helm repo upate
 helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
 kubectl wait deployment.apps/crossplane --namespace crossplane-system --for condition=AVAILABLE=True --timeout 1m
-
-echo "Waiting for DNS service to start"
 kubectl wait deployment.apps/coredns --namespace kube-system --for condition=AVAILABLE=True --timeout 1m
 
 echo "done" >> /opt/.crossplaneinstalled
 
 #Installing Crossplane CLI
-echo "Installing Crossplane CLI"
 curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh
 
 echo "done" >> /opt/.crossplanecliinstalled
+
+#Installing Crossplane’s Kubernetes Provider
+kubectl apply -f kubernetes-provider.yaml
+kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for condition=HEALTHY=True --timeout 1m
+
+echo "done" >> /opt/.kubernetesproviderinstalled
 
 echo "done" >> /opt/.backgroundfinished

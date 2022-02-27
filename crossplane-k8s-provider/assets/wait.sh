@@ -22,7 +22,7 @@ waitForCompletion() {
 
 showProgress()
 {
-  echo -n "Starting cluster"
+  echo -n "Starting k3s Cluster"
   waitForCompletion /opt/.clusterstarted
   echo -n "Installing Helm"
   waitForCompletion /opt/.helminstalled
@@ -30,6 +30,8 @@ showProgress()
   waitForCompletion /opt/.crossplaneinstalled
   echo -n "Installing Crossplane CLI"
   waitForCompletion /opt/.crossplanecliinstalled
+  echo "Installing Kuberentes Provider"
+  waitForCompletion /opt/.kubernetesproviderinstalled
   waitForCompletion /opt/.backgroundfinished
 
   echo "All Set"
