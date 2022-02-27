@@ -1,0 +1,15 @@
+apiVersion: comforteplatform.com/v1alpha1
+kind: AppClaim
+metadata:
+  name: platform-demo 
+  labels:
+    app-owner: piotrzan
+spec:
+  id: comforte-platform
+  compositionSelector:
+    matchLabels:
+      type: frontend
+  parameters:
+    namespace: devops-team
+    image: piotrzan/nginx-demo:blue
+    host: comforte-platform.127.0.0.1.nip.io
