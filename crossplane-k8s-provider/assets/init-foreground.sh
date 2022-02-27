@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 FREQUENCY=1                                          # Delay between each check for completion
 BACKGROUND_SIGNAL_FILE='/opt/.backgroundfinished'    # File updated by background to indicate completion
@@ -6,6 +8,8 @@ BACKGROUND_SAFE_WORD='done'                          # Word in BACKGROUND_SIGNAL
 START_MESSAGE='Starting scenario'                    # Message before the progress animation
 END_NORMAL_MESSAGE='Scenario ready. You have a running Kubernetes cluster.'
 END_KILLED_MESSAGE='Interupted. This scenario may still be initializing.'
+MESSAGE_FILE='/opt/.messagefile'
+touch $MESSAGE_FILE
 
 SPINNER_COLOR_NUM=2                # Color to use, unless COLOR_CYCLE=1
 SPINNER_COLOR_CYCLE=0              # 1 to rotate colors between each animation
@@ -15,13 +19,7 @@ symbols=("▐⠂       ▌" "▐⠈       ▌" "▐ ⠂      ▌" "▐ ⠠      
 
 progress_pid=0
 
-cleanup () {
-  kill $progress_pid >/dev/null 2>&1
-  progress_pid=-1
-  end_message=$END_KILLED_MESSAGE
-}
-
-show_progress () {  
+show_progress () {
   while :; do
     tput civis
     for symbol in "${symbols[@]}"; do
@@ -44,6 +42,12 @@ show_progress () {
   return 0
 }
 
+cleanup () {
+  kill $progress_pid >/dev/null 2>&1
+  progress_pid=-1
+  end_message=$END_KILLED_MESSAGE
+}
+
 start_progress () {
   show_progress &
   progress_pid=$!
@@ -53,6 +57,7 @@ start_progress () {
 
   clear && echo -n "$START_MESSAGE "
 
+  printf "%s\n" "$(cat $MESSAGE_FILE)"
   # Periodically check for background signal or user Ctrl-C interuption
   end_message=$END_NORMAL_MESSAGE
   while [[ $progress_pid -ge 0 ]]; do
@@ -65,8 +70,9 @@ start_progress () {
   done
 
   stty sane; tput cnorm; clear
+  printf "%s\n" "$(cat ${MESSAGE_FILE})"
   printf "%s\n\n" "${end_message}"
-  
+
   # Pick up any changes during background
   source ~/.bashrc
 }
