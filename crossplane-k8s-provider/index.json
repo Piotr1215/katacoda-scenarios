@@ -36,8 +36,8 @@
     ],
     "intro": {
       "text": "intro.md",
-      "foreground": "init-foreground.sh",
-      "background": "background-install.sh"
+      "foreground": "foreground.sh",
+      "background": "background.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -45,12 +45,7 @@
     "assets": {
       "host01": [
         {
-          "file": "init-foreground.sh",
-          "target": "/root",
-          "chmod": "+x"
-        },
-        {
-          "file": "background-install.sh",
+          "file": "*.*",
           "target": "/root",
           "chmod": "+x"
         }
