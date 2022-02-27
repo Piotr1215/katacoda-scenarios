@@ -32,6 +32,8 @@ showProgress()
   waitForCompletion /opt/.crossplanecliinstalled
   echo "Installing Kuberentes Provider"
   waitForCompletion /opt/.kubernetesproviderinstalled
+  echo "Starting Weave Scope"
+  waitForCompletion /opt/.weavescopeinstalled
   waitForCompletion /opt/.backgroundfinished
 
   echo "All Set"
