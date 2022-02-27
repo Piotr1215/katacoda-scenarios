@@ -1,9 +1,9 @@
 Following components are being installed:
 
-✔ k3s cluster\
-✔ helm\
-✔ crossplane\
-✔ crossplane CLI\
+✔ k3s cluster</BR>
+✔ helm</BR>
+✔ crossplane</BR>
+✔ crossplane CLI</BR>
 ✔ kubernetes provider
 
 > Wait until "All Set" message is displayed on the screen and verify if cluster is setup correctly
