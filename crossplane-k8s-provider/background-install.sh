@@ -33,4 +33,6 @@ kubectl wait deployment.apps/coredns --namespace kube-system --for condition=AVA
 echo "Installing Crossplane CLI"
 curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh
 
-echo "done" >> /opt/.backgroundfinished
+clear
+
+echo "Cluster Ready"
