@@ -1,11 +1,11 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: apps.comforteplatform.com
+  name: apps.acmeplatform.com
 spec:
   defaultCompositionRef:
     name: app-frontend
-  group: comforteplatform.com
+  group: acmeplatform.com
   names:
     kind: App
     plural: apps
@@ -68,7 +68,7 @@ metadata:
     type: frontend
 spec:
   compositeTypeRef:
-    apiVersion: comforteplatform.com/v1alpha1
+    apiVersion: acmeplatform.com/v1alpha1
     kind: App
   patchSets:
   - name: metadata
@@ -206,10 +206,10 @@ spec:
                     pathType: ImplementationSpecific
                     backend:
                       service:
-                        name: comforte-platform
+                        name: acmeplatform
                         port:
                           number: 80
-                host: comforteplatform.com
+                host: acmeplatform.com
     patches:
     - fromFieldPath: spec.id
       toFieldPath: metadata.name
