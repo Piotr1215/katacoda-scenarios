@@ -67,7 +67,6 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "uieditorpath": "/root/example",
     "showdashboard": true,
     "dashboards": [
       {
