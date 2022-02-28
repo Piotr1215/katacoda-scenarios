@@ -14,14 +14,12 @@ By utilizing [Kubernetes provider](https://github.com/crossplane-contrib/provide
 
 - deployment
 - service
-- ingress
 - horizontal pod autoscaler
 
 Instead of exposing the resources directly to developers who might be inexperience with Kubernetes, we will create a simple composition containing only important fields, such as:
 
 - namespace to deploy to
 - image with tag
-- name of the host for ingress
 
 ## How Crossplane works
 
