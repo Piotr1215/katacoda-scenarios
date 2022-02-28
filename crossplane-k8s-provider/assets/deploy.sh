@@ -48,6 +48,6 @@ tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
 cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
 echo "done" >> /opt/.octantinstalled
 
-octant --listener-address="0.0.0.0:7777" --dosable-open-browser=true --kubeconfig="/etc/rancher/k3s/k3s.yaml" &
+octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true --kubeconfig="/etc/rancher/k3s/k3s.yaml" &
 
 echo "done" >> /opt/.backgroundfinished
