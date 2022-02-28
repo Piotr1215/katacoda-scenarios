@@ -44,19 +44,38 @@
     },
     "assets": {
       "host01": [
-        {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-        {"file": "deploy.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-        {"file": "*.yaml", "target": "/root/"},
-        {"file": "*.png", "target": "/root/"}
+        {
+          "file": "wait.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "deploy.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "*.yaml",
+          "target": "/root/"
+        },
+        {
+          "file": "*.png",
+          "target": "/root/"
+        }
       ]
     }
   },
   "environment": {
     "uilayout": "vscode-terminal-split",
     "uieditorpath": "/root/example",
-    "showvisualise": true,
-    "scope": "docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true",
-    "scopePort": 4040
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Octant",
+        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
+        "port": 7777
+      }
+    ]
   },
   "backend": {
     "imageid": "ubuntu:2004"

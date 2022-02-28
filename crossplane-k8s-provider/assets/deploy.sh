@@ -42,9 +42,13 @@ kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for con
 
 echo "done" >> /opt/.kubernetesproviderinstalled
 
-#Running Weave Scope
-docker run --name=scope -d --net=host --pid=host --privileged -v /var/run/docker.sock:/var/run/docker.sock:rw weaveworks/scope:1.9.1 --probe.docker=true
-
-echo "done" >> /opt/.weavescopeinstalled
+#Installing Octant
+wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
+tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
+cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
+echo "done" >> /opt/.octantinstalled
 
 echo "done" >> /opt/.backgroundfinished
+
+export OCTANT_DISABLE_OPEN_BROWSER=true
+export OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
