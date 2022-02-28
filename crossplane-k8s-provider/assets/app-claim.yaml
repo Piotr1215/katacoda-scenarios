@@ -12,4 +12,3 @@ spec:
   parameters:
     namespace: devops-team
     image: piotrzan/nginx-demo:green
-    host: acmeplatform.127.0.0.1.nip.io
