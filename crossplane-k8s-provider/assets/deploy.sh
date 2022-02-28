@@ -49,6 +49,6 @@ cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
 echo "done" >> /opt/.octantinstalled
 
 export OCTANT_DISABLE_OPEN_BROWSER=true
-export OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
+OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant &
 
 echo "done" >> /opt/.backgroundfinished

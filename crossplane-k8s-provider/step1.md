@@ -14,7 +14,7 @@ Check Kuberentes cluster info and version `kubectl cluster-info && echo && kubec
 
 Proceed to step 2 where we will explore the setup ➡
 
-## Observability
+## Observability 🔎
 
 > During this exercise, feel free to click on *Octant* tab and explore cluster status in a visual way. We will focus on *kubectl* commands.
 
