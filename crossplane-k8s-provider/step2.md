@@ -9,7 +9,7 @@ Here are the resources created in our cluster. `kubectl get xrd`{{execute}} show
 Our composition and definition describes what Kubernetes objects we want to create, but how should developers let us know what should be created? Do they need to open a Jira ticket? 😤... Nah, they just need to create a simple claim, like so
 
 <pre>
-    ```yaml
+  <code class="language-yaml">
     apiVersion: acmeplatform.com/v1alpha1
     kind: AppClaim
     metadata:
@@ -24,7 +24,7 @@ Our composition and definition describes what Kubernetes objects we want to crea
       parameters:
         namespace: devops-team
         image: piotrzan/nginx-demo:green
-    ```
+   </code>
 </pre>
 
 `kubectl apply -f app-claim.yaml`{{execute T1}}
