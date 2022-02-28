@@ -4,7 +4,8 @@ Following components are being installed:
 ✔ helm</BR>
 ✔ crossplane</BR>
 ✔ crossplane CLI</BR>
-✔ kubernetes provider
+✔ kubernetes provider</BR>
+✔ octant observability
 
 > Wait until "All Set" message is displayed on the screen and verify if cluster is setup correctly
 
