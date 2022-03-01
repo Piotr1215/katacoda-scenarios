@@ -20,9 +20,3 @@ Instead of exposing the resources directly to developers who might be inexperien
 
 - namespace to deploy to
 - image with tag
-
-## How Crossplane works
-
-Below diagram explains Crossplane's components and their relations.
-
-![crossplane-components](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/crossplane-demo/master/diagrams/crossplane-components.puml&fmt=png)
