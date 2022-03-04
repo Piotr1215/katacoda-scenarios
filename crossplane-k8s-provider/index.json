@@ -10,11 +10,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Crossplane Architecture 🏛",
+        "title": "Kubernetes Provider",
         "text": "step2.md"
       },
       {
-        "title": "Compose K8s Application 🏗",
+        "title": "Composed App in Action",
         "text": "step3.md"
       },
       {
@@ -22,7 +22,7 @@
         "text": "step4.md"
       },
       {
-        "title": "Step 5",
+        "title": "Managed Resource",
         "text": "step5.md"
       },
       {

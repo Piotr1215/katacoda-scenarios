@@ -1,0 +1,21 @@
+## Managed Resource
+
+```yaml
+apiVersion: database.aws.crossplane.io/v1beta1
+kind: RDSInstance
+metadata:
+  name: rdspostgresql
+spec:
+  forProvider:
+    region: eu-central-1
+    dbInstanceClass: db.t2.small
+    masterUsername: masteruser
+    allocatedStorage: 30
+    engine: postgres
+    engineVersion: "12"
+    skipFinalSnapshotBeforeDeletion: true
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: aws-rdspostgresql-conn
+```
+
