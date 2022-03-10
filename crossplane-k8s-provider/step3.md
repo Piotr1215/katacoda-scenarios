@@ -4,7 +4,7 @@ First we need to let Crossplane know that we would like to define a composite re
 
 Here are the resources created in our cluster. `kubectl get xrd`{{execute}} shows our composite resource definition whereas `kubectl get compositions`{{execute}} returns all available compositions. Give it a try.
 
-- create a namespace for the resources `kubectl create ns devops-team`{{execute T1}}
+We need to create a namespace for the resources `kubectl create ns devops-team`{{execute T1}} first.
 
 Our composition and definition describes what Kubernetes objects we want to create, but how should developers let us know what should be created? Do they need to open a Jira ticket? 😤... Nah, they just need to create a simple claim, like so
 
@@ -25,7 +25,13 @@ spec:
     image: piotrzan/nginx-demo:green
 ```
 
-`kubectl apply -f app-claim.yaml`{{execute T1}}
+By applying the claim, we are creating multiple Kubernetes resources "under the hood" without needing to know what they are and how they are created. This concern can be moved onto a Platform Team.
+
+```bash
+kubectl apply -f app-claim.yaml && \
+         kubectl wait deployment.apps/acmeplatform --namespace devops-team \ 
+         --for condition=AVAILABLE=True --timeout 1m
+```{{execute T1}}
 
 There are several resources created based on the composition `kubectl get managed`{{execute}}. One of them is a deployment with a sample web app, let's port forward to it.
 

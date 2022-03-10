@@ -1,5 +1,5 @@
 {
-  "title": "Crossplane Kuberentes Provider",
+  "title": "Introduction to Crossplane",
   "description": "Create complex Kubernetes applications with Crossplane Kubernetes Provider",
   "difficulty": "Beginner",
   "time": "15minutes",
@@ -10,27 +10,27 @@
         "text": "step1.md"
       },
       {
-        "title": "Kubernetes Provider",
+        "title": "Kubernetes Provider 🦸",
         "text": "step2.md"
       },
       {
-        "title": "Composed App in Action",
+        "title": "Composed App in Action 🏀",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Application Lifecycle 🐝",
         "text": "step4.md"
       },
       {
-        "title": "Managed Resource",
+        "title": "Managed Resource 🧱",
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "The Power of Composition 🧩",
         "text": "step6.md"
       },
       {
-        "title": "Step 7",
+        "title": "Key Takeaways 📑",
         "text": "step7.md"
       }
     ],
