@@ -1,6 +1,6 @@
 ## Kubernetes Simplified
 
-We will start by practical demonstration of Crossplane composition by utilizing Kubernetes Provider and later explain relevant concepts based on actual cloud providers!
+We will start by practical demonstration of Crossplane composition by utilizing Kubernetes Provider and later dive deeper into what makes compositions so powerful.
 
 > Crossplane can compose infrastructure from various providers and most common usecase is cloud infrastructure. However, composing cloud infrastructure requires access to cloud and storing credentials in a secret. This is obviously not safe and that's why we will use Kubernetes Provider. All the Crossplane concepts and techniques equally apply to cloud provider infrastructure.
 
