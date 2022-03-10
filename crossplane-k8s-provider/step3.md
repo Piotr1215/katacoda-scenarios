@@ -29,8 +29,9 @@ By applying the claim, we are creating multiple Kubernetes resources "under the 
 
 ```bash
 kubectl apply -f app-claim.yaml && \
-         kubectl wait deployment.apps/acmeplatform --namespace devops-team \ 
-         --for condition=AVAILABLE=True --timeout 1m
+        kubectl wait deployment.apps/acmeplatform \
+        --namespace devops-team \ 
+        --for condition=AVAILABLE=True --timeout 1m
 ```{{execute T1}}
 
 There are several resources created based on the composition `kubectl get managed`{{execute}}. One of them is a deployment with a sample web app, let's port forward to it.
