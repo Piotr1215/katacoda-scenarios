@@ -41,4 +41,3 @@ There are several resources created based on the composition `kubectl get manage
 You can also [open the web page right here](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)
 
 In the next section, we will see how easy it is to modify the claim ➡
-
