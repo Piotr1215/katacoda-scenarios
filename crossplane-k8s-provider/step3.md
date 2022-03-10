@@ -27,7 +27,6 @@ spec:
 
 By applying the claim, we are creating multiple Kubernetes resources "under the hood" without needing to know what they are and how they are created. This concern can be moved onto a Platform Team.
 
-
 `kubectl apply -f app-claim.yaml`{{execute T1}}
 
 `kubectl wait deployment.apps/acmeplatform --namespace devops-team --for condition=AVAILABLE=True --timeout 1m`{{execute T1}}
