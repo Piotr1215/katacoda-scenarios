@@ -28,10 +28,10 @@ spec:
 By applying the claim, we are creating multiple Kubernetes resources "under the hood" without needing to know what they are and how they are created. This concern can be moved onto a Platform Team.
 
 ```bash
-kubectl apply -f app-claim.yaml && \
-        kubectl wait deployment.apps/acmeplatform \
-        --namespace devops-team \ 
-        --for condition=AVAILABLE=True --timeout 1m
+kubectl apply -f app-claim.yaml
+
+kubectl wait deployment.apps/acmeplatform \
+        --namespace devops-team --for condition=AVAILABLE=True --timeout 1m
 ```{{execute T1}}
 
 There are several resources created based on the composition `kubectl get managed`{{execute}}. One of them is a deployment with a sample web app, let's port forward to it.
