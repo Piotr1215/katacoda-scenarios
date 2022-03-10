@@ -1,6 +1,6 @@
 {
-  "title": "Introduction to Crossplane",
-  "description": "Create complex Kubernetes applications with Crossplane Kubernetes Provider",
+  "title": "Interactive Crossplane Workshop",
+  "description": "Create complex Kubernetes applications with Crossplane Kubernetes Provider and learn basic Crossplane concepts",
   "difficulty": "Beginner",
   "time": "15minutes",
   "details": {

@@ -1,4 +1,4 @@
-## Kubernetes Provider
+## Kubernetes Simplified
 
 We will start by practical demonstration of Crossplane composition by utilizing Kubernetes Provider and later explain relevant concepts based on actual cloud providers!
 
