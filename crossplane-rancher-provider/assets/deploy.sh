@@ -39,11 +39,13 @@ curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/ins
 
 echo "done" >> /opt/.crossplanecliinstalled
 
-#Installing Crossplane’s Kubernetes Provider
-kubectl apply -f kubernetes-provider.yaml
-kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for condition=HEALTHY=True --timeout 1m
+# Installing Rancher Provider
+docker run -d --restart=unless-stopped \
+  -p 0.0.0.0:8080:80 -p 0.0.0.0:443:443 \
+  --privileged \
+  rancher/rancher:latest
 
-echo "done" >> /opt/.kubernetesproviderinstalled
+echo "done" >> /opt/.rancherinstalled
 
 #Installing Octant
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
