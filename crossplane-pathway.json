@@ -1,0 +1,18 @@
+{
+  "title": "Crossplane",
+  "description": "Workshops for Crossplane and its providers",
+  "icon": "fa-crossplane",
+  "courses": [
+    {
+      "course_id": "crossplane-k8s-provider",
+      "title": "Crossplane Introduction: Kubernetes Provider",
+      "description": "Introduction to Crossplane and Kubernetes Provider"
+    },
+    {
+      "course_id": "crossplane-rancher-provider",
+      "title": "Crossplane: Rancher Jet Provider",
+      "description": "Setting up Rancher using Crossplane Rancher Jet Provider"
+    }
+  ]
+}
+
