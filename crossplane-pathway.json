@@ -1,7 +1,7 @@
 {
   "title": "Crossplane",
   "description": "Workshops for Crossplane and its providers",
-  "icon": "fa-crossplane",
+  "icon": "fa-cloud-upload",
   "courses": [
     {
       "course_id": "crossplane-k8s-provider",
