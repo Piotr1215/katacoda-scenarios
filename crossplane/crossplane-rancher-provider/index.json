@@ -3,6 +3,7 @@
   "description": "Create complex Kubernetes applications with Crossplane Kubernetes Provider and learn basic Crossplane concepts",
   "difficulty": "Beginner",
   "time": "15minutes",
+  "private": "true", 
   "details": {
     "steps": [
       {
