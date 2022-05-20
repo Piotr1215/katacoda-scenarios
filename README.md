@@ -1,12 +1,16 @@
-# Interactive Katacoda Scenarios
+# Interactive Killercoda Scenarios
 
-[![alt](http://shields.killercoda.com/killercoda/decoder/count.svg)](https://www.katacoda.com/decoder "Get your profile on Katacoda.com")
+<!--
+   -[![alt](http://shields.killercoda.com/killercoda/decoder/count.svg)](https://killercoda.com/decoder "Get your profile on Katacoda.com")
+-->
 
-Visit <https://www.katacoda.com/decoder> to view the profile and interactive scenarios
+Visit <https://killercoda.com/decoder> to view my profile and interactive scenarios.
 
-[![alt](http://shields.katacoda.com/katacoda/decoder/count.svg)](https://www.katacoda.com/decoder "Get your profile on Katacoda.com")
+<!--
+   -[![alt](http://shields.katacoda.com/katacoda/decoder/count.svg)](https://killercoda.com/decoder "Get your profile on Katacoda.com")
+-->
 
-Visit <https://www.katacoda.com/docs> to learn more about creating Katacoda scenarios
+Visit <https://killercoda.com/creators> to learn more about creating Killercoda scenarios.
 
-For examples, visit <https://github.com/katacoda/scenario-example>
+For examples, visit <https://killercoda.com/examples>
 
