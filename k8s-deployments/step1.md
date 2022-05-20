@@ -19,7 +19,7 @@ node/node01 condition met
 
 Once all nodes are ready, we can see if all pods are in running status.
 
-Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute interrupt}}
+Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute}}
 
 Last thing, let's create a useful alias for `kubectl` also on the cluster node `alias k=kubectl`{{execute}}
 

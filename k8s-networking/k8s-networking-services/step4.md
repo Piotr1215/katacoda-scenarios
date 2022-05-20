@@ -33,7 +33,7 @@ or alternatively check out Octant https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOS
 
 **Given** there is nginx deployment present in the cluster
 
-`k get deploy -n default`{{execute interrupt}}
+`k get deploy -n default`{{execute}}
 
 **And** deployment is exposed using "NodePort" Service
 
