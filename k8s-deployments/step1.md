@@ -1,12 +1,12 @@
 # Prepare Kubernetes Cluster
 
-Run `launch.sh`{{execute T1}} to start cluster.
+Run `launch.sh`{{execute}} to start cluster.
 
 Now we need to make sure that additional Kubernetes node: *node01* has the same *kubeconfig* configuration so we can execute commands on this node as well.
 To achieve this we will use `scp` to copy over content of the *.kube* directory including Kubernetes *config* file
-`scp -pr .kube root@node01:/root/.kube`{{execute T1}}
+`scp -pr .kube root@node01:/root/.kube`{{execute}}
 
-Check if nodes are running and ready on the other terminal `kubectl wait node --all --for=condition=Ready --timeout=3m`{{execute T2}}
+Check if nodes are running and ready on the other terminal `kubectl wait node --all --for=condition=Ready --timeout=3m`{{execute}}
 
 > *wait*, it establishes a wait handle on the command and periodically refreshes the output.
 
@@ -19,9 +19,9 @@ node/node01 condition met
 
 Once all nodes are ready, we can see if all pods are in running status.
 
-Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute T2 interrupt}}
+Once nodes are up and running let's check what pods are deployed in *kube-system* namespace: `kubectl get pods -n kube-system`{{execute interrupt}}
 
-Last thing, let's create a useful alias for `kubectl` also on the cluster node `alias k=kubectl`{{execute T2}}
+Last thing, let's create a useful alias for `kubectl` also on the cluster node `alias k=kubectl`{{execute}}
 
 Finally let's see what Kubernetes version are we running on:
 
