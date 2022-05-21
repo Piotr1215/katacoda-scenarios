@@ -17,17 +17,19 @@
 
 `k scale deployment nginx-test --replicas 5`{{execute}}
 
-**Then** page on the same NodePort in "Katacoda" is accessible without disruptions
+**Then** page on the same NodePort in "killercoda" is accessible without
+disruptions
 
 `echo $PORT`{{execute}}
 
-Navigate to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
+Navigate to [Ports Page]({{TRAFFIC_SELECTOR}}) and paste port copied from
+previous command
 
 **And** 5 endpoints are registered in the service manifest
 
 `k get endpoints nginxsvc`{{execute}}
 
-or alternatively check out Octant https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com/
+or alternatively check out [Octant]({{TRAFFIC_SELECTOR_HOST1_7777}})
 
 ## Scenario: Deployment scaled down
 
@@ -43,11 +45,13 @@ or alternatively check out Octant https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOS
 
 `k scale deployment nginx-test --replicas 1`{{execute}}
 
-**Then** page on the same NodePort in "Katacoda" is accessible without disruptions
+**Then** page on the same NodePort in "killercoda" is accessible without
+disruptions
 
 `echo $PORT`{{execute}}
 
-Navigate to https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/ and paste port copied from previous command
+Navigate to [Ports Page]({{TRAFFIC_SELECTOR}}) and
+paste port copied from previous command
 
 **And** endpoints are removed from the service manifest leaving only one
 

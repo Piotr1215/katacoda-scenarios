@@ -2,7 +2,7 @@
 
 This scenario is a little bit more involving, so there are a few more steps. We are going to use octant to see pods being updated in real time as well as a very simple static page served by nginx.
 
-Run Octant: https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com, this command will display *octant* cluster viewer. Octant is already installed on this setup
+[Run Octant]({{TRAFFIC_HOST1_7777}}) <- this command will display *octant* cluster viewer. Octant is already installed on this setup
 
 > HINT: In order to observe real time updates of the pods consider installing a [browser auto-refresh plugin](https://www.supersimpleautorefresh.tk/)
 
