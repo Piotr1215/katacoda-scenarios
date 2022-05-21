@@ -22,14 +22,10 @@ waitForCompletion() {
 
 showProgress()
 {
-  echo -n "Starting cluster"
-  waitForCompletion /opt/.clusterstarted
+  echo -n "Waiting for cluster ready"
+  waitForCompletion /opt/.nodesready
   echo -n "Installing Octant"
   waitForCompletion /opt/.octantinstalled
-  echo -n "Waiting for nodes ready"
-  waitForCompletion /opt/.nodesready
-  # echo -n "Completing"
-  # waitForCompletion /opt/.backgroundfinished
   echo -n "Cloning examples"
   waitForCompletion /opt/.examplescloned
   echo "Octant started in the background"

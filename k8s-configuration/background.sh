@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # Start Kubernetes
-echo "Starting Kubernetes Cluster"
-launch.sh
-echo "done" >> /opt/.clusterstarted
-
-echo "Waiting for nodes ready"
+echo "Waiting for cluster ready"
 kubectl wait node --all --for=condition=Ready --timeout=60s
 echo "done" >> /opt/.nodesready
 
