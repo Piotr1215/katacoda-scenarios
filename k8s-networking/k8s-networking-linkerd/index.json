@@ -48,7 +48,7 @@
             "host01": [
                 {
                     "file": "*.sh",
-                    "target": "/usr/local/bin",
+                    "target": "assets",
                     "chmod": "+x"
                 },
                 {
