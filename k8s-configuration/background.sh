@@ -9,8 +9,6 @@ echo "Installing and Octant"
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
 tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
 cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
-export OCTANT_DISABLE_OPEN_BROWSER=true
-export OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
 echo "done" >> /opt/.octantinstalled
 
 echo "Cloning repo with examples"
@@ -23,3 +21,5 @@ echo "Starting Octant in the background"
 
 echo "done" >> /opt/.backgroundfinished
 
+OCTANT_DISABLE_OPEN_BROWSER=true
+OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
