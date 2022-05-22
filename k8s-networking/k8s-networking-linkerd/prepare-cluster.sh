@@ -29,6 +29,9 @@ curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 export PATH=$PATH:/root/.linkerd2/bin
 
 # Setup tmux sessions
+export KUARD=kuard
+export LINKERD=linkerd
+
 tmux -2 new-session -d -s kuard
 tmux -2 new-session -d -s linkerd
 
