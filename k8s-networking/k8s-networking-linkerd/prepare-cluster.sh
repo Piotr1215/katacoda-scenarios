@@ -37,9 +37,11 @@ tmux -2 new-session -d -s $SESSION2
 
 # Setup a window for tailing log files
 tmux new-window -t $SESSION:1 -n 'Kuard'
+tmux select-window -t $SESSION:1
 tmux split-window -v
 
 tmux new-window -t $SESSION2:1 -n 'Linkerd'
+tmux select-window -t $SESSION2:1
 tmux split-window -v
 
 # Install step
