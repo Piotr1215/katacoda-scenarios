@@ -28,21 +28,11 @@ curl --proto '=https' --tlsv1.2 -sSfL https://run.linkerd.io/install | sh
 
 export PATH=$PATH:/root/.linkerd2/bin
 
-# Export session variable for tmux
-export SESSION=kuard
-export SESSION2=linkerd2
+# Setup tmux sessions
+tmux -2 new-session -d -s kuard
+tmux -2 new-session -d -s linkerd
 
-tmux -2 new-session -d -s $SESSION
-tmux -2 new-session -d -s $SESSION2
-
-# Setup a window for tailing log files
-tmux new-window -t $SESSION:1 -n 'Kuard'
-tmux select-window -t $SESSION:1
-tmux split-window -v
-
-tmux new-window -t $SESSION2:1 -n 'Linkerd'
-tmux select-window -t $SESSION2:1
-tmux split-window -v
+#tmux new-window -t $SESSION2:1 -n 'Linkerd'
 
 # Install step
 # wget https://dl.step.sm/gh-release/cli/docs-cli-install/v0.18.0/step-cli_0.18.0_amd64.deb
