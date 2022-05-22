@@ -45,15 +45,13 @@
         "assets": {
             "host01": [
                 {
-                    "file": "*",
+                    "file": "*.sh",
                     "target": "/usr/local/bin",
                     "chmod": "+x"
-                }
-            ],
-            "host02": [
+                },
                 {
-                    "file": "*",
-                    "target": "/usr/local/bin",
+                    "file": "*.png",
+                    "target": "assets",
                     "chmod": "+x"
                 }
             ]
