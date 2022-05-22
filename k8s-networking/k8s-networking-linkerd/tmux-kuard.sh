@@ -1,5 +1,3 @@
-export SESSION=$USER
-
 tmux -2 new-session -d -s $SESSION
 
 # Setup a window for tailing log files

@@ -20,4 +20,3 @@ kubectl get deploy kuard -o yaml \
 ➡ we should see the linkerd sidecar running in the pod
 
 `kubectl get pods -l app=kuard -o jsonpath='{.items[*].spec.containers[*].name}{"\n"}'`{{execute}}
-````
