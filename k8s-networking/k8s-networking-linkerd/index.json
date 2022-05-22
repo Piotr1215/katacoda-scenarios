@@ -18,7 +18,8 @@
             {
                 "title": "Web App",
                 "text": "step3.md",
-                "foreground": "clear-terminals.sh"
+                "background": "tmux-kuard.sh",
+                "foreground": "attach-tmux-kuard.sh"
             },
             {
                 "title": "Sidecar",
@@ -28,7 +29,8 @@
             {
                 "title": "Observability",
                 "text": "step5.md",
-                "foreground": "clear-terminals.sh"
+                "background": "tmux-linkerd.sh",
+                "foreground": "attach-tmux-linkerd.sh"
             },
             {
                 "title": "Mutual TLS",

@@ -2,23 +2,23 @@
 
 ➡ first we need to install observability extension
 
-`helm repo add linkerd https://helm.linkerd.io/stable`{{execute T1}}
+`helm repo add linkerd https://helm.linkerd.io/stable`{{execute}}
 
 ```bash
 helm install linkerd-viz \
   --set dashboard.enforcedHostRegexp=.* \
   linkerd/linkerd-viz
-```{{execute T1}}
+```{{execute}}
 
 ➡ make sure the installation succedded
 
-`linkerd check`{{execute T1}}
+`linkerd check`{{execute}}
 
 ➡ launch the dashboard in background
 
 ```bash
 linkerd viz dashboard --address 0.0.0.0 &
-```{{execute T1}}
+```{{execute}}
 
 ➡ visit the page or access from the tabs on top of terminal
 

@@ -4,10 +4,10 @@
 
 ```bash
 linkerd install | kubectl apply -f -
-```{{execute T1}}
+```{{execute}}
 
 ➡ check linkerd installation
 
-`linkerd check`{{execute T1}}
+`linkerd check`{{execute}}
 
 > be patient, this can take a while ⌛
