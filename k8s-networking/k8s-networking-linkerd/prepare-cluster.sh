@@ -32,8 +32,8 @@ export PATH=$PATH:/root/.linkerd2/bin
 export KUARD=kuard
 export LINKERD=linkerd
 
-tmux -2 new-session -d -s kuard
-tmux -2 new-session -d -s linkerd
+tmux -2 new-session -d -s $KUARD
+tmux -2 new-session -d -s $LINKERD
 
 #tmux new-window -t $SESSION2:1 -n 'Linkerd'
 
