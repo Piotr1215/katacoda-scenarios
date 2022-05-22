@@ -53,8 +53,7 @@
                 },
                 {
                     "file": "*.png",
-                    "target": "assets",
-                    "chmod": "+x"
+                    "target": "assets"
                 }
             ]
         }
