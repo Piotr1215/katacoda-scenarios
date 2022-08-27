@@ -1,0 +1,82 @@
+{
+  "title": "Validate Crossplane compositions with Datree",
+  "description": "Use Datree to validate Crossplane's compositions against custom validation rules",
+  "difficulty": "Beginner",
+  "time": "15minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Cluster Preparation 🚧",
+        "text": "step1.md"
+      },
+      {
+        "title": "Setting up Datree  ",
+        "text": "step2.md"
+      },
+      {
+        "title": "Composed App in Action 🏀",
+        "text": "step3.md" 
+
+
+
+
+      },
+      {
+        "title": "Application Lifecycle 🐝", 
+        "text": "step4.md"
+      },
+      {
+        "title": "The Power of Composition 🧩",
+        "text": "step5.md"
+      },
+      {
+        "title": "Key Takeaways 📑",
+        "text": "step6.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "wait.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "deploy.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "*.yaml",
+          "target": "/root/"
+        },
+        {
+          "file": "*.png",
+          "target": "/root/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+      {
+        "name": "Octant",
+        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
+        "port": 7777
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}
