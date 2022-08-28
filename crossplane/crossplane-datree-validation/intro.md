@@ -14,8 +14,8 @@ Following components are being installed:
 
 ✔ octant & k9s observability
 
-> Wait until "**All Set**" message is displayed on the screen and verify if cluster
-> is set up correctly
+> Wait until "**All Set**" message is displayed on the screen and verify if
+> cluster is set up correctly
 
 Check the cluster setup `kubectl get pods -A`{{exec}}
 
@@ -32,6 +32,6 @@ Click on the Dashboard tab or run octant from this link:
 
 Type `k9s` to use CLI cluster visualization.
 
-Proceed to step 2 where we will explore the setup ➡
+> In case of errors try to restart the environment.
 
-
+If all is ok, proceed to next steps. ➡

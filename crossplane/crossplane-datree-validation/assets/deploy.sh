@@ -11,6 +11,7 @@ k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 echo "Setup KUBECONFIG"
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml 
 echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >> ~/.bashrc
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 
 echo "done" >> /opt/.clusterstarted
 
