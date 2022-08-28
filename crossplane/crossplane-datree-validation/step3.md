@@ -12,8 +12,8 @@ Let's create the resources first
 
 - `kubectl apply -f definition.yaml`{{exec}}
 - `kubectl apply -f composition.yaml`{{exec}}
-- `kubectl apply -f app-claim.yaml`{{exec}}
 - `kubectl create ns devops-team`{{exec}}
+- `kubectl apply -f app-claim.yaml`{{exec}}
 
 And ensure they are created properly `kubectl get crossplane`{{exec}}
 

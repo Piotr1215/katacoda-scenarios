@@ -21,7 +21,6 @@ Within the composition, patchset is applied to all resources, here example of
 the deployment snippet.
 
 ```yaml
-
 ---
 resources:
   - name: deployment
@@ -45,5 +44,14 @@ this `patchSet`, because this is a common practice all team members agree to
 follow. By codyfying it in an inner development loop via a CLI or a linter as
 well as in CI/CD pipeline we ensure that all the compositions adhere the the
 same standards and lower numer of errors.
+
+Let's make sure that the labels are correctly applied to the kubernetes
+resources:
+
+```bash
+kubectl describe service acmeplatform -n devops-team | grep ^Labels -A2
+kubectl describe deployment acmeplatform -n devops-team | grep ^Labels -A2
+kubectl describe hpa acmeplatform -n devops-team | grep ^Labels -A2
+```
 
 Click next to see how to apply `datree` validation to each composition. ➡
