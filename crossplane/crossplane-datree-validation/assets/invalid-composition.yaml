@@ -1,3 +1,4 @@
+
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
@@ -63,6 +64,8 @@ spec:
                       requests:
                         cpu: 125m
                         memory: 128Mi
+      providerConfigRef:
+        name: acmeplatform1
     patches:
     - type: PatchSet
       patchSetName: commonLabels
@@ -94,8 +97,6 @@ spec:
       toFieldPath: spec.providerConfigRef.name
     readinessChecks:
       - type: None
-    providerConfigRef:
-      name: default
   - name: service
     base:
       apiVersion: kubernetes.crossplane.io/v1alpha1
@@ -112,6 +113,8 @@ spec:
                 targetPort: 80
                 protocol: TCP
                 name: http
+      providerConfigRef:
+        name: acmeplatform
     patches:
     - type: PatchSet
       patchSetName: commonLabels
@@ -137,8 +140,6 @@ spec:
       toFieldPath: spec.providerConfigRef.name
     readinessChecks:
       - type: None
-    providerConfigRef:
-      name: kubernetes-provider
   - name: ingress
     base:
       apiVersion: kubernetes.crossplane.io/v1alpha1
@@ -163,6 +164,8 @@ spec:
                         port:
                           number: 80
                 host: acmeplatform.com
+      providerConfigRef:
+        name: acmeplatform
     patches:
     - type: PatchSet
       patchSetName: commonLabels
@@ -189,8 +192,6 @@ spec:
       toFieldPath: status.host
     readinessChecks:
       - type: None
-    providerConfigRef:
-      name: kubernetes-provider
   - name: hpa
     base:
       apiVersion: kubernetes.crossplane.io/v1alpha1
@@ -207,6 +208,8 @@ spec:
                 apiVersion: apps/v1
                 kind: Deployment
               targetCPUUtilizationPercentage: 80
+      providerConfigRef:
+        name: acmeplatform
     patches:
     - type: PatchSet
       patchSetName: commonLabels
@@ -226,5 +229,3 @@ spec:
       toFieldPath: spec.forProvider.manifest.spec.scaleTargetRef.name
     readinessChecks:
       - type: None
-    providerConfigRef:
-      name: kubernetes-provider
