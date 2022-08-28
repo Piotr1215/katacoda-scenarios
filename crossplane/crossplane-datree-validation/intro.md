@@ -12,7 +12,7 @@ Following components are being installed:
 
 ✔ kubernetes provider
 
-✔ octant observability
+✔ octant & k9s observability
 
 > Wait until "**All Set**" message is displayed on the screen and verify if cluster
 > is set up correctly
