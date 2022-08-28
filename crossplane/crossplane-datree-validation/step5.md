@@ -9,6 +9,9 @@ Head over to datree.io and once you have an account, follow
 [the instructions](https://hub.datree.io/setup/policy-as-code#1-enable-policy-as-code-pac-mode)
 to set up policy as code.
 
+Once you create a token, configure the Datree CLI to use it. Copy the blow
+command and substitute with your token. `datree config set token <your token>`
+
 ## Datree Policies
 
 Custom policies in `Datree` are expressed as JSON schema based document. Since
@@ -124,18 +127,15 @@ First, we need to publish the custom rules
 
 You should see the rules available in your datree portal
 
-![rules](_media/rules.png)
-
-Finally, let's test our composition.
-`atree test composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
-
-> We are using the flag `--ignore-missing-schemas` since composition is not a
-> "built-in" Kubernetes object.
+![rules](rules.png)
 
 ## Run the tests
 
 First we will run the tests on an incorrect composition
 `datree test invalid-composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
+
+> We are using the flag `--ignore-missing-schemas` since composition is not a
+> "built-in" Kubernetes object.
 
 Datree highlights errors and tells us how many times the error occured.
 
@@ -146,5 +146,14 @@ Now run the tests on a correct composition
 `datree test composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
 
 > Datree supports glob expansion, so we can run the tests on both files!
+
 `datree test *composition.yaml --policy crossplane --ignore-missing-schemas`
 
+## Cleanup
+
+Since killercoda is a public infrastructure consider deleting your token and
+creating a new one in the Datree portal.
+
+> You can unset the datree token for this environment by
+
+`datree config set token xxxxxxxxxxxxxx`
