@@ -4,7 +4,7 @@ metadata:
   name: platform-demo 
   labels:
     owner: piotrzan
-    service: demo
+    project: demo
 spec:
   id: acmeplatform
   compositionSelector:

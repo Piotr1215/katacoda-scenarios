@@ -1,17 +1,49 @@
-We can easily update the image
+## Validation
 
-`kubectl apply -f app-claim-blue.yaml`{{execute}}
+Since we want to ensure that all the resources have the same patch, we are going
+to use Crossplane's `patchSet` feature.
 
-> Notice how the page changed background color to blue with just one line change
+```yaml
+patchSets:
+  - name: commonLabels
+    patches:
+      - type: FromCompositeFieldPath
+        fromFieldPath: metadata.labels[owner]
+        toFieldPath: spec.forProvider.manifest.metadata.labels[owner]
+      - type: FromCompositeFieldPath
+        fromFieldPath: metadata.labels[service]
+        toFieldPath: spec.forProvider.manifest.metadata.labels[service]
+```
 
-`kubectl port-forward deployment/acmeplatform -n devops-team --address 0.0.0.0 8080:80`{{exec}}
+### Apply patchset
 
-> You can
-> [open the web page right here again]({{TRAFFIC_HOST1_8080}})
+Within the composition, patchset is applied to all resources, here example of
+the deployment snippet.
 
-Deleting the application and underlying resources is as simple as
-`kubectl delete -f app-claim.yaml`{{execute}} You observe how all the resources
-created by the claim got deleted as well
+```yaml
 
-The similicity was possible thanks to Crossplane's composition mechanism, which
-we will explore later.
+---
+resources:
+  - name: deployment
+    base:
+      apiVersion: kubernetes.crossplane.io/v1alpha1
+      kind: Object
+      spec:
+        forProvider:
+          manifest:
+            apiVersion: apps/v1
+            kind: Deployment
+    patches:
+      - type: PatchSet
+        patchSetName: commonLabels
+```
+
+### Why to valiadte
+
+We want to validate the composition against a policy that enforces presence of
+this `patchSet`, because this is a common practice all team members agree to
+follow. By codyfying it in an inner development loop via a CLI or a linter as
+well as in CI/CD pipeline we ensure that all the compositions adhere the the
+same standards and lower numer of errors.
+
+Click next to see how to apply `datree` validation to each composition. ➡

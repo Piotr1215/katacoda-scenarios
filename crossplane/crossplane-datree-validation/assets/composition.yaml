@@ -12,10 +12,10 @@ spec:
   - name: commonLabels
     patches:
       - type: FromCompositeFieldPath
-        fromFieldPath: spec.metadata.labels[owner]
+        fromFieldPath: metadata.labels[owner]
         toFieldPath: spec.forProvider.manifest.metadata.labels[owner]
       - type: FromCompositeFieldPath
-        fromFieldPath: spec.metadata.labels[service]
+        fromFieldPath: metadata.labels[project]
         toFieldPath: spec.forProvider.manifest.metadata.labels[service]
   resources:
   - name: kubernetes
