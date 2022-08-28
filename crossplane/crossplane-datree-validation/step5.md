@@ -145,9 +145,8 @@ Datree highlights errors and tells us how many times the error occured.
 Now run the tests on a correct composition
 `datree test composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
 
-> Datree supports glob expansion, so we can run the tests on both files!
-
-`datree test *composition.yaml --policy crossplane --ignore-missing-schemas`
+Datree supports glob expansion, so we can run the tests on both files
+`datree test *composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
 
 ## Cleanup
 
@@ -156,4 +155,4 @@ creating a new one in the Datree portal.
 
 > You can unset the datree token for this environment by
 
-`datree config set token xxxxxxxxxxxxxx`
+`datree config set token xxxxxxxxxxxxxx`{{exec}}
