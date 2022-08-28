@@ -52,6 +52,6 @@ resources:
 kubectl describe service acmeplatform -n devops-team | grep ^Labels -A2
 kubectl describe deployment acmeplatform -n devops-team | grep ^Labels -A2
 kubectl describe hpa acmeplatform -n devops-team | grep ^Labels -A2
-```
+```{{exec}}
 
 Click next to see how to apply `datree` validation to each composition. ➡
