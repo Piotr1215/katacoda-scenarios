@@ -9,9 +9,6 @@ policies:
       - identifier: CUSTOM_RULE_MANDATORY_NAME
         # This message will override the rule's `defaultMessageOnFailure` property
         messageOnFailure: ''
-      # - identifier: CUSTOM_RULE_MANDATORY_PROVIDERCONFIGREF_NAME
-        # # This message will override the rule's `defaultMessageOnFailure` property
-        # messageOnFailure: ''
       - identifier: CUSTOM_RULE_PROVIDERCONFIGREF_CANNOTBE_DEFAULT
         # This message will override the rule's `defaultMessageOnFailure` property
         messageOnFailure: ''
