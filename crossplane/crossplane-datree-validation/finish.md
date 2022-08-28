@@ -2,7 +2,7 @@
 
 ## Additional Resources
 
-- [Datree](https://www.datree.io/)
+- visit [Datree](https://www.datree.io/) to learn more about valition options
 - browse [Upbound Marketplace](https://marketplace.upbound.io/) where you can
   discover and try out new providers and advanced compositions
 - if you are familiar with terraform, you will
