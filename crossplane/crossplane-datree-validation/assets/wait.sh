@@ -30,12 +30,14 @@ showProgress()
   waitForCompletion /opt/.crossplaneinstalled
   echo -n "Installing Crossplane CLI"
   waitForCompletion /opt/.crossplanecliinstalled
-  echo "Installing Kuberentes Provider"
+  echo -n "Installing Kuberentes Provider"
   waitForCompletion /opt/.kubernetesproviderinstalled
-  echo "Installing Datree"
+  echo -n "Installing Datree"
   waitForCompletion /opt/.datreeinstalled
-  echo "Installing Octant"
+  echo -n "Installing Octant"
   waitForCompletion /opt/.octantinstalled
+  echo -n "Installing K9s"
+  waitForCompletion /opt/.k9sinstalled
   waitForCompletion /opt/.backgroundfinished
 
   echo "All Set"

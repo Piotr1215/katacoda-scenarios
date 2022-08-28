@@ -54,6 +54,13 @@ cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
 
 echo "done" >> /opt/.octantinstalled
 
+#Installing K9s
+wget https://github.com/derailed/k9s/releases/download/v0.26.3/k9s_Linux_x86_64.tar.gz
+tar -xzvf k9s_Linux_x86_64.tar.gz
+cp ./k9s_Linux_x86_64.tar.gz/k9s /usr/bin/
+
+echo "done" >> /opt/.k9sinstalled
+
 octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true --kubeconfig="/etc/rancher/k3s/k3s.yaml" &
 
 echo "done" >> /opt/.backgroundfinished

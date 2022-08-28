@@ -1,29 +1,33 @@
 Following components are being installed:
 
+✔ k3s cluster
 
-✔ k3s cluster  
+✔ helm
 
-✔ helm  
+✔ crossplane
 
-✔ crossplane  
+✔ datree CLI
 
-✔ crossplane CLI  
+✔ kubernetes provider
 
-✔ kubernetes provider  
+✔ octant observability
 
-✔ octant observability  
-
-> Wait until "All Set" message is displayed on the screen and verify if cluster is setup correctly
+> Wait until "**All Set**" message is displayed on the screen and verify if cluster
+> is set up correctly
 
 Check the cluster setup `kubectl get pods -A`{{exec}}
 
-Check Kuberentes cluster info and version `kubectl cluster-info && echo && kubectl version --short`{{exec}}
-
-Proceed to step 2 where we will explore the setup ➡
+Check Kuberentes cluster info and version
+`kubectl cluster-info && echo && kubectl version --short`{{exec}}
 
 ## Observability 🔎
 
-> During this exercise, feel free to click on *Octant* tab and explore cluster status in a visual way. We will focus on *kubectl* commands.
+> During this exercise, feel free to click on _Octant_ tab and explore cluster
+> status in a visual way or use _k9s_ to stay in the terminal.
 
-Click on the Dashboard tab or run octant from this link: [Octant]({{TRAFFIC_HOST1_7777}})
+Click on the Dashboard tab or run octant from this link:
+[Octant]({{TRAFFIC_HOST1_7777}})
 
+Type `k9s` to use CLI cluster visualization.
+
+Proceed to step 2 where we will explore the setup ➡
