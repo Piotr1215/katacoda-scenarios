@@ -57,7 +57,8 @@ echo "done" >> /opt/.octantinstalled
 #Installing K9s
 wget https://github.com/derailed/k9s/releases/download/v0.26.3/k9s_Linux_x86_64.tar.gz
 tar -xzvf k9s_Linux_x86_64.tar.gz
-cp ./k9s_Linux_x86_64.tar.gz/k9s /usr/bin/
+chmod +x k9s
+cp ./k9s /usr/bin/
 
 echo "done" >> /opt/.k9sinstalled
 

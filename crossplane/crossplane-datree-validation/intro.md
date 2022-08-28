@@ -1,3 +1,5 @@
+## Environment Preparation
+
 Following components are being installed:
 
 ✔ k3s cluster
