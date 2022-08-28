@@ -1,33 +1,41 @@
-Following components are being installed:
+## Control Planes Everyhwhere
 
-✔ k3s cluster
+This workshop will help you understand Crossplane architecture and use cases.
 
-✔ helm
+- Understand how Crossplane solves infrastructure provisioning and configuration
+- Learn about and see basic building blocks in action
+- Go through real world scenarios of creating, consuming and managing internal
+  platform
 
-✔ crossplane
+> At the end of this tutorial you will be able to create a free account in
+> [Upbound Cloud](https://www.upbound.io/) and try provisioning cloud
+> infrastructure youself!
 
-✔ datree CLI
+What makes Crossplane so special? First, it builds on Kubernetes and capitalizes
+on the fact that the real power of Kubernetes is its powerful API model and
+control plane logic (control loops). It also moves away from Infrastructure as
+Code to Infrastructure as Data. The difference is that IaC means writing code to
+describe how the provisioning should happen, whereas IaD means writing pure data
+files (about Kubernetes YAML) and submitting them to the control
+component (about Kubernetes an operator) to encapsulate and execute the
+provisioning logic.
 
-✔ kubernetes provider
+The best part about Crossplane is that it seamlessly enables collaboration
+between Application Teams and Platform Teams, by leveraging
+[Kubernetes Control](https://containerjournal.com/kubeconcnc/kubernetes-true-superpower-is-its-control-plane/)
+Plane as the convergence point where everyone meets.
 
-✔ octant observability
+## High Level Architecture
 
-> Wait until "**All Set**" message is displayed on the screen and verify if cluster
-> is set up correctly
+> For a more overview of Crossplane, check out this
+> [short presentation](https://slides.com/decoder/crossplane) and very
+> comprehensive [Crossplane Docs](https://crossplane.io/docs/v1.6/).
 
-Check the cluster setup `kubectl get pods -A`{{exec}}
+Below diagram explains Crossplane's components and their relations.
 
-Check Kuberentes cluster info and version
-`kubectl cluster-info && echo && kubectl version --short`{{exec}}
+<details>
+    <summary>Click here to see Crossplane architecture diagram</summary>
 
-## Observability 🔎
+![crossplane-components](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/crossplane-demo/master/diagrams/crossplane-components.puml&fmt=png)
 
-> During this exercise, feel free to click on _Octant_ tab and explore cluster
-> status in a visual way or use _k9s_ to stay in the terminal.
-
-Click on the Dashboard tab or run octant from this link:
-[Octant]({{TRAFFIC_HOST1_7777}})
-
-Type `k9s` to use CLI cluster visualization.
-
-Proceed to step 2 where we will explore the setup ➡
+</details>
