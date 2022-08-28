@@ -9,7 +9,7 @@ spec:
     apiVersion: acmeplatform.com/v1alpha1
     kind: App
   patchSets:
-  - name: commonLabels
+  - name: commonLabelss
     patches:
       - type: FromCompositeFieldPath
         fromFieldPath: metadata.labels[owner]
@@ -18,8 +18,8 @@ spec:
         fromFieldPath: metadata.labels[project]
         toFieldPath: spec.forProvider.manifest.metadata.labels[service]
   resources:
-  - name: kubernetes
-    base:
+  # - name: kubernetes
+  - base:
       apiVersion: kubernetes.crossplane.io/v1alpha1
       kind: ProviderConfig
       spec:
@@ -95,7 +95,7 @@ spec:
     readinessChecks:
       - type: None
     providerConfigRef:
-      name: kubernetes-provider
+      name: default
   - name: service
     base:
       apiVersion: kubernetes.crossplane.io/v1alpha1

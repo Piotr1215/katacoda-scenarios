@@ -1,0 +1,83 @@
+apiVersion: v1
+policies:
+  - name: crossplane
+    isDefault: true
+    rules:
+      - identifier: CUSTOM_RULE_MANDATORY_PATCHSET
+        # This message will override the rule's `defaultMessageOnFailure` property
+        messageOnFailure: ''
+      - identifier: CUSTOM_RULE_MANDATORY_NAME
+        # This message will override the rule's `defaultMessageOnFailure` property
+        messageOnFailure: ''
+      # - identifier: CUSTOM_RULE_MANDATORY_PROVIDERCONFIGREF_NAME
+        # # This message will override the rule's `defaultMessageOnFailure` property
+        # messageOnFailure: ''
+      - identifier: CUSTOM_RULE_PROVIDERCONFIGREF_CANNOTBE_DEFAULT
+        # This message will override the rule's `defaultMessageOnFailure` property
+        messageOnFailure: ''
+
+customRules:
+  - identifier: CUSTOM_RULE_MANDATORY_PATCHSET
+    name: Ensure a patchSet exist [CUSTOM RULE]
+    defaultMessageOnFailure: Ensure the `patchSet` named _commonLabels_ exist
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Composition
+      then:
+        properties:
+          spec:
+            properties:
+              patchSets:
+                items:
+                  properties:
+                    name:
+                      type: string
+                      enum:
+                        - commonLabels
+
+  - identifier: CUSTOM_RULE_MANDATORY_NAME
+    name: Ensure a name exist for each base [CUSTOM RULE]
+    defaultMessageOnFailure: Each `base` resource should have a _name_
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Composition
+      then:
+        properties:
+          spec:
+            properties:
+              resources:
+                items:
+                  properties:
+                    name:
+                      type: string
+                  required:
+                    - name
+
+  - identifier: CUSTOM_RULE_PROVIDERCONFIGREF_CANNOTBE_DEFAULT
+    name: Ensure a name of providerConfigRef is not default [CUSTOM RULE]
+    defaultMessageOnFailure: Ensure `providerConfigRef` name is not default
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Composition
+      then:
+        properties:
+          spec:
+            properties:
+              resources:
+                items:
+                  properties:
+                    providerConfigRef:
+                      properties:
+                        name:
+                          not:
+                            enum:
+                              - default
