@@ -42,6 +42,10 @@ Crossplane's compositions.
 - Go through real world scenario of creating, and validating Crossplane's
   compostion with Datree
 
+<mark>
+    Remember, this is a live environment, feel free to experiment and use all the available tools to dive deeper in your own pace.
+</mark>
+
 > In case of errors try to restart the environment.
 
 If all is ok, proceed to next steps. ➡
