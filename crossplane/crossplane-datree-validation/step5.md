@@ -10,7 +10,7 @@ Head over to datree.io and once you have an account, follow
 to set up policy as code.
 
 Once you create a token, configure the Datree CLI to use it. Copy the blow
-command and substitute with your token. `datree config set token <your token>`
+command and substitute with your token. `datree config set token`
 
 ## Datree Policies
 
@@ -127,7 +127,7 @@ First, we need to publish the custom rules
 
 You should see the rules available in your datree portal
 
-![rules](rules.png)
+![rules](./assets/rules.png)
 
 ## Run the tests
 
@@ -147,6 +147,12 @@ Now run the tests on a correct composition
 
 Datree supports glob expansion, so we can run the tests on both files
 `datree test *composition.yaml --policy crossplane --ignore-missing-schemas`{{exec}}
+
+Policy run result can be also represented as JSON
+
+Install jq for better JSON formatting
+`yes Y 2>/dev/null | apt install jq`{{exec}} and show policy as JSON
+`datree test *composition.yaml --policy crossplane --ignore-missing-schemas --output json`{{exec}}
 
 ## Cleanup
 
