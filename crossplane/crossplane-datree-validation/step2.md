@@ -1,30 +1,12 @@
-## Kubernetes Simplified
+## Introduction to Datree
 
-We will start by practical demonstration of Crossplane composition by utilizing
-Kubernetes Provider and later dive deeper into what makes compositions so
-powerful.
+> Datree prevents Kubernetes misconfigurations from reaching production.
 
-> Crossplane can compose infrastructure from various providers, and most common
-> usecase is cloud infrastructure. However, composing cloud infrastructure
-> requires access to cloud and storing credentials in a secret. This is
-> obviously not safe and that's why we will use Kubernetes Provider. All the
-> Crossplane concepts and techniques equally apply to cloud provider
-> infrastructure.
+> As your organization's infrastructure owner, the product's stability is your
+> primary concern. Toolchain engineering and architecture gets pushed to the
+> wayside because you must constantly put out fires configured in the
+> development stage.
 
-By utilizing
-[Kubernetes provider](https://github.com/crossplane-contrib/provider-kubernetes),
-it's possible to control what Kubernetes resources are being created. It also
-enables complexity hiding for developers not familiar with
-[Kubernetes Resource Model](https://github.com/Kubernetes/design-proposals-archive/blob/main/architecture/resource-management.md).
-In this scenario we will deploy a Kubernetes application consisting of:
+![datree](https://hub.datree.io/assets/images/offerings-c27207ee48c2d23c27a32cb578cb44d7.png)
 
-- deployment
-- service
-- horizontal pod autoscaler
-
-Instead of exposing the resources directly to developers who might be
-inexperience with Kubernetes, we will create a simple composition containing
-only important fields, such as:
-
-- namespace to deploy to
-- image with tag
+> Learn more about datree by reading their [awesome docs](https://hub.datree.io/)
