@@ -1,13 +1,6 @@
-## Control Planes Everyhwhere
+## Introduction To Crossplane
 
-This workshop will help you understand Crossplane architecture and use cases.
-
-- Understand how Crossplane solves infrastructure provisioning and configuration
-- Learn about and see basic building blocks in action
-- Go through real world scenarios of creating, consuming and managing internal
-  platform
-
-> At the end of this tutorial you will be able to create a free account in
+> If you are interested in discovering more about crossplane, create a free account in
 > [Upbound Cloud](https://www.upbound.io/) and try provisioning cloud
 > infrastructure youself!
 

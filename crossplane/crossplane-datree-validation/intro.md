@@ -1,4 +1,4 @@
-## Environment Preparation
+## Setting up the Environment
 
 Following components are being installed:
 
@@ -31,6 +31,16 @@ Click on the Dashboard tab or run octant from this link:
 [Octant]({{TRAFFIC_HOST1_7777}})
 
 Type `k9s` to use CLI cluster visualization.
+
+## What you will learn
+
+This workshop will help you understand how to use `datree` to validate
+Crossplane's compositions.
+
+- Get a quick refresher about Crossplane
+- Learn what Datree is and how it works
+- Go through real world scenario of creating, and validating Crossplane's
+  compostion with Datree
 
 > In case of errors try to restart the environment.
 

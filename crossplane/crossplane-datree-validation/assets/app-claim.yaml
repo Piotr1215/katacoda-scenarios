@@ -3,7 +3,8 @@ kind: AppClaim
 metadata:
   name: platform-demo 
   labels:
-    app-owner: piotrzan
+    owner: piotrzan
+    service: demo
 spec:
   id: acmeplatform
   compositionSelector:
