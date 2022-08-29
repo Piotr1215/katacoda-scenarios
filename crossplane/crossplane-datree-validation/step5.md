@@ -3,14 +3,18 @@
 To use validation with `Datree`, a free account needs to be created, and a CLI
 installed. No credit card required!
 
-> The CLI is aleady installed on this environment.
+> The CLI is already installed on this environment.
 
 Head over to datree.io and once you have an account, follow
 [the instructions](https://hub.datree.io/setup/policy-as-code#1-enable-policy-as-code-pac-mode)
 to set up policy as code.
 
-Once you create a token, configure the Datree CLI to use it. Copy the blow
-command and substitute with your token. `datree config set token`
+Once you create a token, configure the Datree CLI to use it.
+
+1. Copy your token to the clipboard
+2. Paste token into a variable (it will not be visible in the shell) `read -s DATREETOKEN`{{exec}}
+3. Configure datree with the token `datree config set token $DATREETOKEN`
+
 
 ## Datree Policies
 
