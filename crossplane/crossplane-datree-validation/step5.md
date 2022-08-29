@@ -168,4 +168,5 @@ creating a new one in the Datree portal.
 
 > You can unset the datree token for this environment by
 
-`datree config set token xxxxxxxxxxxxxx`{{exec}}
+- `unset DATREETOKEN`{{exec}}
+- `datree config set token xxxxxxxxxxxxxx`{{exec}}
