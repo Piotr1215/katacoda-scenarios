@@ -72,9 +72,11 @@ customRules:
               resources:
                 items:
                   properties:
-                    providerConfigRef:
+                    base:
                       properties:
-                        name:
-                          not:
-                            enum:
-                              - default
+                        providerConfigRef:
+                          properties:
+                            name:
+                              not:
+                                enum:
+                                  - default

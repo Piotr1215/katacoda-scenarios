@@ -96,29 +96,32 @@ Finally, we want to make sure that if the `providerConfigRef` is present, it
 shouldn't be named _default_
 
 ```yaml
----
-- identifier: CUSTOM_RULE_PROVIDERCONFIGREF_CANNOTBE_DEFAULT
-  name: Ensure a name of providerConfigRef is not default [CUSTOM RULE]
-  defaultMessageOnFailure: Ensure `providerConfigRef` name is not default
-  schema:
-    if:
-      properties:
-        kind:
-          enum:
-            - Composition
-    then:
-      properties:
-        spec:
-          properties:
-            resources:
-              items:
-                properties:
-                  providerConfigRef:
-                    properties:
-                      name:
-                        not:
-                          enum:
-                            - default
+...
+  - identifier: CUSTOM_RULE_PROVIDERCONFIGREF_CANNOTBE_DEFAULT
+    name: Ensure a name of providerConfigRef is not default [CUSTOM RULE]
+    defaultMessageOnFailure: Ensure `providerConfigRef` name is not default
+    schema:
+      if:
+        properties:
+          kind:
+            enum:
+              - Composition
+      then:
+        properties:
+          spec:
+            properties:
+              resources:
+                items:
+                  properties:
+                    base:
+                      properties:
+                        providerConfigRef:
+                          properties:
+                            name:
+                              not:
+                                enum:
+                                  - default
+...
 ```
 
 ## Apply the customRules

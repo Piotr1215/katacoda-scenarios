@@ -209,7 +209,7 @@ spec:
                 kind: Deployment
               targetCPUUtilizationPercentage: 80
       providerConfigRef:
-        name: acmeplatform
+        name: default
     patches:
     - type: PatchSet
       patchSetName: commonLabels
