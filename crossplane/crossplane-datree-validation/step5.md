@@ -13,7 +13,7 @@ Once you create a token, configure the Datree CLI to use it.
 
 1. Copy your token to the clipboard
 2. Paste token into a variable (it will not be visible in the shell) `read -s DATREETOKEN`{{exec}}
-3. Configure datree with the token `datree config set token $DATREETOKEN`
+3. Configure datree with the token `datree config set token $DATREETOKEN`{{exec}}
 
 
 ## Datree Policies
