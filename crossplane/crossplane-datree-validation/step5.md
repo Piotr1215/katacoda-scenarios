@@ -152,7 +152,7 @@ Policy run result can be also represented as JSON
 
 Install jq for better JSON formatting
 `yes Y 2>/dev/null | apt install jq`{{exec}} and show policy as JSON
-`datree test *composition.yaml --policy crossplane --ignore-missing-schemas --output json`{{exec}}
+`datree test *composition.yaml --policy crossplane --ignore-missing-schemas --output json | jq`{{exec}}
 
 ## Cleanup
 
