@@ -4,10 +4,6 @@ Since our focus here are on compositions validation, we are going to skip
 detailed explanation of crosspolane's compositions and the use of
 `kubernetes provider`.
 
-> If you are interested in learning more about crossplane, check out my other
-> workshop on killercoda,
-> [Introduction to Crossplane](https://killercoda.com/decoder/course/crossplane/crossplane-k8s-provider)
-
 Let's create the resources first
 
 - `kubectl apply -f definition.yaml`{{exec}}

@@ -18,6 +18,10 @@ between Application Teams and Platform Teams, by leveraging
 [Kubernetes Control](https://containerjournal.com/kubeconcnc/kubernetes-true-superpower-is-its-control-plane/)
 Plane as the convergence point where everyone meets.
 
+> If you are interested in learning more about crossplane, check out my other
+> workshop on killercoda,
+> [Introduction to Crossplane](https://killercoda.com/decoder/course/crossplane/crossplane-k8s-provider)
+
 ## High Level Architecture
 
 > For a more overview of Crossplane, check out this
