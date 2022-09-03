@@ -15,7 +15,7 @@ And ensure they are created properly `kubectl get crossplane`{{exec}}
 
 ### What are we going to validate
 
-Our goal is to validate whether the `owner` and `project` labels from the below
+Our goal is to validate whether the `owner` and `service` labels from the below
 claim have been applied correctly to all the resources.
 
 ```yaml
@@ -25,7 +25,7 @@ metadata:
   name: platform-demo
   labels:
     owner: piotrzan
-    project: demo
+    service: demo
 spec:
   id: acmeplatform
   compositionSelector:
