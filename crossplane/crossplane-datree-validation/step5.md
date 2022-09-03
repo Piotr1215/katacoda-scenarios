@@ -35,7 +35,7 @@ exists.
 customRules:
   - identifier: CUSTOM_RULE_MANDATORY_PATCHSET
     name: Ensure a patchSet exist [CUSTOM RULE]
-    defaultMessageOnFailure: Ensure the `patchSet` named _commonLabels_ exist
+    defaultMessageOnFailure: Ensure the `patchSet` named commonLabels exist
     schema:
       if:
         properties:
@@ -70,7 +70,7 @@ resource.
 ---
 - identifier: CUSTOM_RULE_MANDATORY_NAME
   name: Ensure a name exist for each base [CUSTOM RULE]
-  defaultMessageOnFailure: Each `base` resource should have a _name_
+  defaultMessageOnFailure: Each `base` resource should have a name
   schema:
     if:
       properties:
@@ -93,7 +93,7 @@ resource.
 ### No default providerConfigRef name
 
 Finally, we want to make sure that if the `providerConfigRef` is present, it
-shouldn't be named _default_
+shouldn't be named default
 
 ```yaml
 ...
