@@ -134,6 +134,8 @@ First, we need to publish the custom rules
 
 You should see the rules available in your datree portal
 
+[Datree Policies](https://app.datree.io/cli/policies)
+
 ![rules](./assets/rules.png)
 
 ## Run the tests
