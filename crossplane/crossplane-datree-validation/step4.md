@@ -11,8 +11,8 @@ patchSets:
         fromFieldPath: metadata.labels[owner]
         toFieldPath: spec.forProvider.manifest.metadata.labels[owner]
       - type: FromCompositeFieldPath
-        fromFieldPath: metadata.labels[service]
-        toFieldPath: spec.forProvider.manifest.metadata.labels[service]
+        fromFieldPath: metadata.labels[project]
+        toFieldPath: spec.forProvider.manifest.metadata.labels[project]
 ```
 
 ### Apply patchset
