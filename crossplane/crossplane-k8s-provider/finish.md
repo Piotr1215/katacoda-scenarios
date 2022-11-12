@@ -4,7 +4,6 @@ Now that you have learned and experimented with basic Crossplane concepts, head 
 
 ## Additional Resources
 
-- [helm provider](https://github.com/crossplane-contrib/provider-helm)
 - browse [Upbound Marketplace](https://marketplace.upbound.io/) where you can discover and try out new providers, configurations and reference architectures
 - if you are familiar with terraform, you will find blog about [Crossplane vs Terraform](https://blog.crossplane.io/crossplane-vs-terraform/) comparison by Nic Cope very useful
 - find out what is the [True Kubernetes Superpower](https://containerjournal.com/kubeconcnc/kubernetes-true-superpower-is-its-control-plane/)

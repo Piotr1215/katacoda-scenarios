@@ -20,7 +20,7 @@ control plane logic (control loops). It also moves away from Infrastructure as
 Code to Control Plane architecture. 
 
 The difference is that IaC means writing code to describe how the provisioning
-should happen, whereas The control plane provides management and orchestration
+should happen, whereas the control plane provides management and orchestration
 of services across an organization’s cloud environment. The control plane takes
 care of establishing policy.
 
