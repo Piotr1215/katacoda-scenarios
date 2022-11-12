@@ -1,11 +1,8 @@
-# Reduce toil with Crossplane Kubernetes provider
+# Introduction to Crossplane
 
-This workshop will help you understand how to use Crossplane's Kubernetes
-provider to reduce toil and simplify developing on Kubernetes.
+This workshop will help you understand Crossplane architecture and use cases.
 
-The goals of the workshop:
-
-- Understand how Crossplane's Kubernetes provider can provide a unified API for developers to create repeatable deployments
+- Understand how Crossplane solves infrastructure provisioning and configuration
 - Learn about and see basic building blocks in action
 - Go through real world scenarios of creating, consuming and managing internal
   platform
