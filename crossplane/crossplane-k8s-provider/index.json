@@ -1,6 +1,6 @@
 {
-  "title": "Interactive Crossplane Workshop",
-  "description": "Create complex Kubernetes applications with Crossplane Kubernetes Provider and learn basic Crossplane concepts",
+  "title": "Reduce development toil with Crossplane's K8s provider",
+  "description": "How to reduce toil and complexity using architecture based on Crossplane's Kubernetes provider",
   "difficulty": "Beginner",
   "time": "15minutes",
   "details": {
