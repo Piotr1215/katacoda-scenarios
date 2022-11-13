@@ -39,9 +39,9 @@ echo "done" >>/opt/.crossplanecliinstalled
 #Installing Crossplane’s Kubernetes Provider
 kubectl apply -f kubernetes-provider.yaml
 kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for condition=HEALTHY=True --timeout 1m
-sudo apt install bat -y
-echo "alias k=kubectl" >>~/.bashrc
-echo "alias cat=batcat" >>~/.bashrc
+helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+helm repo upate
+helm install my-metrics-server metrics-server/metrics-server --version 3.8.2
 
 echo "done" >>/opt/.kubernetesproviderinstalled
 
