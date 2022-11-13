@@ -39,6 +39,7 @@ echo "done" >>/opt/.crossplanecliinstalled
 #Installing Crossplane’s Kubernetes Provider
 kubectl apply -f kubernetes-provider.yaml
 kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for condition=HEALTHY=True --timeout 1m
+echo "alias k=kubectl" >>~/.bashrc
 
 echo "done" >>/opt/.kubernetesproviderinstalled
 
