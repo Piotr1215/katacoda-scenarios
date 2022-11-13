@@ -20,6 +20,7 @@ In this scenario we will deploy a Kubernetes application consisting of:
 
 - deployment
 - service
+- ingress
 - horizontal pod autoscaler
 
 Instead of exposing the resources directly to developers who might be

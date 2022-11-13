@@ -200,6 +200,8 @@ spec:
     - fromFieldPath: spec.parameters.namespace
       toFieldPath: spec.forProvider.manifest.metadata.namespace
     - fromFieldPath: spec.id
+      toFieldPath: spec.providerConfigRef.name
+    - fromFieldPath: spec.id
       toFieldPath: spec.forProvider.manifest.metadata.labels.app
     - fromFieldPath: spec.id
       toFieldPath: spec.forProvider.manifest.spec.scaleTargetRef.name
