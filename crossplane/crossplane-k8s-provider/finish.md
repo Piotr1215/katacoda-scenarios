@@ -1,6 +1,6 @@
 # Try it yourself
 
-Now that you have learned and experimented with basic Crossplane concepts, head over to [Upbound Cloud](https://www.upbound.io/) where you can create a free account and experiment with provisioning cloud infrastructure & services yourself!
+Now that you have learned and experimented with basic Crossplane concepts, head over to [Upbound](https://www.upbound.io/) where you can create a free account and experiment with provisioning cloud infrastructure & services yourself!
 
 ## Additional Resources
 
