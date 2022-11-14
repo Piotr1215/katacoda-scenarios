@@ -1,7 +1,7 @@
 Following components are being installed:
 
 
-✔ k3s cluster  
+✔ kubernetes cluster  
 
 ✔ helm  
 
