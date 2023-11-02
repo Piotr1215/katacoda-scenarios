@@ -12,6 +12,11 @@
       "course_id": "crossplane-rancher-provider",
       "title": "Crossplane: Rancher Jet Provider",
       "description": "Setting up Rancher using Crossplane Rancher Jet Provider"
+    },
+    {
+      "course_id": "crssplane-composition-functions",
+      "title": "Crossplane: Composition Functions Introduction",
+      "description": "Introduction to Crossplane Composition Functions"
     }
   ]
 }
