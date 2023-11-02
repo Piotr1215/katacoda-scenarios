@@ -5,12 +5,8 @@ set -euo pipefail
 #Start Kubernetes
 # curl -sfL https://get.k3s.io | sh -
 
-# echo "Waiting for nodes ready"
-# k3s kubectl wait node --all --for=condition=Ready --timeout=60s
-
-# echo "Setup KUBECONFIG"
-# export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-# echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >>~/.bashrc
+echo "Waiting for nodes ready"
+kubectl wait node --all --for condition=ready --timeout=800s
 
 echo "done" >>/opt/.clusterstarted
 
@@ -43,6 +39,6 @@ tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
 cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
 echo "done" >>/opt/.octantinstalled
 
-octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true --kubeconfig="/etc/rancher/k3s/k3s.yaml" &
+octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true &
 
 echo "done" >>/opt/.backgroundfinished
