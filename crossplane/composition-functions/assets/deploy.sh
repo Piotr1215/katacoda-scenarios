@@ -12,9 +12,6 @@ echo "done" >>/opt/.clusterstarted
 
 #Installing Helm
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-# wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
-# tar xvf helm-v3.4.1-linux-amd64.tar.gz
-# mv linux-amd64/helm /usr/local/bin
 
 echo "done" >>/opt/.helminstalled
 
@@ -29,7 +26,8 @@ helm install crossplane \
 echo "done" >>/opt/.crossplaneinstalled
 
 #Installing Crossplane CLI
-curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh" | sh
+curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh" | sh &&
+	sudo mv crossplane /usr/local/bin
 
 echo "done" >>/opt/.crossplanecliinstalled
 
@@ -39,7 +37,5 @@ helm repo add komodorio https://helm-charts.komodor.io &&
 	helm upgrade --install komoplane komodorio/komoplane
 
 echo "done" >>/opt/.komoplaneinstalled
-
-octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true &
 
 echo "done" >>/opt/.backgroundfinished
