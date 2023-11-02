@@ -1,4 +1,4 @@
-# Introduction to Crossplane
+# Introduction to Composition Functions
 
 This workshop will help you understand Crossplane architecture and use cases.
 
