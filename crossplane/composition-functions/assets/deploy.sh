@@ -35,6 +35,7 @@ echo "done" >>/opt/.crossplanecliinstalled
 helm repo add komodorio https://helm-charts.komodor.io &&
 	helm repo update komodorio &&
 	helm upgrade --install komoplane komodorio/komoplane
+kubectl wait --for condition=Available=True --timeout=300s deployment/komoplane
 
 echo "done" >>/opt/.komoplaneinstalled
 
