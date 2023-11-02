@@ -3,14 +3,14 @@
 set -euo pipefail
 
 #Start Kubernetes
-curl -sfL https://get.k3s.io | sh -
+# curl -sfL https://get.k3s.io | sh -
 
-echo "Waiting for nodes ready"
-k3s kubectl wait node --all --for=condition=Ready --timeout=60s
+# echo "Waiting for nodes ready"
+# k3s kubectl wait node --all --for=condition=Ready --timeout=60s
 
-echo "Setup KUBECONFIG"
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >>~/.bashrc
+# echo "Setup KUBECONFIG"
+# export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+# echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >>~/.bashrc
 
 echo "done" >>/opt/.clusterstarted
 
