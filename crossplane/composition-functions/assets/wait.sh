@@ -21,7 +21,7 @@ waitForCompletion() {
 }
 
 showProgress() {
-	echo -n "Starting k3s Cluster"
+	echo -n "Checking node status"
 	waitForCompletion /opt/.clusterstarted
 	echo -n "Installing Helm"
 	waitForCompletion /opt/.helminstalled
