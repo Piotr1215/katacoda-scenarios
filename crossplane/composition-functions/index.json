@@ -66,9 +66,9 @@
     "showdashboard": true,
     "dashboards": [
       {
-        "name": "Octant",
-        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
-        "port": 7777
+        "name": "Komoplane",
+        "href": "https://[[HOST_SUBDOMAIN]]-8090-[[KATACODA_HOST]].environments.katacoda.com",
+        "port": 8090
       }
     ]
   },

@@ -33,11 +33,12 @@ curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install
 
 echo "done" >>/opt/.crossplanecliinstalled
 
-#Installing Octant
-wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
-tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
-cp ./octant_0.16.3_Linux-64bit/octant /usr/bin/
-echo "done" >>/opt/.octantinstalled
+#Installing komoplane
+helm repo add komodorio https://helm-charts.komodor.io &&
+	helm repo update komodorio &&
+	helm upgrade --install komoplane komodorio/komoplane
+
+echo "done" >>/opt/.komoplaneinstalled
 
 octant --listener-addr="0.0.0.0:7777" --disable-open-browser=true &
 
