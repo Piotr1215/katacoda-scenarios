@@ -4,14 +4,7 @@
 tmux new-session -d -s develop
 
 # Split the window horizontally
-tmux split-window -h
-
-# Set the pane titles
-tmux select-pane -t 0
-tmux send-keys "printf '\033]2;debug\033\\'" C-m
-
-tmux select-pane -t 1
-tmux send-keys "printf '\033]2;dev\033\\'" C-m
+tmux split-window -v
 
 # Attach to the tmux session
 tmux attach -t develop

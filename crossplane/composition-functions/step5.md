@@ -18,4 +18,4 @@ Let's see if our function works
 
 `send_command 0 "go run . --insecure --debug"`{{exec}}
 
-`send_command 1 "cd examples; crossplane beta render xr.yaml composition.yaml functions.yaml"`{{exec}}
+`send_command 1 "crossplane beta render example/xr.yaml example/composition.yaml example/functions.yaml"`{{exec}}
