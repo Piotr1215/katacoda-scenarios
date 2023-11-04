@@ -14,7 +14,9 @@ Check if the function is correctly deployed:
 
 `cd function-auto-ready && go test -v -cover .`{{exec}}
 
-Let's see if our function works
+Let's see if our function works:
+
+`start_tmux.sh`{{exec}}
 
 `send_command 0 "go run . --insecure --debug"`{{exec}}
 
