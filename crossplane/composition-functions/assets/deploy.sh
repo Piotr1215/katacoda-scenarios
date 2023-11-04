@@ -40,4 +40,11 @@ kubectl port-forward --address 0.0.0.0 services/komoplane 8090:8090 &
 
 echo "done" >>/opt/.komoplaneinstalled
 
+## Upgrade Go to latest
+wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+echo "export PATH=$PATH:/usr/local/go/bin" >>/etc/profile
+
+echo "done" >>/opt/.goupgraded
 echo "done" >>/opt/.backgroundfinished
