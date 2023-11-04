@@ -47,4 +47,5 @@ export PATH=$PATH:/usr/local/go/bin
 echo "export PATH=$PATH:/usr/local/go/bin" >>/etc/profile
 
 echo "done" >>/opt/.goupgraded
+
 echo "done" >>/opt/.backgroundfinished

@@ -59,6 +59,16 @@
           "chmod": "+x"
         },
         {
+          "file": "start_tmux.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "send_command",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
           "file": "*.yaml",
           "target": "/root/"
         },

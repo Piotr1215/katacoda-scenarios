@@ -12,5 +12,4 @@ step we will add more code and explain the development.
 
 Check if the function is correctly deployed:
 
-`cd function-auto-ready && go test ./...`{{exec}}
-
+`cd function-auto-ready && go test -v -cover .`{{exec}}

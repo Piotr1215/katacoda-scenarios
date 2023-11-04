@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Get arguments
+pane=$1
+cmd=$2
+
+# Send command to specified pane
+tmux send-keys -t develop:0.$pane "$cmd" C-m
