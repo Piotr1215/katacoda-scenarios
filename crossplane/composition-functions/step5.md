@@ -13,3 +13,9 @@ step we will add more code and explain the development.
 Check if the function is correctly deployed:
 
 `cd function-auto-ready && go test -v -cover .`{{exec}}
+
+Let's see if our function works
+
+`send_command 0 "go run . --insecure --debug"`{{exec}}
+
+`send_command 1 "cd examples; crossplane beta render xr.yaml composition.yaml functions.yaml"`{{exec}}
