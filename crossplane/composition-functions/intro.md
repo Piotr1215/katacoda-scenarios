@@ -1,15 +1,17 @@
-# Introduction to Composition Functions
+# Create a Crossplane Composition Functions
 
-This workshop will help you understand Crossplane architecture and use cases.
+This workshop will help you understand how composition functions work in
+Crossplane. We are going to create and use a simple Go function.
 
-- Understand how Crossplane solves infrastructure provisioning and configuration
-- Learn about and see basic building blocks in action
-- Go through real world scenarios of creating, consuming and managing internal
-  platform
+> At the end of this tutorial you will:
 
-> At the end of this tutorial you will be able to create a free account in
-> [Upbound Cloud](https://www.upbound.io/) and try provisioning cloud
-> infrastructure youself!
+- 🦉 Understand how to develop and test a simple Go composition function
+- 🧱 Apply the function in a real world composition
+
+> After that head over to [Upbound Cloud](https://www.upbound.io/),create a free
+> account, select one or more providers, configuration started packs and
+> functions from the [marketplace](https://marketplace.upbound.io/) and
+> provision your own cloud infrastructure, including using functions.
 
 What makes Crossplane so special? First, it builds on Kubernetes and capitalizes
 on the fact that the real power of Kubernetes is its powerful API model and
@@ -36,6 +38,7 @@ Below diagram explains Crossplane's components and their relations.
 <details>
     <summary>Click here to see Crossplane architecture diagram</summary>
 
+<!-- TODO: Update the diagram to include functions -->
 ![crossplane-components](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/crossplane-demo/master/diagrams/crossplane-components.puml&fmt=png)
 
 </details>

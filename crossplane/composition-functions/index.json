@@ -10,24 +10,32 @@
         "text": "step1.md"
       },
       {
-        "title": "Kubernetes Provider 🦸",
+        "title": "Functions Workflow 󰴽",
         "text": "step2.md"
       },
       {
-        "title": "Composed App in Action 🏀",
+        "title": "Tooling 🛠",
         "text": "step3.md"
       },
       {
-        "title": "Application Lifecycle 🐝",
+        "title": "Template 📝",
         "text": "step4.md"
       },
       {
-        "title": "The Power of Composition 🧩",
+        "title": "Let's code 🤓",
         "text": "step5.md"
       },
       {
-        "title": "Key Takeaways 📑",
+        "title": "Development Loop 🔄",
         "text": "step6.md"
+      },
+      {
+        "title": "Publish 📦",
+        "text": "step7.md"
+      },
+      {
+        "title": "Functions in Practice 💻",
+        "text": "step8.md"
       }
     ],
     "intro": {

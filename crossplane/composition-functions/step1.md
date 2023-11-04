@@ -1,14 +1,12 @@
-Following components are being installed:
+This environment comes with the following components pre-installed:
 
 ✔ helm
 
-✔ crossplane
+✔ crossplane v 1.14
 
 ✔ crossplane CLI
 
-✔ kubernetes provider
-
-✔ komoplane observability
+✔ komoplane for observability
 
 > Wait until "All Set" message is displayed on the screen and verify if cluster is setup correctly
 
@@ -20,8 +18,7 @@ Proceed to step 2 where we will explore the setup ➡
 
 ## Observability 🔎
 
-> During this exercise, feel free to click on _Komoplane_ tab and explore
-> compositions status in a visual way. We will focus on _kubectl_ commands.
+> During this exercise, feel free to use _Komoplane_ and explore
+> crossplane resources in a visual way.
 
-Click on the Dashboard tab or run Komoplane from this link:
-[Komoplane]({{TRAFFIC_HOST1_8090}})
+Start [Komoplane]({{TRAFFIC_HOST1_8090}}) in a new tab
