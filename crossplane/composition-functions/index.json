@@ -27,7 +27,8 @@
       },
       {
         "title": "Development Loop 🔄",
-        "text": "step6.md"
+        "text": "step6.md",
+        "background": "kill_tmux.sh"
       },
       {
         "title": "Publish 📦",
@@ -50,6 +51,11 @@
       "host01": [
         {
           "file": "wait.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "kill_tmux.sh",
           "target": "/usr/local/bin/",
           "chmod": "+x"
         },
