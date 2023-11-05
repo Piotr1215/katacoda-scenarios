@@ -28,7 +28,7 @@
       {
         "title": "Development Loop 🔄",
         "text": "step6.md",
-        "background": "kill_tmux.sh"
+        "background": "assets/kill_tmux.sh"
       },
       {
         "title": "Publish 📦",
