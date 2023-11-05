@@ -1,3 +1,3 @@
-## Development Loop
+## Function logic
 
-<!-- TODO: 6. describe development loop -->
+<!-- TODO: basic function logic -->
