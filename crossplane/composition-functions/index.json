@@ -1,6 +1,6 @@
 {
-  "title": "Interactive Crossplane Compositions Workshop",
-  "description": "Create and use Crossplane Compositions",
+  "title": "Crossplane Composition Functions",
+  "description": "Create and use Crossplane Composition Functions",
   "difficulty": "Beginner",
   "time": "15minutes",
   "details": {
@@ -10,11 +10,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Functions Workflow 󰴽",
+        "title": "Functions Workflow 🔄",
         "text": "step2.md"
       },
       {
-        "title": "Tooling 🛠",
+        "title": "Tooling 🔧",
         "text": "step3.md"
       },
       {
@@ -22,11 +22,11 @@
         "text": "step4.md"
       },
       {
-        "title": "Let's code 🤓",
+        "title": "Development Loop 🔁",
         "text": "step5.md"
       },
       {
-        "title": "Add More Logic 🔄",
+        "title": "Add More Logic 🧠",
         "text": "step6.md",
         "background": "assets/kill_tmux.sh"
       },
