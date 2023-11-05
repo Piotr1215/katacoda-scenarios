@@ -35,6 +35,8 @@ showProgress() {
 	waitForCompletion /opt/.goupgraded
 	# echo -n "Installing Provider Nop"
 	# waitForCompletion /opt/.nopinstalled
+	echo -n "Clnoning and building function-auto-ready"
+	waitForCompletion /opt/.autoreadyinstalled
 	waitForCompletion /opt/.backgroundfinished
 
 	echo "All Set"

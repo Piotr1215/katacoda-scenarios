@@ -48,8 +48,14 @@ echo "export PATH=$PATH:/usr/local/go/bin" >>/etc/profile
 
 echo "done" >>/opt/.goupgraded
 
+# TODO: install tree
 ## Installing Provider Nop
 # crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
 # echo "done" >>/opt/.nopinstalled
+
+# Clone and run the auto-ready repo
+git clone https://github.com/Piotr1215/function-auto-ready.git
+cd function-auto-ready && go test -v -cover .
+echo "done" >>/opt/.autoreadyinstalled
 
 echo "done" >>/opt/.backgroundfinished
