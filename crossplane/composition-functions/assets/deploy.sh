@@ -31,15 +31,6 @@ curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install
 
 echo "done" >>/opt/.crossplanecliinstalled
 
-#Installing komoplane
-helm repo add komodorio https://helm-charts.komodor.io &&
-	helm repo update komodorio &&
-	helm upgrade --install komoplane komodorio/komoplane
-kubectl wait --for condition=Available=True --timeout=300s deployment/komoplane
-kubectl port-forward --address 0.0.0.0 services/komoplane 8090:8090 &
-
-echo "done" >>/opt/.komoplaneinstalled
-
 ## Upgrade Go to latest
 wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
 rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
@@ -58,5 +49,14 @@ sudo apt-get install tree
 # Clone and run the auto-ready repo
 git clone https://github.com/Piotr1215/function-auto-ready.git
 echo "done" >>/opt/.autoreadyinstalled
+
+#Installing komoplane
+helm repo add komodorio https://helm-charts.komodor.io &&
+	helm repo update komodorio &&
+	helm upgrade --install komoplane komodorio/komoplane
+kubectl wait --for condition=Available=True --timeout=300s deployment/komoplane
+kubectl port-forward --address 0.0.0.0 services/komoplane 8090:8090 &
+
+echo "done" >>/opt/.komoplaneinstalled
 
 echo "done" >>/opt/.backgroundfinished

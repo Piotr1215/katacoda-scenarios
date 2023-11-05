@@ -29,8 +29,6 @@ showProgress() {
 	waitForCompletion /opt/.crossplaneinstalled
 	echo -n "Installing Crossplane CLI"
 	waitForCompletion /opt/.crossplanecliinstalled
-	echo -n "Installing Komoplane"
-	waitForCompletion /opt/.komoplaneinstalled
 	echo -n "Upgrade Go to 1.21.3"
 	waitForCompletion /opt/.goupgraded
 	# echo -n "Installing Provider Nop"
@@ -39,6 +37,8 @@ showProgress() {
 	waitForCompletion /opt/.autoreadyinstalled
 	# This should run in the background due to the perfromance impact
 	cd function-auto-ready && go test -v -cover . &
+	echo -n "Installing Komoplane"
+	waitForCompletion /opt/.komoplaneinstalled
 	waitForCompletion /opt/.backgroundfinished
 
 	echo "All Set"
