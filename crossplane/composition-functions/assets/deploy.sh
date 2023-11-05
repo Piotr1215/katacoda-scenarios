@@ -55,7 +55,6 @@ echo "done" >>/opt/.goupgraded
 
 # Clone and run the auto-ready repo
 git clone https://github.com/Piotr1215/function-auto-ready.git
-cd function-auto-ready && go test -v -cover .
 echo "done" >>/opt/.autoreadyinstalled
 
 echo "done" >>/opt/.backgroundfinished

@@ -35,8 +35,10 @@ showProgress() {
 	waitForCompletion /opt/.goupgraded
 	# echo -n "Installing Provider Nop"
 	# waitForCompletion /opt/.nopinstalled
-	echo -n "Clnoning and building function-auto-ready"
+	echo -n "Cloning and building function-auto-ready"
 	waitForCompletion /opt/.autoreadyinstalled
+	# This should run in the background due to the perfromance impact
+	cd function-auto-ready && go test -v -cover . &
 	waitForCompletion /opt/.backgroundfinished
 
 	echo "All Set"
