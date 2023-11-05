@@ -33,8 +33,6 @@ showProgress() {
 	waitForCompletion /opt/.goupgraded
 	# echo -n "Installing Provider Nop"
 	# waitForCompletion /opt/.nopinstalled
-	echo -n "Cloning and building function-auto-ready"
-	waitForCompletion /opt/.autoreadyinstalled
 	echo -n "Installing Komoplane"
 	waitForCompletion /opt/.komoplaneinstalled
 	waitForCompletion /opt/.backgroundfinished

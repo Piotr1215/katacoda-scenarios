@@ -46,12 +46,6 @@ sudo apt-get install tree
 # crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
 # echo "done" >>/opt/.nopinstalled
 
-# Clone and run the auto-ready repo
-git clone https://github.com/Piotr1215/function-auto-ready.git
-# This should run in the background due to the perfromance impact
-cd function-auto-ready && go test -v -cover . &
-echo "done" >>/opt/.autoreadyinstalled
-
 #Installing komoplane
 helm repo add komodorio https://helm-charts.komodor.io &&
 	helm repo update komodorio &&
