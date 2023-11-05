@@ -48,6 +48,8 @@ sudo apt-get install tree
 
 # Clone and run the auto-ready repo
 git clone https://github.com/Piotr1215/function-auto-ready.git
+# This should run in the background due to the perfromance impact
+cd function-auto-ready && go test -v -cover . &
 echo "done" >>/opt/.autoreadyinstalled
 
 #Installing komoplane

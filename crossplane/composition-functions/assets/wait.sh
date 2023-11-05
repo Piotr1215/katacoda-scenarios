@@ -35,8 +35,6 @@ showProgress() {
 	# waitForCompletion /opt/.nopinstalled
 	echo -n "Cloning and building function-auto-ready"
 	waitForCompletion /opt/.autoreadyinstalled
-	# This should run in the background due to the perfromance impact
-	cd function-auto-ready && go test -v -cover . &
 	echo -n "Installing Komoplane"
 	waitForCompletion /opt/.komoplaneinstalled
 	waitForCompletion /opt/.backgroundfinished
