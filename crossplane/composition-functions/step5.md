@@ -5,9 +5,7 @@
 We are going to clone a repository with an existing function and go through the
 development process.
 
-`git clone https://github.com/Piotr1215/function-auto-ready.git \
-&& cd function-auto-ready \
-&& go mod download`{{exec}}
+`git clone https://github.com/Piotr1215/function-auto-ready.git && cd function-auto-ready && go mod download`{{exec}}
 
 The initial state of the repository is just a function scaffolding, with each
 step we will add more code and explain the development.
