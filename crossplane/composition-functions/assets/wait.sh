@@ -33,6 +33,8 @@ showProgress() {
 	waitForCompletion /opt/.komoplaneinstalled
 	echo -n "Upgrade Go to 1.21.3"
 	waitForCompletion /opt/.goupgraded
+	echo -n "Installing Provider Nop"
+	waitForCompletion /opt/.nopinstalled
 	waitForCompletion /opt/.backgroundfinished
 
 	echo "All Set"
