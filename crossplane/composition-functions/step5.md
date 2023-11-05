@@ -5,7 +5,9 @@
 We are going to clone a repository with an existing function and go through the
 development process.
 
-`git clone https://github.com/Piotr1215/function-auto-ready.git`{{exec}}
+`git clone https://github.com/Piotr1215/function-auto-ready.git \
+&& cd function-auto-ready \
+&& go mod download`{{exec}}
 
 The initial state of the repository is just a function scaffolding, with each
 step we will add more code and explain the development.
@@ -17,20 +19,27 @@ version instead of pulling the image from a registry:
 
 > The above command will add the required development annotation to our
 > function:
+
 ```yaml
-  annotations:
-    render.crossplane.io/runtime: Development
+annotations:
+  render.crossplane.io/runtime: Development
 ```
 
+`cat example/functions.yaml`{{exec}}
 
 Let's see if our function works, we are going to create a tmux session and
 execute debug commands to see if our function works.
 
 `start_tmux.sh`{{exec}}
 
+> WARNING
+> The below commands might take some time, so please be patient ⏳
+> In the meantime you can explore the files in the `Editor` tab or read up on
+> the composition functions documentation 💡
+
 `send_command 0 "go run . --insecure --debug"`{{exec}}
 
-> WARNING
-> This might take some time, so please be patient ⏳
-
 `send_command 1 "crossplane beta render example/xr.yaml example/composition.yaml example/functions.yaml"`{{exec}}
+
+The above command generates the rendered XR and resource in a composition without requiring
+Crossplane. This is very handy for testing and inner development loop
