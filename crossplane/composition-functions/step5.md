@@ -8,7 +8,12 @@ functions pipeline.
 
 > The function `function-auto-ready` [was developed](https://github.com/crossplane-contrib/function-auto-ready) by Nic Cope.
 
-Let's clone the repository `git clone https://github.com/crossplane-contrib/function-auto-ready.git && cd function-auto-ready && go mod download`{{exec}}.
+Let's clone the repository `git clone https://github.com/crossplane-contrib/function-auto-ready.git && cd function-auto-ready && go mod download && go test -v .`{{exec}}.
+
+> WARNING
+> The above command might take some time, so please be patient ⏳
+> In the meantime you can explore the files in the `Editor`{{}} tab or read up on
+> the composition functions documentation 💡
 
 Before we start development loop we need to tell the system to use local
 version of the code instead of pulling the image from a registry:
@@ -33,11 +38,6 @@ session and run the 2 commands below.
 > Running the commands with `watch`{{}} helps with iterating over the code.
 
 `start_tmux.sh`{{exec}}
-
-> WARNING
-> The below commands might take some time, so please be patient ⏳
-> In the meantime you can explore the files in the `Editor`{{}} tab or read up on
-> the composition functions documentation 💡
 
 `send_command 0 "go run . --insecure --debug"`{{exec}}
 
