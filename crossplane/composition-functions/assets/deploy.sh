@@ -49,7 +49,7 @@ echo "export PATH=$PATH:/usr/local/go/bin" >>/etc/profile
 echo "done" >>/opt/.goupgraded
 
 ## Installing Provider Nop
-crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
-echo "done" >>/opt/.nopinstalled
+# crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
+# echo "done" >>/opt/.nopinstalled
 
 echo "done" >>/opt/.backgroundfinished
