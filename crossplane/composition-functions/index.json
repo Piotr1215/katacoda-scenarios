@@ -36,33 +36,34 @@
                 "background": "step7/background.sh"
             },
             {
-                "title": "Publish 📦",
+                "title": "step8",
                 "text": "step8/step8.md",
                 "background": "step8/background.sh"
             },
             {
-                "title": "Functions in Practice 💻",
+                "title": "step9",
                 "text": "step9/step9.md",
                 "background": "step9/background.sh"
             },
             {
-                "title": "Functions in Practice",
+                "title": "step10",
                 "text": "step10/step10.md",
-                "background": "step7/background.sh"
+                "background": "step10/background.sh"
             },
             {
                 "title": "step11",
                 "text": "step11/step11.md",
-                "background": "step7/background.sh"
+                "background": "step11/background.sh"
             },
             {
                 "title": "step12",
                 "text": "step12/step12.md",
-                "background": "step7/background.sh"
+                "background": "step12/background.sh"
             },
             {
-                "title": "Publish 📦",
-                "text": "step13/step13.md"
+                "title": "step13",
+                "text": "step13/step13.md",
+                "background": "step13/background.sh"
             }
         ],
         "intro": {
