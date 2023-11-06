@@ -1,17 +1,15 @@
-## Tools of the trade
-
-To write a function in Go you need:
+To write a function in Go you need the following tools. Click on the commands to
+make sure everything is installed and versions are correct.
 
 - [Go](https://go.dev/dl/) 1.21 or newer. The guide uses Go 1.21.
+  `go version`{{exec}}
 - [Docker Engine](https://docs.docker.com/engine/). This guide uses Engine v24.
+  `docker version --format 'Docker Server version: {{println .Server.Version}}Docker Client version: {{.Client.Version}}'
+`{{exec}}
 - The [Crossplane CLI](https://docs.crossplane.io/latest/cli) v1.14 or newer. This guide uses Crossplane CLI v1.14.
+  `crossplane --version`{{exec}}
 
-Let's make sure everything is installed in our environment:
+## Next Step
 
-```bash
-go version
-docker version --format 'Docker Server version: {{println .Server.Version}}Docker Client version: {{.Client.Version}}'
-echo "Crossplane version: $(crossplane --version)"
-```{{exec}}
-
-If we got all the right prerequisites version, let's move to the next step
+Next we are going to lean how to use `crossplane beta xpkg init` command to
+initiate a new function repository.

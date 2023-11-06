@@ -22,3 +22,7 @@ Proceed to step 2 where we will explore the setup ➡
 > crossplane resources in a visual way.
 
 Start [Komoplane]({{TRAFFIC_HOST1_8090}}) in a new tab
+
+## Next Step
+
+Next we will learn the basics of how `composition functions` work

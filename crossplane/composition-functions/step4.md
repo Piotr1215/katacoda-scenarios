@@ -1,5 +1,3 @@
-## Function Template
-
 > Read more about [using function templates](https://docs.crossplane.io/knowledge-base/guides/write-a-composition-function-in-go/#initialize-the-function-from-a-template) in the Crossplane Composition
 > Functions documentation
 
@@ -13,3 +11,8 @@ all the required files:
 `tree function-example-test`{{exec}}
 
 > To explore the files in more detail click on the `Editor` tab.
+
+## Next Step
+
+Next we will learn how to setup inner development loop when developing a
+function.

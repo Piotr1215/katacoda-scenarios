@@ -1,5 +1,3 @@
-## Development Loop 🌀
-
 We are going to clone a repository with an existing function and see how the
 inner development loop looks like. The function we will work with is called
 `function-auto-ready`{{}} and it solves a specific problem of [deriving
@@ -52,7 +50,7 @@ Here we can output helpful debug information during the development process.
 The above command generates the rendered XR and resource in a composition without requiring
 Crossplane. This is very handy for testing and inner development loop.
 
-### Coming next
+## Next Step
 
 In the next section we are going to start from an empty function code and
 gradually build a simple function.

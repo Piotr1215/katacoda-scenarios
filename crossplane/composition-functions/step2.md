@@ -1,7 +1,3 @@
-## Understanding the Functions Workflow
-
-<!-- TODO: 2. explain the functions workflow -->
-
 Composition functions are first class citizen in the Crossplane ecosystem. This
 means they can be installed and managed like any other package.
 
@@ -9,3 +5,7 @@ means they can be installed and managed like any other package.
 > in-detail understanding of the concepts.
 
 ![functions-workflow](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/dca-prep-kit/master/diagrams/crossplane-functions-sequence.puml&fmt=png)
+
+## Next Step
+
+Next we will learn what tools are required to develop a function.
