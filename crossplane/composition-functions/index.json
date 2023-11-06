@@ -1,107 +1,128 @@
 {
-  "title": "Crossplane Composition Functions",
-  "description": "Create and use Crossplane Composition Functions",
-  "difficulty": "Beginner",
-  "time": "15minutes",
-  "details": {
-    "steps": [
-      {
-        "title": "Cluster Preparation 🚧",
-        "text": "step1.md"
-      },
-      {
-        "title": "Functions Workflow 🔄",
-        "text": "step2.md"
-      },
-      {
-        "title": "Tooling 🔧",
-        "text": "step3.md"
-      },
-      {
-        "title": "Template 📝",
-        "text": "step4.md"
-      },
-      {
-        "title": "Development Loop 🌀",
-        "text": "step5.md"
-      },
-      {
-        "title": "Basic Function 📖",
-        "text": "step6.md",
-        "foreground": "assets/kill_tmux.sh"
-      },
-      {
-        "title": "Run Initial Code 🏃",
-        "text": "step7/step7.md",
-        "background": "step7/background.sh"
-      },
-      {
-        "title": "Publish 📦",
-        "text": "step8.md"
-      },
-      {
-        "title": "Functions in Practice 💻",
-        "text": "step9.md"
-      }
-    ],
-    "intro": {
-      "text": "intro.md",
-      "foreground": "foreground.sh",
-      "background": "background.sh"
-    },
-    "finish": {
-      "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "wait.sh",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
+    "title": "Crossplane Composition Functions",
+    "description": "Create and use Crossplane Composition Functions",
+    "difficulty": "Beginner",
+    "time": "15minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Cluster Preparation 🚧",
+                "text": "step1.md"
+            },
+            {
+                "title": "Functions Workflow 🔄",
+                "text": "step2.md"
+            },
+            {
+                "title": "Tooling 🔧",
+                "text": "step3.md"
+            },
+            {
+                "title": "Template 📝",
+                "text": "step4.md"
+            },
+            {
+                "title": "Development Loop 🌀",
+                "text": "step5.md"
+            },
+            {
+                "title": "Basic Function 📖",
+                "text": "step6.md",
+                "foreground": "assets/kill_tmux.sh"
+            },
+            {
+                "title": "Run Initial Code 🏃",
+                "text": "step7/step7.md",
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "Publish 📦",
+                "text": "step8/step8.md"
+                "background": "step8/background.sh"
+            },
+            {
+                "title": "Functions in Practice 💻",
+                "text": "step9/step9.md"
+                "background": "step9/background.sh"
+            },
+            {
+                "title": "Functions in Practice",
+                "text": "step10/step10.md"
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "step11",
+                "text": "step11/step11.md"
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "step12",
+                "text": "step12/step12.md"
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "Publish 📦",
+                "text": "step13/step13.md"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "foreground": "foreground.sh",
+            "background": "background.sh"
         },
-        {
-          "file": "kill_tmux.sh",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
+        "finish": {
+            "text": "finish.md"
         },
-        {
-          "file": "deploy.sh",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "start_tmux.sh",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "send_command",
-          "target": "/usr/local/bin/",
-          "chmod": "+x"
-        },
-        {
-          "file": "*.yaml",
-          "target": "/root/"
-        },
-        {
-          "file": "*.png",
-          "target": "/root/"
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "kill_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "start_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "send_command",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "*.yaml",
+                    "target": "/root/"
+                },
+                {
+                    "file": "*.png",
+                    "target": "/root/"
+                }
+            ]
         }
-      ]
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "showdashboard": true,
+        "dashboards": [
+            {
+                "name": "Komoplane",
+                "href": "https://[[HOST_SUBDOMAIN]]-8090-[[KATACODA_HOST]].environments.katacoda.com",
+                "port": 8090
+            }
+        ]
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
     }
-  },
-  "environment": {
-    "uilayout": "terminal",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "Komoplane",
-        "href": "https://[[HOST_SUBDOMAIN]]-8090-[[KATACODA_HOST]].environments.katacoda.com",
-        "port": 8090
-      }
-    ]
-  },
-  "backend": {
-    "imageid": "kubernetes-kubeadm-1node"
-  }
 }
