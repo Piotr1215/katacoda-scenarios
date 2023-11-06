@@ -8,7 +8,10 @@ functions pipeline.
 
 > The function `function-auto-ready` [was developed](https://github.com/crossplane-contrib/function-auto-ready) by Nic Cope.
 
-Let's clone the repository `git clone https://github.com/crossplane-contrib/function-auto-ready.git && cd function-auto-ready && go mod download && go test -v .`{{exec}}.
+Let's clone the repository `git clone
+https://github.com/crossplane-contrib/function-auto-ready.git`{{exec}}
+download the dependencies `cd function-auto-ready && go mod download`{{exec}}
+and run tests to make sure everything works `go test -v .`{{exec}}.
 
 > WARNING
 > The above command might take some time, so please be patient ⏳
