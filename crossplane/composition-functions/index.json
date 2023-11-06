@@ -26,17 +26,22 @@
         "text": "step5.md"
       },
       {
-        "title": "Add More Logic 🧠",
+        "title": "Basic Function 📖",
         "text": "step6.md",
         "foreground": "assets/kill_tmux.sh"
       },
       {
+        "title": "Run Initial Code 🏃",
+        "text": "step7/step7.md",
+        "background": "step7/background.sh"
+      },
+      {
         "title": "Publish 📦",
-        "text": "step7.md"
+        "text": "step8.md"
       },
       {
         "title": "Functions in Practice 💻",
-        "text": "step8.md"
+        "text": "step9.md"
       }
     ],
     "intro": {
