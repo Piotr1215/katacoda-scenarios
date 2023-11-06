@@ -28,7 +28,7 @@
       {
         "title": "Add More Logic 🧠",
         "text": "step6.md",
-        "background": "assets/kill_tmux.sh"
+        "foreground": "assets/kill_tmux.sh"
       },
       {
         "title": "Publish 📦",
