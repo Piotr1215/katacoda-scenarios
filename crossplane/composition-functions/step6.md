@@ -1,3 +1,4 @@
+## Clone the repository
 
 Since the focus of this workshop is on the implementaion fundamentals, our
 function's logic will be simple and will add a label to every rendered resource.
