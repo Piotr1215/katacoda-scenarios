@@ -10,7 +10,6 @@ resources created by the composition. Let's add the logic to do just that:
 Notice that now the resources from the `render`{{}} command now each have a
 label of `crossplane.io/test-label: Hello work`
 
-- `kill_tmux.sh`{{exec interrupt}}
 
 ### Recap
 

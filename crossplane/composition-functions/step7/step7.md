@@ -29,7 +29,6 @@ And render our resources in another pane.
 
 `send_command 1 "crossplane beta render example/xr.yaml example/composition.yaml example/functions.yaml"`{{exec}}
 
-Now we can close tmux session with `kill_tmux.sh`{{exec interrupt}}
 
 ### Example Files
 

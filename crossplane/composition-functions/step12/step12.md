@@ -9,7 +9,6 @@ context.
 
 We are using the `log.WithValues`{{}} function to add _xr_ context to our log.
 
-- `kill_tmux.sh`{{exec interrupt}}
 
 ## Next Steps
 

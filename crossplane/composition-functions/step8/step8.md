@@ -14,7 +14,6 @@ Let's run the code again and see what we are getting:
 
 we should see `json`{{}} form of the function input.
 
-- `kill_tmux.sh`{{exec interrupt}}
 
 ### RunFunctionRequest and RunFunctionResponse
 

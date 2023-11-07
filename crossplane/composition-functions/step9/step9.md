@@ -9,7 +9,6 @@ Let's run the function again:
 With the added debug line we should see additional
 output of the xr data we have submitted to to `render`{{}} command.
 
-- `kill_tmux.sh`{{exec interrupt}}
 
 ## Next Step
 

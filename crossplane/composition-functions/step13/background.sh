@@ -1,1 +1,1 @@
-cd /root/function-simple-label && git reset --hard && git checkout 8-unit-tests
+cd /root/function-simple-label && git reset --hard && git checkout 8-unit-tests && /usr/local/bin/kill_tmux.sh
