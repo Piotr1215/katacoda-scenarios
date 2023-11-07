@@ -3,8 +3,7 @@
 Since the focus of this workshop is on the implementaion fundamentals, our
 function's logic will be simple and will add a label to every rendered resource.
 
-`git clone https://github.com/Piotr1215/function-simple-label.git && cd
-function-simple-label`{{exec}}
+`git clone https://github.com/Piotr1215/function-simple-label.git /root/function-simple-label && cd /root/function-simple-label`{{exec}}
 
 ## Initial State
 
