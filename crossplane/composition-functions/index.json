@@ -36,32 +36,32 @@
                 "background": "step7/background.sh"
             },
             {
-                "title": "step8",
+                "title": "What is a Composition Function? 🤔",
                 "text": "step8/step8.md",
                 "background": "step8/background.sh"
             },
             {
-                "title": "step9",
+                "title": "Composite Resource 📦",
                 "text": "step9/step9.md",
                 "background": "step9/background.sh"
             },
             {
-                "title": "step10",
+                "title": "Desired Resources 📦",
                 "text": "step10/step10.md",
                 "background": "step10/background.sh"
             },
             {
-                "title": "step11",
+                "title": "Business Logic 🧠",
                 "text": "step11/step11.md",
                 "background": "step11/background.sh"
             },
             {
-                "title": "step12",
+                "title": "Logging 📝",
                 "text": "step12/step12.md",
                 "background": "step12/background.sh"
             },
             {
-                "title": "step13",
+                "title": "Unit Testing 🧪",
                 "text": "step13/step13.md",
                 "background": "step13/background.sh"
             }

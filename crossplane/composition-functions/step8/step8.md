@@ -1,4 +1,4 @@
-## Function Anatomy
+## Anatomy of a Function
 
 Notice that now the **fn.go** file has comments over important parts of the
 code. We have also added a _log debug_ statement to show what we are getting as
@@ -40,4 +40,3 @@ type Input struct {
 ## Next Step
 
 Next we will retrieve observed _xr_ from the request.
-
