@@ -28,43 +28,50 @@
             {
                 "title": "Basic Function 📖",
                 "text": "step6.md",
+                "foreground": "assets/kill_tmux.sh",
                 "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Run Initial Code 🏃",
                 "text": "step7/step7.md",
-                "background": "step7/background.sh"
+                "background": "step7/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "What is a Composition Function? 🤔",
                 "text": "step8/step8.md",
                 "background": "step8/background.sh",
-                "foreground": "foreground.sh"
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Composite Resource 📦",
                 "text": "step9/step9.md",
-                "background": "step9/background.sh"
+                "background": "step9/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Desired Resources 📦",
                 "text": "step10/step10.md",
-                "background": "step10/background.sh"
+                "background": "step10/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Business Logic 🧠",
                 "text": "step11/step11.md",
-                "background": "step11/background.sh"
+                "background": "step11/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Logging 📝",
                 "text": "step12/step12.md",
-                "background": "step12/background.sh"
+                "background": "step12/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             },
             {
                 "title": "Unit Testing 🧪",
                 "text": "step13/step13.md",
-                "background": "step13/background.sh"
+                "background": "step13/background.sh",
+                "foreground": "assets/kill_tmux.sh"
             }
         ],
         "intro": {
