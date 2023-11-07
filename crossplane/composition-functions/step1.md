@@ -16,13 +16,13 @@ Check Kuberentes cluster info and version `kubectl cluster-info && echo && kubec
 
 Proceed to step 2 where we will explore the setup ➡
 
-## Observability 🔎
+## Self Learning 📗
 
-> During this exercise, feel free to use _Komoplane_ and explore
-> crossplane resources in a visual way.
+> Once the workshop is over, you can apply compositions and use _Komoplane_ to explore
+> Crossplane resources in a visual way.
 
 Start [Komoplane]({{TRAFFIC_HOST1_8090}}) in a new tab
 
 ## Next Step
 
-Next we will learn the basics of how `composition functions` work
+Next we will learn the basics of how `composition functions` work.
