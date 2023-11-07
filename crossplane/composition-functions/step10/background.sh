@@ -1,1 +1,1 @@
-cd /root/function-simple-label && git checkout 5-get-desired-state
+cd /root/function-simple-label && git reset --hard && git checkout 5-get-desired-state
