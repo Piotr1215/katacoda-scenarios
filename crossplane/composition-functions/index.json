@@ -38,7 +38,8 @@
             {
                 "title": "What is a Composition Function? 🤔",
                 "text": "step8/step8.md",
-                "background": "step8/background.sh"
+                "background": "step8/background.sh",
+                "foreground": "foreground.sh"
             },
             {
                 "title": "Composite Resource 📦",
@@ -100,14 +101,6 @@
                     "file": "send_command",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
-                },
-                {
-                    "file": "*.yaml",
-                    "target": "/root/"
-                },
-                {
-                    "file": "*.png",
-                    "target": "/root/"
                 }
             ]
         }
