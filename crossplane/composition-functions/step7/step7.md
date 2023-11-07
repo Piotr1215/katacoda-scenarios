@@ -14,8 +14,6 @@ Let's make sure our function works by invoking `crossplane beta render`{{}} comm
 and running our function in the debug mode. First, lets start a tmux session to
 split panes.
 
-If you are not in the function directory `cd function-simple-label`{{exec}}, otherwise
-
 `start_tmux.sh`{{exec}}
 
 Start the debug session in one pane.
