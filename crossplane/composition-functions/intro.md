@@ -6,12 +6,14 @@ Crossplane. We are going to create and use a simple Go function.
 > At the end of this tutorial you will:
 
 - 🦉 Understand how to develop and test a simple Go composition function
-- 🧱 Apply the function in a real world composition
+- 🧱 Apply the function in a composition
 
 > After that head over to [Upbound Cloud](https://www.upbound.io/),create a free
 > account, select one or more providers, configuration started packs and
 > functions from the [marketplace](https://marketplace.upbound.io/) and
 > provision your own cloud infrastructure, including using functions.
+
+## Crossplane Recap
 
 What makes Crossplane so special? First, it builds on Kubernetes and capitalizes
 on the fact that the real power of Kubernetes is its powerful API model and
