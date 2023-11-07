@@ -4,7 +4,7 @@
 > on the top left corner of the terminal window. This will allow us to see the
 > the files and explore code base better.
 
-Click on the <kbd>function-simple-label</kbd> folder and the <kbd>fn.go</kbd>
+Click on the **function-simple-label** folder and the **fn.go**
 file.
 
 The initial state of the repository is just a function signature and some
@@ -14,15 +14,20 @@ Let's make sure our function works by invoking `crossplane beta render`{{}} comm
 and running our function in the debug mode. First, lets start a tmux session to
 split panes
 
-`start_tmux.sh`{{exec}}
+`cd function-simple-label && start_tmux.sh`{{exec}}
 
 Start the debug session in one pane.
 
 `send_command 0 "go run . --insecure --debug"`{{exec}}
 
+> ⚠️ The first run can take a while like in the previous example.
+> In the meantime we can explore example files in the example directory
+
 And render our resources in another pane.
 
 `send_command 1 "crossplane beta render example/xr.yaml example/composition.yaml example/functions.yaml"`{{exec}}
+
+Now we can close tmux session with `kill_tmux.sh`{{exec interrupt}}
 
 ### Example Files
 
@@ -31,11 +36,11 @@ manifest, which is just an XR at this point.
 
 Now, let's look at the composition, xr and functions files in the editor.
 
-> All the files are in the <kbd>example</kbd> folder.
+> All the files are in the **example** folder.
 
 ### Composition
 
-The <kbd>composition.yaml</kbd> is composing 2 resources that belong to
+The **composition.yaml** is composing 2 resources that belong to
 [provider-nop](https://github.com/crossplane-contrib/provider-nop)
 
 > provider-nop does not crate any external resources, but is a handy way to
@@ -78,4 +83,4 @@ A sample _xr_ to render the resources in composition.
 
 ## Next Step
 
-Next we will start implementing the function logic in the <kbd>fn.go</kbd> file.
+Next we will start implementing the function logic in the **fn.go** file.

@@ -11,8 +11,7 @@ https://github.com/crossplane-contrib/function-auto-ready.git`{{exec}}
 download the dependencies `cd function-auto-ready && go mod download`{{exec}}
 and run tests to make sure everything works `go test -v .`{{exec}}.
 
-> WARNING
-> The above command might take some time, so please be patient ⏳
+> ⚠️ The above command might take some time, so please be patient ⏳
 > In the meantime you can explore the files in the `Editor`{{}} tab or read up on
 > the composition functions documentation 💡
 

@@ -1,4 +1,4 @@
-# Create a Crossplane Composition Functions
+## Introduction
 
 This workshop will help you understand how composition functions work in
 Crossplane. We are going to create and use a simple Go function.
