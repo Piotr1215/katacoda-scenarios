@@ -12,9 +12,11 @@ _boilerplate_ code.
 
 Let's make sure our function works by invoking `crossplane beta render`{{}} command
 and running our function in the debug mode. First, lets start a tmux session to
-split panes
+split panes.
 
-`cd function-simple-label && start_tmux.sh`{{exec}}
+If you are not in the function directory `cd function-simple-label`{{exec}}, otherwise
+
+`start_tmux.sh`{{exec}}
 
 Start the debug session in one pane.
 
