@@ -28,7 +28,6 @@
             {
                 "title": "Basic Function 📖",
                 "text": "step6.md",
-                "foreground": "assets/kill_tmux.sh",
                 "foreground": "assets/kill_tmux.sh"
             },
             {
@@ -71,6 +70,12 @@
                 "title": "Unit Testing 🧪",
                 "text": "step13/step13.md",
                 "background": "step13/background.sh",
+                "foreground": "assets/kill_tmux.sh"
+            },
+            {
+                "title": "Deploy to local cluster 🚀",
+                "text": "step14/step14.md",
+                "background": "step14/background.sh",
                 "foreground": "assets/kill_tmux.sh"
             }
         ],
