@@ -1,6 +1,6 @@
 ## Better Log Output
 
-Let's improve our log output by redefinihg the log struct with additional
+Let's improve our log output by redefining the log struct with additional
 context.
 
 - `start_tmux.sh`{{exec}}

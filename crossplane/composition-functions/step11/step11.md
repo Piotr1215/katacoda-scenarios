@@ -8,8 +8,7 @@ resources created by the composition. Let's add the logic to do just that:
 - `send_command 1 "crossplane beta render example/xr.yaml example/composition.yaml example/functions.yaml"`{{exec}}
 
 Notice that now the resources from the `render`{{}} command now each have a
-label of `crossplane.io/test-label: Hello work`
-
+label of `crossplane.io/test-label: Hello world!`
 
 ### Recap
 
