@@ -26,15 +26,7 @@ And returns [RunFunctionResponse](https://pkg.go.dev/github.com/crossplane/funct
 Each function can have an arbitrary structure as input. In our case we have
 defined a simple struct with one filed describing the label value:
 
-```go
-type Input struct {
-	metav1.TypeMeta   `json:",inline"`
-	metav1.ObjectMeta `json:"metadata,omitempty"`
-
-	// Label is used to add a static label to each composed resource.
-	Label string `json:"label"`
-}
-```
+![function-input](./_media/function-input.png)
 
 ## Next Step
 
