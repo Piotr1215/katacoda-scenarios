@@ -84,14 +84,7 @@
     },
     "environment": {
         "uilayout": "terminal",
-        "showdashboard": true,
-        "dashboards": [
-            {
-                "name": "Komoplane",
-                "href": "https://[[HOST_SUBDOMAIN]]-8090-[[KATACODA_HOST]].environments.katacoda.com",
-                "port": 8090
-            }
-        ]
+        "showdashboard": true
     },
     "backend": {
         "imageid": "kubernetes-kubeadm-1node-4GB"

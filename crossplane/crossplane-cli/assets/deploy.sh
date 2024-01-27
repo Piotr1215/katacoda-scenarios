@@ -39,13 +39,4 @@ echo "done" >>/opt/.goupgraded
 # Install tree command
 sudo apt-get install tree
 
-#Installing komoplane
-helm repo add komodorio https://helm-charts.komodor.io &&
-	helm repo update komodorio &&
-	helm upgrade --install komoplane komodorio/komoplane
-kubectl wait --for condition=Available=True --timeout=300s deployment/komoplane
-kubectl port-forward --address 0.0.0.0 services/komoplane 8090:8090 &
-
-echo "done" >>/opt/.komoplaneinstalled
-
 echo "done" >>/opt/.backgroundfinished
