@@ -36,13 +36,4 @@ Plane as the convergence point where everyone meets.
 
 > For a more overview of Crossplane, check out this
 > [short presentation](https://slides.com/decoder/crossplane) and very
-> comprehensive [Crossplane Docs](https://crossplane.io/docs/v1.6/).
-
-Below diagram explains Crossplane's components and their relations.
-
-<details>
-    <summary>Click here to see Crossplane architecture diagram</summary>
-
-![crossplane-components](http://www.plantuml.com/plantuml/proxy?cache=yes&src=https://raw.githubusercontent.com/Piotr1215/crossplane-demo/master/diagrams/crossplane-components.puml&fmt=png)
-
-</details>
+> comprehensive [Crossplane Docs](https://crossplane.io/docs/).
