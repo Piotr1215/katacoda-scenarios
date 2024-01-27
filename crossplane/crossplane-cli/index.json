@@ -20,12 +20,12 @@
                 "background": "step3/background.sh"
             },
             {
-                "title": "The trace command 🔍",
+                "title": "The top command 🔝",
                 "text": "step4/step4.md",
                 "background": "step4/background.sh"
             },
             {
-                "title": "The top command 🔝",
+                "title": "The trace command 🔍",
                 "text": "step5/step5.md",
                 "background": "step5/background.sh"
             },
