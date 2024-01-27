@@ -64,7 +64,8 @@
                     "file": "send_command",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
-                }
+                },
+                {"file": "validate/**/*.*", "target": "/root"}
             ]
         }
     },
