@@ -8,30 +8,9 @@ spec:
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
-  name: provider-aws-acmpca
-spec:
-  package: xpkg.upbound.io/upbound/provider-aws-acmpca:v0.47.1
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
   name: provider-aws-amplify
 spec:
   package: xpkg.upbound.io/upbound/provider-aws-amplify:v0.47.1
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-azure-analysisservices
-spec:
-  package: xpkg.upbound.io/upbound/provider-azure-analysisservices:v0.42.0
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
-  name: provider-azure-attestation
-spec:
-  package: xpkg.upbound.io/upbound/provider-azure-attestation:v0.42.0
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
