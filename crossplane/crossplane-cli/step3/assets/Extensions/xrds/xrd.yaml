@@ -1,0 +1,48 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xrs.example.crossplane.io
+spec:
+  group: example.crossplane.io
+  names:
+    kind: XR
+    plural: xrs
+  claimNames:
+    kind: MyUser
+    plural: myusers
+  versions:
+    - name: v1beta1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              x-kubernetes-validations:
+              - rule: "self.minReplicas <= self.replicas"
+                message: "replicas should be greater than or equal to minReplicas."
+              properties:
+                id:
+                  x-kubernetes-int-or-string: true
+                  description: ID of this user that other objects will use to refer to it.
+                minReplicas:
+                  type: integer
+                maxReplicas:
+                  type: integer
+                replicas: 
+                  type: integer
+                count:
+                  type: integer
+              required:
+                - id
+                - count
+                - maxReplicas
+            status:
+              type: object
+              properties:
+                dummy:
+                  type: string
+                  description: Dummy status field.
+

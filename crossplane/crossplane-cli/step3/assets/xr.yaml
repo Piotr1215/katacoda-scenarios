@@ -1,0 +1,11 @@
+apiVersion: example.crossplane.io/v1beta1
+kind: XR
+metadata:
+  name: example
+  labels:
+    a: b
+spec:
+  count: 2
+  id: abc
+  maxReplicas: 3
+  
