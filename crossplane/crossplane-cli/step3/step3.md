@@ -74,3 +74,7 @@ projects.
 Or clean the cache directory.
 
 `crossplane beta validate Extensions rendered.yaml --cache-dir mycache --clean-cache`{{exec}}
+
+## Next Step
+
+Next we will learn new capabilities of the _trace_ command
