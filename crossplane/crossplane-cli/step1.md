@@ -2,6 +2,7 @@ This environment comes with the following components pre-installed:
 
 ✔ helm
 
+<!-- TODO:(piotr1215) swap to 1.15 when ready --> 
 ✔ crossplane v 1.14
 
 ✔ crossplane CLI
@@ -11,8 +12,6 @@ This environment comes with the following components pre-installed:
 Check the cluster setup `kubectl get pods -A`{{exec}}
 
 Check Kuberentes cluster info and version `kubectl cluster-info && echo && kubectl version`{{exec}}
-
-Proceed to step 2 where we will explore the setup ➡
 
 ## Next Step
 
