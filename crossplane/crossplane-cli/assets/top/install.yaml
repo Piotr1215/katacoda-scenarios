@@ -8,13 +8,6 @@ spec:
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
-  name: provider-aws-amplify
-spec:
-  package: xpkg.upbound.io/upbound/provider-aws-amplify:v0.47.1
----
-apiVersion: pkg.crossplane.io/v1
-kind: Provider
-metadata:
   name: provider-azure-certificateregistration
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-certificateregistration:v0.42.0
