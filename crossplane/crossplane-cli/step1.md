@@ -14,7 +14,7 @@ Check the cluster setup `kubectl get pods -A`{{exec}}
 
 Check Kuberentes cluster info and version `kubectl cluster-info && echo && kubectl version`{{exec}}
 
-> [!IMPORTANT] if it takes longer than 5 minutes to load the environment, please
+> 🚨 if it takes longer than 5 minutes to load the environment, please
 > restart scenario (or refresh browser)
 
 ## Next Step
