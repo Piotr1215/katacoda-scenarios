@@ -1,0 +1,17 @@
+1) ./crossplane-cli beta validate schemas.yaml resources.yaml
+
+2) ./crossplane-cli beta validate missing-schemas.yaml resources.yaml
+
+3) ./crossplane-cli beta render xr.yaml composition.yaml func.yaml | ./crossplane-cli beta validate schemas.yaml -
+
+4) ./crossplane-cli beta render xr.yaml composition.yaml func.yaml --include-full-xr | ./crossplane-cli beta validate schemas.yaml -
+
+5) ./crossplane-cli beta render xr.yaml composition.yaml func.yaml --include-full-xr  > rendered.yaml
+
+6) ./crossplane-cli beta validate Extensions rendered.yaml
+
+7) ./crossplane-cli beta validate Extensions rendered.yaml 
+
+8) ./crossplane-cli beta validate Extensions rendered.yaml --cache-dir mycache
+
+9) ./crossplane-cli beta validate Extensions rendered.yaml --cache-dir mycache --clean-cache

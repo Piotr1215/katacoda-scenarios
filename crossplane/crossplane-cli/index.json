@@ -1,0 +1,74 @@
+{
+    "title": "Crossplane Composition Functions",
+    "description": "Create and use Crossplane Composition Functions",
+    "difficulty": "Beginner",
+    "time": "15minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Cluster Preparation 🚧",
+                "text": "step1.md"
+            },
+            {
+                "title": "The xpkg init command 📦",
+                "text": "step2.md"
+            },
+            {
+                "title": "The validate command",
+                "text": "step3/step3.md",
+                "background": "step3/background.sh"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "foreground": "foreground.sh",
+            "background": "background.sh"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "kill_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "start_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "send_command",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "showdashboard": true,
+        "dashboards": [
+            {
+                "name": "Komoplane",
+                "href": "https://[[HOST_SUBDOMAIN]]-8090-[[KATACODA_HOST]].environments.katacoda.com",
+                "port": 8090
+            }
+        ]
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}
