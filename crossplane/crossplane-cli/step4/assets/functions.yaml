@@ -1,0 +1,24 @@
+apiVersion: pkg.crossplane.io/v1beta1
+kind: Function
+metadata:
+  name: function-patch-and-transform
+spec:
+  package: xpkg.upbound.io/upbound/function-patch-and-transform:v0.2.1
+  packagePullPolicy: Always
+---
+apiVersion: pkg.crossplane.io/v1beta1
+kind: Function
+metadata:
+  name: function-simple-label
+spec:
+  # This is ignored when using the Development runtime.
+  package: xpkg.upbound.io/piotr/function-simple-label:v0.0.1
+  packagePullPolicy: Always
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-nop
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
+

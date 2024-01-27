@@ -18,6 +18,11 @@
                 "title": "The validate command",
                 "text": "step3/step3.md",
                 "background": "step3/background.sh"
+            },
+            {
+                "title": "The trace command",
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
             }
         ],
         "intro": {

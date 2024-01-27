@@ -1,0 +1,33 @@
+# FunctionTester
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xfunctiontesters.composition-functions.io
+spec:
+  group: composition-functions.io
+  names:
+    kind: XFunctionTester
+    plural: xfunctiontesters
+  defaultCompositionRef:
+    name: composition-function-simple-label
+  connectionSecretKeys:
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                env:
+                  type: string
+                  description: Environment
+                render:
+                  type: boolean
+                  description: Should things render
+              required:
+                - env
+                - render

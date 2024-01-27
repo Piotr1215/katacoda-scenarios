@@ -1,4 +1,5 @@
 ## Let's validate our composition
+
 `crossplane beta validate assets/schemas.yaml assets/resources.yaml`{{exec}}
 `crossplane beta validate missing-assets/schemas.yaml assets/resources.yaml`{{exec}}
 `crossplane beta render assets/xr.yaml assets/composition.yaml assets/func.yaml | ./crossplane-cli beta validate assets/schemas.yaml -`{{exec}}
