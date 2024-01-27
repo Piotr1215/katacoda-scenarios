@@ -8,7 +8,7 @@ folder or standard input.
 > The validate command doesn't require a cluster, all required resources are
 > encapsulated in the command
 
-First let's swap to the validate directory `cd validate && tree`{{exec}} and start
+First let's swap to the validate directory `cd /root/validate && tree`{{exec}} and start
 validation process.
 
 > Use the builtin editor, accessible on the left upper corner on the terminal,
@@ -32,7 +32,7 @@ This is a very useful feature when developing functions. Passing the output of
 the _render_ command to the _validate_ command makes sure that our function does
 not violate schema requirements.
 
-`crossplane beta render xr.yaml composition.yaml func.yaml | ./crossplane-cli beta validate schemas.yaml -`{{exec}}
+`crossplane beta render xr.yaml composition.yaml func.yaml | crossplane beta validate schemas.yaml -`{{exec}}
 
 You might have noticed that there is an error indicating the missing XR. This is
 because functions do not have access to spec fields. The flag _--include-full-xr_ fixed

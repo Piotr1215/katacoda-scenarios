@@ -15,14 +15,19 @@
                 "background": "step2/background.sh"
             },
             {
-                "title": "The validate command",
+                "title": "The validate command ✅",
                 "text": "step3/step3.md",
                 "background": "step3/background.sh"
             },
             {
-                "title": "The trace command",
+                "title": "The trace command 🔍",
                 "text": "step4/step4.md",
                 "background": "step4/background.sh"
+            },
+            {
+                "title": "The top command 🔝",
+                "text": "step5/step5.md",
+                "background": "step5/background.sh"
             }
         ],
         "intro": {
@@ -65,7 +70,15 @@
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 },
-                {"file": "validate/**/*.*", "target": "/root"}
+                {
+                    "file": "validate/**/*.*",
+                    "target": "/root"
+                },
+                {
+                    "file": "top/*.*",
+                    "target": "/root"
+                }
+
             ]
         }
     },

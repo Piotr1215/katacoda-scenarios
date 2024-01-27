@@ -1,5 +1,6 @@
 ## Introduction
 
+<!-- TODO:(piotr1215) add back link to blog when ready --> 
 This workshop will help you understand how to use various `crossplane CLI`
 commands and how they can help you with your day-to-day crossplane tasks
 
