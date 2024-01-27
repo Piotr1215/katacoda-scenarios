@@ -1,0 +1,59 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xstoragebuckets.platform-composites.acme.io
+  labels:
+    provider: gcp
+    type: generic
+spec:
+  patchSets:
+    - name: environmentToProviderConfig
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.environment
+          toFieldPath: spec.providerConfigRef.name
+    - name: claimNameIsResourceName
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: metadata.name
+          toFieldPath: metadata.name
+        - type: FromCompositeFieldPath
+          fromFieldPath: metadata.labels[crossplane.io/claim-name]
+          toFieldPath: metadata.name
+    - name: ownerAndServiceLabels
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.owner
+          toFieldPath: spec.forProvider.labels[owner]
+        - type: FromCompositeFieldPath
+          fromFieldPath: spec.parameters.service
+          toFieldPath: spec.forProvider.labels[service]
+  writeConnectionSecretsToNamespace: acme-system
+  compositeTypeRef:
+    apiVersion: platform-composites.acme.io/v1alpha1
+    kind: XStorageBucket
+  resources:
+  - name: storagebucket
+    base:
+      apiVersion: storage.gcp.acme.io/v1beta1
+      kind: Bucket
+      spec:
+        forProvider: 
+          location: us-west1
+          storageClass: STANDARD
+          providerConfigRef:
+            name: default
+    patches:
+      - type: PatchSet
+        patchSetName: claimNameIsResourceName
+      - type: PatchSet
+        patchSetName: ownerAndServiceLabels
+      - type: FromCompositeFieldPath
+        fromFieldPath: spec.parameters.location
+        toFieldPath: spec.forProvider.location
+      - type: FromCompositeFieldPath
+        fromFieldPath: spec.parameters.class
+        toFieldPath: spec.forProvider.storageClass
+      - type: PatchSet
+        patchSetName: environmentToProviderConfig
+
