@@ -11,7 +11,8 @@
             },
             {
                 "title": "The xpkg init command 📦",
-                "text": "step2.md"
+                "text": "step2/step2.md",
+                "background": "step2/background.sh"
             },
             {
                 "title": "The validate command",
