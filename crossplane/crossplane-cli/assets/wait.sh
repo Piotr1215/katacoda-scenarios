@@ -31,8 +31,6 @@ showProgress() {
 	waitForCompletion /opt/.crossplanecliinstalled
 	echo -n "Upgrade Go to 1.21.3"
 	waitForCompletion /opt/.goupgraded
-	echo -n "Installing Provider Nop"
-	waitForCompletion /opt/.nopinstalled
 	echo -n "Installing Komoplane"
 	waitForCompletion /opt/.komoplaneinstalled
 	waitForCompletion /opt/.backgroundfinished

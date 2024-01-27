@@ -38,10 +38,6 @@ echo "done" >>/opt/.goupgraded
 # Install tree command
 sudo apt-get install tree
 
-## Installing Provider Nop
-crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0
-echo "done" >>/opt/.nopinstalled
-
 #Installing komoplane
 helm repo add komodorio https://helm-charts.komodor.io &&
 	helm repo update komodorio &&
