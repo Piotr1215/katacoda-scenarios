@@ -41,6 +41,11 @@
                     "chmod": "+x"
                 },
                 {
+                    "file": "crossplane",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
                     "file": "kill_tmux.sh",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"

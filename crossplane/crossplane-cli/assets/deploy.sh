@@ -23,9 +23,10 @@ helm install crossplane \
 echo "done" >>/opt/.crossplaneinstalled
 
 #Installing Crossplane CLI
-curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh" | sh && sudo mv crossplane /usr/local/bin
+# TODO:(piotr1215) crossplane CLI binary is in the assets as the build takes forever, change this when release is Available
+# curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh" | sh && sudo mv crossplane /usr/local/bin
 
-echo "done" >>/opt/.crossplanecliinstalled
+# echo "done" >>/opt/.crossplanecliinstalled
 
 ## Upgrade Go to latest
 wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
