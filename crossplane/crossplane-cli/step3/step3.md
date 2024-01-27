@@ -1,23 +1,28 @@
 ## Let's validate our composition
 
-> [!NOTE]
 > The validate command doesn't require a cluster, all required resources are
 > encapsulated in the command
 
-`crossplane beta validate ./validte_assets/schemas.yaml ./validte_assets/resources.yaml`{{exec}}
+First let's swap to the validate directory `cd validate`{{exec}} and start
+validation process.
 
-`crossplane beta validate missing-./validte_assets/schemas.yaml ./validte_assets/resources.yaml`{{exec}}
+> Use the builtin editor, accessible on the left upper corner on the terminal,
+> to view the files.
 
-`crossplane beta render ./validte_assets/xr.yaml ./validte_assets/composition.yaml ./validte_assets/func.yaml | ./crossplane-cli beta validate ./validte_assets/schemas.yaml -`{{exec}}
+`crossplane beta validate schemas.yaml resources.yaml`{{exec}}
 
-`crossplane beta render ./validte_assets/xr.yaml ./validte_assets/composition.yaml ./validte_assets/func.yaml --include-full-xr | ./crossplane-cli beta validate ./validte_assets/schemas.yaml -`{{exec}}
+`crossplane beta validate missing-schemas.yaml resources.yaml`{{exec}}
 
-`crossplane beta render ./validte_assets/xr.yaml ./validte_assets/composition.yaml ./validte_assets/func.yaml --include-full-xr > ./validte_assets/rendered.yaml`{{exec}}
+`crossplane beta render xr.yaml composition.yaml func.yaml | ./crossplane-cli beta validate schemas.yaml -`{{exec}}
 
-`crossplane beta validate Extensions ./validte_assets/rendered.yaml`{{exec}}
+`crossplane beta render xr.yaml composition.yaml func.yaml --include-full-xr | ./crossplane-cli beta validate schemas.yaml -`{{exec}}
 
-`crossplane beta validate Extensions ./validte_assets/rendered.yaml`{{exec}}
+`crossplane beta render xr.yaml composition.yaml func.yaml --include-full-xr > rendered.yaml`{{exec}}
 
-`crossplane beta validate Extensions ./validte_assets/rendered.yaml --cache-dir mycache`{{exec}}
+`crossplane beta validate Extensions rendered.yaml`{{exec}}
 
-`crossplane beta validate Extensions ./validte_assets/rendered.yaml --cache-dir mycache --clean-cache`{{exec}}
+`crossplane beta validate Extensions rendered.yaml`{{exec}}
+
+`crossplane beta validate Extensions rendered.yaml --cache-dir mycache`{{exec}}
+
+`crossplane beta validate Extensions rendered.yaml --cache-dir mycache --clean-cache`{{exec}}
