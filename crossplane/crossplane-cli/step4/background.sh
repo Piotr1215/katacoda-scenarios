@@ -1,1 +1,1 @@
-cd /root/trace || exit
+
