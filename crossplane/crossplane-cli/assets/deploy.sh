@@ -20,6 +20,11 @@ helm install crossplane \
 	--namespace crossplane-system \
 	--create-namespace crossplane-stable/crossplane
 kubectl wait -n crossplane-system deploy/crossplane --for='condition=AVAILABLE=True'
+kubectl apply -f /root/top/install.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl patch deployment metrics-server -n kube-system \
+	--type='json' \
+	-p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls=true"}]'
 
 echo "done" >>/opt/.crossplaneinstalled
 
@@ -31,10 +36,5 @@ echo "done" >>/opt/.crossplaneinstalled
 
 # Install tree command
 sudo apt-get install tree
-kubectl apply -f /root/top/install.yaml
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-kubectl patch deployment metrics-server -n kube-system \
-	--type='json' \
-	-p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls=true"}]'
 
 echo "done" >>/opt/.backgroundfinished
