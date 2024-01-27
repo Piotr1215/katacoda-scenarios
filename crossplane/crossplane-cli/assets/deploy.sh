@@ -19,6 +19,7 @@ helm repo update
 helm install crossplane \
 	--namespace crossplane-system \
 	--create-namespace crossplane-stable/crossplane
+kubectl wait -n crossplane-system deploy/crossplane --for='condition=AVAILABLE=True'
 
 echo "done" >>/opt/.crossplaneinstalled
 
