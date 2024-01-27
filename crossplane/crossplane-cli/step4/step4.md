@@ -1,15 +1,9 @@
 ## Trace claim
 
-Install provider nop
+Apply resources `kubectl apply -f composition.yaml,xrd.yaml,functions.yaml`{{exec}}
 
-`crossplane xpkg install provider xpkg.upbound.io/crossplane-contrib/provider-nop:v0.2.0`{{exec}}
+Once everything is applied, we can apply our xr: `kubectl apply -f xr.yaml`{{exec}}
 
-check if provider is ready
+Now run trace command to see how the resources from our xr are applied
 
-`kubectl get crossplane`{{exec}}
-
-Apply resources `kubectl apply -f assets/composition.yaml,assets/xrd.yaml,assets/functions.yaml`{{exec}}
-
-Once everything is applied, we can apply our xr: `kubectl apply -f assets/xr.yaml`{{exec}}
-
-Trace
+`crossplane beta trace ...`{{exec}}

@@ -21,7 +21,8 @@
             },
             {
                 "title": "The trace command 🔍",
-                "text": "step4/step4.md"
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
             },
             {
                 "title": "The top command 🔝",
@@ -80,6 +81,10 @@
                 },
                 {
                     "file": "top/*.*",
+                    "target": "/root"
+                },
+                {
+                    "file": "trace/*.*",
                     "target": "/root"
                 }
             ]
