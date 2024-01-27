@@ -13,7 +13,7 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 echo "done" >>/opt/.helminstalled
 
 #Installing Crossplane
-echo "Installing Crossplane"
+echo "Installing Crossplane and setting up cluster"
 helm repo add crossplane-stable https://charts.crossplane.io/stable
 helm repo update
 helm install crossplane \
@@ -27,14 +27,6 @@ echo "done" >>/opt/.crossplaneinstalled
 # curl -sL "https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh" | sh && sudo mv crossplane /usr/local/bin
 
 # echo "done" >>/opt/.crossplanecliinstalled
-
-## Upgrade Go to latest
-wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-echo "export PATH=$PATH:/usr/local/go/bin" >>/etc/profile
-
-echo "done" >>/opt/.goupgraded
 
 # Install tree command
 sudo apt-get install tree

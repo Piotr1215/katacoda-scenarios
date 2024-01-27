@@ -25,10 +25,8 @@ showProgress() {
 	waitForCompletion /opt/.clusterstarted
 	echo -n "Installing Helm"
 	waitForCompletion /opt/.helminstalled
-	echo -n "Installing Crossplane"
+	echo -n "Installing Crossplane and setting up cluster"
 	waitForCompletion /opt/.crossplaneinstalled
-	echo -n "Upgrade Go to 1.21.3"
-	waitForCompletion /opt/.goupgraded
 	waitForCompletion /opt/.backgroundfinished
 
 	echo "All Set"
