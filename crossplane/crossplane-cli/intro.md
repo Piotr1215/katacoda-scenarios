@@ -1,6 +1,7 @@
 ## Introduction
 
-<!-- TODO:(piotr1215) add back link to blog when ready --> 
+<!-- TODO:(piotr1215) add back link to blog when ready -->
+
 This workshop will help you understand how to use various `crossplane CLI`
 commands and how they can help you with your day-to-day crossplane tasks
 
@@ -11,11 +12,11 @@ commands and how they can help you with your day-to-day crossplane tasks
 
   - 🚀 initiate a new project with `crossplane beta init` including running an
     `init.sh` script
-  - 🔄 convert classic P&T composition to a new function P&T using `crossplane beta convert pipeline-composition`
-  - 🔀 convert a ControllerConfig to a DeploymentRuntimeConfig using `crossplane beta convert deployment-runtime`
   - ✅ validate composition against a schema using `crossplane beta validate`
+  - 🔄 convert classic P&T composition to a new function P&T using `crossplane beta convert pipeline-composition`
   - 🔍 improvements to `crossplane beta trace` command allow tracing packages
   - 📊 quickly check resources utilization of crossplane pods using `crossplane beta top`
+  - 🔀 convert a ControllerConfig to a DeploymentRuntimeConfig using `crossplane beta convert deployment-runtime`
 
 ## Crossplane Recap
 

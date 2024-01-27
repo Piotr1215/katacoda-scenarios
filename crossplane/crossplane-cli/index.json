@@ -21,13 +21,17 @@
             },
             {
                 "title": "The trace command 🔍",
-                "text": "step4/step4.md",
-                "background": "step4/background.sh"
+                "text": "step4/step4.md"
             },
             {
                 "title": "The top command 🔝",
                 "text": "step5/step5.md",
                 "background": "step5/background.sh"
+            },
+            {
+                "title": "The convert command 🔄",
+                "text": "step6/step6.md",
+                "background": "step6/background.sh"
             }
         ],
         "intro": {
@@ -78,7 +82,6 @@
                     "file": "top/*.*",
                     "target": "/root"
                 }
-
             ]
         }
     },
