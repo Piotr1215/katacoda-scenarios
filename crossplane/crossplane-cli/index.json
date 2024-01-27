@@ -41,7 +41,7 @@
                     "chmod": "+x"
                 },
                 {
-                    "file": "crossplane",
+                    "file": "crossplane-cli",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 },
