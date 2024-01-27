@@ -77,4 +77,4 @@ Or clean the cache directory.
 
 ## Next Step
 
-Next we will learn new capabilities of the _trace_ command
+Next we will learn new capabilities of the _top_ command.

@@ -3,8 +3,6 @@
 Crossplane is evolving in a very fast pace, some features supercede others and
 we need to migrate to newer APIs.
 
-<!-- TODO:(piotr1215) add conversion examples -->
-
 The _convert_ subcommand implements two conversions for now.
 
 ### Convert from ControllerConfig -> DeploymentRuntimeConfig
@@ -21,7 +19,7 @@ The same with a sample composition `crossplane beta convert pipeline-composition
 Let's save the last conversion and compare the old and new file `crossplane beta convert pipeline-composition
 /root/convert/composition.yaml > new_composition.yaml`{{exec}}
 
-`diff /root/convert/composition.yaml new_composition.yaml`{{exec}}
+`diff --side-by-side --color --suppress-common-lines --ignore-all-space /root/convert/composition.yaml new_composition.yaml`{{exec}}
 
 ## Next Step
 
