@@ -25,4 +25,4 @@ Start [Komoplane]({{TRAFFIC_HOST1_8090}}) in a new tab
 
 ## Next Step
 
-Next we will learn the basics of how `composition functions` work.
+Next we will learn how to use the **crossplane beta xpkg init** command.
