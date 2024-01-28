@@ -1,7 +1,0 @@
-apiVersion: composition-functions.io/v1alpha1
-kind: XFunctionTester
-metadata:
-  name: test-resource
-spec:
-  env: dev
-  render: true

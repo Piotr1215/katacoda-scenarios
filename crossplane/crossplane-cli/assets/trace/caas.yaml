@@ -1,6 +1,0 @@
-apiVersion: pkg.crossplane.io/v1
-kind: Configuration
-metadata:
-  name: configuration-observability-oss
-spec:
-  package: xpkg.upbound.io/upbound/configuration-observability-oss:v0.2.0
