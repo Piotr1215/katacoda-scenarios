@@ -14,7 +14,7 @@ Running the command without arguments `crossplane beta xpkg init`{{exec}} shows 
 Let's create a new folder `mkdir new-func && cd new-func`{{exec}} and run the
 init command to create a new function based on the _funciton-sdk-go_.
 
-`crossplane beta xpkg init new-func function-template-go`{{exec}}
+`crossplane beta xpkg init new-func function-template-go && tree`{{exec}}
 
 > Use the builtin editor, accessible on the left upper corner on the terminal,
 > to view the files.
@@ -23,7 +23,8 @@ init command to create a new function based on the _funciton-sdk-go_.
 
 If a template repository has an _init_ script it would be run on the command
 execution.
-<!-- TODO:(piotr1215) add this when implemented --> 
+
+<!-- TODO:(piotr1215) add this when implemented -->
 
 ## Next Step
 
