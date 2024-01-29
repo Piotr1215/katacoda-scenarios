@@ -28,10 +28,13 @@ prepares for us directory structure with all the necessary boilerplate.
 
 ### The init script
 
-If a template repository has an _init_ script it would be run on the command
-execution.
+Since the `function-template-go` template repository has an `init.sh script`, we
+could see the details being printed out. We can `v`iew the code of the init
+script or execute it and see changes in our repository.
 
-<!-- TODO:(piotr1215) add this when implemented -->
+Let's accept the changes to the init script by selecting `y`{{exec}} and clone the _function-template-go_ repository `cd ../ && git clone https://github.com/crossplane/function-template-go.git`{{exec}}
+And we can see what changes the init script introduced to our files compared to
+the original repository `diff -r --color --suppress-common-lines --ignore-all-space new-func function-template-go`{{exec}}.
 
 ## Next Step
 
