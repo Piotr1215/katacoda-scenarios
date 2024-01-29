@@ -8,7 +8,7 @@ resources such as providers and functions.
 
 Let's apply a very useful confgiuration which creates a base observabilty stack
 [configuration-observability-oss](https://marketplace.upbound.io/configurations/upbound/configuration-observability-oss/v0.2.0)
-`kubectl apply -f /root/trace/observabilty.yaml`{{exec}}
+`kubectl apply -f /root/trace/observability.yaml`{{exec}}
 
 Now we can trace the installation progress of all the package components
 `crossplane beta trace configuration/configuration-observability-oss`{{exec}}
