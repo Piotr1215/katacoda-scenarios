@@ -21,8 +21,10 @@ against any schema (in this case provider CRD and an XRD)
 
 `crossplane beta validate schemas.yaml resources.yaml`{{exec}}
 
-If there is a validation error, the command will indicate it accordingly. Let's
-try it out:
+The command has two categories of output; _errors_ and _warnings_.
+If there is a validation error or warning, the command will indicate it accordingly. Let's
+try it out, here the command will output validation warning since were are
+missing an XRD:
 
 `crossplane beta validate missing-schemas.yaml resources.yaml`{{exec}}
 
