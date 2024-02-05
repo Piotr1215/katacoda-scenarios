@@ -37,11 +37,11 @@ x-kubernetes-validations:
 First let's use an xr example with the incorrect values, here we are getting a
 validation error.
 
-`crossplane beta validate ./cel-rule-example/xrd.yaml wrong-xr.yaml`{{exec}}
+`crossplane beta validate ./cel-rule-example/xrd.yaml ./cel-rule-example/wrong-xr.yaml`{{exec}}
 
 Whereas with the correct xr, the validation passes.
 
-`crossplane beta validate ./cel-rule-example/xrd.yaml xr.yaml`{{exec}}
+`crossplane beta validate ./cel-rule-example/xrd.yaml ./cel-rule-example/xr.yaml`{{exec}}
 
 ### Validate resource against a schema
 
