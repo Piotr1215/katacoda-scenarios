@@ -1,0 +1,4 @@
+./crossplane-cli beta validate xrd.yaml wrong-xr.yaml
+
+./crossplane-cli beta validate xrd.yaml xr.yaml
+
