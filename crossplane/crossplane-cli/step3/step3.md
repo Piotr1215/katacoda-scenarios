@@ -14,6 +14,35 @@ validation process.
 > Use the builtin editor, accessible on the left upper corner on the terminal,
 > to view the files.
 
+### Validate Kubernetes CEL rules
+
+> ✨ Latest addition to the validate command
+
+Crossplane Resource Definition XRD is an OpenAPIV3 spec compatible schema. As
+such it benefits from the addition of [CEL Validation
+Rules](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#validation-rules).
+
+Those rules enable expressing complex business validatation scenarios for claims
+and XRs based on the XRD schema. Let's see it in action.
+
+In this scenario our _xrd_ specifies that replicas should be between min and max
+replicas values with the following rule:
+
+```yaml
+x-kubernetes-validations:
+  - rule: "self.minReplicas <= self.replicas && self.replicas <= self.maxReplicas"
+    message: "replicas should be in between minReplicas and maxReplicas."
+```
+
+First let's use an xr example with the incorrect values, here we are getting a
+validation error.
+
+`crossplane beta validate ./cel-rule-example/xrd.yaml wrong-xr.yaml`{{exec}}
+
+Whereas with the correct xr, the validation passes.
+
+`crossplane beta validate ./cel-rule-example/xrd.yaml xr.yaml`{{exec}}
+
 ### Validate resource against a schema
 
 In the first scenario we can validate any resource (in this case XR and MR)
