@@ -2,43 +2,39 @@
 
 set -euo pipefail
 
-#Start Kubernetes
-# curl -sfL https://get.k3s.io | sh -
-
-# echo "Waiting for nodes ready"
-# k3s kubectl wait node --all --for=condition=Ready --timeout=60s
-
-# echo "Setup KUBECONFIG"
-# export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-# echo "export KUBECONFIG=/etc/rancher/k3s/k3s.yaml" >>~/.bashrc
+echo "Waiting for nodes ready"
+kubectl wait node --all --for condition=ready --timeout=800s
 
 echo "done" >>/opt/.clusterstarted
 
 #Installing Helm
-wget https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz
-tar xvf helm-v3.4.1-linux-amd64.tar.gz
-mv linux-amd64/helm /usr/local/bin
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 echo "done" >>/opt/.helminstalled
 
 #Installing Crossplane
-kubectl create namespace crossplane-system
+echo "Installing Crossplane and setting up cluster"
 helm repo add crossplane-stable https://charts.crossplane.io/stable
-helm repo upate
-helm install crossplane --namespace crossplane-system crossplane-stable/crossplane
-kubectl wait deployment.apps/crossplane --namespace crossplane-system --for condition=AVAILABLE=True --timeout 1m
-kubectl wait deployment.apps/coredns --namespace kube-system --for condition=AVAILABLE=True --timeout 1m
+helm repo update
+helm install crossplane \
+	--namespace crossplane-system \
+	--create-namespace crossplane-stable/crossplane
+kubectl wait -n crossplane-system deploy/crossplane --for='condition=AVAILABLE=True'
+kubectl apply -f /root/top/install.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl patch deployment metrics-server -n kube-system \
+	--type='json' \
+	-p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls=true"}]'
 
 echo "done" >>/opt/.crossplaneinstalled
 
 #Installing Crossplane CLI
-curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.5/install.sh | sh
+curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.15/install.sh | sh
 
 echo "done" >>/opt/.crossplanecliinstalled
 
 #Installing Crossplane’s Kubernetes Provider
 kubectl apply -f kubernetes-provider.yaml
-kubectl wait provider.pkg.crossplane.io/crossplane-provider-kubernetes --for condition=HEALTHY=True --timeout 1m
 echo "alias k=kubectl" >>~/.bashrc
 
 echo "done" >>/opt/.kubernetesproviderinstalled
