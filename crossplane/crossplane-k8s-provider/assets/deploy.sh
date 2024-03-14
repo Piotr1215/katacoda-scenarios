@@ -33,6 +33,8 @@ curl -sL https://raw.githubusercontent.com/crossplane/crossplane/release-1.15/in
 echo "done" >>/opt/.crossplanecliinstalled
 
 #Installing Crossplane’s Kubernetes Provider
+kubectl apply -f kubernetes-provider-settings.yaml
+kubectl wait -n crossplane-system provider/crossplane-provider-kubernetes --for='condition=AVAILABLE=True'
 kubectl apply -f kubernetes-provider.yaml
 echo "alias k=kubectl" >>~/.bashrc
 
