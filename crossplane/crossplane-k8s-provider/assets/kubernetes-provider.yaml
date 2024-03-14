@@ -20,13 +20,23 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 
 ---
-apiVersion: pkg.crossplane.io/v1alpha1
-kind: ControllerConfig
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
 metadata:
+  creationTimestamp: "2024-03-14T08:13:05Z"
   name: crossplane-provider-kubernetes
 spec:
-  serviceAccountName: crossplane-provider-kubernetes
-
+  deploymentTemplate:
+    spec:
+      selector: {}
+      strategy: {}
+      template:
+        spec:
+          containers: []
+          serviceAccountName: crossplane-provider-kubernetes
+  serviceAccountTemplate:
+    metadata:
+      name: crossplane-provider-kubernetes
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
