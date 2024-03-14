@@ -37,7 +37,7 @@ kubectl apply -f kubernetes-provider.yaml
 kubectl wait --for condition=healthy --timeout=300s provider.pkg.crossplane.io/provider-kubernetes
 SA=$(kubectl -n crossplane-system get sa -o name | grep provider-kubernetes | sed -e 's|serviceaccount\/|{{xp_namespace}}:|g')
 kubectl create clusterrolebinding provider-kubernetes-admin-binding --clusterrole cluster-admin --serviceaccount="${SA}"
-kubectl apply -f /kubernetes-provider-config.yaml
+kubectl apply -f kubernetes-provider-config.yaml
 
 echo "alias k=kubectl" >>~/.bashrc
 
