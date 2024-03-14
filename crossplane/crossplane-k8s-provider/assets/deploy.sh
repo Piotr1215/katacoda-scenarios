@@ -20,7 +20,6 @@ helm install crossplane \
 	--namespace crossplane-system \
 	--create-namespace crossplane-stable/crossplane
 kubectl wait -n crossplane-system deploy/crossplane --for='condition=AVAILABLE=True'
-kubectl apply -f /root/top/install.yaml
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 kubectl patch deployment metrics-server -n kube-system \
 	--type='json' \
