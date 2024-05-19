@@ -1,4 +1,4 @@
->  Before proceeding with the installation steps, wait for the environment to be ready.
+> 💡 Before proceeding with the installation steps, wait for the environment to be ready.
 
 There are 3 ways to install _vcluster_:
 

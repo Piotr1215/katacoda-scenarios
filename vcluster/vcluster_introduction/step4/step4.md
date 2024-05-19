@@ -1,7 +1,7 @@
 In this section we will explore various _vcluster_ components and explain some
 on the basic concepts.
 
->  we can view the resources using octant. Open
+> 💡 we can view the resources using octant. Open
 > [Octant]({{TRAFFIC_HOST1_7777}})
 
 Let's start by creating a simple deployment inside of the _vcluster_ and see
@@ -24,7 +24,7 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 0 "kubectl get svc,deploy,pod -n test-namespace"
+send_command 1 "vcluster disconnect my-vcluster && kubectl get svc,deploy,pod -n test-namespace"
 ```{{exec interrupt}}
 
 Here we can see the resources created by the _vcluster_ in the host cluster.
