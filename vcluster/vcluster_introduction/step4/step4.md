@@ -24,9 +24,17 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 1 "vcluster disconnect my-vcluster && kubectl get svc,deploy,pod -n test-namespace"
+send_command 1 "vcluster disconnect"
+```{{exec interrupt}}
+
+```bash
+send_command 1 "kubectl get svc,deploy,pod -n test-namespace"
+```{{exec}}
+
+```bash
+send_command 0 "vcluster connect my-vcluster"
 ```{{exec interrupt}}
 
 Here we can see the resources created by the _vcluster_ in the host cluster.
 
-> ℹ️ feel free to explore the resources using octant.
+> 💡 feel free to explore the resources using octant.
