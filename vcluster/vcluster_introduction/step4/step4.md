@@ -24,17 +24,17 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 1 "vcluster disconnect"
+send_command 0 "C-c" && send_command 0 "kubectl get svc,deploy,pod -n test-namespace"
 ```{{exec interrupt}}
 
-```bash
-send_command 1 "kubectl get svc,deploy,pod -n test-namespace"
-```{{exec}}
+We have disconnected from _vcluster_ and now can list resources in the host cluster.
+
+> Notice how easi it is to connect and disconnect to and from a virtual cluster
+
+Out pod and service are synchronized to host cluster with _vcluster_ applying naming convention to avoid name collisions.
+
+Now, let's reconnect and keep exploring the virtual cluster in _octant_
 
 ```bash
 send_command 0 "vcluster connect my-vcluster"
 ```{{exec interrupt}}
-
-Here we can see the resources created by the _vcluster_ in the host cluster.
-
-> 💡 feel free to explore the resources using octant.
