@@ -15,7 +15,7 @@ This deployment will create a pod with a single container running a sample web
 app. We will also expose this deployment using a service of type NodePort.
 
 ```bash
-send_command 1 "kubectl all --all-namespaces"
+send_command 1 "kubectl get all --all-namespaces"
 ```{{exec}}
 
 Now we can check what was synchronized to the host cluster.
@@ -24,7 +24,7 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 0 "C-c" && send_command 1 "kubectl get all -n --all-namespaces"
+send_command 0 "C-c" && send_command 1 "kubectl get all --all-namespaces"
 ```{{exec interrupt}}
 
 We have disconnected from _vcluster_ and now can list resources in the host cluster.
@@ -51,6 +51,8 @@ to write data to a file using a simple script.
 ```bash
 send_command 1 "get_json"
 ```{{exec}}
+
+> ⚠️ this command take take a moment to execute
 
 Here we can find our nginx pod and service.
 
