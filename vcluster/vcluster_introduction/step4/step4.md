@@ -24,17 +24,46 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 1 "C-c" && send_command 0 "kubectl get svc,deploy,pod -n --all-namespaces"
+send_command 1 "C-c" && send_command 0 "kubectl get all -n --all-namespaces"
 ```{{exec interrupt}}
 
 We have disconnected from _vcluster_ and now can list resources in the host cluster.
 
 > Notice how easy it is to connect and disconnect to and from a virtual cluster
 
-Out pod and service are synchronized to host cluster with _vcluster_ applying naming convention to avoid name collisions.
+Our pod and service are synchronized to host cluster with _vcluster_ applying naming convention to avoid name collisions.
+
+### Data storage
+
+Vcluster by default stores data in a _sqlite_ database. This database is stored
+directly in the _vcluster_ pod. A key _vcluster_ component called _syncer_ is
+responsible for syncing the resources between the virtual and host clusters.
+
+First let's copy the database file from the _vcluster_ to the current folder.
+
+```bash
+send_command 0 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db ./state.db -c syncer "
+```{{exec}}
+
+All the interesting data is stored in the _state.db_ file. We can use _sqlite3_
+to write data to a file using a simple script.
+
+```bash
+send_command 0 "get_json"
+```{{exec}}
+
+Here we can find our nginx pod and service.
+
+```bash
+send_command 0 "jq '.' ./filtered_output.json"
+```{{exec}}
+
+### Reconnect to vcluster
 
 Now, let's reconnect and keep exploring the virtual cluster in _octant_
 
 ```bash
-send_command 0 "vcluster connect my-vcluster"
+send_command 1 "vcluster connect my-vcluster"
 ```{{exec interrupt}}
+
+

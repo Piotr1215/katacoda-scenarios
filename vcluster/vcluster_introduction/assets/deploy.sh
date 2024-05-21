@@ -2,13 +2,15 @@
 
 set -euo pipefail
 
-echo "Waiting for nodes ready"
+# "Waiting for nodes ready"
 kubectl wait node --all --for condition=ready --timeout=800s
-
 echo "done" >>/opt/.clusterstarted
 
-# Install tree command
-sudo apt-get install tree
+# "Installing tools"
+sudo apt-get update
+sudo apt-get install -y sqlite3
+sudo apt-get install -y tree
+echo "done" >>/opt/.toolsinstalled
 
 # Installing octant for view
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
