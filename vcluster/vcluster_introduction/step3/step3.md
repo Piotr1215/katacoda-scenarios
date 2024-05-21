@@ -7,13 +7,13 @@ kubeconfig. In the other pane, we can interact with the new vcluster.
 `start_tmux.sh`{{exec}}
 
 ```bash
-send_command 0 "vcluster create my-vcluster --namespace test-namespace"
+send_command 1 "vcluster create my-vcluster --namespace test-namespace"
 ```{{exec}}
 
 Now we can check all the resources in our new vcluster.
 
 ```bash
-send_command 1 "kubectl get all"
+send_command 0 "kubectl get all --all-namespaces"
 ```{{exec}}
 
 ## Next Step
