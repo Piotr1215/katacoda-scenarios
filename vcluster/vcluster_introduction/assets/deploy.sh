@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-#Start Kubernetes
-# curl -sfL https://get.k3s.io | sh -
-
 echo "Waiting for nodes ready"
 kubectl wait node --all --for condition=ready --timeout=800s
 

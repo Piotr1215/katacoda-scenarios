@@ -16,6 +16,7 @@ tmux new-session -d -s develop -c "$start_dir"
 
 # Split the window horizontally, using the same start directory
 tmux split-window -v -c "$start_dir"
+tmux resize-pane -y $(($(tmux display -p '#{pane_height}') * 2 / 3))
 
 # Attach to the tmux session
 tmux attach -t develop
