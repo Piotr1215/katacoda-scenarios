@@ -8,14 +8,14 @@ Let's start by creating a simple deployment inside of the _vcluster_ and see
 what resources are created.
 
 ```bash
-send_command 0 "kubectl apply -f deployment.yaml"
+send_command 1 "kubectl apply -f deployment.yaml"
 ```{{exec}}
 
 This deployment will create a pod with a single container running a sample web
 app. We will also expose this deployment using a service of type NodePort.
 
 ```bash
-send_command 0 "kubectl all --all-namespaces"
+send_command 1 "kubectl all --all-namespaces"
 ```{{exec}}
 
 Now we can check what was synchronized to the host cluster.
@@ -24,7 +24,7 @@ _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
 
 ```bash
-send_command 1 "C-c" && send_command 0 "kubectl get all -n --all-namespaces"
+send_command 0 "C-c" && send_command 1 "kubectl get all -n --all-namespaces"
 ```{{exec interrupt}}
 
 We have disconnected from _vcluster_ and now can list resources in the host cluster.
@@ -42,20 +42,20 @@ responsible for syncing the resources between the virtual and host clusters.
 First let's copy the database file from the _vcluster_ to the current folder.
 
 ```bash
-send_command 0 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db ./state.db -c syncer "
+send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db ./state.db -c syncer "
 ```{{exec}}
 
 All the interesting data is stored in the _state.db_ file. We can use _sqlite3_
 to write data to a file using a simple script.
 
 ```bash
-send_command 0 "get_json"
+send_command 1 "get_json"
 ```{{exec}}
 
 Here we can find our nginx pod and service.
 
 ```bash
-send_command 0 "jq '.' ./filtered_output.json"
+send_command 1 "jq '.' ./filtered_output.json"
 ```{{exec}}
 
 ### Reconnect to vcluster
@@ -63,7 +63,7 @@ send_command 0 "jq '.' ./filtered_output.json"
 Now, let's reconnect and keep exploring the virtual cluster in _octant_
 
 ```bash
-send_command 1 "vcluster connect my-vcluster"
+send_command 0 "vcluster connect my-vcluster"
 ```{{exec interrupt}}
 
 
