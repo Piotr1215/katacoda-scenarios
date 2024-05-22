@@ -46,19 +46,13 @@ send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db
 ```{{exec}}
 
 All the interesting data is stored in the _state.db_ file. We can use _sqlite3_
-to write data to a file using a simple script.
+to retrieve all data that _vcluster_ stores.
 
 ```bash
-send_command 1 "get_json"
+send_command 1 "sqlite3 state.db \"SELECT * FROM kine WHERE name LIKE '%nginx%';\""
 ```{{exec}}
 
-> ⚠️ this command take take a moment to execute
-
-Here we can find our nginx pod and service.
-
-```bash
-send_command 1 "jq '.' ./filtered_output.json"
-```{{exec}}
+Here we can find our nginx pod and service and other data synchronized by _vcluster_.
 
 ### Reconnect to vcluster
 
