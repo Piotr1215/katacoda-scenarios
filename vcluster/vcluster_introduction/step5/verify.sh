@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vluster list | grep -q "new-vcluster"
+vcluster list | grep -q "new-vcluster"
