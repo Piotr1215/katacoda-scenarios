@@ -5,5 +5,7 @@ Make sure not to connect to the `vcluster` after creating it.
 
 <details>
 <summary>click to see the answer</summary>
-<code>vcluster create new-vcluster --namespace new-namespace --connect=false</code>
+
+`vcluster create new-vcluster --namespace new-namespace --connect=false`{{exec}}
+
 </details>
