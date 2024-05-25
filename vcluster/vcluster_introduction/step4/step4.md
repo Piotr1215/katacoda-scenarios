@@ -18,7 +18,16 @@ app. We will also expose this deployment using a service of type NodePort.
 send_command 1 "kubectl get all --all-namespaces"
 ```{{exec}}
 
-Now we can check what was synchronized to the host cluster.
+We can access the web page as we normally would in a regular Kubernetes cluster.
+
+```bash
+send_command 1 "kubectl -n team-b port-forward --address 0.0.0.0 svc/test-service 31234:80 > /dev/null &"
+```{{exec}}
+
+> Now we can access the web page by clicking on the link below.
+> [nginx sample app]({{TRAFFIC_HOST1_31234}})
+
+Let's check what was synchronized to the host cluster.
 Notice that _vcluster didn't create _deployment_. This is because by default
 _vcluster_ will only sync workloads and services, configmaps and secrets to the
 host cluster.
