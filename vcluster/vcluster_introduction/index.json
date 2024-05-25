@@ -28,7 +28,7 @@
             {
                 "title": "Test your knowledge 🧪",
                 "text": "step5/step5.md",
-                "background": "step5/verify.sh"
+                "verify": "step5/verify.sh"
             }
         ],
         "intro": {
