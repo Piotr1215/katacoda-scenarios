@@ -26,9 +26,14 @@
                 "background": "step4/background4.sh"
             },
             {
-                "title": "Test your knowledge 🧪",
+                "title": "Create 🧪",
                 "text": "step5/step5.md",
                 "verify": "step5/verify.sh"
+            },
+            {
+                "title": "Reconnect 🧪",
+                "text": "step6/step6.md",
+                "verify": "step6/verify.sh"
             }
         ],
         "intro": {
