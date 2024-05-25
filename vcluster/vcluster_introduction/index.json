@@ -24,6 +24,11 @@
                 "title": "Exploring vcluster 🚀",
                 "text": "step4/step4.md",
                 "background": "step4/background4.sh"
+            },
+            {
+                "title": "Test your knowledge 🧪",
+                "text": "step5/step5.md",
+                "background": "step5/verify.sh"
             }
         ],
         "intro": {
