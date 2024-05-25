@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vcluster list | grep -q "new-vcluster"
+vcluster list | awk '/new-vcluster/ && /new-namespace/ { found=1 } END { exit !found }'
