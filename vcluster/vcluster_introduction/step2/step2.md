@@ -58,4 +58,4 @@ error-prone. This is where `vcluster` can help.
 
 ## Next Step
 
-Next we will see how to achieve resources isolation using Kubernetes namespaces.
+Next, we will create a new _vcluster_
