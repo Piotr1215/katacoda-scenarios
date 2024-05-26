@@ -63,12 +63,7 @@ send_command 1 "sqlite3 state.db \"SELECT * FROM kine WHERE name LIKE '%nginx%';
 
 Here we can find our nginx pod and service and other data synchronized by _vcluster_.
 
-### Reconnect to vcluster
+## Next Step
 
-Now, let's reconnect and keep exploring the virtual cluster in _octant_
-
-```bash
-send_command 0 "vcluster connect my-vcluster"
-```{{exec interrupt}}
-
-
+Next we will see how well you have mastered the _vcluster_ CLI by running some
+test scenarios.
