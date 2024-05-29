@@ -1,0 +1,21 @@
+{
+    "title": "kluctl",
+    "description": "\u0015Use kluctl to manage kubernetes deployments",
+    "difficulty": "beginner",
+    "time": "20 minutes",
+    "details": {
+        "steps": [],
+        "assets": {
+            "host01": []
+        },
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}
