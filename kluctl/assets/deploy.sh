@@ -6,10 +6,11 @@ set -euo pipefail
 kubectl wait node --all --for condition=ready --timeout=800s
 echo "done" >>/opt/.clusterstarted
 
-# "Installing tools"
+# "Installing tools and configuring git"
 sudo apt-get update
-sudo apt-get install -y sqlite3
 sudo apt-get install -y tree
+git config --global user.email "you@example.com"
+git config --global user.name "Kluctl Demo"
 echo "done" >>/opt/.toolsinstalled
 
 # Installing octant for view
@@ -20,5 +21,7 @@ echo "done" >>/opt/.octantinstalled
 
 echo "done" >>/opt/.backgroundfinished
 
+# shellcheck disable=SC2034
+# it is used in the background script
 OCTANT_DISABLE_OPEN_BROWSER=true
 OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant

@@ -23,11 +23,12 @@ waitForCompletion() {
 showProgress() {
 	echo -n "Checking node status"
 	waitForCompletion /opt/.clusterstarted
-	echo -n "Installing additional tools"
+	echo -n "Installing additional tools & configuring system"
 	waitForCompletion /opt/.toolsinstalled
 	echo -n "Installing octant"
 	waitForCompletion /opt/.octantinstalled
 	waitForCompletion /opt/.backgroundfinished
+	# Pick up any changes during background
 
 	echo "All Set"
 	echo ""
