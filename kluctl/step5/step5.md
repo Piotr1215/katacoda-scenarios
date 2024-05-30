@@ -13,6 +13,9 @@ Now we can deploy the application to dev environment.
 kluctl deploy --yes -t dev
 ```{{exec}}
 
+> 💡 Notice that we are using the `--yes` flag to avoid the confirmation prompt.
+> This is useful for the scenario, but in real life you should always review the changes before applying them.
+
 ## Next Step
 
 Next we will introduce changes to our setup and see how `kluclt` handles them.
