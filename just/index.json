@@ -1,0 +1,52 @@
+{
+    "title": "Justfile introduction",
+    "description": "Introduction to just; a handy way to save and run project-specific commands.",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Setting Up Justfile 🛠️",
+                "text": "step1/step1.md",
+                "background": "step1/background.sh"
+            },
+            {
+                "title": "Basic Commands and Usage 🔧",
+                "text": "step2/step2.md",
+                "background": "step2/background.sh"
+            },
+            {
+                "title": "Practical Demonstration 💡",
+                "text": "step3/step3.md",
+                "background": "step3/background.sh"
+            },
+            {
+                "title": "Advanced Features 🚀",
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
+            },
+            {
+                "title": "Project Integration 🔗",
+                "text": "step5/step5.md",
+                "background": "step5/background.sh"
+            },
+            {
+                "title": "Summary and Resources 📖",
+                "text": "step6/step6.md",
+                "background": "step6/background.sh"
+            }
+        ],
+        "assets": {
+            "host01": []
+        },
+        "intro": {
+            "text": "intro.md"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
