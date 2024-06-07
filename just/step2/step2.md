@@ -79,16 +79,18 @@ just recipe1 recipe2
 If we don't specify a recipe, `just` will run the first recipe in the
 `justfile`. We can specify a default recipe by using `default` as the recipe name.
 
-
 ```bash
-tac << 'EOF' >> justfile
-default:
-    just --list
-
-EOF
+{
+    echo "default:"
+    echo "    just --list"
+    echo ""
+    cat justfile
+} | sponge justfile
 ```{{exec}}
 
 ```bash
 just
 ```{{exec}}
+
+Notice that running `just` this time simply printed the list of recipes.
 
