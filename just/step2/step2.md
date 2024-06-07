@@ -53,7 +53,7 @@ dependent: dependency
 EOF
 ```{{exec}}
 
-``bash
+```bash
 just dependent
 ```{{exec}}
 
