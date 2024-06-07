@@ -9,3 +9,7 @@ managing them and their dependencies becomes a nightmare.
 There is a tool that combines best of both worlds; [just](https://github.com/casey/just) is similar to `make`, but focused on commands orchestration.
 
 ![justfile-pic](./_media/justfile-pic.png)
+
+## Next Step
+
+Next we will install `just` and setup a simple `justfile` to see how it works.
