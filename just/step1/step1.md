@@ -23,3 +23,24 @@ Create a directory for the sample project
 mkdir -p ./just-example && cd ./just-example
 ```{{exec}}
 
+Create a `justfile` in the project directory
+
+```bash
+cat << 'EOF' > justfile
+# This is a comment
+hello:
+    echo "Hello, World!"
+EOF
+```{{exec}}
+
+### Running the first command
+
+Now we can run the `hello` command
+
+> 💡 by default `just` will run first recipe in the `justfile` if we don't
+> specify one
+
+```bash
+just
+```{{exec}}
+
