@@ -94,3 +94,11 @@ just
 
 Notice that running `just` this time simply printed the list of recipes.
 
+> 💡 comments on top of recipes are used as descriptions when running `just
+> --list`
+
+## Next Step
+
+There are many more features in `just` that we can explore. Next we will look an
+at example production ready `justfile`
+
