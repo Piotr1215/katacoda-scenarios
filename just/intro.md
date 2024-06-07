@@ -8,4 +8,4 @@ managing them and their dependencies becomes a nightmare.
 
 There is a tool that combines best of both worlds; [just](https://github.com/casey/just) is similar to `make`, but focused on commands orchestration.
 
-![justfile-pic](justfile-pic.png)
+![justfile-pic](_media/justfile-pic.png)
