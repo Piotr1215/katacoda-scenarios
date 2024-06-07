@@ -1,10 +1,9 @@
-Let's start by downloading the `justfile` and checking all the recipes in it.
+Let's start by cloning a repository with the `justfile` and checking all the recipes in it.
 
 ```bash
 cd ../
-mkdir -p real-example
-cd real-example
-wget -P ./working https://raw.githubusercontent.com/Piotr1215/crossplane-box/main/justfile
+git clone https://github.com/Piotr1215/crossplane-box.git
+cd crossplane-box
 ```{{exec}}
 
 ```bash
