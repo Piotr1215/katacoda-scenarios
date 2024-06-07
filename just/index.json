@@ -1,6 +1,6 @@
 {
-    "title": "Justfile introduction",
-    "description": "Introduction to just; a handy way to save and run project-specific commands.",
+    "title": "Introduction to just",
+    "description": "Justfile; a handy way to save and run project-specific commands.",
     "difficulty": "beginner",
     "time": "15 minutes",
     "details": {
