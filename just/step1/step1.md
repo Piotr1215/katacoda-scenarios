@@ -44,3 +44,7 @@ Now we can run the `hello` command
 just
 ```{{exec}}
 
+## Next Step
+
+Next we will learn basic commands and syntax of `just`.
+
