@@ -7,7 +7,7 @@ advanced features that helped me to write complex recipes:
 `just` allows you to define recipes in any shell language. This is very useful
 when you need to write complex shell scripts. For example:
 
-```bash
+```justfile
 # setup kind cluster
 setup_kind cluster_name='control-plane':
   #!/usr/bin/env bash
