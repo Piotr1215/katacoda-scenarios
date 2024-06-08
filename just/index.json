@@ -24,11 +24,6 @@
         "title": "Advanced Features 🚀",
         "text": "step4/step4.md",
         "background": "step4/background.sh"
-      },
-      {
-        "title": "Summary and Resources 📖",
-        "text": "step5/step5.md",
-        "background": "step5/background.sh"
       }
     ],
     "assets": {
