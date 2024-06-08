@@ -35,9 +35,8 @@ This will allow to use the `date_suffix` variable in the recipes and it will
 add suffix with test_(current date). Let's try it out:
 
 ```bash
-cd cd ../just-example/
 cat <<EOF >> justfile 
-date_suffix                      := `echo test_$(date +%F)`
+date_suffix                      := \`echo test_\$(date +%F)\`
 add_suffix:
   echo "Adding date suffix: {{date_suffix}}"
 EOF
