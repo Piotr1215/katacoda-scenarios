@@ -10,6 +10,9 @@ There is a tool that combines best of both worlds; [just](https://github.com/cas
 
 ![justfile-pic](./_media/justfile-pic.png)
 
+> 💡 you can read a compaion blog post
+> [here](https://piotrzan.medium.com/master-command-orchestration-16f4a117ce05)
+
 ## Next Step
 
 Next we will install `just` and setup a simple `justfile` to see how it works.
