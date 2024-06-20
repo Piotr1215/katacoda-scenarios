@@ -38,17 +38,6 @@
       ]
     }
   },
-  "environment": {
-    "uilayout": "terminal-iframe",
-    "showdashboard": true,
-    "dashboards": [
-      {
-        "name": "Octant",
-        "href": "https://[[HOST_SUBDOMAIN]]-7777-[[KATACODA_HOST]].environments.katacoda.com",
-        "port": 7777
-      }
-    ]
-  },
   "backend": {
     "imageid": "kubernetes-kubeadm-2nodes"
   }
