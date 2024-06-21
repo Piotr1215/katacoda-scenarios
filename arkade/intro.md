@@ -1,6 +1,6 @@
 > 💡 Arkade simplifies Kubernetes development by streamlining the installation of CLI tools and apps, enhancing productivity and efficiency.
 
-![arkade-logo](./_media/arkade-logo.png)
+![arkade-small-logo](./_media/arkade-small-logo.png)
 
 > 🚨 if it takes longer than 5 minutes to load the environment, please
 > restart scenario (or refresh browser)
