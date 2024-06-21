@@ -13,8 +13,8 @@ arkade --help
 Let's make sure to add this folder to the $PATH variable 
 
 ```bash
-export PATH=$PATH:$HOME/.arkade/bin/{{exec}}
-```
+export PATH=$PATH:$HOME/.arkade/bin/
+```{{exec}}
 
 ## Usage overview
 
