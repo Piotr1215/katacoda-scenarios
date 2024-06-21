@@ -14,13 +14,14 @@
 
 ## In this workshop you will learn how to:
 
-- Create Kubernetes clusters and apps with **arkade get kind** and **kind create cluster**.
-- Quick install and update CLIs using **arkade get**.
-- Install system packages on Linux with **arkade system install**.
-- Install Kubernetes apps with **arkade install**.
-- Efficiently install packages from OCI images via **arkade oci install**.
-- Manage Helm charts with **arkade chart bump -f ./chart/values.yaml**.
-- Update Helm deployments with **arkade chart upgrade -f ./charts/values.yaml**.
+We are going to setup a cloud native development environment with **arkade**. We
+will:
+
+- Create Kubernetes KIND cluster
+- Add a few system apps
+- Install observability and other apps on our test cluster
+- Install packages from OCI images 
+- Modify helm chart values
 
 
-Testing ✨marking ✨
+ All this only using **arkade**!
