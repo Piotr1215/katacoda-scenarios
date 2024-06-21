@@ -1,1 +1,12 @@
-# Finish
+- [Arkade GitHub Repository](https://github.com/alexellis/arkade)
+- [Everyday Go eBook by Alex Ellis](https://openfaas.gumroad.com/l/everyday-golang)
+- [Kubernetes](https://kubernetes.io/)
+- [Helm](https://helm.sh/)
+- [OCI (Open Container Initiative)](https://opencontainers.org/)
+- [GitHub Actions](https://github.com/features/actions)
+- [Docker](https://www.docker.com/)
+- [OpenFaaS](https://www.openfaas.com/)
+- [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/)
+- [Cert Manager](https://cert-manager.io/)
+- [Portainer](https://www.portainer.io/)
+
