@@ -2,10 +2,6 @@
 
 set -euo pipefail
 
-# "Waiting for nodes ready"
-kubectl wait node --all --for condition=ready --timeout=800s
-echo "done" >>/opt/.clusterstarted
-
 # "Installing tools and configuring git"
 sudo apt-get update
 sudo apt-get install -y tree
