@@ -10,7 +10,7 @@ echo "done" >>/opt/.clusterstarted
 sudo apt-get update
 sudo apt-get install -y tree
 git config --global user.email "you@example.com"
-git config --global user.name "Kluctl Demo"
+git config --global user.name "Arkade Demo"
 echo "done" >>/opt/.toolsinstalled
 
 # Installing octant for view
