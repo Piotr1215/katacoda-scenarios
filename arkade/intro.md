@@ -24,4 +24,4 @@ will:
 - Modify helm chart values
 
 
- All this only using **arkade**!
+⭐All this only using **arkade**!
