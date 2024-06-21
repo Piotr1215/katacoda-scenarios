@@ -13,6 +13,11 @@
           "chmod": "+x"
         },
         {
+          "file": "init-foreground.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
           "file": "kill_tmux.sh",
           "target": "/usr/local/bin/",
           "chmod": "+x"
@@ -33,18 +38,15 @@
           "chmod": "+x"
         },
         {
-          "file": ".sqliterc",
-          "target": "/root",
-          "chmod": "+x"
-        },
-        {
           "file": "deployment.yaml",
           "target": "/root"
         }
       ]
     },
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
     },
     "finish": {
       "text": "finish.md"
