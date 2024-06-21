@@ -26,7 +26,7 @@ We can also install any chart by using the `chart` subcommand. Let's try with
 `crossplane`.
 
 ```bash
-arkade install chart --repo-name stable/crossplane --chart crossplane
+arkade install chart --repo-name stable/crossplane 
 ```{{exec interrupt}}
 
 This was too easy 🤯!
