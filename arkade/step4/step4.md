@@ -11,10 +11,7 @@ arkade get
 And let's install a few.
 
 ```bash
-arkade get vcluster \
-    viddy \
-    yq \ 
-    k9s
+arkade get vcluster k9s
 ```{{exec}}
 
 Easy as pie 🥧!
