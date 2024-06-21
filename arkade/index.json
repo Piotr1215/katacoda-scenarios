@@ -9,6 +9,11 @@
                 "title": "Installation 🚀",
                 "text": "step1/step1.md",
                 "background": "step1/background.sh"
+            },
+            {
+                "title": "Setup KIND Cluster",
+                "text": "step2/step2.md",
+                "background": "step2/background.sh"
             }
         ],
         "assets": {
