@@ -14,6 +14,16 @@
                 "title": "Setup KIND Cluster",
                 "text": "step2/step2.md",
                 "background": "step2/background.sh"
+            },
+            {
+                "title": "Install apps on the cluster",
+                "text": "step3/step3.md",
+                "background": "step3/background.sh"
+            },
+            {
+                "title": "Install command line tools",
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
             }
         ],
         "assets": {
