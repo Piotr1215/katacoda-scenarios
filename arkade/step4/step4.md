@@ -11,8 +11,25 @@ arkade get
 And let's install a few.
 
 ```bash
-arkade get vcluster viddy yq 
+arkade get vcluster \
+    viddy \
+    yq \ 
+    k9s
 ```{{exec}}
 
 Easy as pie 🥧!
 
+Let's check our cluster with k9s!
+
+```bash
+k9s
+```{{exec}}
+
+We can also install any chart by using the `chart` subcommand. Let's try with
+`crossplane`.
+
+```bash
+arkade install chart --repo-name stable/crossplane --chart crossplane
+```{{exec interrupt}}
+
+This was too easy 🤯!
