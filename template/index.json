@@ -1,0 +1,93 @@
+{
+    "title": "Introduction to vCluster",
+    "description": "vCluster fundamentals",
+    "difficulty": "Beginner",
+    "time": "15minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Installation ⚙️",
+                "text": "step1/step1.md",
+                "background": "step1/background1.sh"
+            },
+            {
+                "title": "Namespaces based isolation 👤",
+                "text": "step2/step2.md",
+                "background": "step2/background2.sh"
+            },
+            {
+                "title": "Creating vcluster 🏗️",
+                "text": "step3/step3.md",
+                "background": "step3/background3.sh"
+            },
+            {
+                "title": "Exploring vcluster 🚀",
+                "text": "step4/step4.md",
+                "background": "step4/background4.sh"
+            },
+            {
+                "title": "Create 🧪",
+                "text": "step5/step5.md",
+                "verify": "step5/verify.sh"
+            },
+            {
+                "title": "Reconnect 🧪",
+                "text": "step6/step6.md",
+                "verify": "step6/verify.sh"
+            }
+        ],
+        "intro": {
+            "text": "intro.md",
+            "foreground": "foreground.sh",
+            "background": "background.sh"
+        },
+        "finish": {
+            "text": "finish.md"
+        },
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "init-foreground.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "kill_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "start_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "send_command",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deployment.yaml",
+                    "target": "/root"
+                }
+            ]
+        }
+    },
+    "environment": {
+        "uilayout": "terminal",
+        "showdashboard": true
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}
