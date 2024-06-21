@@ -21,9 +21,8 @@ waitForCompletion() {
 }
 
 showProgress() {
-	echo -n "Installing additional tools & configuring system"
+	echo -n "Initial System Configuration"
 	waitForCompletion /opt/.toolsinstalled
-	echo -n "Installing octant"
 	waitForCompletion /opt/.octantinstalled
 	waitForCompletion /opt/.backgroundfinished
 	# Pick up any changes during background
