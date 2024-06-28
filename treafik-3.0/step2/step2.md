@@ -1,6 +1,6 @@
 # OpenTelemetry Integration with Traefik 3.0 📊
 
-Let's adjust our setup to resolve the port conflicts and address the localhost issue:
+Let's set up our environment with the correct port configurations:
 
 1. Stop and remove the existing whoami container:
 
@@ -15,19 +15,18 @@ cat << EOF > traefik.yml
 entryPoints:
   web:
     address: ":8000"
-
+  dashboard:
+    address: ":8085"
 providers:
   file:
     directory: /etc/traefik/dynamic
     watch: true
-
 api:
   insecure: true
   dashboard: true
-
+  entrypoint: dashboard
 metrics:
   prometheus: {}
-
 tracing:
   otlp:
     http:
@@ -35,7 +34,7 @@ tracing:
 EOF
 ```{{exec}}
 
-3. Start the whoami container on a different port:
+3. Start the whoami container:
 
 ```bash
 docker run -d --name whoami -p 8080:80 traefik/whoami
@@ -58,7 +57,7 @@ http:
 EOF
 ```{{exec}}
 
-5. Now, start Traefik:
+5. Start Traefik:
 
 ```bash
 traefik --configfile=traefik.yml
@@ -70,10 +69,9 @@ traefik --configfile=traefik.yml
 for i in {1..10}; do curl -s http://0.0.0.0:8000/whoami > /dev/null; done
 ```{{exec}}
 
-You can access the Traefik dashboard at: {{TRAFFIC_HOST1_8080}}
-
-And the whoami service at: {{TRAFFIC_HOST1_8000}}/whoami
-
-For Prometheus metrics, you can query them at: {{TRAFFIC_HOST1_8000}}/metrics
+You can access:
+- The Traefik dashboard at: {{TRAFFIC_HOST1_8085}}
+- The whoami service at: {{TRAFFIC_HOST1_8000}}/whoami
+- Prometheus metrics at: {{TRAFFIC_HOST1_8000}}/metrics
 
 In the next step, we'll explore Traefik's new support for the Gateway API!
