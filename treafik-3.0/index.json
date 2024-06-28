@@ -1,0 +1,84 @@
+{
+  "title": "Exploring Traefik 3.0 Key Features",
+  "description": "Learn about the major new features in Traefik 3.0",
+  "difficulty": "beginner",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Setting Up Traefik 3.0 🚀",
+        "text": "step1/step1.md",
+        "background": "step1/background.sh"
+      },
+      {
+        "title": "OpenTelemetry Integration 📊",
+        "text": "step2/step2.md",
+        "background": "step2/background.sh"
+      },
+      {
+        "title": "Gateway API Support 🌉",
+        "text": "step3/step3.md",
+        "background": "step3/background.sh"
+      },
+      {
+        "title": "WebAssembly Plugins 🧩",
+        "text": "step4/step4.md",
+        "background": "step4/background.sh"
+      },
+      {
+        "title": "HTTP/3 and Additional Features 🚀",
+        "text": "step5/step5.md",
+        "background": "step5/background.sh"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {
+          "file": "wait.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "init-foreground.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "kill_tmux.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "deploy.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "start_tmux.sh",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "send_command",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        },
+        {
+          "file": "deployment.yaml",
+          "target": "/root"
+        }
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
