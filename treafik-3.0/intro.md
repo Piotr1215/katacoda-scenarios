@@ -10,16 +10,4 @@ Traefik is a modern HTTP reverse proxy and load balancer made to deploy microser
 
 Here's a high-level overview of Traefik 3.0's architecture and new features:
 
-```mermaid
-graph TD
-    A[Client] -->|HTTP/HTTPS/HTTP3| B(Traefik 3.0)
-    B -->|OpenTelemetry| C[Observability Platform]
-    B -->|Gateway API| D[Kubernetes]
-    B -->|WebAssembly| E[Coraza WAF]
-    B -->|Load Balancing| F[Service 1]
-    B -->|Load Balancing| G[Service 2]
-    B -->|Load Balancing| H[Service 3]
-    I[SPIFFE] -->|Identity| B
-    J[Tailscale] -->|VPN| B
-```
-
+[![](https://mermaid.ink/img/pako:eNp9kUtvwjAMgP9KlNMmwV7cepjUAoXuRaVW49BycBsDEWmK0nRTR_nvM-2ExoUcrMT-nCifDzwvBXKHbwzstyyepJrRcpOxkqjtig2Hz-08jsP7U4i6OGqZdxMbwLXcsdHdw23f43XsYo86RoUFWtO0bJwssgrNF2RSSduwUIFdl6ZY_e-ZgcVvaJgbBi2bJK91hkajxeqCWmLmVhUWmaJ7p8m4NPADbOn6F9RbCYJ5oEDnUm9a5icRPS9zZI9XudmZe7rKzc_c6I8LkigMfH_auwoEaaOfkqO-_JLEIFWVg8Ke-Aw_qMgHvEBTgBQk_3BCU263pC3lDm0FmF3KU30kDmpbRo3OuWNNjQNe7wUJm0igmRWXyamQtjTcWYOqKInd8b2fcDfo4y-R3aBO?type=png)](https://mermaid.live/edit#pako:eNp9kUtvwjAMgP9KlNMmwV7cepjUAoXuRaVW49BycBsDEWmK0nRTR_nvM-2ExoUcrMT-nCifDzwvBXKHbwzstyyepJrRcpOxkqjtig2Hz-08jsP7U4i6OGqZdxMbwLXcsdHdw23f43XsYo86RoUFWtO0bJwssgrNF2RSSduwUIFdl6ZY_e-ZgcVvaJgbBi2bJK91hkajxeqCWmLmVhUWmaJ7p8m4NPADbOn6F9RbCYJ5oEDnUm9a5icRPS9zZI9XudmZe7rKzc_c6I8LkigMfH_auwoEaaOfkqO-_JLEIFWVg8Ke-Aw_qMgHvEBTgBQk_3BCU263pC3lDm0FmF3KU30kDmpbRo3OuWNNjQNe7wUJm0igmRWXyamQtjTcWYOqKInd8b2fcDfo4y-R3aBO)
