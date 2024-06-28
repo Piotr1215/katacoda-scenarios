@@ -58,9 +58,17 @@ This configuration:
 - Configures Traefik to watch for dynamic configuration files
 - Enables the API and dashboard in insecure mode (for demonstration purposes)
 
+## Create Dynamic Configuration Directory
+
+Let's create the directory that Traefik will watch for dynamic configuration:
+
+```bash
+sudo mkdir -p /etc/traefik/dynamic
+```{{exec}}
+
 ## Start Traefik
 
-Let's start Traefik with our new configuration:
+Now we can start Traefik with our new configuration:
 
 ```bash
 traefik --configfile=traefik.yaml
