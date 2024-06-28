@@ -10,7 +10,7 @@ Traefik is a modern HTTP reverse proxy and load balancer made to deploy microser
 
 Here's a high-level overview of Traefik 3.0's architecture and new features:
 
-<antArtifact identifier="traefik-3-diagram" type="application/vnd.ant.mermaid" title="Traefik 3.0 Architecture Diagram">
+```mermaid
 graph TD
     A[Client] -->|HTTP/HTTPS/HTTP3| B(Traefik 3.0)
     B -->|OpenTelemetry| C[Observability Platform]
@@ -21,3 +21,5 @@ graph TD
     B -->|Load Balancing| H[Service 3]
     I[SPIFFE] -->|Identity| B
     J[Tailscale] -->|VPN| B
+```
+
