@@ -2,24 +2,15 @@
 
 In this first step, we'll install Traefik 3.0 and set up a basic configuration.
 
-## Download Traefik 3.0
+## Download and Install Traefik 3.0
 
-First, let's download the Traefik 3.0 binary:
-
-```bash
-wget https://github.com/traefik/traefik/releases/download/v3.0.0/traefik_v3.0.0_linux_amd64.tar.gz
-```{{exec}}
-
-Now, let's extract the binary:
+Let's download, extract, and install Traefik 3.0 in one command:
 
 ```bash
-tar -zxvf traefik_v3.0.0_linux_amd64.tar.gz
-```{{exec}}
-
-Move the Traefik binary to a directory in your PATH:
-
-```bash
-sudo mv traefik /usr/local/bin/
+wget https://github.com/traefik/traefik/releases/download/v3.0.0/traefik_v3.0.0_linux_amd64.tar.gz && \
+tar -zxvf traefik_v3.0.0_linux_amd64.tar.gz && \
+sudo mv traefik /usr/local/bin/ && \
+rm traefik_v3.0.0_linux_amd64.tar.gz
 ```{{exec}}
 
 ## Verify Installation
@@ -74,7 +65,11 @@ Now we can start Traefik with our new configuration:
 traefik --configfile=traefik.yaml
 ```{{exec}}
 
-You should see output indicating that Traefik has started successfully.
+## Important Note on Service Configuration
+
+When configuring services to work with Traefik in this Killercoda environment, ensure they are set to listen on all interfaces (0.0.0.0) and not just localhost. This allows the services to be accessible from outside the container or VM.
+
+For example, if you're running a web service, make sure it's configured to listen on 0.0.0.0:port instead of localhost:port or 127.0.0.1:port.
 
 ## Access the Dashboard
 
