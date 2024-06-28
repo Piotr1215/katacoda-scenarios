@@ -1,14 +1,14 @@
 # OpenTelemetry Integration with Traefik 3.0 📊
 
-Let's adjust our setup to avoid port conflicts:
+Let's adjust our setup to resolve the port conflicts and address the localhost issue:
 
 1. Stop and remove the existing whoami container:
 
 ```bash
 docker stop whoami && docker rm whoami
-```{{exec}}
+```{{exec interrupt}}
 
-2. Update the Traefik configuration to use a different port:
+2. Update the Traefik configuration:
 
 ```bash
 cat << EOF > traefik.yml
@@ -31,7 +31,7 @@ metrics:
 tracing:
   otlp:
     http:
-      endpoint: "http://localhost:4318"
+      endpoint: "http://0.0.0.0:4318"
 EOF
 ```{{exec}}
 
@@ -54,7 +54,7 @@ http:
     whoami:
       loadBalancer:
         servers:
-          - url: "http://localhost:8080"
+          - url: "http://0.0.0.0:8080"
 EOF
 ```{{exec}}
 
@@ -67,7 +67,7 @@ traefik --configfile=traefik.yml
 6. In a new terminal, generate some traffic:
 
 ```bash
-for i in {1..10}; do curl -s http://localhost:8000/whoami > /dev/null; done
+for i in {1..10}; do curl -s http://0.0.0.0:8000/whoami > /dev/null; done
 ```{{exec}}
 
 You can access the Traefik dashboard at: {{TRAFFIC_HOST1_8080}}
