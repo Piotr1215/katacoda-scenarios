@@ -1,5 +1,3 @@
-# Step 3: Handling Command Line Arguments
-
 Let's modify our script to accept a name as a command-line argument and add basic error handling.
 
 ```bash

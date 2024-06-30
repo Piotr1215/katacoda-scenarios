@@ -1,5 +1,3 @@
-# Step 4: Adding User Input with Validation
-
 Now, let's add user input to ask how many files to create, with input validation.
 
 ```bash

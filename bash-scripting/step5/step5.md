@@ -1,5 +1,3 @@
-# Step 5: Adding Conditional Logic
-
 Let's add a case statement to provide different messages based on the number of files.
 
 ```bash

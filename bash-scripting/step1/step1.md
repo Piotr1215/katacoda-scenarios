@@ -1,5 +1,3 @@
-# Step 1: Setting Up the Script
-
 Let's start by creating the basic structure of our script with strict mode.
 
 ```bash

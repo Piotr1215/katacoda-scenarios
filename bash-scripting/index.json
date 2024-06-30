@@ -1,6 +1,6 @@
 {
     "title": "Bash Scripting for Beginners: Step-by-Step Practical Guide",
-    "description": "Bash scripting is a powerful way to automate tasks, manage files, and perform complex operations directly from the command line. It's an essential skill for system administrators, developers, and anyone who wants to leverage the full potential of their Unix/Linux system.",
+    "description": "Bash scripting is a powerful way to automate tasks, manage files, and perform complex operations directly from the command line.",
     "difficulty": "beginner",
     "time": "15 minutes",
     "details": {

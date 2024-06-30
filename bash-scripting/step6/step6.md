@@ -1,5 +1,3 @@
-# Step 6: Implementing File Creation
-
 Finally, let's implement the actual file creation using an array and a loop.
 
 ```bash

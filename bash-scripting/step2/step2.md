@@ -1,5 +1,3 @@
-# Step 2: Adding a Function
-
 Now let's add a function to print headers. Functions allow you to group commands and reuse code.
 
 ```bash
