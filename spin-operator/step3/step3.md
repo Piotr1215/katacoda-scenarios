@@ -1,26 +1,28 @@
-## Creating a Sample Spin Application
+## Creating a Sample Spin App
 
-1. **Prerequisites**:
-   - ✅Ensure Rust and Cargo installed.
+### Install Spin Template for Rust
 
-1. **Install Spin Template for Rust**:
+> ✅We have already installed Rust toolchain and Cargo.
+
    ```sh
    spin templates install --git https://github.com/fermyon/spin --update
    ```{{exec}}
 
 > We need to add `wasm32-wasi` compilation target
 
-   ```bash
+   ```sh
    source ~/.bashrc && rustup target add wasm32-wasi
    ```{{exec}}
 
-1. **Create a New Spin Application**:
+### Create a New Spin App
+
    ```sh
    spin new -t http-rust hello-rust --accept-defaults && tree hello-rust
    ```{{exec}}
    This command creates a new Spin application using the template.
 
-1. **Build the Application**
+### Build the App
+
    ```sh
    cd hello-rust
    spin build
@@ -29,31 +31,34 @@
 
 > 💤 Cargo build can take some time
 
-1. **Configure the Application**:
+### Configure the App
+
    We can modify the `spin.toml` file to configure your application routes and settings.
 
    ```sh
    ccat spin.toml
    ```{{exec}}
 
----
+## Running the Sample Spin App
 
-## Running the Sample Spin Application
 
 Let's start tmux first so we can run the application in the background.
 
-1. **Start tmux**:
+### Start tmux
+
    ```sh
    start_tmux
    ```{{exec}}
 
-1. **Run the Application**:
+### Run the App
+
    ```sh
    send_command 1 "spin up"
    ```{{exec}}
    This command starts your Spin application.
 
-1. **Testing**:
+### Testing
+
    We can now curl the application to see the response.
    ```sh
    send_command 0 "curl http://127.0.0.1:3000"
