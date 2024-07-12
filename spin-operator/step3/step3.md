@@ -41,7 +41,6 @@
 
 ## Running the Sample Spin App
 
-
 Let's start tmux first so we can run the application in the background.
 
 ### Start tmux

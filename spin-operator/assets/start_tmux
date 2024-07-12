@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default start directory
-default_dir="/root/" # Update to your preferred default directory
+default_dir="/root/hello-rust" # Update to your preferred default directory
 
 # Desired start directory
 start_dir="/root/"
