@@ -46,13 +46,10 @@ source ~/.bashrc && rustup target add wasm32-wasi
    ```{{exec}}
    This command starts your Spin application.
 
-1. **Access Your Application**:
-   Open your browser and navigate to the address provided in the terminal [Running Application]({{TRAFFIC_HOST1_3000}}) 
-
 1. **Testing**:
    We can also curl the application to see the response.
    ```sh
-   curl {{TRAFFIC_HOST1_3000}}
+   curl http://127.0.0.1:3000
    ```{{exec}}
 
 For more details, visit the [Spin Quickstart Guide](https://developer.fermyon.com/spin/v2/quickstart).

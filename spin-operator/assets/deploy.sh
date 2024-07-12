@@ -10,7 +10,7 @@ echo "done" >>/opt/.clusterstarted
 sudo apt-get update
 sudo apt-get install -y tree
 git config --global user.email "you@example.com"
-git config --global user.name "Kluctl Demo"
+git config --global user.name "Spinkube Demo"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 wget https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
 tar -xzf linux-amd64-1.1.0.tar.gz
