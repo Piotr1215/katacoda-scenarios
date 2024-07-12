@@ -1,22 +1,35 @@
 ## Creating a Sample Spin Application
 
-1. **Initialize a New Spin Application**:
+1. **Install Spin Template for Python**:
    ```sh
-   spin new http my-spin-app
+   spin templates install --git https://github.com/fermyon/spin-python-sdk --update
    ```{{exec}}
-   This command sets up a new Spin application template in the `my-spin-app` directory.
 
-2. **Build the Application**:
+1. **Create a New Spin Application**:
    ```sh
-   cd my-spin-app
+   spin new -t http-py hello-python --accept-defaults
+   ```{{exec}}
+   This command creates a new Spin application using the template.
+
+1. **Prepare Python Virtual Environment**:
+   ```sh
+   cd hello-python
+   python3 -m venv venv-dir
+   source venv-dir/bin/activate
+   pip3 install -r requirements.txt
+   ```{{exec}}
+
+1. **Configure the Application**:
+   We can modify the `spin.toml` file to configure your application routes and settings.
+   ```sh
+   cat spin.toml
+   ```{{exec}}
+
+1. **Build the Application**
+   ```sh
    spin build
    ```{{exec}}
-
-3. **Configure the Application**:
-   Modify the `spin.toml` file to configure your application routes and settings.
-
-4. **Add Your Code**:
-   Implement your application logic in the designated source files (e.g., `src/lib.rs` for Rust).
+   This command compiles the application code and generates the WebAssembly binary.
 
 ---
 
@@ -31,13 +44,9 @@
    This command starts your Spin application.
 
 2. **Access Your Application**:
-   Open your browser and navigate to the address provided in the terminal (e.g., `http://localhost:3000`).
+   Open your browser and navigate to the address provided in the terminal [Running Application]({{TRAFFIC_HOST1_3000}}) 
 
 3. **Testing**:
    Interact with your application through the browser or use tools like `curl` to send requests.
-
-### Benefits
-- **Quick Setup**: Get started with a sample application in minutes.
-- **Easy Testing**: Run locally to test and iterate on your application.
 
 For more details, visit the [Spin Quickstart Guide](https://developer.fermyon.com/spin/v2/quickstart).

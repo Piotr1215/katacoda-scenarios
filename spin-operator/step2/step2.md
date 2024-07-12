@@ -17,16 +17,13 @@ Spin is a framework for building and running event-driven microservice applicati
 
 2. **Install Spin CLI**:
    ```sh
-   curl -fsSL https://developer.fermyon.com/downloads/install.sh | bash
+   curl -fsSL https://developer.fermyon.com/downloads/install.sh \
+   | bash && mv spin /usr/local/bin/spin
    ```{{exec}}
 
 3. **Verify Installation**:
    ```sh
    spin --version
    ```{{exec}}
-
-### Benefits of Installation
-- **Simplified Setup**: Quick and easy installation process.
-- **Ready to Use**: Provides all necessary tools to start developing Spin applications.
 
 For more details, visit the [Spin documentation](https://developer.fermyon.com/spin/v2/install).
