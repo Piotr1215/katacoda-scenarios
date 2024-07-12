@@ -11,10 +11,6 @@ Spin is a framework for building and running event-driven microservice applicati
 
 ### Installation Steps
 
-1. **Prerequisites**:
-   - Ensure you have Rust and Cargo installed.
-   - Install Wasmtime, the WebAssembly runtime.
-
 2. **Install Spin CLI**:
    ```sh
    curl -fsSL https://developer.fermyon.com/downloads/install.sh \

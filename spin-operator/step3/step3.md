@@ -1,5 +1,8 @@
 ## Creating a Sample Spin Application
 
+1. **Prerequisites**:
+   - ✅Ensure Rust and Cargo installed.
+
 1. **Install Spin Template for Rust**:
    ```sh
    spin templates install --git https://github.com/fermyon/spin --update
@@ -8,12 +11,12 @@
 > We need to add `wasm32-wasi` compilation target
 
 ```bash
-rustup target add wasm32-wasi
+source ~/.bashrc && rustup target add wasm32-wasi
 ```{{exec}}
 
 1. **Create a New Spin Application**:
    ```sh
-   spin new -t http-rust hello-rust --accept-defaults
+   spin new -t http-rust hello-rust --accept-defaults && tree hello-rust
    ```{{exec}}
    This command creates a new Spin application using the template.
 
@@ -22,12 +25,9 @@ rustup target add wasm32-wasi
    cd hello-rust
    spin build
    ```{{exec}}
-
-1. **Build the Application**
-   ```sh
-   spin build
-   ```{{exec}}
    This command compiles the application code and generates the WebAssembly binary.
+
+> 💤 Cargo build can take some time
 
 1. **Configure the Application**:
    We can modify the `spin.toml` file to configure your application routes and settings.
