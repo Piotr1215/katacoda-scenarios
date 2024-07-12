@@ -1,4 +1,5 @@
 ## Objective
+
 Learn how to install and configure the Spin Operator on a Kubernetes cluster using Helm.
 
 ## Demo
@@ -33,3 +34,7 @@ Learn how to install and configure the Spin Operator on a Kubernetes cluster usi
      --version 0.2.0 --wait \
      oci://ghcr.io/spinkube/charts/spin-operator
    ```{{exec}}
+
+> Check [Octant]({{TRAFFIC_SELECTOR_HOST1_7777}}) to see the installed
+> resources.
+
