@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Spin Operator 🕸 script"
-kill_tmux
+tmux kill-server 2>/dev/null
