@@ -23,7 +23,7 @@ waitForCompletion() {
 showProgress() {
 	echo -n "Checking node status"
 	waitForCompletion /opt/.clusterstarted
-	echo -n "Installing additional tools & configuring system"
+	echo -n "Configure git and install rust tools"
 	waitForCompletion /opt/.toolsinstalled
 	echo -n "Installing octant"
 	waitForCompletion /opt/.octantinstalled

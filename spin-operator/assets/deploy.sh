@@ -11,6 +11,9 @@ sudo apt-get update
 sudo apt-get install -y tree
 git config --global user.email "you@example.com"
 git config --global user.name "Kluctl Demo"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source ~/.bashrc
+rustup target add wasm32-wasi
 echo "done" >>/opt/.toolsinstalled
 
 # Installing octant for view
