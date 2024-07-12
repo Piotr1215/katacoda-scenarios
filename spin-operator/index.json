@@ -29,6 +29,11 @@
                 "title": "Installation 🔧",
                 "text": "step5/step5.md",
                 "background": "step5/background.sh"
+            },
+            {
+                "title": "Spin Kube ☸",
+                "text": "step6/step6.md",
+                "background": "step6/background.sh"
             }
         ],
         "assets": {
