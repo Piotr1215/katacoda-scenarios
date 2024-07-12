@@ -1,0 +1,84 @@
+{
+    "title": "Introduction to Spin Operator",
+    "description": "Spin Operator Installation and Basic Usage",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "WebAssembly 🏗",
+                "text": "step1/step1.md",
+                "background": "step1/background.sh"
+            },
+            {
+                "title": "Spin Framework 🖼",
+                "text": "step2/step2.md",
+                "background": "step2/background.sh"
+            },
+            {
+                "title": "Run Sample App 📃",
+                "text": "step3/step3.md",
+                "background": "step3/background.sh"
+            },
+            {
+                "title": "Spin Operator 🕸",
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
+            },
+            {
+                "title": "Installation 🔧",
+                "text": "step5/step5.md",
+                "background": "step5/background.sh"
+            }
+        ],
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "init-foreground.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "kill_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "start_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "send_command",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deployment.yaml",
+                    "target": "/root"
+                }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "background": "background.sh",
+            "foreground": "foreground.sh"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node"
+    }
+}
