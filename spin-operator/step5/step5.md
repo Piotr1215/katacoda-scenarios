@@ -13,18 +13,25 @@ Learn how to install and configure the Spin Operator on a Kubernetes cluster usi
 
 2. Install KWasm Operator:
    ```bash
-   helm repo add kwasm http://kwasm.sh/kwasm-operator/
-   helm install kwasm-operator kwasm/kwasm-operator \
-     --namespace kwasm --create-namespace \
-     --set kwasmOperator.installerImage=ghcr.io/spinkube/containerd-shim-spin/node-installer:v0.13.1
-   kubectl annotate node --all kwasm.sh/kwasm-node=true
+    # Add Helm repository if not already done
+    helm repo add kwasm http://kwasm.sh/kwasm-operator/
+
+    # Install KWasm operator
+    helm install \
+      kwasm-operator kwasm/kwasm-operator \
+      --namespace kwasm \
+      --create-namespace \
+      --set kwasmOperator.installerImage=ghcr.io/spinkube/containerd-shim-spin/node-installer:v0.15.1
+
+    # Provision Nodes
+    kubectl annotate node --all kwasm.sh/kwasm-node=true
    ```{{exec}}
 
 3. Install Spin Operator CRDs and configurations:
    ```bash
    kubectl apply -f https://github.com/spinkube/spin-operator/releases/download/v0.2.0/spin-operator.crds.yaml
-   kubectl apply -f https://github.com/spinkube/spin-operator/releases/download/v0.2.0/spin-runtimeclass.yaml
-   kubectl apply -f https://github.com/spinkube/spin-operator/releases/download/v0.2.0/spin-app-executor.yaml
+   kubectl apply -f https://github.com/spinkube/spin-operator/releases/download/v0.2.0/spin-operator.runtime-class.yaml
+   kubectl apply -f https://github.com/spinkube/spin-operator/releases/download/v0.2.0/spin-operator.shim-executor.yaml
    ```{{exec}}
 
 4. Install Spin Operator using Helm:
@@ -35,6 +42,6 @@ Learn how to install and configure the Spin Operator on a Kubernetes cluster usi
      oci://ghcr.io/spinkube/charts/spin-operator
    ```{{exec}}
 
-> Check [Octant]({{TRAFFIC_SELECTOR_HOST1_7777}}) to see the installed
-> resources.
+> 💡 we can view the resources using octant. Open
+> [Octant]({{TRAFFIC_HOST1_7777}})
 
