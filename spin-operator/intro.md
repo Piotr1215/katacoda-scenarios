@@ -3,17 +3,17 @@
 > 🚨 if it takes longer than 3 minutes to load the environment, please
 > restart scenario (or refresh browser)
 
-Welcome to this interactive scenario where you'll explore the exciting world of WebAssembly (Wasm) and its application in modern web development and microservices!
+Welcome to this interactive scenario where you'll explore the exciting world of WebAssembly (WASM) and its application in modern web development and microservices!
 
 ## What you'll learn 
 
 In this scenario, you will:
 
 1. 🧠 Understand the basics of WebAssembly and its impact on web development
-2. 🛠️ Get hands-on experience with Spin, a framework for building Wasm-based microservices
-3. 🎛️ Learn about the Spin Operator and how it integrates Wasm applications with Kubernetes
+2. 🛠️ Get hands-on experience with Spin, a framework for building WASM-based microservices
+3. 🎛️ Learn about the Spin Operator and how it integrates WASM applications with Kubernetes
 4. 💻 Create, build, and deploy a sample Spin application
-5. ☸️ Use the Spin Operator to manage your Wasm applications in a Kubernetes environment
+5. ☸️ Use the Spin Operator to manage your WASM applications in a Kubernetes environment
 
 ## Prerequisites 
 

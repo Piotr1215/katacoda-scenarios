@@ -17,7 +17,7 @@ The `Spin Operator` is a Kubernetes operator designed to manage and deploy `Spin
 - **Reliability**: Ensures high availability and robust performance of Spin applications.
 
 ### Use Cases
-- Ideal for deploying Wasm (WebAssembly) modules within Kubernetes clusters.
+- Ideal for deploying WASM (WebAssembly) modules within Kubernetes clusters.
 - Enhances Kubernetes by providing specialized handling for Spin applications.
 
 ![spin-operator](../assets/spin-operator.png)
