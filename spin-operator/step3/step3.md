@@ -5,8 +5,11 @@
    spin templates install --git https://github.com/fermyon/spin --update
    ```{{exec}}
 
-> Rust toolchain and `wasm32-wasi` target were already installed on scenario
-> start.
+> We need to add `wasm32-wasi` compilation target
+
+```bash
+rustup target add wasm32-wasi
+```{{exec}}
 
 1. **Create a New Spin Application**:
    ```sh
