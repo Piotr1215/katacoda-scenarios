@@ -33,7 +33,7 @@ source ~/.bashrc && rustup target add wasm32-wasi
    We can modify the `spin.toml` file to configure your application routes and settings.
 
    ```sh
-   cat spin.toml
+   ccat spin.toml
    ```{{exec}}
 
 ---
