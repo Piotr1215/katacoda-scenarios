@@ -10,9 +10,9 @@
 
 > We need to add `wasm32-wasi` compilation target
 
-```bash
-source ~/.bashrc && rustup target add wasm32-wasi
-```{{exec}}
+   ```bash
+   source ~/.bashrc && rustup target add wasm32-wasi
+   ```{{exec}}
 
 1. **Create a New Spin Application**:
    ```sh
@@ -40,16 +40,23 @@ source ~/.bashrc && rustup target add wasm32-wasi
 
 ## Running the Sample Spin Application
 
+Let's start tmux first so we can run the application in the background.
+
+1. **Start tmux**:
+   ```sh
+   start_tmux
+   ```{{exec}}
+
 1. **Run the Application**:
    ```sh
-   spin up
+   send_command 1 "spin up"
    ```{{exec}}
    This command starts your Spin application.
 
 1. **Testing**:
-   We can also curl the application to see the response.
+   We can now curl the application to see the response.
    ```sh
-   curl http://127.0.0.1:3000
+   send_command 0 "curl http://127.0.0.1:3000"
    ```{{exec}}
 
 For more details, visit the [Spin Quickstart Guide](https://developer.fermyon.com/spin/v2/quickstart).

@@ -49,7 +49,7 @@
                     "chmod": "+x"
                 },
                 {
-                    "file": "kill_tmux.sh",
+                    "file": "kill_tmux",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 },
@@ -59,7 +59,7 @@
                     "chmod": "+x"
                 },
                 {
-                    "file": "start_tmux.sh",
+                    "file": "start_tmux",
                     "target": "/usr/local/bin/",
                     "chmod": "+x"
                 },
