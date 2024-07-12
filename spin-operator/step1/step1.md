@@ -1,6 +1,6 @@
 ### What is WebAssembly?
 
-![web-assembly](/_media/web-assembly.png)
+![web-assembly](.assets/web-assembly.png)
 
 WebAssembly (Wasm) is a low-level, assembly-like language with a compact binary format that runs with near-native performance. 
 It allows code written in various languages, such as C, C++, and Rust, to run on the web alongside JavaScript, leveraging both its performance and flexibility.
