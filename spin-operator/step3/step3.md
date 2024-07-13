@@ -60,7 +60,7 @@ Let's start tmux first so we can run the application in the background.
 
    We can now curl the application to see the response.
    ```sh
-   send_command 0 "curl http://127.0.0.1:3000"
+   send_command 2 "curl http://127.0.0.1:3000"
    ```{{exec}}
 
 For more details, visit the [Spin Quickstart Guide](https://developer.fermyon.com/spin/v2/quickstart).
