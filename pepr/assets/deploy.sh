@@ -14,7 +14,7 @@ sudo apt-get install -y tree
 git config --global user.email "you@example.com"
 git config --global user.name "Pepr Demo"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
+eval "$(cat ~/.bashrc | tail -n +10)"
 nvm install 20 -y
 echo "done" >>/opt/.toolsinstalled
 
