@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export DEBIAN_FRONTEND=noninteractive
-
 # "Waiting for nodes ready"
 kubectl wait node --all --for condition=ready --timeout=800s
 echo "done" >>/opt/.clusterstarted
@@ -11,11 +9,8 @@ sudo apt-get update
 sudo apt-get install -y tree
 git config --global user.email "you@example.com"
 git config --global user.name "Pepr Demo"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-# Install NVM and Node.js
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
 # Source NVM scripts directly
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion" # This loads nvm bash_completion
