@@ -29,6 +29,7 @@ showProgress() {
 	waitForCompletion /opt/.octantinstalled
 	waitForCompletion /opt/.backgroundfinished
 	# Pick up any changes during background
+	source ~/.bashrc
 
 	echo "All Set"
 	echo ""
