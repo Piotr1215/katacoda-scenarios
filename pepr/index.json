@@ -1,0 +1,67 @@
+{
+    "title": "WIP: Pepr - Configuration as Code for IT Ops",
+    "description": "Introduction to Pepr",
+    "difficulty": "beginner",
+    "time": "15 minutes",
+    "details": {
+        "steps": [
+            {
+                "title": "Installation 💽",
+                "text": "step1/step1.md",
+                "background": "step1/background.sh"
+            }
+        ],
+        "assets": {
+            "host01": [
+                {
+                    "file": "wait.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "init-foreground.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "kill_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deploy.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "start_tmux.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "send_command",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "deployment.yaml",
+                    "target": "/root"
+                }
+            ]
+        },
+        "intro": {
+            "text": "intro.md",
+            "background": "background.sh",
+            "foreground": "foreground.sh"
+        },
+        "finish": {
+            "text": "finish.md"
+        }
+    },
+    "backend": {
+        "imageid": "kubernetes-kubeadm-1node-4GB"
+    },
+    "interface": {
+        "layout": "ide"
+    }
+}
