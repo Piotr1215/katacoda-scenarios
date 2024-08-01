@@ -1,6 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash -i
 
 set -euo pipefail
+
+export DEBIAN_FRONTEND=noninteractive
 
 # "Waiting for nodes ready"
 kubectl wait node --all --for condition=ready --timeout=800s
@@ -12,6 +14,7 @@ sudo apt-get install -y tree
 git config --global user.email "you@example.com"
 git config --global user.name "Pepr Demo"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
 nvm install 20 -y
 echo "done" >>/opt/.toolsinstalled
 
