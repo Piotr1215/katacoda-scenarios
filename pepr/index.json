@@ -29,6 +29,11 @@
                 "title": "Step4/Create Capability 👉",
                 "text": "step5/step5.md",
                 "background": "step5/background.sh"
+            },
+            {
+                "title": "Step6/Yaml Backup Capability 💾",
+                "text": "step6/step6.md",
+                "background": "step6/background.sh"
             }
         ],
         "assets": {

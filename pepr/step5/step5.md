@@ -24,43 +24,32 @@ And let's create a backup.ts capability
 
 ```typescript
 cat << 'EOF' > capabilities/backup.ts
-import {
-  Capability,
-  Log,
-  a,
-} from "pepr";
+import { Capability, Log, a } from "pepr";
 import * as fs from "fs";
 import * as path from "path";
 import * as yaml from "js-yaml";
 
-/**
- *  The SavePodYAML Capability saves the YAML of created Pods in the default namespace.
- */
 export const SavePodYAML = new Capability({
   name: "save-pod-yaml",
-  description: "Saves the YAML of created Pods in the default namespace to a file.",
+  description: "Save YAML of created Pods in default namespace.",
   namespaces: ["default"],
 });
 
-// Use the 'When' function to create a new action
 const { When } = SavePodYAML;
 
-// Define the action to save Pod YAML when a Pod is created in the default namespace
-When(a.Pod)
-  .IsCreated()
-  .Mutate(async (request) => {
-    const pod = request.Raw;
-    const podName = pod.metadata?.name;
-    const podYaml = yaml.dump(pod);
-    const filePath = path.join("/tmp", `${podName}.yaml`);
+When(a.Pod).IsCreated().Mutate((request) => {
+  const pod = request.Raw;
+  const podName = pod.metadata?.name || pod.metadata?.generateName;
+  if (!podName) return;
 
-    try {
-      fs.writeFileSync(filePath, podYaml, "utf8");
-      Log.info(`Pod YAML saved to ${filePath}`);
-    } catch (error) {
-      Log.error(error, `Failed to save Pod YAML to ${filePath}`);
-    }
-  });
+  const filePath = path.join("/tmp", `${podName}.yaml`);
+  try {
+    fs.writeFileSync(filePath, yaml.dump(pod), "utf8");
+    Log.info(`Pod YAML saved to ${filePath}`);
+  } catch (error) {
+    Log.error(`Failed to save Pod YAML: ${error}`);
+  }
+});
 EOF
 ```{{exec}}
 
@@ -88,18 +77,3 @@ EOF
 ```{{exec}}
 
 Run `pepr format`{{exec}} to make sure the files are formatted correctly.
-
-```bash
-start_tmux.sh 
-```{{exec}}
-
-```bash
-send_command 1 "cd yaml-backup && pepr dev --confirm"
-```
-
-```bash
-send_command 0 "kubectl create deployment nginx --image=nginx"
-```
-
-
-
