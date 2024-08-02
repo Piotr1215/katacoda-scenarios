@@ -13,7 +13,7 @@ echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
 sudo apt-get update
-sudo apt-get install -y tree
+sudo apt-get install -y tree bat
 git config --global user.email "you@example.com"
 git config --global user.name "Pepr Demo"
 # Source NVM scripts directly
