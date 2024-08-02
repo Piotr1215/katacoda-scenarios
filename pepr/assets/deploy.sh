@@ -13,7 +13,7 @@ echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
 sudo apt-get update
-sudo apt-get install -y tree bat
+sudo apt-get install -y tree bat jq
 sudo mv /usr/bin/batcat /usr/bin/bat
 git config --global user.email "you@example.com"
 git config --global user.name "Pepr Demo"

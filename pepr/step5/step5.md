@@ -1,4 +1,4 @@
-## Backup YAML to node
+## Let's develop a custom capability
 
 `Pepr's` claim to fame is to be `Configuration as Code for IT Ops`. One of the
 most common tasks for IT or DevOps engineers is to create backup. Let's design a
@@ -77,3 +77,7 @@ EOF
 ```{{exec}}
 
 Run `pepr format`{{exec}} to make sure the files are formatted correctly.
+
+## Next Steps
+
+Next we will deploy our backup module and capabilities.

@@ -37,5 +37,4 @@ Source: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/cust
 
 ## Next Steps
 
-Next we will review pepr capabilities and apply example yaml
-
+Next we will review pepr capabilities and apply sample yaml

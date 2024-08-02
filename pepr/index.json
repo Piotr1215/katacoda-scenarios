@@ -34,6 +34,16 @@
                 "title": "Step6/Yaml Backup Capability 💾",
                 "text": "step6/step6.md",
                 "background": "step6/background.sh"
+            },
+            {
+                "title": "Step7/Build & Deploy 🏗",
+                "text": "step7/step7.md",
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "Step8/Monitoring 🕵",
+                "text": "step8/step8.md",
+                "background": "step8/background.sh"
             }
         ],
         "assets": {

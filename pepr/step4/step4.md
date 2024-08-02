@@ -20,14 +20,6 @@ Let's apply the yaml and observe pepr logs
 send_command 0 "kubectl apply -f /root/pepr-demo/capabilities/hello-pepr.samples.yaml"
 ```{{exec}}
 
+## Next Steps 
 
-
-
-
-
-
-
-
-
-
-
+Next we will build a custom capability

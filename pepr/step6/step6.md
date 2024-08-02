@@ -17,7 +17,14 @@ send_command 1 "kubectl create deployment nginx --image=nginx"
 Let's check if the pod YAML was saved to the node in the `/tmp` directory:
 
 ```bash
-send_command 0 "ls -l /tmp"
+send_command 1 "ls -l /tmp"
 ```{{exec}}
 
+```bash
+send_command 1 "bat /tmp/nginx*.yaml"
+```{{exec}}
+
+## Next Steps
+
+Next we will deploy pepr controller to the Kubernetes cluster.
 
