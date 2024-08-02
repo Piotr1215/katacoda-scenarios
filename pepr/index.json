@@ -14,6 +14,11 @@
                 "title": "Modules 🧩",
                 "text": "step2/step2.md",
                 "background": "step2/background.sh"
+            },
+            {
+                "title": "Capability 🦉",
+                "text": "step3/step3.md",
+                "background": "step3/background.sh"
             }
         ],
         "assets": {
