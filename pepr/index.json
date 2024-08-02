@@ -6,22 +6,22 @@
     "details": {
         "steps": [
             {
-                "title": "Installation 💽",
+                "title": "Step1/Installation 💽",
                 "text": "step1/step1.md",
                 "background": "step1/background.sh"
             },
             {
-                "title": "Dev Mode 🎨",
+                "title": "Step2/Modules 🧩",
                 "text": "step2/step2.md",
                 "background": "step2/background.sh"
             },
             {
-                "title": "Modules 🧩",
+                "title": "Step3/Dev Mode 🎨",
                 "text": "step3/step3.md",
                 "background": "step3/background.sh"
             },
             {
-                "title": "Capability 🦉",
+                "title": "Step4/Capability 🦉",
                 "text": "step4/step4.md",
                 "background": "step4/background.sh"
             }

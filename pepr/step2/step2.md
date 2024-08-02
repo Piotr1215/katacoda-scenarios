@@ -12,13 +12,10 @@ pepr init
 Let's see what the `pepr init` command created:
 
 ```bash
-cd pepr-demo && tree 
+cd pepr-demo && tree -I 'node_modules' 
 ```{{exec}}
 
 
-### Kubernetes Resources Overview
-
-> 💡 Open [Octant]({{TRAFFIC_HOST1_7777}}) to see Kubernetes dahsboard.
 
 ## Next Step
 
