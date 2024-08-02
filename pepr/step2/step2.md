@@ -6,6 +6,7 @@ pepr init
 
 - module name: `pepr-demo`{{exec}}
 - description: `A simple Pepr module`{{exec}}
+- configure failure behavior: `^M`{{exec}}
 - create module: `Y`{{exec}}
 
 Start Pepr in development mode:
@@ -13,6 +14,8 @@ Start Pepr in development mode:
 ```bash
 cd pepr-demo && pepr dev --host host.docker.internal
 ```{{exec}}
+
+Confirm module redeploy `Y`{{exec}} 
 
 > 💡 The `--host host.docker.internal` flag is used because we're not using k3d in this environment.
 
