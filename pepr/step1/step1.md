@@ -22,6 +22,8 @@ Let's explore available Pepr commands:
 pepr --help
 ```{{exec}}
 
+<img src="https://pepr.dev/images/svg/pepr-simplified.svg" alt="pepr-webhooks">
+
 ## Next Step
 
 Create and run a simple Pepr module.

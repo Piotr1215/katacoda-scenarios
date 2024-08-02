@@ -1,11 +1,16 @@
 ## Start Pepr in development mode
 
 ```bash
-pepr dev --confirm
+start_tmux.sh
+```
+
+Now let's run pepr in first pane
+
+```bash
+send_command 1 "pepr dev --confirm"
 ```{{exec}}
 
 >NOTE: This command, by necessity, installs resources into the cluster you run it against. Generally, these resources are removed once the pepr dev session ends but there are two notable exceptions:
-
 - the pepr-system namespace, and
 - the PeprStore CRD.
 
@@ -29,4 +34,8 @@ The CustomResourceDefinition API resource allows you to define custom resources.
 Source: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions
 
 > 💡 Open [Octant]({{TRAFFIC_HOST1_7777}}) to see Kubernetes dahsboard.
+
+## Next Steps
+
+Next we will review pepr capabilities and apply example yaml
 
