@@ -4,6 +4,7 @@
 curl -sLS https://get.arkade.dev | sudo sh
 echo "export PATH=$PATH:$HOME/.arkade/bin/" >>~/.bashrc
 arkade install k3s
+sudo mv /root/.arkade/bin/k3s /usr/local/bin/
 echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
