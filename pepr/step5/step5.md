@@ -9,7 +9,8 @@ First we need to generate a new module:
 
 ```bash
 cd /root && pepr init
-```
+```{{exec}}
+
 - module name: `yaml-backup`{{exec}}
 - description: `Backup pod YAML to node`{{exec}}
 - configure failure behavior: `^M`{{exec}}
@@ -17,11 +18,11 @@ cd /root && pepr init
 
 ```bash
 cd ./yaml-backup
-```
+```{{exec}}
 
 And let's create a backup.ts capability
 
-```javascript
+```typescript
 cat << 'EOF' > capabilities/backup.ts
 import {
   Capability,
@@ -49,7 +50,7 @@ When(a.Pod)
   .IsCreated()
   .Watch(async (pod) => {
     const podYaml = K8s.yaml.dump(pod.Raw);
-    const filePath = path.join("/path/to/save/yaml/files", `${pod.metadata.name}.yaml`);
+    const filePath = path.join("/tmp", `${pod.metadata.name}.yaml`);
     
     try {
       fs.writeFileSync(filePath, podYaml, "utf8");
@@ -59,4 +60,27 @@ When(a.Pod)
     }
   });
 EOF
-```
+```{{exec}}
+
+Ok, we need to modify the `pepr.ts` file to remove the `HelloPepr` module and
+add our own:
+
+```typescript
+cat << 'EOF' > pepr.ts
+import { PeprModule } from "pepr";
+// cfg loads your pepr configuration from package.json
+import cfg from "./package.json";
+
+// Import the new SavePodYAML capability
+import { SavePodYAML } from "./capabilities/backup";
+
+/**
+ * This is the main entrypoint for this Pepr module. It is run when the module is started.
+ * This is where you register your Pepr configurations and capabilities.
+ */
+new PeprModule(cfg, [
+  // Your additional capabilities go here
+  SavePodYAML,
+]);
+EOF
+```{{exec}}

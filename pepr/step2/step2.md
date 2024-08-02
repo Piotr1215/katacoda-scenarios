@@ -15,8 +15,6 @@ Let's see what the `pepr init` command created:
 cd pepr-demo && tree -I 'node_modules' 
 ```{{exec}}
 
-
-
 ## Next Step
 
 Start pepr in dev mode
