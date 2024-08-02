@@ -12,14 +12,14 @@ pepr init
 Start Pepr in development mode:
 
 ```bash
-cd pepr-demo && pepr dev --host host.docker.internal
+cd pepr-demo && pepr dev
 ```{{exec}}
 
 Confirm module redeploy `Y`{{exec}} 
 
-> 💡 The `--host host.docker.internal` flag is used because we're not using k3d in this environment.
+### Kubernetes Resources Overview
 
-Explore the files in the editor
+> 💡 Open [Octant]({{TRAFFIC_HOST1_7777}}) to see Kubernetes dahsboard.
 
 ## Next Step
 

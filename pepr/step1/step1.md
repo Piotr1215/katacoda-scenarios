@@ -13,8 +13,8 @@ source ~/.bashrc
 ### Installing Pepr
 
 ```bash
-npm -i -g pepr@0.33.0
-```
+npm install -g pepr@0.33.0
+```{{exec}}
 
 Let's explore available Pepr commands:
 

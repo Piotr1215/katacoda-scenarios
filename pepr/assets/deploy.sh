@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # "Waiting for nodes ready"
-kubectl wait node --all --for condition=ready --timeout=800s
+curl -sLS https://get.arkade.dev | sudo sh
+echo "export PATH=$PATH:$HOME/.arkade/bin/" >>~/.bashrc
+arkade install k3s
 echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
