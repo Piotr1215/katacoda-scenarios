@@ -3,8 +3,12 @@
 # "Waiting for nodes ready"
 curl -sLS https://get.arkade.dev | sudo sh
 echo "export PATH=$PATH:$HOME/.arkade/bin/" >>~/.bashrc
-arkade install k3s
-sudo mv /root/.arkade/bin/k3s /usr/local/bin/
+arkade get kubectl
+sudo mv /root/.arkade/bin/kubectl /usr/local/bin/
+arkade install k3d
+sudo mv /root/.arkade/bin/k3d /usr/local/bin/
+k3d cluster create --agents 2
+kubectl wait node --all --for condition=ready --timeout=800s
 echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
