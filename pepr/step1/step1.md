@@ -13,30 +13,14 @@ source ~/.bashrc
 ### Installing Pepr
 
 ```bash
-npm -i -g pepr@33.0
+npm -i -g pepr@0.33.0
 ```
 
-### Creating Pepr Module
-
-Let's create a new Pepr module and start experimenting:
+Let's explore available Pepr commands:
 
 ```bash
-pepr init
+pepr --help
 ```{{exec}}
-
-- module name: `pepr-demo`{{exec}}
-- description: `A simple Pepr module`{{exec}}
-- create module: `Y`{{exec}}
-
-Start Pepr in development mode:
-
-```bash
-cd pepr-demo && pepr dev --host host.docker.internal
-```{{exec}}
-
-> 💡 The `--host host.docker.internal` flag is used because we're not using k3d in this environment.
-
-Explore the files in the editor
 
 ## Next Step
 
