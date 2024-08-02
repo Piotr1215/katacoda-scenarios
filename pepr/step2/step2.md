@@ -9,13 +9,12 @@ pepr init
 - configure failure behavior: `^M`{{exec}}
 - create module: `Y`{{exec}}
 
-Start Pepr in development mode:
+Let's see what the `pepr init` command created:
 
 ```bash
-cd pepr-demo && pepr dev
+cd pepr-demo && tree 
 ```{{exec}}
 
-Confirm module redeploy `Y`{{exec}} 
 
 ### Kubernetes Resources Overview
 
@@ -23,4 +22,4 @@ Confirm module redeploy `Y`{{exec}}
 
 ## Next Step
 
-Add simple capability
+Start pepr in dev mode

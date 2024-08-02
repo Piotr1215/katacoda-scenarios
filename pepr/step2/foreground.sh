@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Capabilities 🤔 script"
+echo "Dev Mod 🎨 script"

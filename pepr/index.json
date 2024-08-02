@@ -11,14 +11,19 @@
                 "background": "step1/background.sh"
             },
             {
-                "title": "Modules 🧩",
+                "title": "Dev Mode 🎨",
                 "text": "step2/step2.md",
                 "background": "step2/background.sh"
             },
             {
-                "title": "Capability 🦉",
+                "title": "Modules 🧩",
                 "text": "step3/step3.md",
                 "background": "step3/background.sh"
+            },
+            {
+                "title": "Capability 🦉",
+                "text": "step4/step4.md",
+                "background": "step4/background.sh"
             }
         ],
         "assets": {

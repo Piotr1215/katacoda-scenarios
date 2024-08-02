@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Capability 🦉 script"
+echo "Capabilities 🤔 script"
