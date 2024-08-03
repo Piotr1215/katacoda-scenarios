@@ -9,7 +9,7 @@ First we need to generate a new module:
 
 ```bash
 cd /root && pepr init
-```{{exec}}
+```{{exec interrupt}}
 
 - module name: `yaml-backup`{{exec}}
 - description: `Backup pod YAML to node`{{exec}}

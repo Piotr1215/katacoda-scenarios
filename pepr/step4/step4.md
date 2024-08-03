@@ -12,7 +12,7 @@ and sample kubernetes yaml to test them
 
 ```bash
 bat /root/pepr-demo/capabilities/hello-pepr.samples.yaml
-```{{exec}}
+```{{exec interrupt}}
 
 ## Next Steps 
 
