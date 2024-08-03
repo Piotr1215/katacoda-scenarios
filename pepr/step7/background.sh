@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Step7/Build & Deploy 🏗 script"
-tmux kill-server 2>/dev/null
+tmux kill-server >/dev/null 2>&1 || true
