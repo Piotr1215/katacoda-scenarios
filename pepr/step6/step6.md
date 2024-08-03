@@ -21,8 +21,8 @@ send_command 1 "ls -l /tmp"
 ```{{exec}}
 
 ```bash
-send_command 1 "bat /tmp/nginx*.yaml"
-```{{exec}}
+send_command 1 "bat /tmp/*.yaml"
+```{{exec interrupt}}
 
 ## Next Steps
 

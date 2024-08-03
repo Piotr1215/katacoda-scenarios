@@ -4,8 +4,8 @@ Now that we have our Pepr module ready, we can build and deploy it to our
 Kubernetes cluster.
 
 ```bash
-pepr format && pepr build
-```{{exec}}
+cd yaml-backup && pepr format && pepr build
+```{{exec interrupt}}
 
 `pepr build` generated various build artifacts, we are interested in the
 Kubernetes yaml files. Let's deploy the Pepr controller to our Kubernetes.
