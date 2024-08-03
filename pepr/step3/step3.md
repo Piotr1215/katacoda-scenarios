@@ -7,7 +7,7 @@ start_tmux.sh
 Now let's run pepr in first pane
 
 ```bash
-cd pepr-demo && send_command 1 "pepr dev --confirm"
+cd pepr-demo && send_command 0 "pepr dev --confirm"
 ```{{exec}}
 
 >NOTE: This command, by necessity, installs resources into the cluster you run it against. Generally, these resources are removed once the pepr dev session ends but there are two notable exceptions:
@@ -32,6 +32,12 @@ Source: https://kubernetes.io/docs/reference/access-authn-authz/admission-contro
 The CustomResourceDefinition API resource allows you to define custom resources. Defining a CRD object creates a new custom resource with a name and schema that you specify.
 
 Source: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions
+
+Let's apply the sample yaml and observe pepr logs
+
+```bash
+send_command 1 "kubectl apply -f /root/pepr-demo/capabilities/hello-pepr.samples.yaml"
+```{{exec}}
 
 > 💡 Open [Octant]({{TRAFFIC_HOST1_7777}}) to see Kubernetes dahsboard.
 

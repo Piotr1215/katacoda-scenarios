@@ -14,12 +14,6 @@ and sample kubernetes yaml to test them
 bat /root/pepr-demo/capabilities/hello-pepr.samples.yaml
 ```{{exec}}
 
-Let's apply the yaml and observe pepr logs
-
-```bash
-kubectl apply -f /root/pepr-demo/capabilities/hello-pepr.samples.yaml
-```{{exec}}
-
 ## Next Steps 
 
 Next we will build a custom capability
