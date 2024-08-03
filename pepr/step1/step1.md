@@ -22,7 +22,7 @@ Let's explore available Pepr commands:
 pepr --help
 ```{{exec}}
 
-<img src="https://pepr.dev/images/svg/pepr-simplified.svg" alt="pepr-webhooks">
+![pepr-simplified](./assets/pepr-simplified.png) 
 
 ## Next Step
 
