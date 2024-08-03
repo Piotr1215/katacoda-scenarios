@@ -7,7 +7,7 @@ start_tmux.sh
 Now let's run pepr in first pane
 
 ```bash
-cd pepr-demo && send_command 0 "pepr dev --confirm"
+send_command 0 "cd pepr-demo && pepr dev --confirm"
 ```{{exec}}
 
 >NOTE: This command, by necessity, installs resources into the cluster you run it against. Generally, these resources are removed once the pepr dev session ends but there are two notable exceptions:
