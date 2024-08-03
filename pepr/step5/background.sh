@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Step4/Create Capability 👉 script"
-kill_tmux.sh
+tmux kill-server 2>/dev/null

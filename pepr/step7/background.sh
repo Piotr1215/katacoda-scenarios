@@ -1,3 +1,3 @@
 #!/bin/sh
 echo "Step7/Build & Deploy 🏗 script"
-kill_tmux.sh
+tmux kill-server 2>/dev/null
