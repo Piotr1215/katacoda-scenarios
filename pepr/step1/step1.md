@@ -22,8 +22,6 @@ Let's explore available Pepr commands:
 pepr --help
 ```{{exec}}
 
-![pepr-simplified](./assets/pepr-simplified.png) 
-
 ## Next Step
 
 Create and run a simple Pepr module.
