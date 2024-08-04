@@ -2,6 +2,8 @@
 
 <img src="https://github.com/defenseunicorns/pepr/raw/main/_images/pepr.png" alt="Pepr-logo" width="300" />
 
+> [Companion Blog ](https://piotrzan.medium.com/from-yaml-chaos-to-kubernetes-zen-5b9e8242a5cb) About Pepr
+
 Kubernetes management often involves complex configurations, scattered scripts,
 and cumbersome YAML files. Pepr is **Kubernetes middleware** and addresses this
 issue by offering a type-safe,
