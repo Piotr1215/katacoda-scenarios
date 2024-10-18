@@ -25,6 +25,8 @@ showProgress() {
 	waitForCompletion /opt/.clusterstarted
 	echo -n "Installing additional tools"
 	waitForCompletion /opt/.toolsinstalled
+	echo -n "Installing K9s"
+	waitForCompletion /opt/.k9sinstalled
 	echo -n "Installing octant"
 	waitForCompletion /opt/.octantinstalled
 	waitForCompletion /opt/.backgroundfinished

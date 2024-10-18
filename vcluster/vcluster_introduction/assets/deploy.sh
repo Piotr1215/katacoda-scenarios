@@ -12,6 +12,13 @@ sudo apt-get install -y sqlite3
 sudo apt-get install -y tree
 echo "done" >>/opt/.toolsinstalled
 
+#Installing K9s
+wget https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz
+tar -xzvf k9s_Linux_amd64.tar.gz
+chmod +x k9s
+sudo cp ./k9s /usr/local/bin/
+echo "done" >>/opt/.k9sinstalled
+
 # Installing octant for view
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
 tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
