@@ -7,7 +7,7 @@ responsible for syncing the resources between the virtual and host clusters.
 First let's copy the database file from the _vcluster_ to the current folder.
 
 ```bash
-send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db ./state.db -c syncer "
+send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/state.db ./state.db -c syncer"
 ```{{exec}}
 
 All the interesting data is stored in the _state.db_ file. We can use _sqlite3_

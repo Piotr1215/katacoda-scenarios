@@ -5,6 +5,9 @@ The Frontend team needs a specific Kubernetes version. Let's create a new virtua
 ```bash
 cat <<EOF > vcluster-frontend.yaml
 sync:
+  toHost:
+    endpoints:
+      enabled: false
 controlPlane:
   distro:
     k8s:
@@ -31,5 +34,9 @@ kubectl version
 ```{{exec}}
 
 ## Next Step
+
+```bash
+vcluster disconnect
+```{{exec}}
 
 Next we will see what the backend team needs and create a virtual cluster for them.
