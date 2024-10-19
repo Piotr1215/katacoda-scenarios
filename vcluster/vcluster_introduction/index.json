@@ -61,9 +61,14 @@
                 "verify": "step11/verify.sh"
             },
             {
-                "title": "Reconnect 🧪",
+                "title": "Implment Yourself",
                 "text": "step12/step12.md",
-                "verify": "step12/verify.sh"
+                "background": "step12/background.sh"
+            },
+            {
+                "title": "Reconnect 🧪",
+                "text": "step13/step13.md",
+                "verify": "step13/verify.sh"
             }
         ],
         "intro": {

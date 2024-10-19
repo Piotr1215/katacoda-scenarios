@@ -1,15 +1,13 @@
-Reconnect to the vcluster created first, `my-vcluster`, in the `test-namespace` namespace.
+Try to implement the following on your own:
 
-### Solution
+- [Isolated workloads](https://www.vcluster.com/docs/vcluster/deploy/topologies/isolated-workloads)
+- [Multi-Namespace Mode](https://www.vcluster.com/docs/vcluster/deploy/topologies/multi-namespace-mode)
 
-<details>
-<summary>click to see the answer</summary>
+## Platform Overview
 
-`vcluster connect my-vcluster`{{exec}}
+Helps manage virtual clusters across multiple teams and namespaces.
 
-</details>
+```bash
+vcluster start platform
+```{{exec}}
 
-## Next Step
-
-This is the end of the workshop! Feel free to experiment with the
-_vcluster_ and explore the different commands available in the CLI.
