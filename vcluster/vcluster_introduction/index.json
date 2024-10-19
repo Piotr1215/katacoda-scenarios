@@ -81,7 +81,7 @@
                     "target": "/root"
                 },
                 {
-                  "file": "./kube-ps1/kube-ps1.sh",
+                  "file": "kube-ps1.sh",
                   "target": "/root",
                   "chmod": "+x"
                 }
@@ -93,6 +93,6 @@
         "showdashboard": true
     },
     "backend": {
-        "imageid": "kubernetes-kubeadm-1node"
+        "imageid": "kubernetes-kubeadm-1node-4GB"
     }
 }

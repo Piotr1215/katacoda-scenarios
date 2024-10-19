@@ -42,10 +42,6 @@ vcluster completion bash > /etc/bash_completion.d/vcluster
 source ~/.bashrc
 ```{{exec}}
 
-### QOL Improvements
-
-
-
 ## Next Step
 
 Next we will see how to achieve resources isolation using Kubernetes namespaces.

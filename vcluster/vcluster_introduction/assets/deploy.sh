@@ -20,7 +20,7 @@ sudo cp ./k9s /usr/local/bin/
 echo "done" >>/opt/.k9sinstalled
 
 # Installing kube-ps1
-echo 'source /path/to/kube-ps1.sh' >>~/.bashrc
+echo 'source /root/kube-ps1.sh' >>~/.bashrc
 echo "PS1='[\u@\h \W \$(kube_ps1)]\$ '" >>~/.bashrc
 echo "done" >>/opt/.kubeps1installed
 
