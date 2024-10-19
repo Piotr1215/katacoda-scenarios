@@ -7,14 +7,14 @@ responsible for syncing the resources between the virtual and host clusters.
 First let's copy the database file from the _vcluster_ to the current folder.
 
 ```bash
-send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/state.db ./state.db -c syncer"
+kubectl cp test-namespace/my-vcluster-0:/data/state.db ./state.db -c syncer
 ```{{exec}}
 
 All the interesting data is stored in the _state.db_ file. We can use _sqlite3_
 to retrieve all data that _vcluster_ stores.
 
 ```bash
-send_command 1 "sqlite3 state.db \"SELECT * FROM kine WHERE name LIKE '%nginx%';\""
+sqlite3 state.db "SELECT * FROM kine WHERE name LIKE '%nginx%';"
 ```{{exec}}
 
 Here we can find our nginx pod and service and other data synchronized by _vcluster_.
