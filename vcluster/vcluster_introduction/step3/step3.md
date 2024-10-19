@@ -14,7 +14,7 @@ Now we can check all the resources in our new vcluster.
 
 ```bash
 send_command 1 "vcluster list"
-```
+```{{exec}}
 
 ```bash
 send_command 1 "kubectl get all --all-namespaces"

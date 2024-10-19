@@ -21,7 +21,25 @@ echo "done" >>/opt/.k9sinstalled
 
 # Installing kube-ps1
 echo 'source /root/kube-ps1.sh' >>~/.bashrc
-echo "PS1='[\u@\h \W \$(kube_ps1)]\$ '" >>~/.bashrc
+# Setting up custom kube_ps1 function
+echo '
+kube_ps1_custom() {
+    local kube_ps1_output
+    kube_ps1_output="$(kube_ps1)"
+    echo "${kube_ps1_output#[⎈ /}"
+}
+' >>~/.bashrc
+# Configuring kube-ps1
+echo '
+KUBE_PS1_SYMBOL_DEFAULT="⎈"
+KUBE_PS1_SEPARATOR="/"
+KUBE_PS1_PREFIX="["
+KUBE_PS1_SUFFIX="]"
+' >>~/.bashrc
+# Setting the PS1
+echo 'PS1="$(kube_ps1_custom)\$ "' >>~/.bashrc
+
+# Marking installation as complete
 echo "done" >>/opt/.kubeps1installed
 
 # Installing octant for view
