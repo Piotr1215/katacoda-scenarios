@@ -27,4 +27,9 @@ k get nodes
 
 ## Next Step
 
+```bash
+vcluster disconnect
+vcluster delete admin
+```{{exec}}
+
 Next we will see what the admin team needs and create a virtual cluster for them.

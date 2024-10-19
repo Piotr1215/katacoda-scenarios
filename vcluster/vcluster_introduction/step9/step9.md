@@ -41,4 +41,10 @@ k get secrets,cm -n default
 
 ## Next Step
 
+```bash
+vcluster disconnect
+vcluster delete base
+```{{exec}}
+
+
 Next we will see how to sync generic resources to the virtual cluster.

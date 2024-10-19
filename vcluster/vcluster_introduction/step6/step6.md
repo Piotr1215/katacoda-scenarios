@@ -37,6 +37,7 @@ kubectl version
 
 ```bash
 vcluster disconnect
+vcluster delete frontend
 ```{{exec}}
 
 Next we will see what the backend team needs and create a virtual cluster for them.

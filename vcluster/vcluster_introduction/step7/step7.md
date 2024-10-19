@@ -31,4 +31,9 @@ k describe resourcequota vc-backend -n backend-team
 
 ## Next Step
 
+```bash
+vcluster disconnect
+vcluster delete backend
+```{{exec}}
+
 Next we will see what the admin team needs and create a virtual cluster for them.

@@ -79,5 +79,11 @@ EOF
 
 ## Next Step
 
+```bash
+vcluster disconnect v-cert-manager
+vcluster delete v-cert-manager
+```{{exec}}
+
+
 Check your knowkedgde by taking a short quiz.
 
