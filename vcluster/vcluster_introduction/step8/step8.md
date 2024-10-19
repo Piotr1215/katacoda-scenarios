@@ -1,10 +1,12 @@
-The admin team needs access to underlying Kubernetes nodes. By default, vcluster only syncs _pseudo-nodes_ to virtual cluster.
+The admin team needs access to underlying Kubernetes nodes and they need more lightweight Kubernetes distribution. 
+
+> By default, vcluster only syncs _pseudo-nodes_ to virtual cluster.
 
 ```bash
 cat <<EOF > vcluster-admin.yaml
 controlPlane:
   distro:
-    k8s:
+    k3s:
       enabled: true
       version: "v1.30.0"
 sync:

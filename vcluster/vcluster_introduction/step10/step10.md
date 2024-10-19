@@ -77,6 +77,11 @@ EOF
 
 > Notice we didn't need to install `cert manager` on the virtual cluster. We just synced the resources from the host cluster.
 
+```bash
+kubectl get Issuer,Certificate -n cert-manager-test
+```{{exec}}
+
+
 ## Next Step
 
 ```bash

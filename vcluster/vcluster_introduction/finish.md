@@ -4,7 +4,7 @@ Now that you have learned and experimented with _vcluster_, head over to the off
 
 - Read the [vcluster Documentation](https://www.vcluster.com/docs) to learn more about installation, configuration, and use cases.
 - Explore the [vcluster GitHub repository](https://github.com/loft-sh/vcluster) to see the source code, report issues, and contribute to the project.
-- Watch the [hands-on vcluster Introduction Video](https://www.youtube.com/watch?v=IMdMvn2_LeI&pp=ygUVdmNsdXN0ZXIgaW50cm9kdWN0aW9u) to get a visual overview of how it works.
+- Watch the [vCluster Tips Playlist](https://www.youtube.com/playlist?list=PL8MSvTvMDqe5oj7aYx9A3W74ef2n1Xrgh) for some inspiration on what can be done with virtual clusters.
 - Check out the [vcluster Helm Chart](https://artifacthub.io/packages/helm/loft/vcluster) on Artifact Hub for easy installation.
 
 ## Community

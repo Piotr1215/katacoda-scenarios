@@ -26,32 +26,32 @@
                 "background": "step4/background4.sh"
             },
             {
-                "title": "Data Storage",
+                "title": "Data Storage 📦",
                 "text": "step5/step5.md",
                 "background": "step5/background.sh"
             },
             {
-                "title": "Configure Frontend Team",
+                "title": "Configure Frontend Team 👨‍💻",
                 "text": "step6/step6.md",
                 "background": "step6/background.sh"
             },
             {
-                "title": "Backend Team",
+                "title": "Backend Team 👩‍💻",
                 "text": "step7/step7.md",
                 "background": "step7/background.sh"
             },
             {
-                "title": "Admin Team",
+                "title": "Admin Team 🛠️",
                 "text": "step8/step8.md",
                 "background": "step8/background.sh"
             },
             {
-                "title": "All Teams",
+                "title": "All Teams 👥",
                 "text": "step9/step9.md",
                 "background": "step9/background.sh"
             },
             {
-                "title": "Sync Cert Manager Resources",
+                "title": "Sync Cert Manager Resources 🔄",
                 "text": "step10/step10.md",
                 "background": "step10/background.sh"
             },
@@ -61,7 +61,7 @@
                 "verify": "step11/verify.sh"
             },
             {
-                "title": "Implment Yourself",
+                "title": "Implment Yourself 🛠️",
                 "text": "step12/step12.md",
                 "background": "step12/background.sh"
             },
@@ -131,3 +131,4 @@
         "imageid": "kubernetes-kubeadm-1node-4GB"
     }
 }
+
