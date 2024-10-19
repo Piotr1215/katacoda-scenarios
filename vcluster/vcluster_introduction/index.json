@@ -26,14 +26,19 @@
                 "background": "step4/background4.sh"
             },
             {
-                "title": "Create 🧪",
+                "title": "Data Storage",
                 "text": "step5/step5.md",
-                "verify": "step5/verify.sh"
+                "background": "step5/background.sh"
+            },
+            {
+                "title": "Create 🧪",
+                "text": "step6/step6.md",
+                "verify": "step6/verify.sh"
             },
             {
                 "title": "Reconnect 🧪",
-                "text": "step6/step6.md",
-                "verify": "step6/verify.sh"
+                "text": "step7/step7.md",
+                "verify": "step7/verify.sh"
             }
         ],
         "intro": {
@@ -81,9 +86,9 @@
                     "target": "/root"
                 },
                 {
-                  "file": "kube-ps1.sh",
-                  "target": "/root",
-                  "chmod": "+x"
+                    "file": "kube-ps1.sh",
+                    "target": "/root",
+                    "chmod": "+x"
                 }
             ]
         }

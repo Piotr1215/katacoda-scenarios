@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kubectl config current-context | grep -q my-vcluster
+vcluster list | awk '/new-vcluster/ && /new-namespace/ { found=1 } END { exit !found }'

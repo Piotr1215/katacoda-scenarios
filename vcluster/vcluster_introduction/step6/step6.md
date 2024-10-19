@@ -1,15 +1,11 @@
-Reconnect to the vcluster created first, `my-vcluster`, in the `test-namespace` namespace.
+Create a new vcluster named `new-vcluster` in the `new-namespace` namespace.
+Make sure not to connect to the `vcluster` after creating it.
 
 ### Solution
 
 <details>
 <summary>click to see the answer</summary>
 
-`vcluster connect my-vcluster`{{exec}}
+`vcluster create new-vcluster --namespace new-namespace --connect=false`{{exec}}
 
 </details>
-
-## Next Step
-
-This is the end of the workshop! Feel free to experiment with the
-_vcluster_ and explore the different commands available in the CLI.

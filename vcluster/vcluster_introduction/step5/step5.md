@@ -1,11 +1,25 @@
-Create a new vcluster named `new-vcluster` in the `new-namespace` namespace.
-Make sure not to connect to the `vcluster` after creating it.
+## Data storage
 
-### Solution
+Vcluster by default stores data in a _sqlite_ database. This database is stored
+directly in the _vcluster_ pod. A key _vcluster_ component called _syncer_ is
+responsible for syncing the resources between the virtual and host clusters.
 
-<details>
-<summary>click to see the answer</summary>
+First let's copy the database file from the _vcluster_ to the current folder.
 
-`vcluster create new-vcluster --namespace new-namespace --connect=false`{{exec}}
+```bash
+send_command 1 "kubectl cp test-namespace/my-vcluster-0:/data/server/db/state.db ./state.db -c syncer "
+```{{exec}}
 
-</details>
+All the interesting data is stored in the _state.db_ file. We can use _sqlite3_
+to retrieve all data that _vcluster_ stores.
+
+```bash
+send_command 1 "sqlite3 state.db \"SELECT * FROM kine WHERE name LIKE '%nginx%';\""
+```{{exec}}
+
+Here we can find our nginx pod and service and other data synchronized by _vcluster_.
+
+## Next Step
+
+Next we will see how well you have mastered the _vcluster_ CLI by running some
+test scenarios.
