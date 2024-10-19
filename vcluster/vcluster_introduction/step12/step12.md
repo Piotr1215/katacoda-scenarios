@@ -8,6 +8,6 @@ Try to implement the following on your own:
 Helps manage virtual clusters across multiple teams and namespaces.
 
 ```bash
-vcluster start platform
+vcluster platform start --password=admin123
 ```{{exec}}
 

@@ -51,7 +51,7 @@
                 "background": "step9/background.sh"
             },
             {
-                "title": "Sync Knative Resources",
+                "title": "Sync Cert Manager Resources",
                 "text": "step10/step10.md",
                 "background": "step10/background.sh"
             },
