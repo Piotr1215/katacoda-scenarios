@@ -31,14 +31,39 @@
                 "background": "step5/background.sh"
             },
             {
-                "title": "Create 🧪",
+                "title": "Configure Frontend Team",
                 "text": "step6/step6.md",
-                "verify": "step6/verify.sh"
+                "background": "step6/background.sh"
+            },
+            {
+                "title": "Backend Team",
+                "text": "step7/step7.md",
+                "background": "step7/background.sh"
+            },
+            {
+                "title": "Admin Team",
+                "text": "step8/step8.md",
+                "background": "step8/background.sh"
+            },
+            {
+                "title": "All Teams",
+                "text": "step9/step9.md",
+                "background": "step9/background.sh"
+            },
+            {
+                "title": "Sync Knative Resources",
+                "text": "step10/step10.md",
+                "background": "step10/background.sh"
+            },
+            {
+                "title": "Create 🧪",
+                "text": "step11/step11.md",
+                "verify": "step11/verify.sh"
             },
             {
                 "title": "Reconnect 🧪",
-                "text": "step7/step7.md",
-                "verify": "step7/verify.sh"
+                "text": "step12/step12.md",
+                "verify": "step12/verify.sh"
             }
         ],
         "intro": {

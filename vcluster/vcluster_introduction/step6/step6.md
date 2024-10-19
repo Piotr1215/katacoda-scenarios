@@ -1,11 +1,35 @@
-Create a new vcluster named `new-vcluster` in the `new-namespace` namespace.
-Make sure not to connect to the `vcluster` after creating it.
+# Configure Frontend Team
 
-### Solution
+The Frontend team needs a specific Kubernetes version. Let's create a new virtual cluster for them with the required version.
 
-<details>
-<summary>click to see the answer</summary>
+```bash
+cat <<EOF > vcluster-frontend.yaml
+sync:
+controlPlane:
+  distro:
+    k8s:
+      enabled: true
+      version: "v1.28.0"
+EOF
+```{{exec}}
 
-`vcluster create new-vcluster --namespace new-namespace --connect=false`{{exec}}
+```bash
+vcluster create frontend --namespace frontend-team -f vcluster-frontend.yaml --connect=false
+```{{exec}}
 
-</details>
+Check our host cluster versin first:
+
+```bash
+kubectl version
+```{{exec}}
+
+Now let's connect to the `frontend` virtual cluster and check the version:
+
+```bash
+vcluster connect frontend
+kubectl version
+```{{exec}}
+
+## Next Step
+
+Next we will see what the backend team needs and create a virtual cluster for them.

@@ -1,15 +1,34 @@
-Reconnect to the vcluster created first, `my-vcluster`, in the `test-namespace` namespace.
+The Backend team needs newer Kubernetes version and resource quotas. 
 
-### Solution
+```bash
+cat <<EOF > vcluster-backend.yaml
+controlPlane:
+  distro:
+    k8s:
+      enabled: true
+      version: "v1.28.0"
+policies:
+  resourceQuota:
+    enabled: true
+    quota:
+      cpu: "10"
+      memory: 2Gi
+      pods: "10"
+EOF
+```{{exec}}
 
-<details>
-<summary>click to see the answer</summary>
+```bash
+vcluster create backend --namespace backend-team -f vcluster-backend.yaml --connect=false
+```{{exec}}
 
-`vcluster connect my-vcluster`{{exec}}
+This creates a `ResourceQuota` resource on our host cluster. 
 
-</details>
+```bash
+k describe resourcequota vc-backend -n backend-team
+```{{exec}}
+
+> Now we are sure that the backend team will not consume more resources than allowed.
 
 ## Next Step
 
-This is the end of the workshop! Feel free to experiment with the
-_vcluster_ and explore the different commands available in the CLI.
+Next we will see what the admin team needs and create a virtual cluster for them.
