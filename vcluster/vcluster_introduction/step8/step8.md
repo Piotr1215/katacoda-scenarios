@@ -8,7 +8,6 @@ controlPlane:
   distro:
     k3s:
       enabled: true
-      version: "v1.30.0"
 sync:
   fromHost:
     nodes:
@@ -20,11 +19,12 @@ EOF
 vcluster create admin --namespace admin-team -f vcluster-admin.yaml --connect=false
 ```{{exec}}
 
-Now we should see the actula nodes synced to the virtual cluster.
+Now we should see the actual nodes synced to the virtual cluster as well as `k3s` distribution.
 
 ```bash
 vcluster connect admin
-k get nodes
+kubectl version
+kubectl get nodes
 ```{{exec}}
 
 ## Next Step
