@@ -1,5 +1,3 @@
-# Try it yourself
-
 Now that you have learned and experimented with _vcluster_, head over to the official [vcluster website](https://www.vcluster.com/) where you can dive deeper into its features and capabilities. You can also try out _vcluster_ in your own environment by following the detailed documentation provided.
 
 ## Additional Resources

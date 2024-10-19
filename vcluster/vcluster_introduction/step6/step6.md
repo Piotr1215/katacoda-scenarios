@@ -1,5 +1,3 @@
-# Configure Frontend Team
-
 The Frontend team needs a specific Kubernetes version. Let's create a new virtual cluster for them with the required version.
 
 ```bash
