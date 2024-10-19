@@ -11,3 +11,10 @@ Helps manage virtual clusters across multiple teams and namespaces.
 vcluster platform start --password=admin123
 ```{{exec}}
 
+Let's add the virtual cluster to the platform and watch the resources in the `test-namespace`.
+
+```bash
+kubectl get pods -n test-namespace
+```{{exec}}
+
+
