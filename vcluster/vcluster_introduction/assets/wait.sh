@@ -27,6 +27,8 @@ showProgress() {
 	waitForCompletion /opt/.toolsinstalled
 	echo -n "Installing K9s"
 	waitForCompletion /opt/.k9sinstalled
+	echo -n "Installing kube-ps1"
+	waitForCompletion /opt/.kubeps1installed
 	echo -n "Installing octant"
 	waitForCompletion /opt/.octantinstalled
 	waitForCompletion /opt/.backgroundfinished

@@ -17,6 +17,35 @@ curl -L -o vcluster "https://github.com/loft-sh/vcluster/releases/latest/downloa
     && rm -f vcluster
 ```{{exec}}
 
+## Post Installation
+
+Verify the installation by running the following command:
+
+```bash
+vcluster version
+```{{exec}}
+
+Check all available commands:
+
+```bash
+vcluster --help
+```{{exec}}
+
+Generate autocompletion scripts:
+
+```bash
+echo $SHELL
+```{{exec}}
+
+```bash
+vcluster completion bash > /etc/bash_completion.d/vcluster
+source ~/.bashrc
+```{{exec}}
+
+### QOL Improvements
+
+
+
 ## Next Step
 
 Next we will see how to achieve resources isolation using Kubernetes namespaces.

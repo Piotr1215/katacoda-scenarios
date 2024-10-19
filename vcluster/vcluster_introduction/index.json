@@ -79,6 +79,11 @@
                 {
                     "file": "deployment.yaml",
                     "target": "/root"
+                },
+                {
+                  "file": "./kube-ps1/kube-ps1.sh",
+                  "target": "/root",
+                  "chmod": "+x"
                 }
             ]
         }

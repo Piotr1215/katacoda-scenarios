@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test
+  namespace: team-b
+  labels:
+    type: test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: test-deployment
+  template:
+    metadata:
+      labels:
+        type: test-deployment
+    spec:
+      containers:
+        - image: piotrzan/nginx-demo:green
+          name: nginx-test
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

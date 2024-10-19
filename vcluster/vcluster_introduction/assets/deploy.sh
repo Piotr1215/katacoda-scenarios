@@ -19,6 +19,11 @@ chmod +x k9s
 sudo cp ./k9s /usr/local/bin/
 echo "done" >>/opt/.k9sinstalled
 
+# Installing kube-ps1
+echo 'source /path/to/kube-ps1.sh' >>~/.bashrc
+echo "PS1='[\u@\h \W \$(kube_ps1)]\$ '" >>~/.bashrc
+echo "done" >>/opt/.kubeps1installed
+
 # Installing octant for view
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
 tar -xzvf octant_0.16.3_Linux-64bit.tar.gz
