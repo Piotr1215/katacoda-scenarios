@@ -49,5 +49,4 @@ echo "done" >>/opt/.octantinstalled
 
 echo "done" >>/opt/.backgroundfinished
 
-OCTANT_DISABLE_OPEN_BROWSER=true
-OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant
+OCTANT_DISABLE_OPEN_BROWSER=true OCTANT_LISTENER_ADDR=0.0.0.0:7777 octant &
