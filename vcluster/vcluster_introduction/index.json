@@ -8,26 +8,26 @@
             {
                 "title": "Installation ⚙️",
                 "text": "step1/step1.md",
-                "background": "step1/background1.sh",
-                "foreground": "step1/foreground1.sh"
+                "background": "step1/background.sh",
+                "foreground": "step1/foreground.sh"
             },
             {
                 "title": "Namespaces based isolation 👤",
                 "text": "step2/step2.md",
-                "background": "step2/background2.sh",
-                "foreground": "step2/foreground2.sh"
+                "background": "step2/background.sh",
+                "foreground": "step2/foreground.sh"
             },
             {
                 "title": "Creating vcluster 🏗️",
                 "text": "step3/step3.md",
-                "background": "step3/background3.sh",
-                "foreground": "step3/foreground3.sh"
+                "background": "step3/background.sh",
+                "foreground": "step3/foreground.sh"
             },
             {
                 "title": "Exploring vcluster 🚀",
                 "text": "step4/step4.md",
-                "background": "step4/background4.sh",
-                "foreground": "step4/foreground4.sh"
+                "background": "step4/background.sh",
+                "foreground": "step4/foreground.sh"
             },
             {
                 "title": "Data Storage 📦",
@@ -68,8 +68,7 @@
             {
                 "title": "Create 🧪",
                 "text": "step11/step11.md",
-                "verify": "step11/verify.sh",
-                "foreground": "step11/foreground.sh"
+                "verify": "step11/verify.sh"
             },
             {
                 "title": "Implment Yourself 🛠️",
