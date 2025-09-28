@@ -1,0 +1,73 @@
+# Production Team vCluster Configuration
+# Full-featured environment with real nodes and ingress support
+
+# No resource quotas for production - full access
+policies:
+  resourceQuota:
+    enabled: false
+  limitRange:
+    enabled: false
+
+# Sync configuration - full bi-directional sync
+sync:
+  toHost:
+    pods:
+      enabled: true
+    services:
+      enabled: true
+    ingresses:
+      enabled: true  # Enable ingress sync for production
+  fromHost:
+    nodes:
+      enabled: true  # Sync real nodes from host
+      selector:
+        all: true  # See all nodes
+
+# Enable priority classes sync
+priorityclasses:
+  enabled: true
+
+# Control plane configuration
+controlPlane:
+  distro:
+    k3s:
+      enabled: true
+      image:
+        tag: "v1.29.0-k3s1"
+  backingStore:
+    database:
+      embedded:
+        enabled: true
+  coredns:
+    enabled: true  # Enable CoreDNS for better DNS resolution
+    integrated: true
+
+# Advanced networking features
+networking:
+  replicateServices:
+    toHost:
+      - from: "*"
+        to: "vcluster-prod-*"
+  resolveDNS:
+    - hostname: "*.vcluster-dev-team.svc.cluster.local"  # Cross-vCluster DNS
+    - hostname: "*.vcluster-partner-team.svc.cluster.local"
+
+# Storage - enable persistent volumes
+storage:
+  persistence:
+    size: "5Gi"
+  classes:
+    - name: "local-path"
+      default: true
+
+# Enable metrics and monitoring
+monitoring:
+  serviceMonitor:
+    enabled: false  # Can be enabled if Prometheus is available
+
+# High availability settings (for production readiness demo)
+replicas: 1  # Set to 1 for demo, production would use 3
+
+# Enable audit logging for compliance
+audit:
+  enabled: false  # Simplified for workshop

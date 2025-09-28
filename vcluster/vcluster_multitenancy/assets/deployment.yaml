@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: team-b
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test
+  namespace: team-b
+  labels:
+    type: test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: test-deployment
+  template:
+    metadata:
+      labels:
+        type: test-deployment
+    spec:
+      containers:
+        - image: piotrzan/nginx-demo:green
+          name: nginx-test
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+  namespace: team-b
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 31234
+  selector:
+    type: test-deployment

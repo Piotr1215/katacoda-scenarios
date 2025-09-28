@@ -1,0 +1,62 @@
+# Development Team vCluster Configuration
+# Resource-limited environment for dev/test workloads
+
+# Automatic resource quotas for the vCluster namespace
+policies:
+  resourceQuota:
+    enabled: true
+    quota:
+      requests.cpu: "4"
+      requests.memory: "8Gi"
+      limits.cpu: "8"
+      limits.memory: "16Gi"
+      persistentvolumeclaims: "10"
+      services.nodeports: "0"  # No NodePort services for dev
+      services.loadbalancers: "0"  # No LoadBalancer services for dev
+
+  limitRange:
+    enabled: true
+    default:
+      cpu: "200m"
+      memory: "256Mi"
+    defaultRequest:
+      cpu: "100m"
+      memory: "128Mi"
+    max:
+      cpu: "2"
+      memory: "4Gi"
+
+# Sync configuration - minimal for dev environment
+sync:
+  toHost:
+    pods:
+      enabled: true
+  fromHost:
+    nodes:
+      enabled: false  # Use fake nodes for dev
+
+# Control plane configuration
+controlPlane:
+  distro:
+    k3s:
+      enabled: true
+      image:
+        tag: "v1.29.0-k3s1"  # Latest stable version
+  backingStore:
+    database:
+      embedded:
+        enabled: true  # Use embedded SQLite for simplicity
+
+# Networking - simple ClusterIP services only
+networking:
+  replicateServices:
+    toHost:
+      - from: "*"
+        to: "vcluster-dev-*"
+
+# Telemetry and monitoring
+telemetry:
+  enabled: false  # Disable for workshop simplicity
+
+# Enable pro features trial (if available)
+pro: false
