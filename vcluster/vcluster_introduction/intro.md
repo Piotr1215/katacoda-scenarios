@@ -22,6 +22,22 @@ and host clusters.
 <sub>source: author based on https://www.vcluster.com/docs/vcluster/architecture/</sub>
 </details>
 
+<details>
+<summary>vCluster overview diagram</summary>
+
+![vCluster Overview](./assets/vcluster-flowchart.png)
+
+| **Feature**             | **Benefit**                               |
+| ----------------------- | ----------------------------------------- |
+| Full Kubernetes API     | Certified Kubernetes distribution         |
+| Flexible isolation      | Separate control plane per team           |
+| Resource efficiency     | Shared infrastructure, isolated workloads |
+| Sub-minute provisioning | Instant test/dev/ci environments          |
+
+> **vCluster** = Containerized Kubernetes inside a Pod!
+
+</details>
+
 ## Next Step
 
 Next we will install _vcluster_.
