@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Backend Team script"
+echo "Configure Frontend Team script"

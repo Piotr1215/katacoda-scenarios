@@ -1,39 +1,41 @@
-The Backend team needs newer Kubernetes version and resource quotas. 
+The Frontend team needs a specific Kubernetes version. Let's create a new virtual cluster for them with the required version.
 
 ```bash
-cat <<EOF > vcluster-backend.yaml
+cat <<EOF > vcluster-frontend.yaml
+sync:
+  toHost:
+    endpoints:
+      enabled: false
 controlPlane:
   distro:
     k8s:
       enabled: true
-      version: "v1.29.0"
-policies:
-  resourceQuota:
-    enabled: true
-    quota:
-      cpu: "10"
-      memory: 2Gi
-      pods: "10"
+      version: "v1.28.0"
 EOF
 ```{{exec}}
 
 ```bash
-vcluster create backend --namespace backend-team -f vcluster-backend.yaml --connect=false
+vcluster create frontend --namespace frontend-team -f vcluster-frontend.yaml --connect=false
 ```{{exec}}
 
-This creates a `ResourceQuota` resource on our host cluster. 
+Check our host cluster versin first:
 
 ```bash
-k describe resourcequota vc-backend -n backend-team
+kubectl version
 ```{{exec}}
 
-> Now we are sure that the backend team will not consume more resources than allowed.
+Now let's connect to the `frontend` virtual cluster and check the version:
+
+```bash
+vcluster connect frontend
+kubectl version
+```{{exec}}
 
 ## Next Step
 
 ```bash
 vcluster disconnect
-vcluster delete backend
+vcluster delete frontend
 ```{{exec}}
 
-Next we will see what the admin team needs and create a virtual cluster for them.
+Next we will see what the backend team needs and create a virtual cluster for them.

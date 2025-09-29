@@ -1,3 +1,2 @@
 #!/bin/sh
-echo "Configure Frontend Team script"
-clear
+echo "How Syncer Works script"

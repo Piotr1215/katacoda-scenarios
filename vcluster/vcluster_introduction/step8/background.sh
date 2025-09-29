@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Admin Team script"
+echo "Backend Team script"
