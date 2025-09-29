@@ -6,7 +6,7 @@ controlPlane:
   distro:
     k8s:
       enabled: true
-      version: "v1.29.0"
+      version: "v1.32.0"
 policies:
   resourceQuota:
     enabled: true
