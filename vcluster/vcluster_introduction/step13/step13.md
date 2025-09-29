@@ -1,20 +1,37 @@
-Try to implement the following on your own:
+## Quiz 2: Create vCluster with Resource Quotas
 
-- [Isolated workloads](https://www.vcluster.com/docs/vcluster/deploy/topologies/isolated-workloads)
-- [Multi-Namespace Mode](https://www.vcluster.com/docs/vcluster/deploy/topologies/multi-namespace-mode)
+Create a new vCluster with the following requirements:
+- Name: `limited-team`
+- Namespace: `limited-ns`
+- Resource limits:
+  - Maximum 4 CPUs
+  - Maximum 8Gi memory
+  - Maximum 15 pods
+- Do NOT connect after creation
 
-## Platform Overview
+### Solution
 
-Helps manage virtual clusters across multiple teams and namespaces.
+<details>
+<summary>click to see the answer</summary>
+
+First, create the configuration file with resource quotas:
 
 ```bash
-vcluster platform start --password=admin123
+cat <<EOF > quiz-limits.yaml
+policies:
+  resourceQuota:
+    enabled: true
+    quota:
+      cpu: "4"
+      memory: 8Gi
+      pods: "15"
+EOF
 ```{{exec}}
 
-Let's add the virtual cluster to the platform and watch the resources in the `test-namespace`.
+Then create the vCluster:
 
 ```bash
-kubectl get pods -n test-namespace
+vcluster create limited-team --namespace limited-ns -f quiz-limits.yaml --connect=false
 ```{{exec}}
 
-
+</details>

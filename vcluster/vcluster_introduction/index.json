@@ -71,20 +71,29 @@
                 "foreground": "step10/foreground.sh"
             },
             {
-                "title": "Create 🧪",
+                "title": "Quiz 1: Custom K8s Version 🧪",
                 "text": "step12/step12.md",
                 "verify": "step12/verify.sh"
             },
             {
-                "title": "Implement Yourself 🛠️",
+                "title": "Quiz 2: Resource Quotas 📊",
                 "text": "step13/step13.md",
-                "background": "step13/background.sh",
-                "foreground": "step11/foreground.sh"
+                "verify": "step13/verify.sh"
             },
             {
-                "title": "Reconnect 🧪",
+                "title": "Quiz 3: Snapshots 📸",
                 "text": "step14/step14.md",
                 "verify": "step14/verify.sh"
+            },
+            {
+                "title": "Quiz 4: vCluster Management 📝",
+                "text": "step15/step15.md",
+                "verify": "step15/verify.sh"
+            },
+            {
+                "title": "Quiz 5: Pre-populated Resources 🎯",
+                "text": "step16/step16.md",
+                "verify": "step16/verify.sh"
             }
         ],
         "intro": {
