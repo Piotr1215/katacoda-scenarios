@@ -10,8 +10,8 @@ A vCluster snapshot includes:
 ### Create Snapshot
 
 ```bash
-# Snapshot to ephemeral docker image registry (ttl.sh)
-vcluster snapshot admin "oci://ttl.sh/vcluster-admin:1h"
+# Snapshot the backend vCluster to ephemeral docker image registry (ttl.sh)
+vcluster snapshot backend "oci://ttl.sh/vcluster-backend:1h"
 ```{{exec}}
 
 > **Note**: ttl.sh is a free ephemeral registry where images expire after the specified time (1h = 1 hour)
@@ -27,23 +27,24 @@ vcluster snapshot admin "oci://ttl.sh/vcluster-admin:1h"
 ### Simulate Disaster Recovery
 
 ```bash
-# Delete the vCluster to simulate disaster
-vcluster delete admin --delete-namespace
+# Delete the backend vCluster to simulate disaster
+vcluster delete backend --delete-namespace
 ```{{exec}}
 
 ### Restore from Snapshot
 
 ```bash
 # Create new vCluster from snapshot (namespace is auto-created)
-vcluster create admin --namespace admin-team --restore "oci://ttl.sh/vcluster-admin:1h"
+vcluster create backend-restored --restore "oci://ttl.sh/vcluster-backend:1h"
 ```{{exec}}
 
 ### Verify Restoration
 
 ```bash
 # Connect and check restored state
-vcluster connect admin
+vcluster connect backend-restored
 kubectl get ns
+kubectl get resourcequotas -A
 ```{{exec}}
 
 > **Key Points:**
