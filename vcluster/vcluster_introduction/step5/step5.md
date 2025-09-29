@@ -31,7 +31,7 @@ The init container copies Kubernetes binaries, then the main container runs all 
 View the control plane components running inside the vCluster pod:
 
 ```bash
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- ps aux | grep -E "vcluster|kine|kube-" | grep -v grep
+kubectl exec -n test-namespace my-vcluster-0 -c syncer -- ps aux | grep -E "vcluster|kine|kube-" | grep -v grep | awk '{print NR". "$0}'
 ```{{exec}}
 
 This shows the four key processes that make up a complete Kubernetes control plane, all running inside a single container!
