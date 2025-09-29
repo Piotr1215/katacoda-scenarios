@@ -1,8 +1,9 @@
 ## Quiz 5: Create vCluster with Pre-populated Resources
 
-First, list existing vClusters:
+First, ensure we're not connected to any vCluster and list existing vClusters:
 
 ```bash
+vcluster disconnect
 vcluster list
 ```{{exec}}
 
