@@ -1,5 +1,11 @@
 ## Quiz 1: Create vCluster with Custom Kubernetes Version
 
+First, list existing vClusters:
+
+```bash
+vcluster list
+```{{exec}}
+
 Create a new vCluster with the following requirements:
 - Name: `quiz-k8s`
 - Namespace: `quiz-ns`

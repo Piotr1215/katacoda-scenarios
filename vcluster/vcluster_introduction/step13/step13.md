@@ -1,6 +1,12 @@
 ## Quiz 2: Create vCluster with Resource Quotas
 
-First, clean up the previous quiz vCluster:
+First, list existing vClusters:
+
+```bash
+vcluster list
+```{{exec}}
+
+Clean up the previous quiz vCluster:
 
 ```bash
 vcluster delete quiz-k8s --delete-namespace

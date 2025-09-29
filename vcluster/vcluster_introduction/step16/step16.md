@@ -1,5 +1,17 @@
 ## Quiz 5: Create vCluster with Pre-populated Resources
 
+First, list existing vClusters:
+
+```bash
+vcluster list
+```{{exec}}
+
+Clean up the previous quiz vCluster:
+
+```bash
+vcluster delete limited-team --delete-namespace
+```{{exec}}
+
 Create a vCluster with the following requirements:
 - Name: `quiz-prepop`
 - Namespace: `quiz-final`

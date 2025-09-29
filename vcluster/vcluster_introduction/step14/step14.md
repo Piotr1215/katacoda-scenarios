@@ -1,5 +1,11 @@
 ## Quiz 3: Take a vCluster Snapshot
 
+First, list existing vClusters:
+
+```bash
+vcluster list
+```{{exec}}
+
 Perform the following backup operation:
 - Take a snapshot of the `limited-team` vCluster created in Quiz 2
 - Namespace: `limited-ns`
