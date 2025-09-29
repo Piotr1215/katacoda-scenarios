@@ -61,27 +61,6 @@ Get actual resource consumption:
 kubectl top pod -n test-namespace -l app=vcluster
 ```{{exec}}
 
-### Understanding vCluster Isolation
-
-vCluster achieves workload isolation by running a full Kubernetes control plane inside a pod. See which control plane components are running:
-
-```bash
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- \
-  ps aux | \
-  awk '/kube-apiserver|kube-controller-manager|kine.*state.db|vcluster start/ && !/awk/ {
-    cmd=$11
-    if (cmd ~ /vcluster/) print "• vcluster"
-    else if (cmd ~ /kine/) print "• kine (etcd replacement)"
-    else if (cmd ~ /kube-apiserver/) print "• kube-apiserver"
-    else if (cmd ~ /kube-controller-manager/) print "• kube-controller-manager"
-  }' | sort -u
-```{{exec}}
-
-This architecture provides:
-- **API isolation**: Each vCluster has its own API server
-- **Independent state**: Separate SQLite database per vCluster
-- **Resource efficiency**: All components run in a single pod (10-50MB typical)
-- **Fast provisioning**: Sub-minute deployment time
 
 ### Database Storage Analysis
 

@@ -1,5 +1,15 @@
 The syncer is the heart of vCluster, acting as a bidirectional state reconciliation engine between virtual and host clusters.
 
+### Reconciliation Loop
+
+The syncer follows this continuous loop:
+
+```
+Watch(vCluster API) → Transform(resource) → Apply(host API) → Update Status(vCluster API)
+                                              ↑                           ↓
+                                              └───────────────────────────┘
+```
+
 ### Syncer Architecture
 
 ![vCluster Syncer](./assets/vcluster-syncer.png)
@@ -8,7 +18,7 @@ The syncer continuously watches both the vCluster API and host cluster API, tran
 
 ### How the Syncer Works
 
-Let's explore the syncer's operations in real-time:
+View recent syncer logs:
 
 ```bash
 kubectl logs -n test-namespace my-vcluster-0 -c syncer --tail=20
@@ -45,22 +55,12 @@ Notice the naming pattern: `<name>-x-<namespace>-x-<vcluster-name>`
 
 ### What Gets Synced?
 
-#### Resources Synced TO Host Cluster:
+View resources managed by vCluster in the host namespace:
 
 ```bash
-kubectl get pods,services,configmaps,secrets -n test-namespace \
-  --show-labels | \
-  grep "vcluster.loft.sh/managed-by=my-vcluster"
-```{{exec}}
-
-#### Resources Synced FROM Host Cluster:
-
-Check node information synced from host:
-
-```bash
-vcluster connect my-vcluster --namespace test-namespace
-kubectl get nodes -o wide
-vcluster disconnect
+kubectl get pods,services -n test-namespace \
+  -l vcluster.loft.sh/managed-by=my-vcluster \
+  --show-labels
 ```{{exec}}
 
 ### Annotation Sync Example
@@ -83,23 +83,6 @@ kubectl get pods -n test-namespace \
   -o custom-columns=NAME:.metadata.name,TEAM:.metadata.annotations.example\\.io/team
 ```{{exec}}
 
-### Reconciliation Loop
-
-The syncer follows this continuous loop:
-
-```
-Watch(vCluster API) → Transform(resource) → Apply(host API) → Update Status(vCluster API)
-                                              ↑                           ↓
-                                              └───────────────────────────┘
-```
-
-Monitor the reconciliation in real-time:
-
-```bash
-kubectl logs -n test-namespace my-vcluster-0 -c syncer -f | \
-  grep -E "(create|update|delete|sync)" | \
-  head -20
-```{{exec}}
 
 ### Key Syncer Features
 
