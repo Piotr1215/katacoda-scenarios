@@ -9,6 +9,23 @@ arkade get k3d
 sudo mv /root/.arkade/bin/k3d /usr/local/bin/
 k3d cluster create
 kubectl wait node --all --for condition=ready --timeout=800s
+
+# Install metrics-server and patch for k3d
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl patch deployment metrics-server -n kube-system --type='json' -p='[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/-",
+    "value": "--kubelet-insecure-tls"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/args/-",
+    "value": "--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname"
+  }
+]'
+kubectl wait deployment metrics-server -n kube-system --for=condition=Available --timeout=300s
+
 echo "done" >>/opt/.clusterstarted
 
 # "Installing tools and configuring git"
