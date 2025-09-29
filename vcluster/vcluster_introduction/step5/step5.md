@@ -15,23 +15,26 @@ kubectl get pod -n test-namespace -l app=vcluster -o json | \
 
 ### vCluster Components
 
-| **Component** | **Purpose** | **Location** |
-|--------------|------------|--------------|
-| **kine** | Lightweight etcd replacement using SQLite | Runs as process in syncer |
-| **kube-apiserver** | Full Kubernetes API server | Runs as process in syncer |
-| **kube-controller-manager** | Manages Kubernetes controllers | Runs as process in syncer |
-| **syncer** | Bi-directional resource sync with host | Main container process |
-| **SQLite Database** | Complete state isolation | `/data/state.db` |
+The init container copies Kubernetes binaries, then the main container runs all processes:
+
+| **Component** | **Purpose** | **Details** |
+|--------------|------------|-------------|
+| **Init Container** | Provides Kubernetes binaries | Copies from `ghcr.io/loft-sh/kubernetes` to `/binaries/` |
+| **kine** | Lightweight etcd replacement using SQLite | Process in syncer container (PID ~21) |
+| **kube-apiserver** | Full Kubernetes API server | Process in syncer container (PID ~30) |
+| **kube-controller-manager** | Manages Kubernetes controllers | Process in syncer container (PID ~71) |
+| **syncer process** | Bi-directional resource sync with host | Main orchestrator (PID 1) |
+| **SQLite Database** | Complete state isolation | `/data/state.db` with WAL |
 
 ### Exploring Running Processes
 
 View the control plane components running inside the vCluster pod:
 
 ```bash
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- sh -c "echo '📊 vCluster Control Plane Processes' && echo '═══════════════════════════════════' && echo && echo 'Component                     PID   Time' && echo '─────────────────────────────────────────' && ps aux | grep 'vcluster start' | grep -v grep | head -1 | awk '{printf \"%-28s %5s  %s\\n\", \"vCluster Manager\", \$1, \$3}' && ps aux | grep 'kine.*state.db' | grep -v grep | head -1 | awk '{printf \"%-28s %5s  %s\\n\", \"Kine (etcd replacement)\", \$1, \$3}' && ps aux | grep 'kube-apiserver' | grep -v grep | head -1 | awk '{printf \"%-28s %5s  %s\\n\", \"Kubernetes API Server\", \$1, \$3}' && ps aux | grep 'kube-controller-manager' | grep -v grep | head -1 | awk '{printf \"%-28s %5s  %s\\n\", \"Controller Manager\", \$1, \$3}'"
+kubectl exec -n test-namespace my-vcluster-0 -c syncer -- ps aux | grep -E "vcluster|kine|kube-" | grep -v grep
 ```{{exec}}
 
-This shows the four key processes that make up a complete Kubernetes control plane, all running inside a single pod!
+This shows the four key processes that make up a complete Kubernetes control plane, all running inside a single container!
 
 ### vCluster Data Directory
 
@@ -43,7 +46,9 @@ kubectl exec -n test-namespace my-vcluster-0 -c syncer -- ls -la /data/
 
 Key files and directories:
 - **state.db**: SQLite database containing all cluster state
-- **kine.sock**: Unix socket for kine (etcd replacement)
+- **state.db-wal**: Write-ahead log for database durability
+- **state.db-shm**: Shared memory file for concurrent access
+- **kine.sock**: Unix socket for etcd-compatible API
 - **pki/**: Certificates and keys for secure communication
 - **pids/**: Process ID files for running components
 
