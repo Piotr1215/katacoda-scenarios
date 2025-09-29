@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "Create vCluster Test"
+echo "Implment Yourself script"
 clear

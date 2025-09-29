@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "All Teams script"
+echo "Sync Knative Resources script"
 clear

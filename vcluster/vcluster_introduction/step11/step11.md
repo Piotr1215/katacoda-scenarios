@@ -1,50 +1,41 @@
-All Teams need to have virtual clusters with pre-populated resources. 
+We can reuse the metrics server from the host cluster within the vCluster.
+
+> 📚 **Documentation**: For more details, see the [vCluster Metrics Server Integration docs](https://www.vcluster.com/docs/vcluster/configure/vcluster-yaml/integrations/metricsServer)
+
+The metrics server is already installed on the host cluster. Let's create a vCluster that uses it.
 
 ```bash
-cat <<EOF > vcluster-base.yaml
-controlPlane:
-  distro:
-    k8s:
-      enabled: true
-      version: "v1.30.0"
-experimental:
-  deploy:
-    vcluster:
-      manifests: |-
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: vcluster-test-config
-        data:
-          TEST_KEY: "test_value"
-        ---
-        apiVersion: v1
-        kind: Secret
-        metadata:
-          name: vcluster-test-secret
-        type: Opaque
-        stringData:
-          test-credential: "test123"
+cat <<EOF > vcluster-metrics.yaml
+integrations:
+  metricsServer:
+    enabled: true
+    nodes: true
+    pods: true
 EOF
 ```{{exec}}
 
 ```bash
-vcluster create base --namespace base-ns -f vcluster-base.yaml --connect=false
+vcluster create host-metrics-vcluster -f vcluster-metrics.yaml --connect=true
 ```{{exec}}
 
-Now we should see the actula nodes synced to the virtual cluster.
+Now the metrics API should be available within the vCluster. Let's test it:
 
 ```bash
-vcluster connect base
-k get secrets,cm -n default
+kubectl top nodes
 ```{{exec}}
+
+```bash
+kubectl top pods -A
+```{{exec}}
+
+> Notice we didn't need to install metrics server on the virtual cluster. We just reused it from the host cluster.
 
 ## Next Step
 
 ```bash
-vcluster disconnect
-vcluster delete base
+vcluster disconnect host-metrics-vcluster
+vcluster delete host-metrics-vcluster
 ```{{exec}}
 
+Check your knowledge by taking a short quiz.
 
-Next we will see how to sync generic resources to the virtual cluster.

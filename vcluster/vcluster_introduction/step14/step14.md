@@ -1,20 +1,15 @@
-Try to implement the following on your own:
+Reconnect to the vcluster created first, `my-vcluster`, in the `test-namespace` namespace.
 
-- [Isolated workloads](https://www.vcluster.com/docs/vcluster/deploy/topologies/isolated-workloads)
-- [Multi-Namespace Mode](https://www.vcluster.com/docs/vcluster/deploy/topologies/multi-namespace-mode)
+### Solution
 
-## Platform Overview
+<details>
+<summary>click to see the answer</summary>
 
-Helps manage virtual clusters across multiple teams and namespaces.
+`vcluster connect my-vcluster`{{exec}}
 
-```bash
-vcluster platform start --password=admin123
-```{{exec}}
+</details>
 
-Let's add the virtual cluster to the platform and watch the resources in the `test-namespace`.
+## Next Step
 
-```bash
-kubectl get pods -n test-namespace
-```{{exec}}
-
-
+This is the end of the workshop! Feel free to experiment with the
+_vcluster_ and explore the different commands available in the CLI.

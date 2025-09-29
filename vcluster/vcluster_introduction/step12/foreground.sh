@@ -1,3 +1,3 @@
 #!/bin/sh
-echo "Sync Knative Resources script"
+echo "Create vCluster Test"
 clear

@@ -1,3 +1,2 @@
 #!/bin/sh
-echo "Admin Team script"
-clear
+echo "vCluster Snapshots script"
