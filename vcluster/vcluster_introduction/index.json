@@ -65,7 +65,7 @@
                 "foreground": "step9/foreground.sh"
             },
             {
-                "title": "Sync Cert Manager Resources 🔄",
+                "title": "Reuse Host Metrics Server 📊",
                 "text": "step11/step11.md",
                 "background": "step11/background.sh",
                 "foreground": "step10/foreground.sh"
