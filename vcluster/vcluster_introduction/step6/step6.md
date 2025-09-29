@@ -1,5 +1,3 @@
-## The Syncer: vCluster's Core Component
-
 The syncer is the heart of vCluster, acting as a bidirectional state reconciliation engine between virtual and host clusters.
 
 ### Syncer Architecture
@@ -32,15 +30,15 @@ The syncer performs several key transformations:
 Let's see how resources are transformed. First, create a deployment in the vCluster:
 
 ```bash
-kubectl config use-context vcluster_my-vcluster_test-namespace_kind-kind
-kubectl create deployment test-app --image=nginx --replicas=2
+vcluster connect my-vcluster --namespace test-namespace
+kubectl create deployment testapp --image=nginx --replicas=2
 ```{{exec}}
 
 Now check how it appears in the host cluster:
 
 ```bash
-kubectl config use-context kind-kind
-kubectl get pods -n test-namespace | grep test-app
+vcluster disconnect
+kubectl get pods -n test-namespace | grep testapp
 ```{{exec}}
 
 Notice the naming pattern: `<name>-x-<namespace>-x-<vcluster-name>`
@@ -50,8 +48,9 @@ Notice the naming pattern: `<name>-x-<namespace>-x-<vcluster-name>`
 #### Resources Synced TO Host Cluster:
 
 ```bash
-echo "=== Resources created in host cluster from vCluster ==="
-kubectl get pods,services,configmaps,secrets -n test-namespace --show-labels | grep "vcluster.loft.sh/managed-by=my-vcluster"
+kubectl get pods,services,configmaps,secrets -n test-namespace \
+  --show-labels | \
+  grep "vcluster.loft.sh/managed-by=my-vcluster"
 ```{{exec}}
 
 #### Resources Synced FROM Host Cluster:
@@ -59,8 +58,9 @@ kubectl get pods,services,configmaps,secrets -n test-namespace --show-labels | g
 Check node information synced from host:
 
 ```bash
-kubectl config use-context vcluster_my-vcluster_test-namespace_kind-kind
+vcluster connect my-vcluster --namespace test-namespace
 kubectl get nodes -o wide
+vcluster disconnect
 ```{{exec}}
 
 ### Syncer Configuration
@@ -68,8 +68,8 @@ kubectl get nodes -o wide
 View current syncer configuration:
 
 ```bash
-kubectl config use-context kind-kind
-kubectl get cm -n test-namespace my-vcluster-config -o yaml | grep -A 20 "sync:"
+kubectl get cm -n test-namespace my-vcluster-config -o yaml | \
+  grep -A 20 "sync:"
 ```{{exec}}
 
 ### Bidirectional Sync Example
@@ -77,17 +77,18 @@ kubectl get cm -n test-namespace my-vcluster-config -o yaml | grep -A 20 "sync:"
 Let's demonstrate bidirectional syncing by adding a label to a pod in the host cluster:
 
 ```bash
-# Get a pod name from vCluster workloads
-POD=$(kubectl get pods -n test-namespace -l vcluster.loft.sh/managed-by=my-vcluster -o name | head -1)
-# Add a label in the host cluster
+POD=$(kubectl get pods -n test-namespace \
+  -l vcluster.loft.sh/managed-by=my-vcluster \
+  -o name | head -1)
 kubectl label -n test-namespace $POD test-label=from-host
 ```{{exec}}
 
 Check if the label appears in the vCluster:
 
 ```bash
-kubectl config use-context vcluster_my-vcluster_test-namespace_kind-kind
+vcluster connect my-vcluster --namespace test-namespace
 kubectl get pods --show-labels | grep test-label
+vcluster disconnect
 ```{{exec}}
 
 ### Syncer Resource Mappings
@@ -95,8 +96,9 @@ kubectl get pods --show-labels | grep test-label
 Examine the syncer's internal mappings:
 
 ```bash
-kubectl config use-context kind-kind
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- sqlite3 /data/state.db "SELECT name FROM kine WHERE name LIKE '/vcluster/mappings/%' LIMIT 10;"
+kubectl exec -n test-namespace my-vcluster-0 -c syncer -- \
+  sqlite3 /data/state.db \
+  "SELECT name FROM kine WHERE name LIKE '/vcluster/mappings/%' LIMIT 10;"
 ```{{exec}}
 
 ### Reconciliation Loop
@@ -112,7 +114,9 @@ Watch(vCluster API) → Transform(resource) → Apply(host API) → Update Statu
 Monitor the reconciliation in real-time:
 
 ```bash
-kubectl logs -n test-namespace my-vcluster-0 -c syncer -f | grep -E "(create|update|delete|sync)" | head -20
+kubectl logs -n test-namespace my-vcluster-0 -c syncer -f | \
+  grep -E "(create|update|delete|sync)" | \
+  head -20
 ```{{exec}}
 
 ### Syncer Performance Metrics
@@ -133,22 +137,8 @@ kubectl exec -n test-namespace my-vcluster-0 -c syncer -- sh -c "ps aux | grep s
 | **Reference Rewriting** | Maintains resource relationships across clusters |
 | **Bidirectional Updates** | Labels/annotations flow both directions |
 
-### Debugging Syncer Issues
-
-Check for sync errors:
-
-```bash
-kubectl logs -n test-namespace my-vcluster-0 -c syncer | grep -i error | tail -5
-```{{exec}}
-
-View syncer event stream:
-
-```bash
-kubectl get events -n test-namespace --field-selector involvedObject.name=my-vcluster-0 | head -10
-```{{exec}}
-
 > **Note:** The syncer is highly optimized and typically syncs resources within milliseconds, making vCluster feel like a native Kubernetes cluster.
 
 ## Next Step
 
-Next we will see how well you have mastered the _vcluster_ CLI by running some test scenarios.
+Next we will practice using the _vcluster_ CLI with different scenarios.
