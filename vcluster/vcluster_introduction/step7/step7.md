@@ -10,7 +10,7 @@ controlPlane:
   distro:
     k8s:
       enabled: true
-      version: "v1.28.0"
+      version: "v1.32.0"
 EOF
 ```{{exec}}
 
