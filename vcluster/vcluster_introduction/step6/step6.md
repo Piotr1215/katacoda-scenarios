@@ -63,42 +63,24 @@ kubectl get nodes -o wide
 vcluster disconnect
 ```{{exec}}
 
-### Syncer Configuration
+### Annotation Sync Example
 
-View current syncer configuration:
-
-```bash
-kubectl get cm -n test-namespace my-vcluster-config -o yaml | \
-  grep -A 20 "sync:"
-```{{exec}}
-
-### Bidirectional Sync Example
-
-Let's demonstrate bidirectional syncing by adding a label to a pod in the host cluster:
-
-```bash
-POD=$(kubectl get pods -n test-namespace \
-  -l vcluster.loft.sh/managed-by=my-vcluster \
-  -o name | head -1)
-kubectl label -n test-namespace $POD test-label=from-host
-```{{exec}}
-
-Check if the label appears in the vCluster:
+The syncer synchronizes certain annotations between virtual and host clusters. Let's add an annotation to see this in action:
 
 ```bash
 vcluster connect my-vcluster --namespace test-namespace
-kubectl get pods --show-labels | grep test-label
+POD_NAME=$(kubectl get pods -o jsonpath='{.items[0].metadata.name}')
+kubectl annotate pod $POD_NAME example.io/team=frontend
+kubectl get pods -o custom-columns=NAME:.metadata.name,TEAM:.metadata.annotations.example\\.io/team
 vcluster disconnect
 ```{{exec}}
 
-### Syncer Resource Mappings
-
-Examine the syncer's internal mappings:
+Check the annotation in the host cluster:
 
 ```bash
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- \
-  sqlite3 /data/state.db \
-  "SELECT name FROM kine WHERE name LIKE '/vcluster/mappings/%' LIMIT 10;"
+kubectl get pods -n test-namespace \
+  -l vcluster.loft.sh/managed-by=my-vcluster \
+  -o custom-columns=NAME:.metadata.name,TEAM:.metadata.annotations.example\\.io/team
 ```{{exec}}
 
 ### Reconciliation Loop
@@ -117,14 +99,6 @@ Monitor the reconciliation in real-time:
 kubectl logs -n test-namespace my-vcluster-0 -c syncer -f | \
   grep -E "(create|update|delete|sync)" | \
   head -20
-```{{exec}}
-
-### Syncer Performance Metrics
-
-Check syncer resource usage:
-
-```bash
-kubectl exec -n test-namespace my-vcluster-0 -c syncer -- sh -c "ps aux | grep syncer | head -1"
 ```{{exec}}
 
 ### Key Syncer Features
