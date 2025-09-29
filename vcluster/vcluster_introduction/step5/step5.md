@@ -63,15 +63,18 @@ kubectl top pod -n test-namespace -l app=vcluster
 
 ### Understanding vCluster Isolation
 
-vCluster achieves workload isolation by running a full Kubernetes control plane inside a pod:
+vCluster achieves workload isolation by running a full Kubernetes control plane inside a pod. See which control plane components are running:
 
 ```bash
 kubectl exec -n test-namespace my-vcluster-0 -c syncer -- \
-  ps aux | grep -E '(kube-apiserver|kube-controller|kine)' | \
-  grep -v grep | \
-  awk '{print $11}' | \
-  cut -d'/' -f3 | \
-  sort -u
+  ps aux | \
+  awk '/kube-apiserver|kube-controller-manager|kine.*state.db|vcluster start/ && !/awk/ {
+    cmd=$11
+    if (cmd ~ /vcluster/) print "• vcluster"
+    else if (cmd ~ /kine/) print "• kine (etcd replacement)"
+    else if (cmd ~ /kube-apiserver/) print "• kube-apiserver"
+    else if (cmd ~ /kube-controller-manager/) print "• kube-controller-manager"
+  }' | sort -u
 ```{{exec}}
 
 This architecture provides:
