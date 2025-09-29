@@ -53,38 +53,44 @@
                 "foreground": "step7/foreground.sh"
             },
             {
-                "title": "Admin Team 🛠️",
+                "title": "Admin Team - CI/CD Access 🛠️",
                 "text": "step9/step9.md",
                 "background": "step9/background.sh",
                 "foreground": "step8/foreground.sh"
             },
             {
-                "title": "All Teams 👥",
+                "title": "vCluster Snapshots 📸",
                 "text": "step10/step10.md",
                 "background": "step10/background.sh",
                 "foreground": "step9/foreground.sh"
             },
             {
-                "title": "Reuse Host Metrics Server 📊",
+                "title": "All Teams - Pre-populated Resources 👥",
                 "text": "step11/step11.md",
                 "background": "step11/background.sh",
                 "foreground": "step10/foreground.sh"
             },
             {
-                "title": "Create 🧪",
+                "title": "Reuse Host Metrics Server 📊",
                 "text": "step12/step12.md",
-                "verify": "step12/verify.sh"
+                "background": "step12/background.sh",
+                "foreground": "step11/foreground.sh"
+            },
+            {
+                "title": "Create 🧪",
+                "text": "step13/step13.md",
+                "verify": "step13/verify.sh"
             },
             {
                 "title": "Implment Yourself 🛠️",
-                "text": "step13/step13.md",
-                "background": "step13/background.sh",
+                "text": "step14/step14.md",
+                "background": "step14/background.sh",
                 "foreground": "step12/foreground.sh"
             },
             {
                 "title": "Reconnect 🧪",
-                "text": "step14/step14.md",
-                "verify": "step14/verify.sh"
+                "text": "step15/step15.md",
+                "verify": "step15/verify.sh"
             }
         ],
         "intro": {

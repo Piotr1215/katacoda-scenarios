@@ -1,20 +1,11 @@
-Try to implement the following on your own:
+Create a new vcluster named `new-vcluster` in the `new-namespace` namespace.
+Make sure not to connect to the `vcluster` after creating it.
 
-- [Isolated workloads](https://www.vcluster.com/docs/vcluster/deploy/topologies/isolated-workloads)
-- [Multi-Namespace Mode](https://www.vcluster.com/docs/vcluster/deploy/topologies/multi-namespace-mode)
+### Solution
 
-## Platform Overview
+<details>
+<summary>click to see the answer</summary>
 
-Helps manage virtual clusters across multiple teams and namespaces.
+`vcluster create new-vcluster --namespace new-namespace --connect=false`{{exec}}
 
-```bash
-vcluster platform start --password=admin123
-```{{exec}}
-
-Let's add the virtual cluster to the platform and watch the resources in the `test-namespace`.
-
-```bash
-kubectl get pods -n test-namespace
-```{{exec}}
-
-
+</details>

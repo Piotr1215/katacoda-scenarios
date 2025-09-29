@@ -1,3 +1,2 @@
 #!/bin/sh
-echo "All Teams script"
-clear
+echo "vCluster Snapshots script"
