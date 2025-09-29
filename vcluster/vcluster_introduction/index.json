@@ -53,7 +53,7 @@
                 "foreground": "step7/foreground.sh"
             },
             {
-                "title": "KAI Scheduler with vCluster 🚀",
+                "title": "Kueue Scheduler with vCluster 🚀",
                 "text": "step9/step9.md",
                 "background": "step9/background.sh",
                 "foreground": "step8/foreground.sh"
@@ -141,22 +141,6 @@
                     "file": "kube-ps1.sh",
                     "target": "/root",
                     "chmod": "+x"
-                },
-                {
-                    "file": "kai-vcluster.yaml",
-                    "target": "/root"
-                },
-                {
-                    "file": "queues.yaml",
-                    "target": "/root"
-                },
-                {
-                    "file": "gpu-demo-pod1.yaml",
-                    "target": "/root"
-                },
-                {
-                    "file": "gpu-demo-pod2.yaml",
-                    "target": "/root"
                 }
             ]
         }

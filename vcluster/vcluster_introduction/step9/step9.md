@@ -1,67 +1,206 @@
-> Using virtual scheduler for true KAI isolation per team
+## What is Kueue?
 
-```yaml
-experimental:
-  syncSettings:
-    setOwner: false  # Required for KAI pod-grouper
+> **Job queueing controller for Kubernetes batch workloads**
 
+| **Feature**               | **Benefit**                        |
+| ------------------------- | ---------------------------------- |
+| Resource quotas & limits  | Fair sharing between teams         |
+| Queue-based scheduling    | Priority and FIFO ordering         |
+| Resource flavors          | Different node types & resources   |
+| Preemption & priorities   | Critical jobs get resources first  |
+
+> **CNCF Project:** Production-grade batch job management
+
+## Deploy Kueue in vCluster with Virtual Scheduler
+
+> Using virtual scheduler for complete Kueue isolation per team
+
+### Create vCluster Configuration
+
+```bash
+cat <<EOF > kueue-vcluster.yaml
 controlPlane:
   advanced:
     virtualScheduler:
-      enabled: true   # Runs scheduler inside a virtual cluster
+      enabled: true  # Runs scheduler inside virtual cluster
 
 sync:
   fromHost:
     nodes:
-      enabled: true   # Syncs host nodes for labels detection
-    runtimeClasses:
-      enabled: true   # Syncs NVIDIA runtime
-    # Auto-enabled with virtual scheduler:
-    csiDrivers: auto
-    csiNodes: auto
-    csiStorageCapacities: auto
-```
-
-| **Virtual Scheduler Benefits** | **Impact**                                |
-| ------------------------------ | ----------------------------------------- |
-| Independent KAI versions       | Each team runs v0.7.11, v0.9.2, or v0.9.3 |
-| Complete scheduler isolation   | KAI decisions stay within vCluster        |
-| True scheduling autonomy       | No cross-team interference                |
-| Verified working               | Pods scheduled by vCluster's KAI          |
-
-```bash
-vcluster create kai-isolated --values kai-vcluster.yaml
+      enabled: true  # Required for virtual scheduler
+EOF
 ```{{exec}}
 
-## Install KAI Inside vCluster
+### Deploy vCluster with Virtual Scheduler
 
-> Installing KAI scheduler that will make independent scheduling decisions
+```bash
+vcluster create kueue-team --values kueue-vcluster.yaml --connect=false
+kubectl wait --for=condition=ready pod -l app=vcluster -n vcluster-kueue-team --timeout=120s
+```{{exec}}
+
+## Install Kueue Inside vCluster
+
+> Installing Kueue that will manage batch jobs independently
 
 ```bash
 # Connect to vCluster first
-vcluster connect kai-isolated
+vcluster connect kueue-team
 
-# Install KAI - it will be THE scheduler for this vCluster
-KAI_VERSION=v0.7.11
-helm upgrade -i kai-scheduler \
-  oci://ghcr.io/nvidia/kai-scheduler/kai-scheduler \
-  -n kai-scheduler --create-namespace \
-  --version $KAI_VERSION \
-  --set "global.gpuSharing=true"
+# Install Kueue from official manifests
+kubectl apply --server-side -f https://github.com/kubernetes-sigs/kueue/releases/download/v0.9.1/manifests.yaml
 
-kubectl wait --for=condition=ready pod -n kai-scheduler --all --timeout=120s
+# Wait for Kueue controller to be ready
+kubectl wait --for=condition=available deploy/kueue-controller-manager -n kueue-system --timeout=60s
 ```{{exec}}
 
-## Deploy and Test GPU Workload in vCluster
+## Configure Kueue Resources
+
+> Set up ResourceFlavor, ClusterQueue, and LocalQueue
 
 ```bash
-# Apply queues and deploy two pods with different GPU fractions
-kubectl apply -f queues.yaml
-kubectl apply -f gpu-demo-pod1.yaml
-kubectl apply -f gpu-demo-pod2.yaml
+# Label node for Kueue flavor
+kubectl label node node01 kueue.x-k8s.io/flavor=default --overwrite
 
-kubectl wait --for=condition=ready pod -n default --all --timeout=120s
-
-# Show both pods sharing the GPU
-kubectl get pods -l app=gpu-demo -o custom-columns=NAME:.metadata.name,FRACTION:.metadata.annotations."kai\.scheduler/gpu-fraction",STATUS:.status.phase
+# Create Kueue resources
+kubectl apply -f - <<EOF
+# ResourceFlavor defines the resources available
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: ResourceFlavor
+metadata:
+  name: default-flavor
+spec:
+  nodeLabels:
+    kueue.x-k8s.io/flavor: default
+---
+# ClusterQueue manages resources at cluster level
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: ClusterQueue
+metadata:
+  name: team-a-cq
+spec:
+  namespaceSelector: {}
+  queueingStrategy: StrictFIFO
+  resourceGroups:
+  - coveredResources: ["cpu", "memory"]
+    flavors:
+    - name: default-flavor
+      resources:
+      - name: cpu
+        nominalQuota: 10
+      - name: memory
+        nominalQuota: 20Gi
+---
+# LocalQueue for team namespace
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: LocalQueue
+metadata:
+  namespace: default
+  name: team-a-queue
+spec:
+  clusterQueue: team-a-cq
+EOF
 ```{{exec}}
+
+## Deploy Sample Batch Jobs
+
+> Submit multiple jobs to see Kueue's queue management
+
+```bash
+# Create three batch jobs with different resource requirements
+kubectl apply -f - <<EOF
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-job-1
+  namespace: default
+  labels:
+    kueue.x-k8s.io/queue-name: team-a-queue
+spec:
+  parallelism: 1
+  completions: 1
+  suspend: true  # Kueue will unsuspend when admitted
+  template:
+    spec:
+      containers:
+      - name: worker
+        image: busybox
+        command: ["sh", "-c", "echo 'Processing batch job 1' && sleep 30"]
+        resources:
+          requests:
+            cpu: "1"
+            memory: "512Mi"
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-job-2
+  namespace: default
+  labels:
+    kueue.x-k8s.io/queue-name: team-a-queue
+spec:
+  parallelism: 1
+  completions: 1
+  suspend: true
+  template:
+    spec:
+      containers:
+      - name: worker
+        image: busybox
+        command: ["sh", "-c", "echo 'Processing batch job 2' && sleep 30"]
+        resources:
+          requests:
+            cpu: "2"
+            memory: "1Gi"
+      restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-job-3
+  namespace: default
+  labels:
+    kueue.x-k8s.io/queue-name: team-a-queue
+spec:
+  parallelism: 1
+  completions: 1
+  suspend: true
+  template:
+    spec:
+      containers:
+      - name: worker
+        image: busybox
+        command: ["sh", "-c", "echo 'Processing batch job 3' && sleep 30"]
+        resources:
+          requests:
+            cpu: "1"
+            memory: "256Mi"
+      restartPolicy: Never
+EOF
+```{{exec}}
+
+## Check Queue Status
+
+> View how Kueue manages the job queue
+
+```bash
+# Check Kueue workloads
+kubectl get workloads
+
+# Check job status - some may be pending due to resource limits
+kubectl get jobs
+
+# View ClusterQueue resource usage
+kubectl describe clusterqueue team-a-cq | grep -A 10 "Status:"
+```{{exec}}
+
+## Virtual Scheduler Benefits
+
+| **Benefit**              | **Impact**                                |
+| ------------------------ | ----------------------------------------- |
+| Independent Kueue versions | Each team runs their preferred version  |
+| Complete queue isolation | No cross-team job interference           |
+| Custom resource limits   | Per-team quotas and priorities          |
+| Safe testing            | Test new Kueue features without risk     |
+
+> **Key Point:** Each vCluster runs its own Kueue instance with virtual scheduler!
