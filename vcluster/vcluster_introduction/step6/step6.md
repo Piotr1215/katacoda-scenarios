@@ -4,14 +4,6 @@ The syncer is the heart of vCluster, acting as a bidirectional state reconciliat
 
 The syncer follows this continuous loop:
 
-```
-Watch(vCluster API) → Transform(resource) → Apply(host API) → Update Status(vCluster API)
-                                              ↑                           ↓
-                                              └───────────────────────────┘
-```
-
-### Syncer Architecture
-
 ![vCluster Syncer](./assets/vcluster-syncer.png)
 
 The syncer continuously watches both the vCluster API and host cluster API, transforming and synchronizing resources between them.

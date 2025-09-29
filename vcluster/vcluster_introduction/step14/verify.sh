@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# For snapshot verification, we check if the vCluster still exists
-# (since we can't easily verify the OCI upload succeeded)
-# In a real scenario, you might restore and verify
-vcluster list 2>/dev/null | grep -E "quiz-k8s.*quiz-ns" >/dev/null 2>&1
+# Verify that the container snapshot was created successfully
+# Check if /data/backup.tar.gz exists in the vCluster pod
+kubectl exec -n limited-ns limited-team-0 -c syncer -- test -f /data/backup.tar.gz 2>/dev/null

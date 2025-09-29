@@ -24,7 +24,7 @@ vcluster create backend --namespace backend-team -f vcluster-backend.yaml --conn
 This creates a `ResourceQuota` resource on our host cluster. 
 
 ```bash
-k describe resourcequota vc-backend -n backend-team
+kubectl describe resourcequota vc-backend -n backend-team
 ```{{exec}}
 
 > Now we are sure that the backend team will not consume more resources than allowed.

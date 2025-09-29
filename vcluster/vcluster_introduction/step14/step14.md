@@ -1,23 +1,25 @@
 ## Quiz 3: Take a vCluster Snapshot
 
 Perform the following backup operation:
-- Take a snapshot of the `quiz-k8s` vCluster created in Quiz 1
-- Save it to ephemeral registry: `oci://ttl.sh/quiz-backup:2h`
-- Verify the snapshot was successful
+- Take a snapshot of the `limited-team` vCluster created in Quiz 2
+- Namespace: `limited-ns`
+- Save it to local container storage: `container:///data/backup.tar.gz`
+- Verify the snapshot was created successfully
+
+> **📚 Documentation**: For more details on backup and restore operations, see [vCluster Backup & Restore](https://www.vcluster.com/docs/vcluster/manage/backup-restore/backup)
 
 ### Solution
 
 <details>
 <summary>click to see the answer</summary>
 
-Take the snapshot:
+Create the snapshot:
 
 ```bash
-# Generate random suffix to avoid naming conflicts
-RAND=$(openssl rand -hex 3)
-vcluster snapshot quiz-k8s "oci://ttl.sh/quiz-backup-${RAND}:2h"
+# Create snapshot inside vCluster's /data directory
+vcluster snapshot limited-team --namespace limited-ns "container:///data/backup.tar.gz"
 ```{{exec}}
 
-The snapshot is now stored in the ttl.sh registry and will expire after 2 hours.
+The snapshot is now saved persistently in the vCluster's data directory.
 
 </details>

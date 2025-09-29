@@ -1,5 +1,11 @@
 ## Quiz 2: Create vCluster with Resource Quotas
 
+First, clean up the previous quiz vCluster:
+
+```bash
+vcluster delete quiz-k8s --delete-namespace
+```{{exec}}
+
 Create a new vCluster with the following requirements:
 - Name: `limited-team`
 - Namespace: `limited-ns`
@@ -8,6 +14,8 @@ Create a new vCluster with the following requirements:
   - Maximum 8Gi memory
   - Maximum 15 pods
 - Do NOT connect after creation
+
+> **📚 Documentation**: For more details on resource quota configuration, see [vCluster Resource Quota Policies](https://www.vcluster.com/docs/vcluster/configure/vcluster-yaml/policies/resource-quota)
 
 ### Solution
 
