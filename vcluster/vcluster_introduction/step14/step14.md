@@ -1,5 +1,7 @@
 ## Quiz 3: Upgrade Kubernetes Version
 
+> **💡 Tip**: Both `kubectl` and `vcluster` commands support tab completion. You can also use `k9s` for interactive cluster management.
+
 First, ensure we're not connected to any vCluster and list existing vClusters:
 
 ```bash

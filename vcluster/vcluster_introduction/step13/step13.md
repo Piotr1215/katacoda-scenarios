@@ -1,5 +1,7 @@
 ## Quiz 2: Create vCluster with Resource Quotas
 
+> **💡 Tip**: Both `kubectl` and `vcluster` commands support tab completion. You can also use `k9s` for interactive cluster management.
+
 First, ensure we're not connected to any vCluster and list existing vClusters:
 
 ```bash
@@ -47,6 +49,12 @@ Then create the vCluster:
 
 ```bash
 vcluster create limited-team --namespace limited-ns -f quiz-limits.yaml --connect=false
+```{{exec}}
+
+Wait for the vCluster to be ready:
+
+```bash
+kubectl wait --for=condition=Ready pod -l app=vcluster -n limited-ns --timeout=120s
 ```{{exec}}
 
 Clean up the vCluster after verification:

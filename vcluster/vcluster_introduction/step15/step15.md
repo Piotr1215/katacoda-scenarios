@@ -1,10 +1,18 @@
 ## Quiz 4: vCluster Management
 
+> **💡 Tip**: Both `kubectl` and `vcluster` commands support tab completion. You can also use `k9s` for interactive cluster management.
+
 First, ensure we're not connected to any vCluster and list existing vClusters:
 
 ```bash
 vcluster disconnect
 vcluster list
+```{{exec}}
+
+Clean up the previous quiz vCluster:
+
+```bash
+vcluster delete quiz-version --delete-namespace
 ```{{exec}}
 
 Complete the following tasks:

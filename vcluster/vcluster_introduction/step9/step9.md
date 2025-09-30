@@ -41,18 +41,18 @@ vcluster delete my-vcluster --namespace test-namespace
 vcluster create my-vcluster --namespace test-namespace --restore "oci://ttl.sh/vcluster-snapshot-${RAND}:1h"
 ```{{exec}}
 
-### Verify Restoration
-
-```bash
-# Check restored deployment (auto-connected after restore)
-kubectl get deployments -A
-```{{exec}}
-
-You should see the `nginx-test` deployment in the `team-b` namespace restored from the snapshot.
+> **Note**: After restore, vCluster automatically connects you to the restored cluster. You can verify the restoration by checking if the `nginx-test` deployment in the `team-b` namespace was restored.
 
 ```bash
 # Disconnect from restored vcluster
 vcluster disconnect
+```{{exec}}
+
+## Cleanup
+
+```bash
+# Delete my-vcluster to free up resources for next steps
+vcluster delete my-vcluster --namespace test-namespace
 ```{{exec}}
 
 > **Key Points:**

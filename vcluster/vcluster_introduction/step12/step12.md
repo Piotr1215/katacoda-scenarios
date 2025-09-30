@@ -1,5 +1,7 @@
 ## Quiz 1: Create vCluster with Custom Kubernetes Version
 
+> **💡 Tip**: Both `kubectl` and `vcluster` commands support tab completion. You can also use `k9s` for interactive cluster management.
+
 First, ensure we're not connected to any vCluster and list existing vClusters:
 
 ```bash
@@ -34,6 +36,12 @@ Then create the vCluster:
 
 ```bash
 vcluster create quiz-k8s --namespace quiz-ns -f quiz-version.yaml --connect=false
+```{{exec}}
+
+Wait for the vCluster to be ready:
+
+```bash
+kubectl wait --for=condition=Ready pod -l app=vcluster -n quiz-ns --timeout=120s
 ```{{exec}}
 
 </details>
