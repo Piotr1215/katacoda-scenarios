@@ -57,10 +57,4 @@ Wait for the vCluster to be ready:
 kubectl wait --for=condition=Ready pod -l app=vcluster -n limited-ns --timeout=120s
 ```{{exec}}
 
-Clean up the vCluster after verification:
-
-```bash
-vcluster delete limited-team --delete-namespace
-```{{exec}}
-
 </details>

@@ -9,6 +9,12 @@ vcluster disconnect
 vcluster list
 ```{{exec}}
 
+Clean up the previous quiz vCluster:
+
+```bash
+vcluster delete limited-team --delete-namespace
+```{{exec}}
+
 Perform the following tasks:
 1. Create a vCluster named `quiz-version` in namespace `quiz-upgrade`
 2. Configure it with Kubernetes version `v1.32.0`
@@ -31,7 +37,8 @@ controlPlane:
   distro:
     k8s:
       enabled: true
-      version: v1.32.0
+      image:
+        tag: v1.32.0
 EOF
 ```{{exec}}
 
@@ -55,20 +62,21 @@ controlPlane:
   distro:
     k8s:
       enabled: true
-      version: v1.33.0
+      image:
+        tag: v1.33.0
 EOF
 ```{{exec}}
 
 Upgrade the vCluster:
 
 ```bash
-vcluster create quiz-version --namespace quiz-upgrade -f quiz-k8s-133.yaml --connect=false --upgrade
+vcluster create --upgrade quiz-version --namespace quiz-upgrade -f quiz-k8s-133.yaml --connect=false
 ```{{exec}}
 
 Wait for the upgrade to complete:
 
 ```bash
-sleep 10 && kubectl wait --for=condition=Ready pod -l app=vcluster -n quiz-upgrade --timeout=120s
+kubectl wait --for=condition=Ready pod -l app=vcluster -n quiz-upgrade --timeout=120s
 ```{{exec}}
 
 </details>

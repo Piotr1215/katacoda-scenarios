@@ -21,7 +21,6 @@ Complete the following tasks:
 3. Create a deployment named `quiz-app` with image `nginx:alpine`
 4. Verify the deployment was created
 5. Disconnect from the vCluster
-6. Clean up the vCluster
 
 ### Solution
 
@@ -62,12 +61,6 @@ Step 5: Disconnect:
 
 ```bash
 vcluster disconnect
-```{{exec}}
-
-Step 6: Clean up the vCluster:
-
-```bash
-vcluster delete quiz-mgmt --delete-namespace
 ```{{exec}}
 
 </details>

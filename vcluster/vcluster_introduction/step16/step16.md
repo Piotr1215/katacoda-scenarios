@@ -9,6 +9,12 @@ vcluster disconnect
 vcluster list
 ```{{exec}}
 
+Clean up the previous quiz vCluster:
+
+```bash
+vcluster delete quiz-mgmt --delete-namespace
+```{{exec}}
+
 Create a vCluster with the following requirements:
 - Name: `quiz-prepop`
 - Namespace: `quiz-final`
@@ -60,14 +66,3 @@ kubectl wait --for=condition=Ready pod -l app=vcluster -n quiz-final --timeout=1
 ```{{exec}}
 
 </details>
-
-## Congratulations! 🎉
-
-You've completed all the vCluster workshop quizzes! You now know how to:
-- Create vClusters with custom configurations
-- Set resource limits and quotas
-- Take snapshots for backup
-- Manage multiple vClusters
-- Pre-populate resources for teams
-
-Feel free to explore more advanced vCluster features at [vcluster.com](https://www.vcluster.com/docs)
