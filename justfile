@@ -1,6 +1,11 @@
 default:
   just --list
 
+# Connect to Killercoda via cloudflared tunnel
+# Usage: just kc URL
+kc URL:
+  sshpass -p "test123" ssh -o ProxyCommand="cloudflared access ssh --hostname %h" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@{{URL}}
+
 copy_assets:
   # Validate initial JSON syntax
   @jq empty {{invocation_directory()}}/index.json || { echo "Invalid JSON format in index.json"; exit 1; }
