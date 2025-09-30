@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Verify that the container snapshot was created successfully
-# Check if /data/backup.tar.gz exists in the vCluster pod
-kubectl exec -n limited-ns limited-team-0 -c syncer -- test -f /data/backup.tar.gz 2>/dev/null
+# Verify that the vCluster has been upgraded to Kubernetes v1.33.0
+# Check the kubernetes init container image version
+kubectl get pod quiz-version-0 -n quiz-upgrade -o jsonpath='{.spec.initContainers[?(@.name=="kubernetes")].image}' 2>/dev/null | grep -q "v1.33.0"

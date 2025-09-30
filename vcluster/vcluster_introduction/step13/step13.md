@@ -49,4 +49,10 @@ Then create the vCluster:
 vcluster create limited-team --namespace limited-ns -f quiz-limits.yaml --connect=false
 ```{{exec}}
 
+Clean up the vCluster after verification:
+
+```bash
+vcluster delete limited-team --delete-namespace
+```{{exec}}
+
 </details>

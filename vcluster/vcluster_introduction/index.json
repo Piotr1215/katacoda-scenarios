@@ -81,7 +81,7 @@
                 "verify": "step13/verify.sh"
             },
             {
-                "title": "Quiz 3: Snapshots 📸",
+                "title": "Quiz 3: Kubernetes Version Upgrade 🔄",
                 "text": "step14/step14.md",
                 "verify": "step14/verify.sh"
             },
