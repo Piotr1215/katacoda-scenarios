@@ -29,10 +29,17 @@ kubectl describe resourcequota vc-backend -n backend-team
 
 > Now we are sure that the backend team will not consume more resources than allowed.
 
+## Cleanup
+
+```bash
+# Clean up the backend vcluster
+vcluster delete backend --delete-namespace
+```{{exec}}
+
 ## Next Step
 
 ```bash
 vcluster disconnect
 ```{{exec}}
 
-Next we'll explore vCluster snapshots for backup and recovery using the backend cluster.
+Next we'll explore vCluster snapshots for backup and recovery.

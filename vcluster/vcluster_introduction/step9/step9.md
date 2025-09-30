@@ -10,10 +10,10 @@ A vCluster snapshot includes:
 ### Create Snapshot
 
 ```bash
-# Snapshot the backend vCluster to ephemeral docker image registry (ttl.sh)
+# Snapshot my-vcluster to ephemeral docker image registry (ttl.sh)
 # Generate random suffix to avoid naming conflicts
 RAND=$(openssl rand -hex 3)
-vcluster snapshot backend "oci://ttl.sh/vcluster-backend-${RAND}:1h"
+vcluster snapshot my-vcluster --namespace test-namespace "oci://ttl.sh/vcluster-snapshot-${RAND}:1h"
 ```{{exec}}
 
 > **Note**: ttl.sh is a free ephemeral registry where images expire after the specified time (1h = 1 hour)
@@ -29,8 +29,8 @@ vcluster snapshot backend "oci://ttl.sh/vcluster-backend-${RAND}:1h"
 ### Simulate Disaster Recovery
 
 ```bash
-# Delete the backend vCluster to simulate disaster
-vcluster delete backend --delete-namespace
+# Delete my-vcluster to simulate disaster
+vcluster delete my-vcluster --namespace test-namespace
 ```{{exec}}
 
 ### Restore from Snapshot
@@ -38,16 +38,21 @@ vcluster delete backend --delete-namespace
 ```bash
 # Create new vCluster from snapshot (namespace is auto-created)
 # Use the same image name from the snapshot step above
-vcluster create backend-restored --restore "oci://ttl.sh/vcluster-backend-${RAND}:1h"
+vcluster create my-vcluster --namespace test-namespace --restore "oci://ttl.sh/vcluster-snapshot-${RAND}:1h"
 ```{{exec}}
 
 ### Verify Restoration
 
 ```bash
-# Connect and check restored state
-vcluster connect backend-restored
-kubectl get ns
-kubectl get resourcequotas -A
+# Check restored deployment (auto-connected after restore)
+kubectl get deployments -A
+```{{exec}}
+
+You should see the `nginx-test` deployment in the `team-b` namespace restored from the snapshot.
+
+```bash
+# Disconnect from restored vcluster
+vcluster disconnect
 ```{{exec}}
 
 > **Key Points:**
