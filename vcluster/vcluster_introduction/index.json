@@ -132,6 +132,11 @@
                     "chmod": "+x"
                 },
                 {
+                    "file": "setup_remote_access.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
                     "file": ".sqliterc",
                     "target": "/root",
                     "chmod": "+x"
